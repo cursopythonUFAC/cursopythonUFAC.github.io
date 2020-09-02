@@ -20,7 +20,7 @@ Declaro para os devidos fins que caso eu solicite a inscrição para o curso _Py
 
 **Horário**: Das 14h às 18hs (Toda sexta)
 
-**Inscrição**: https://cutt.ly/pyUFAC
+**Inscrição**: <a href=https://cutt.ly/pyUFAC>https://cutt.ly/pyUFAC</a>
 
 **Plataformas:** 
 
