@@ -19,7 +19,7 @@ Declaro para os devidos fins que caso eu solicite a inscrição para o curso _Py
 
 **Horário**: Das 14h às 18hs (Toda sexta)
 
-**Inscrição**: [cutt.ly/pyUFAC](https://cutt.ly/pyUFAC)
+**Inscrição**: [https://cutt.ly/pyUFAC](https://cutt.ly/pyUFAC)
 
 **Plataformas:** 
 
@@ -31,4 +31,4 @@ Declaro para os devidos fins que caso eu solicite a inscrição para o curso _Py
 
 - Este site (Material didático & Informações)
 
-**Contato**: cursopython.ufac@gmail.com
+**Contato**: [cursopython.ufac@gmail.com](cursopython.ufac@gmail.com)
