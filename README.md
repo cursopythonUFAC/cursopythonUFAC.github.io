@@ -5,7 +5,7 @@
 # Como é o curso?
 
 Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupyter Lab__ com aplicações voltadas para estudantes, profissionais e pesquisadores de engenharia. Este ambiente permite a criação de __Notebooks__, um conceito de documento que inclui textos tradicionais com títulos, figuras, equações, etc, e códigos Python. Os resultados da programação em Python são impressos dentro do documento, permitindo, inclusive, a criação de botões interativos dentro do Notebook, possibilitando a criação de gráficos e outros elementos interativos. No curso, serão apresentados os conceitos básicos da linguagem de programação Python aplicados à alguns problemas da engenharia e da matemática, que serão previamente explicados ao decorrer das aulas. Além disso, o curso contará com atividades práticas semanais, que serão apresentadas nas aulas de videoconferências e em apostilas no formato de __Notebooks__. Ao final do curso cada participante deverá fazer um projeto final de curso para consolidar o conhecimento adquirido. Finalmente, o participante pode contar com a ajuda dos bolsistas e/ou voluntários para tirar dúvidas durante as aulas e na resolução das tarefas semanais.
-<div id='termo-compromisso'/>
+<div class="tag-h1" id='termo-compromisso'/>
 
 # Termo de compromisso
 
