@@ -1,7 +1,7 @@
 plugins:
   - jekyll-relative-links
 theme: jekyll-theme-leap-day
-title: Python para engenharia com aplicações
+title: Python para engenharia
 description: Site de apoio do curso online de Python para a engenharia com aplicações
 relative_links:
   enabled: true
