@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
 <img src="imgs/README/ARTE DE DIVULGAÇÃO.jpg" alt="Arte de divulgação">
 
 # Como é o curso?
