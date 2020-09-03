@@ -20,7 +20,7 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 
 **Horário**: Das 14h às 18hs (Toda sexta)
 
-**Inscrição**: <a href="https://cutt.ly/pyUFAC" class="btn" target="_blank">https://cutt.ly/pyUFAC</a>
+**Inscrição**: <a href="https://cutt.ly/pyUFAC"  target="_blank">https://cutt.ly/pyUFAC</a>
 
 **Plataformas:** 
 
