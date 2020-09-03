@@ -10,15 +10,13 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 
 > Declaro para os devidos fins que ao me inscrever para o curso _Python para engenharia com aplicações_, estou ciente de que caso a minha participação seja __inferior a 75% das aulas__, __não receberei certificado de participação__ de acordo com edital PROEX-11/2020. Declaro, ainda, que __minha participação está condicionada às entregas das atividades semanais__ e do projeto final.
 
-# Informações importantes
+# Inscrição & informações
 
 **Período de inscrição**: 02/09 à 09/09
 
 **Período do curso**: 11/09 à 18/12 (60 horas)
 
 **Horário**: Das 14h às 18hs (Toda sexta)
-
-**Inscrição**: <a href="https://cutt.ly/pyUFAC"  target="_blank">https://cutt.ly/pyUFAC</a>
 
 **Plataformas:** 
 
@@ -31,5 +29,5 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 - Este site (Material didático & Informações)
 
 **Contato**: [cursopython.ufac@gmail.com](mailto:cursopython.ufac@gmail.com)
-# Inscrição
+
 <a href="https://cutt.ly/pyUFAC" class="btn" target="_blank">Inscreva-se</a>
