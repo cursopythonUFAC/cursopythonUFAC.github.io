@@ -1,5 +1,3 @@
-<a href="https://cutt.ly/pyUFAC" class="btn" target="_blank">Inscreva-se</a>
-
 <img src="imgs/README/ARTE DE DIVULGAÇÃO.jpg" alt="Arte de divulgação">
 
 # Como é o curso?
@@ -33,3 +31,5 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 - Este site (Material didático & Informações)
 
 **Contato**: [cursopython.ufac@gmail.com](mailto:cursopython.ufac@gmail.com)
+# Inscrição
+<a href="https://cutt.ly/pyUFAC" class="btn" target="_blank">Inscreva-se</a>
