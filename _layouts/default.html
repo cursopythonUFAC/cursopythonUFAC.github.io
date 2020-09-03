@@ -17,7 +17,8 @@
   <body>
 
       <header>
-        <h1>{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+        <img src="imgs/favicon.ico" style="vertical-align:middle; width: 46px">
+        <h1 style="vertical-align:middle; display:inline;">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
         <p>{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
       </header>
 
