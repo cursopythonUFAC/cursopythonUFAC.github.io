@@ -1,4 +1,4 @@
-<a href="https://cutt.ly/pyUFAC"><img src="imgs/README/Botao.png" alt="Inscreva-se" class="center"></a>
+<a href="https://cutt.ly/pyUFAC" class="btn" target="_blank"><strong>Inscreva-se</strong></a>
 
 <img src="imgs/README/ARTE DE DIVULGAÇÃO.jpg" alt="Arte de divulgação">
 
@@ -20,7 +20,7 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 
 **Horário**: Das 14h às 18hs (Toda sexta)
 
-**Inscrição**: [https://cutt.ly/pyUFAC](https://cutt.ly/pyUFAC)
+**Inscrição**: <a href="https://cutt.ly/pyUFAC" class="btn" target="_blank">https://cutt.ly/pyUFAC</a>
 
 **Plataformas:** 
 
