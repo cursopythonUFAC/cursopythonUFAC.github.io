@@ -1,4 +1,4 @@
-<a href="https://cutt.ly/pyUFAC"><img src="imgs/README/Botão.png" alt="Inscreva-se" class="center"></a>
+<a href="https://cutt.ly/pyUFAC"><img src="imgs/README/Botao.png" alt="Inscreva-se" class="center"></a>
 
 <img src="imgs/README/ARTE DE DIVULGAÇÃO.jpg" alt="Arte de divulgação">
 
