@@ -10,7 +10,7 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 
 > Declaro para os devidos fins que ao me inscrever para o curso _Python para engenharia com aplicações_, estou ciente de que caso a minha participação seja __inferior a 75% das aulas__, __não receberei certificado de participação__ de acordo com edital PROEX-11/2020. Declaro, ainda, que __minha participação está condicionada às entregas das atividades semanais__ e do projeto final.
 
-# Inscrição & informações
+# Inscrição
 
 **Período de inscrição**: 02/09 à 09/09
 
