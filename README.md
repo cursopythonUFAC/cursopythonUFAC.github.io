@@ -12,7 +12,7 @@ Neste curso será ensinado o Python dentro do ambiente de desenvolvimento __Jupy
 
 # Inscrição & informações
 
-**Período de inscrição**: Inscrições encerradas (<span style="color:red;"><b>Lotado</b></span>)
+**Período de inscrição**: Inscrições encerradas (<span style="color:red;"><b>Vagas totalmente preenchidas</b></span>)
 
 **Período do curso**: 11/09 à 18/12 (60 horas)
 
