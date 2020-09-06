@@ -3,6 +3,16 @@
 
 @import "{{ site.theme }}";
 
+#titulo{
+    vertical-align:middle;
+    display:inline;
+}
+
+#titulo-logo{
+    vertical-align:middle; 
+    height: 42px;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -54,6 +64,54 @@
     font-weight: bold;
     text-decoration: none;
 }
+
 .btn-blocked:hover{
     cursor: not-allowed;
+}
+
+#plataformas{
+    display: inline;
+} 
+.nome{
+    display: inline;
+}
+
+#banner { 
+    display: block;
+    
+}
+
+@media only screen and (max-width: 480px) {  
+    #plataformas{
+        display: none;
+    } 
+    #banner {
+        top: 0px;
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 340px) {  
+    #titulo-logo{
+        display: none;
+    }
+    #banner{
+        .downloads{
+            margin-right: 10px;
+        }
+        #logo{
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {  
+    #banner .nome{
+        display: none;
+    } 
+}
+
+.plataformas{
+    height: 16px;
+    vertical-align:text-bottom;
 }
