@@ -1,0 +1,31 @@
+{% assign tags = "roteiro, material, entrega" | split: ", " %}
+{% assign nomes = "Roteiro, Material auxiliar, Entrega atividade" | split: ", " %}
+
+<ul class="atividade">
+    <li>
+        <a href="{{ include.roteiro }}" target="_blank">
+            <img src="imgs/activities-icons/{{ tags[0] }}.svg" alt="{{ nomes[0] }}">
+        </a>
+        <span>{{ nomes[0] }}</span>
+    </li>
+
+    <li>
+        <a href="{{ include.material }}" target="_blank">
+            <img src="imgs/activities-icons/{{ tags[1] }}.svg" alt="{{ nomes[1] }}">
+        </a>
+        <span>{{ nomes[1] }}</span>
+    </li>
+
+    <!--<li>
+        <a href="" target="_blank">
+            <img src="imgs/activities-icons/youtube.svg" alt="Atividades">
+        </a>
+        <span>Vídeo</span>
+    </li>-->
+    <li>
+        <a href="{{ include.entrega }}" target="_blank">
+            <img src="imgs/activities-icons/{{ tags[2] }}.svg" alt="{{ nomes[2] }}">
+        </a>
+        <span>{{ nomes[2] }}</span>
+    </li>
+</ul>
