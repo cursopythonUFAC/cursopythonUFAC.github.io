@@ -1,4 +1,22 @@
-<img src="imgs/README/ARTE DE DIVULGAÇÃO.jpg" alt="Arte de divulgação">
+# Primeiros passos
+----
+Antes de tudo, **te enviamos um e-mail**. Neste e-mail te enviamos os links de convite para o servidor do **Discord** e para sala de aula no **Google Classroom**.  Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
+
+### **Discord**
+O **Discord** é tipo um **Whatsapp**, só que com muito mais recursos. Será nosso canal de comunicação entre você e os tutores. Lá você poderão **conversar** e **tirar dúvidas** e receber **informações relativas ao curso**. O link para download pode ser encontrado logo abaixo:  
+
+> [https://discord.com/download](https://discord.com/download)  
+
+É recomendado a utilização da versão Desktop do **Discord**. 
+
+### **Google Classroom**
+
+O **Google Classroom** é a plataforma de ensino  aonde você enviará as suas atividades. Você pode acessá-la clicando no ícone **Entregar atividade**.  Lembrando que a presença nas lives não serão obrigatórias, entretanto nós recomendamos a presença sempre que possível. As **atividades têm caráter obrigatório** e devem ser entregues via Google Classroom/Sala de Aula.  
+
+### **Google Meet**
+
+O **Google Meet** é a plataforma de *streamming* (**lives**) aonde aconterão os encontros semanais. O **link** da live será enviado **uma hora antes** pelos canais de comunicação do curso. Além disso, durante as aulas, **você poderá acessar a live (Google Meet)  no menu superior de plataformas digitais**, localizado no topo do site.
+
 
 # Como é o curso?
 
