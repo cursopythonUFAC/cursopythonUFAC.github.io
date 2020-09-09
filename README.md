@@ -2,7 +2,20 @@
 ----
 Antes de tudo, **te enviamos um e-mail**. Neste e-mail te enviamos os links de convite para o servidor do **Discord** e para sala de aula no **Google Classroom**.  Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
 
+### Anaconda
+
+Anaconda é a distribuição que usaremos para rodar os nossos códigos Python em Notebooks. Link para download:
+
+> [https://www.anaconda.com/products/individual](https://www.anaconda.com/products/individual)
+
+A instalação é simples. Basta clicar Next toda vida, porém tem uma ressalva:
+
+> Caso necessite de rodar o Python no terminal do Windows pode clicar na opção: 
+
+![Instalação Anaconda](imgs/instalacao_anaconda.png)
+
 ### **Discord**
+
 O **Discord** é tipo um **Whatsapp**, só que com muito mais recursos. Será nosso canal de comunicação entre você e os tutores. Lá você poderão **conversar** e **tirar dúvidas** e receber **informações relativas ao curso**. O link para download pode ser encontrado logo abaixo:  
 
 > [https://discord.com/download](https://discord.com/download)  
