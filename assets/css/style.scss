@@ -1,26 +1,27 @@
----
----
+--- 
+
+--- 
 
 @import "{{ site.theme }}";
 
-#titulo{
-    vertical-align:middle;
-    display:inline;
+#titulo {
+    vertical-align: middle;
+    display: inline;
 }
 
-#titulo-logo{
-    vertical-align:middle; 
+#titulo-logo {
+    vertical-align: middle;
     height: 42px;
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
-.btn{
+.btn {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -29,7 +30,7 @@
     height: 40px;
     background: #ffcc00;
     border: 1px solid #f0b500;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
     border-radius: 0px 2px 2px 0px;
     text-align: center;
     font: 28px 'Quattrocento Sans';
@@ -38,15 +39,17 @@
     font-weight: bold;
     text-decoration: none;
 }
-.btn:visited{
-    color:#333;
+
+.btn:visited {
+    color: #333;
 }
-.btn:hover{
-    color:#666;
+
+.btn:hover {
+    color: #666;
     background: #ffdd54;
 }
 
-.btn-blocked{
+.btn-blocked {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -55,7 +58,7 @@
     height: 50px;
     background: #CCC;
     border: 1px solid #AAA;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
     border-radius: 0px 2px 2px 0px;
     text-align: center;
     font: 28px 'Quattrocento Sans';
@@ -65,54 +68,74 @@
     text-decoration: none;
 }
 
-.btn-blocked:hover{
+.btn-blocked:hover {
     cursor: not-allowed;
 }
 
-#plataformas{
-    display: inline;
-} 
-#banner .nome{
+#plataformas {
     display: inline;
 }
 
-#banner { 
+#banner .nome {
+    display: inline;
+}
+
+#banner {
     display: block;
 }
 
-.plataformas{
+.plataformas {
     height: 16px;
-    vertical-align:text-bottom;
+    vertical-align: text-bottom;
 }
 
-.atividade{
+nav{
+    li a{
+        padding-right: 0.2em;
+        border-right: 2px solid #EAE6D1; 
+        outline: none;
+    }
+}
+
+
+nav .active {
+    a{
+        border-right: 2px solid #666;
+    }
+}
+
+.atividade {
     display: block;
     list-style: none;
     padding: 0;
-    width:390px;//500px;
-    margin-left:auto;
+    width: 390px; //500px;
+    margin-left: auto;
     align-items: center;
-    margin-right:auto;
+    margin-right: auto;
     border-bottom: 1px solid #dbdbdb;
     border-top: 1px solid #dbdbdb;
-    li{
+
+    li {
         margin-top: 10px;
         margin-bottom: 10px;
         vertical-align: center;
         width: 120px;
         display: inline-block;
     }
-    a{
-        text-align:center;
-        display:block;
-    }
-    img{
-        width: 56px;
-        margin-left:auto;
-        margin-right:auto;
+
+    a {
+        text-align: center;
         display: block;
     }
-    span{
+
+    img {
+        width: 56px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    span {
         display: block;
         text-align: center;
         margin-top: 4px;
@@ -122,44 +145,51 @@
 }
 
 
-@media only screen and (max-width: 480px) {  
-    #plataformas{
+@media only screen and (max-width: 480px) {
+    #plataformas {
         display: none;
-    } 
+    }
+
     #banner {
         top: 0px;
         position: relative;
     }
 }
 
-@media only screen and (max-width: 340px) {  
-    #titulo-logo{
+@media only screen and (max-width: 340px) {
+    #titulo-logo {
         display: none;
     }
-    #banner{
-        .downloads{
+
+    #banner {
+        .downloads {
             margin-right: 10px;
         }
-        #logo{
+
+        #logo {
             display: none;
         }
     }
 }
 
-@media only screen and (max-width: 600px) {  
-    #banner .nome{
+@media only screen and (max-width: 640px) {
+    #banner .nome {
         display: none;
-    } 
-    .atividade{
-        width: 154px;//210
+    }
+
+    .atividade {
+        width: 154px; //210
         height: 48px;
-        li{
+
+        li {
             width: 48px;
         }
-        img{
+
+        img {
             width: 32px;
         }
-        span{
+
+        span {
             display: none;
         }
     }

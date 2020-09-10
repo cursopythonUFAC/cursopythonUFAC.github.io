@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="google-site-verification" content="mt09r5KXDq77uW-GRWevO-9Q9ZJitYWkdmEp8XJdG8Y" />
-  <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico">
   <meta name="generator" content="Jekyll v3.9.0" />
   <meta property="og:title" content="Curso de Python para engenharia com aplicações" />
   <meta property="og:locale" content="en_US" />
@@ -33,36 +33,59 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <!-- Mathjax Support -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ]
+      },
+      options: {
+        enableMenu: false
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
 </head>
 
 <body>
 
   <header>
-    <img src="imgs/favicon.ico" id="titulo-logo">
+    <a href="/"><img src="/imgs/favicon.ico" id="titulo-logo"></a>
     <h1 id="titulo">Python para engenharia</h1>
     <p>Site de apoio do curso online de Python para a engenharia com aplicações</p>
   </header>
 
   <div id="banner">
+    {% if page.url != "/" %}
+      <a class="button fork" onclick="history.back(-1)">
+        <strong>&#8678;</strong>
+        <div class="nome"> Voltar</div>
+      </a>
+    {% endif %}
+
     <a href="{{ site.github.repository_url }}" id="logo" target="_blank"></a>
     <div class="downloads">
       <span id="plataformas">Plataformas digitais:</span>
       <ul>
         <li>
           <a href="https://meet.google.com/" class="button" target="_blank">
-            <img src="imgs/meet.png" alt="Google Meet" class="plataformas">
+            <img src="/imgs/meet.png" alt="Google Meet" class="plataformas">
             <div class="nome">Meet</div>
           </a>
         </li>
         <li>
           <a href="https://classroom.google.com/" class="button" target="_blank">
-            <img src="imgs/classroom.png" alt="Google Classroom" class="plataformas">
+            <img src="/imgs/classroom.png" alt="Google Classroom" class="plataformas">
             <div class="nome">Classroom</div>
           </a>
         </li>
         <li>
-          <a href="https://discord.com/download" class="button" target="_blank">
-            <img src="imgs/discord.png" alt="Discord" class="plataformas">
+          <a href="https://discord.gg/vdCWJu" class="button" target="_blank">
+            <img src="/imgs/discord.png" alt="Discord" class="plataformas">
             <div class="nome">Discord</div>
           </a>
         </li>
@@ -77,7 +100,7 @@
   </div><!-- end banner -->
 
   <div class="wrapper">
-    <nav>
+    <nav id="side-menu">
       <ul></ul>
     </nav>
     <section style="padding: 30px 30px 25px 30px">
@@ -85,7 +108,7 @@
 
     </section>
     <footer>
-      <img src="imgs/logo_ufac.png" alt="Logo da UFAC" style="width: 33%;max-width: 75px">
+      <img src="/imgs/logo_ufac.png" alt="Logo da UFAC" style="width: 33%;max-width: 75px">
       <p><small>Curso de Engenharia Elétrica</br>Créditos do tema: <a
             href="https://github.com/pages-themes/leap-day">mattgraham</a></small></p>
     </footer>

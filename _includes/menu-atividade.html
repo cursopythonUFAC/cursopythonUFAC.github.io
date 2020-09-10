@@ -1,9 +1,9 @@
 {% assign tags = "roteiro, material, entrega" | split: ", " %}
-{% assign nomes = "Roteiro, Material auxiliar, Entrega atividade" | split: ", " %}
+{% assign nomes = "Roteiro, Jupyter Notebook, Entregar atividade" | split: ", " %}
 
 <ul class="atividade">
     <li>
-        <a href="{{ include.roteiro }}" target="_blank">
+        <a href="{{ include.roteiro }}">
             <img src="imgs/activities-icons/{{ tags[0] }}.svg" alt="{{ nomes[0] }}">
         </a>
         <span>{{ nomes[0] }}</span>
