@@ -15,7 +15,7 @@ Antes de tudo, **te enviamos um e-mail**. Neste e-mail te enviamos os links de c
 
 **Contato**: cursopython.ufac@gmail.com
 
-**Lista de presença (11/Set)**: [https://forms.gle/oAWj4VDo8MHGLskD7](https://forms.gle/oAWj4VDo8MHGLskD7)
+**Lista de presença (11/Set)**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
 
 
 # Plataformas digitais
@@ -56,7 +56,7 @@ O **Google Meet** é a plataforma de *streamming* (**lives**) aonde aconterão o
 ### **Capítulo 1:** Primeiros passos
 > Nesta capítulo o aluno aprenderá à instalar e configurar do Anaconda para o uso do Jupyter Lab com o Python. Será apresentado o o ambiente de desenvolvimento Jupyter Lab. Além de uma pequena introdução à linguagem de programação Python.
 
-Lista de presença da aula: [https://forms.gle/oAWj4VDo8MHGLskD7](https://forms.gle/oAWj4VDo8MHGLskD7)
+**Lista de presença da aula:** [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap1/cap1.html" 
