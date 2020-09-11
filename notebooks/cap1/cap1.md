@@ -608,7 +608,7 @@ Agora tente calcular as seguintes operações:
 - $\frac{8}{2}\times (2+2)$
 - $(2+3)\times 3^3$
 - $7+7\div 7 + 7 \times 7 -7$
-- $$\sqrt{9^2-4\times3}$$
+- $\sqrt{9^2-4\times3}$
 
 > **Dica:** Use $x^{0,5}$ para calcular $\sqrt{x}$.
 
