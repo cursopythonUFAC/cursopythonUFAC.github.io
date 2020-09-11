@@ -2,7 +2,9 @@
 
 -----
 
-Antes de tudo, **te enviamos um e-mail**. Neste e-mail te enviamos os links de convite para o servidor do **Discord** e para sala de aula no **Google Classroom**.  Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
+> **Atenção**: Nós **mudamos de Classroom** para ter suporte ao GSuite (Conta Premium da Google).  Considere o link que está no menu superior do site.
+
+
 
 **Onde:** No Google **Meet** (Ver o menu superior)
 
@@ -16,6 +18,10 @@ Antes de tudo, **te enviamos um e-mail**. Neste e-mail te enviamos os links de c
 **Contato**: cursopython.ufac@gmail.com
 
 **Lista de presença (11/Set)**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
+
+
+
+> Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
 
 
 # Plataformas digitais
