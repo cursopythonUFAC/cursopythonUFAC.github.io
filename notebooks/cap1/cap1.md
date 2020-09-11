@@ -2,11 +2,15 @@
 layout: default
 ---
 
-<center><div style="font-size:32px;display:inline-block;font-weight:bold;margin-block-end: 0.43em;" class="aula-title">Capítulo 1: Primeiros passos</div></center>
+<center><div style="font-size:32px;display:inline-block;font-weight:bold;" class="aula-title">Capítulo 1: Primeiros passos</div></center>
+
+
 
 ----
 
 # Introdução
+
+----
 
 **Mas afinal o que é o Jupyter Notebook?**
 
@@ -20,9 +24,9 @@ Utilizando o Jupyter é possível escrever o trabalho da faculdade, relatórios 
 
 > Imagens tiradas do site oficial do Jupyter Notebook.
 
-`Você será capaz de fazer algo parecido com isso em alguns capítulos!`
+`Você será capaz de fazer algo parecido com isso em algumas aulas!`
 
-Por padrão, os códigos do Jupyter Notebook são feitos na linguagem de programação Python. É possível trabalhar com outras linguagens, porém não será abordado neste curso. O texto é feito através da linguagem `Markdown`, uma linguagem de marcação (ou criação?) tão simples que é possível dominar os conceitos básicos em menos de 10 minutos. Embora simples, o `Markdown` é uma linguagem poderosa! Por exemplo, partes do site de apoio do curso foi feito utilizando a linguagem Markdown, assim como o roteiro deste capítulo.
+Por padrão, os códigos do Jupyter Notebook são feitos na linguagem de programação Python. É possível trabalhar com outras linguagens, porém não será abordado neste curso. O texto é feito através da linguagem `Markdown`, uma linguagem de marcação (ou criação?) tão simples que é possível dominar os conceitos básicos em menos de 10 minutos. Embora simples, o `Markdown` é uma linguagem poderosa! Por exemplo, partes do site de apoio do curso foi feito utilizando a linguagem Markdown, assim como o roteiro desta aula.
 
 > **Curiosidade:**  O nome Jupyter vem de [**Ju**]lia, [**Pyt**]hon [**e R**], as principais linguagens de programação utilizadas pelos cientistas de dados. É possível utilizar o Jupyter com essas três linguagens, e com outras, como C++.
 
@@ -43,7 +47,7 @@ https://www.anaconda.com/products/individual
 Procure por **Download** e baixe o instalador:  
 > Certifique-se que está baixando o `anaconda3`, a versão do Anaconda com o Python3.  
 
-![Site do Anaconda](images/site_anaconda.png)
+<img src="images/site_anaconda.png" alt="Site do Jupyter" style="zoom:67%;" />
 
 Depois siga os passos como a instalação de qualquer outro programa do windows. Contudo, atente-se para selecionar `Add Anaconda3 to my PATH environmental variable`, como mostrado na figura abaixo: 
 
@@ -73,11 +77,11 @@ Se ainda assim você estiver dúvidas em relação à instalação do Anaconda v
 
 Baixe o Discord em [https://discord.com/download](https://discord.com/download) e instale-o.
 
-![Download do Discord](images/downloaddisc.png)
+<img src="images/downloaddisc.png" alt="Download do Discord" style="zoom: 50%;" />
 
 Na tela de login, caso ainda não possua uma conta, clique em "Registre-se".
 
-![Login no discord](images/disclogin.png)
+<img src="images/disclogin.png" style="zoom:80%;" alt="Login no Discord" />
 
 Preencha seus dados e crie uma nova conta. Após o processo, será necessário verificar sua conta pelo seu e-mail. Agora, já estará apto a logar no Discord. 
 
@@ -90,6 +94,14 @@ Procure na sua tela inicial o botão indicado por um `+`, como mostrado na segui
 ![Entre no servidor](images/discplus.png)
 
 Clique no botão "Entrar em um servidor". 
+
+
+![Entrando no Discord](images/discenter.png)
+
+No campo "Insira um convite", você irá inserir um dos links de convite do nosso servidor Discord, no caso, o link é: https://discord.gg/ruCdT7Z ou https://discord.gg/xCpHFBH
+
+![Entrando no servidor](images/discserver.png)
+
 
 **Passo 3: Interagindo no servidor**
 
@@ -118,6 +130,8 @@ Caso o Discord não reconheça seu microfone, tente ir em configurações (no ca
 Para qualquer dúvida em relação ao Discord, procurar o monitor **Gustavo**.
 
 # Prática 1: A interface do Jupyter
+
+----
 
 Ao abrir o programa pela primeira vez você irá encontrar uma interface parecida com essa:
 
@@ -175,7 +189,7 @@ Vamos à um exemplo. Considere os códigos abaixo, **não se preocupe em entend�
 
 ```
 # Atividade 1
-
+----
 ```
 
 **Célula 2:** Modo código - Python
@@ -308,7 +322,9 @@ Para acessar o **modo de comando** clique na região esquerda fora da célula ou
 
 Além disso, é possível selecionar várias células pressionando `Shift` e clicando com o mouse.
 
-# Prática 2: Introdução ao Markdown
+# Prática 2: Se tornando um aprendiz de Markdown
+
+----
 
 ### Parte 1: A linguagem Markdown
 
@@ -322,7 +338,7 @@ Nesta célula apenas copie e cole e veja o que acontece.
 ## Atividade 2
 ----
 
-# Capítulo 1 - Primeiros passos
+# Aula 1 - Primeiros passos
 #### Data da aula: 11 de setembro de 2020.
 
 ### Contato.
@@ -494,9 +510,9 @@ Agora crie o seu cabeçalho.
 O meu ficou assim:
 
 ```html
-<center><h1>Capítulo 1: Primeiros passos</h1></center>
+<center><h1>Aula 1: Primeiros passos</h1></center>
 
-<center><div style="font-size:24px;display:inline-block;">11 de setembro de 2020</div></center>
+<center><div style="font-size:26px;display:inline-block;">11 de setembro de 2020</div></center>
 
 __Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
 __Matrícula__: 9999999999999  
@@ -508,14 +524,14 @@ Resulta em:
 
 ----
 
-<center><div style="font-size:28px;display:inline-block;font-weight: bold;margin-block-end: 0.43em;">Capítulo 1: Primeiros passos</div></center>
+<center><h1>Aula 1: Primeiros passos</h1></center>
 
-<center><div style="font-size:24px;display:inline-block;margin-block-end: 0.83em;">11 de setembro de 2020</div></center>
+<center><div style="font-size:26px;display:inline-block;">11 de setembro de 2020</div></center>
 
-__Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
-__Matrícula__: 9999999999999  
-__Telefone__: (68) 9 9999-9999  
-__E-mail__: beatriz.mestra@cursopythonufac.github.io  
+__Nome do(a) aluno(a)__: Beatriz Mestra em Markdown
+__Matrícula__: 9999999999999
+__Telefone__: (68) 9 9999-9999
+__E-mail__: beatriz.mestra@cursopythonufac.github.io
 
 -----
 
@@ -525,9 +541,15 @@ __E-mail__: beatriz.mestra@cursopythonufac.github.io
 >
 >> Evite usar muitos # no seu cabeçalho pois isso pode atrapalhar na geração de índice ao exportar seu Notebook para pdf, LaTeX ou HTML.
 
-**Ah, a partir de agora não se esqueça de criar os títulos das práticas e de suas respectivas partes 😉**
+**Ah, não se esqueça de criar os cabeçalhos das próximas atividades 😉**
+
+Exemplo:
+
+
 
 # Prática 3: Introdução ao Python
+
+----
 
 ### Parte 1: Comentários
 
@@ -543,14 +565,12 @@ No meu caso, sou de várias linhas.
 Mas o meu colega ali em cima, é de apenas uma.
 Sacou? :D
 '''
-# Agora segue meu cabeçalho utilizando um comentário:
 
-'''
--------Capítulo 1 - Primeiros passos----------
-> Data: 11 de setembro de 2020.
-> Telefone: (68) 9 9999-9999  
-> E-mail: beatriz.mestra@cursopythonufac.github.io
-'''
+titulo_1 = "Aula 1 - Primeiros passos."
+titulo_2 = "Data: 11 de setembro de 2020."
+titulo_3 = "E-mail: beanascigom@gmail.com"
+titulo_4 = "Telefone: (68) 9 9250-6776"
+comentario = # "eu sou um comentario e nao posso ser executado."
 ```
 
 Execute o código. Você pode ir até "Run" ou use o atalho `Ctrl + Enter`.
@@ -588,7 +608,7 @@ Agora tente calcular as seguintes operações:
 - $\frac{8}{2}\times (2+2)$
 - $(2+3)\times 3^3$
 - $7+7\div 7 + 7 \times 7 -7$
-- $\sqrt{9^2-4\times3}$
+- $$\sqrt{9^2-4\times3}$$
 
 > **Dica:** Use $x^{0,5}$ para calcular $\sqrt{x}$.
 
@@ -600,11 +620,11 @@ O python não reconhece expressões que não fazem sentido, como a expressão ab
 
 Existem diversos tipos de dados em Python que se comportam de diferente formas em expressões, os três tipos mais básicos são:
 
-|       Tipo de dado        |                      Exemplo                      |
-| :-----------------------: | :-----------------------------------------------: |
-|          Inteiro          |             -2, -1, 0, 1, 2, 3, 4, 5              |
-| Ponto flutante (Decimais) |      -1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25       |
-|          Strings          | 'a', 'aa', 'aaa', 'Hello!', 'curso de python', '' |
+|       Data type        |                      Exemplo                      |
+| :--------------------: | :-----------------------------------------------: |
+|        Integers        |             -2, -1, 0, 1, 2, 3, 4, 5              |
+| Floating-point numbers |      -1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25       |
+|        Strings         | 'a', 'aa', 'aaa', 'Hello!', 'curso de python', '' |
 
 Integers (`int`) se refere aos números inteiros, floating-point numbers (`float`) se refere a números com casa decimal e strings são textos.
 
@@ -682,7 +702,7 @@ print('Eu saí de casa ' + 10 + ' vezes na semana passada')
 
 ### Parte 3: Fórmula de báskara
 
-Crie pequeno programa (uma célula) capaz de resolver qualquer equação de segundo:  
+Crie pequeno programa (uma célula) capaz de resolver qualquer equação de segundo:
 $$
 ax^2+bx+c=0
 $$
@@ -692,7 +712,7 @@ O usuário deve entrar com os parâmetros $a$, $b$ e $c$. Utilize a função inp
 >
 > Para resolver a equação de segundo grau você pode utilizar a fórmula de Baskara:  
 >  
-> $$\{x_1,x_2\}=\frac{-b\pm\sqrt{\Delta}}{2a}$$
+> $${x_1,x_2}=\frac{-b\pm\sqrt{\Delta}}{2a}$$
 >
 > $$\Delta=b^2-4ac$$
 > 
