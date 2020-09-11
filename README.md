@@ -15,6 +15,8 @@ Antes de tudo, **te enviamos um e-mail**. Neste e-mail te enviamos os links de c
 
 **Contato**: cursopython.ufac@gmail.com
 
+**Lista de presença (11/Set)**: [https://forms.gle/JZbV35qRxwDwhAuJ7](https://forms.gle/JZbV35qRxwDwhAuJ7)
+
 
 # Plataformas digitais
 
