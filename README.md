@@ -52,14 +52,10 @@ O **Google Meet** é a plataforma de *streamming* (**lives**) aonde aconterão o
 # Conteúdo do curso
 ----
 ### **Capítulo 1:** Primeiros passos
-> Nesta capítulo o aluno aprenderá à:
-> **FAZER DESCRIÇÃO**
-> Instalar configurar do Anaconda para o uso do Jupyter Lab com o Python.
-> Apresentação do ambiente de desenvolvimento Jupyter Lab.
-> Criação de um Notebook e execução de um código Python em um Notebook e no terminal. 
+> Nesta capítulo o aluno aprenderá à instalar e configurar do Anaconda para o uso do Jupyter Lab com o Python. Será apresentado o o ambiente de desenvolvimento Jupyter Lab. Além de uma pequena introdução à linguagem de programação Python.
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap1/cap1.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
-    entrega="https://classroom.google.com/" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
