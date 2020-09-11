@@ -24,9 +24,9 @@ Utilizando o Jupyter é possível escrever o trabalho da faculdade, relatórios 
 
 > Imagens tiradas do site oficial do Jupyter Notebook.
 
-`Você será capaz de fazer algo parecido com isso em algumas aulas!`
+`Você será capaz de fazer algo parecido com isso em algumas capítulos!`
 
-Por padrão, os códigos do Jupyter Notebook são feitos na linguagem de programação Python. É possível trabalhar com outras linguagens, porém não será abordado neste curso. O texto é feito através da linguagem `Markdown`, uma linguagem de marcação (ou criação?) tão simples que é possível dominar os conceitos básicos em menos de 10 minutos. Embora simples, o `Markdown` é uma linguagem poderosa! Por exemplo, partes do site de apoio do curso foi feito utilizando a linguagem Markdown, assim como o roteiro desta aula.
+Por padrão, os códigos do Jupyter Notebook são feitos na linguagem de programação Python. É possível trabalhar com outras linguagens, porém não será abordado neste curso. O texto é feito através da linguagem `Markdown`, uma linguagem de marcação (ou criação?) tão simples que é possível dominar os conceitos básicos em menos de 10 minutos. Embora simples, o `Markdown` é uma linguagem poderosa! Por exemplo, partes do site de apoio do curso foi feito utilizando a linguagem Markdown, assim como o roteiro deste capítulo.
 
 > **Curiosidade:**  O nome Jupyter vem de [**Ju**]lia, [**Pyt**]hon [**e R**], as principais linguagens de programação utilizadas pelos cientistas de dados. É possível utilizar o Jupyter com essas três linguagens, e com outras, como C++.
 
@@ -338,7 +338,7 @@ Nesta célula apenas copie e cole e veja o que acontece.
 ## Atividade 2
 ----
 
-# Aula 1 - Primeiros passos
+# Capítulo 1 - Primeiros passos
 #### Data da aula: 11 de setembro de 2020.
 
 ### Contato.
@@ -510,9 +510,9 @@ Agora crie o seu cabeçalho.
 O meu ficou assim:
 
 ```html
-<center><h1>Aula 1: Primeiros passos</h1></center>
+<center><h1>Capítulo 1: Primeiros passos</h1></center>
 
-<center><div style="font-size:26px;display:inline-block;">11 de setembro de 2020</div></center>
+<center><div style="font-size:24px;display:inline-block;">11 de setembro de 2020</div></center>
 
 __Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
 __Matrícula__: 9999999999999  
@@ -524,14 +524,14 @@ Resulta em:
 
 ----
 
-<center><h1>Aula 1: Primeiros passos</h1></center>
+<center><div style="font-size:28px;display:inline-block;font-weight: bold;margin-block-end: 0.43em;">Capítulo 1: Primeiros passos</div></center>
 
-<center><div style="font-size:26px;display:inline-block;">11 de setembro de 2020</div></center>
+<center><div style="font-size:24px;display:inline-block;margin-block-end: 0.83em;">11 de setembro de 2020</div></center>
 
-__Nome do(a) aluno(a)__: Beatriz Mestra em Markdown
-__Matrícula__: 9999999999999
-__Telefone__: (68) 9 9999-9999
-__E-mail__: beatriz.mestra@cursopythonufac.github.io
+__Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
+__Matrícula__: 9999999999999  
+__Telefone__: (68) 9 9999-9999  
+__E-mail__: beatriz.mestra@cursopythonufac.github.io  
 
 -----
 
