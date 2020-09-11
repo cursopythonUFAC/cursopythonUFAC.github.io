@@ -322,7 +322,7 @@ Para acessar o **modo de comando** clique na região esquerda fora da célula ou
 
 Além disso, é possível selecionar várias células pressionando `Shift` e clicando com o mouse.
 
-# Prática 2: Se tornando um aprendiz de Markdown
+# Prática 2: Introdução ao Markdown
 
 ----
 
