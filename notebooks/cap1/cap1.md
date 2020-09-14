@@ -821,7 +821,7 @@ Podemos criar uma lista dentro de uma lista adicionando uma identação, como mo
 > >    - item 3.3
 > > 3. item 3
 
-**Tarefa: ** Abaixo tem uma receita de bolo. Tente reproduzir em Markdown o exemplo abaixo:
+**Tarefa:** Abaixo tem uma receita de bolo. Tente reproduzir em Markdown o exemplo abaixo:
 
 > 1. Ingredientes:
 >    - Ovo
@@ -1022,7 +1022,7 @@ No Python _vanilla_ (Sem módulos ou extensões) não existe a operação de rai
 > 4**0.5
 > ```
 
-**Tarefa: ** Calcule as seguintes expressões:
+**Tarefa:** Calcule as seguintes expressões:
 
 - $\sqrt[4]{256}$
 - $\sqrt[3]{27}$
@@ -1053,7 +1053,7 @@ Irá resolver primeiro o que está em parênteses. Abaixo tem-se a tabela de pri
 |     3      | `*`, `/`, `//` e `%` | Multiplicação, divisão, divisão inteira e resto |
 |     4      |      `+` e `-`       | Soma e subtração                                |
 
-**Tarefa:** tente calcular as seguintes operações:
+**Tarefa:** Tente calcular as seguintes operações:
 
 - $\frac{8}{2}\times (2+2)$
 - $(2+3)\times 3^3$
@@ -1088,7 +1088,7 @@ Existem diversos tipos de dados em Python que se comportam de diferente formas e
 
 Inteiros (`int`) se refere aos números inteiros, números em ponto flutuante (`float`) se refere a números com casa decimal e strings são textos.
 
-> **Observação:** Note que as strings tem sempre aspas simples em suas extremidades como `'Isso é uma string'`
+> **Observação:** Note que as strings tem sempre aspas simples em suas extremidades como `'Isso é uma string'`.
 
 Note, que você pode somar dois inteiros, como `3+5`, mas não pode somar (ou concatenar) um inteiro e uma string, como na célula abaixo.
 
@@ -1113,7 +1113,7 @@ Podemos concatenar (Juntar) uma string utilizando o operador `+`. Por exemplo:
 >
 >    'curso de Python'
 
-**Tarefa: ** Concatene as seguintes strings para formar uma frase:
+**Tarefa:** Concatene as seguintes strings para formar uma frase:
 
 - `"O "`
 - `"céu "`
@@ -1130,7 +1130,7 @@ Podemos repetir uma determinada string e concatená-las utilizando as notações
 >
 >  'abacaxi abacaxi abacaxi abacaxi abacaxi '
 
-**Tarefa: ** Utilize operadores de string para gerar a seguinte frase:
+**Tarefa:** Utilize operadores de string para gerar a seguinte frase:
 
 > O céu é Azul Azul Azul
 
@@ -1217,13 +1217,13 @@ Agora execute as células na seguinte ordem:
 
 ​	Célula 1 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 1 $\rightarrow$  Célula 2 $\rightarrow$ Célula 1
 
-**Tarefa: ** Reinicie o Kernel e adicione a expresão `print()` no final da célula 1 (Abaixo).  Execute a Célula 1 e a Célula 2. O que aconteceu? Justifique sua Resposta.
+**Tarefa:** Reinicie o Kernel e adicione a expresão `print()` no final da célula 1 (Abaixo).  Execute a Célula 1 e a Célula 2. O que aconteceu? Justifique sua Resposta.
 
-> ```python
-> # Célula 1: atribuição da variável _
-> 2
-> print()
-> ```
+```python
+# Célula 1: atribuição da variável _
+2
+print()
+```
 
 ### Exemplo 4: Nome das variáveis
 
@@ -1288,7 +1288,7 @@ No Python podemos utilizar a atribuição múltipla para trocar o valor de duas 
 
 ## Parte 5: Entrada & saída
 
-As funções de entrada e 
+As fu
 
 
 
@@ -1311,10 +1311,6 @@ Note que os dados coletados pela função `input()` são sempre do tipo `string`
 Algumas vezes será necessário converter de um tipo de dado para outro para podemos operar. A função `Input()`, por exemplo, sempre resulta em uma `string`, mas podemos usar outras funções para podermos transformar esse dado em um número. Essas funções são `str()`, `int()` e `float()`. Escreva o código abaixo, execute e veja o que acontece:
 
 ![Imprimir entrada](images/exercicio_print_input.png)
-
-## Parte 7: Atribuição múltipla
-
-
 
 # Atividade 4: Para casa
 
