@@ -129,7 +129,7 @@ Caso o Discord não reconheça seu microfone, tente ir em configurações (no ca
 
 Para qualquer dúvida em relação ao Discord, procurar o monitor **Gustavo**.
 
-# Prática 1: A interface do Jupyter
+# A interface do Jupyter
 
 ----
 
@@ -185,10 +185,10 @@ Um Notebook é formado por uma ou mais células. Uma célula é um espaço aonde
 
 Vamos à um exemplo. Considere os códigos abaixo, **não se preocupe em entendê-los agora**. Considere os códigos abaixo:
 
-**Célula 1:** Modo texto - Python
+**Célula 1:** Modo texto - Markdown
 
 ```
-# Atividade 1
+# Prática 1
 ----
 ```
 
@@ -235,13 +235,16 @@ plt.show()
 
 Crie um novo Notebook, nomeie como `Aula_1aux`, recorte a célula 1 do seu primeiro Notebook e cole no Notebook `Aula_1aux`.
 
-### Parte 3: Reiniciando o Kernel
+### Parte 3: Kernel e Células
 
-Toda vez que uma célula de código é executada, os valores das variáveis finais das variáveis são salvas na memória. Desta forma, ao executar uma célula nem sempre o resultado vai ser o mesmo. Para deixar mais claro este conceito considere as três células abaixo:
+Toda vez que uma célula de código é executada, os valores das variáveis finais das variáveis são salvas na memória. Primeiramente:
+
+1. Crie três células de código como mostra abaixo (Copie e cole os códigos em Python):
 
 **Célula 1:** Bloco de atribuição da variável `x`:
 
 ```python
+# Célula 1:
 # Atribua o valor 0 à variável 'x'
 x=0
 ```
@@ -249,6 +252,7 @@ x=0
 **Célula 2:** Incremente a variável `x` em 1
 
 ```python
+# Célula 2:
 # Incremente esta variável em 1
 x=x+1
 ```
@@ -256,24 +260,37 @@ x=x+1
 **Célula 3:** Imprima o valor da variável `x`
 
 ```python
+# Célula 3:
 # Mostre o valor de 'x'
 x
 ```
 
-![Exemplo de exercício para o Kernel](images/atribuicao_kernel.png)
+2. Reinicie o Kernel indo no menu `Kernel>Restart Kernel...` 
 
-Para ficar claro, copie as três células e faça a seguinte sequência de execução:
+   ![image-20200912092242796](/home/lucaslrodri/Insync/lucaslrodri@gmail.com/Google Drive/UFAC/Projetos de extensão/Curso Python/Repositorios/cursopythonUFAC.github.io/notebooks/cap1/images/menu_kernel.png)
 
-​	Célula 1 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 3 $\rightarrow$  Célula 2 $\rightarrow$ Célula 3 $\rightarrow$  Célula 1 $\rightarrow$ Célula 3 
+3. Execute as células na seguinte ordem:
+
+​	Célula 1 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 3 $\rightarrow$  Célula 2 $\rightarrow$ Célula 3 $\rightarrow$  Célula 1 $\rightarrow$ Célula 3
+
 
 > **Dicas:** 
 >
-> - Selecione a célula e utilize o atalho `Ctrl+B` para executar a célula pelo teclado.
-> - Use as teclas &uarr; e &darr; para movimentar entre as células.
+> - Selecione a célula e utilize o atalho `Ctrl+Enter` para executar a célula pelo teclado.
+> - Use as teclas $\uparrow$ e $\downarrow$ para movimentar entre as células.
+> - Um atalho para reiniciar o Kernel é apertar `0` duas vezes.
 
-Observe que toda vez que uma célula é executada há um aumento da numeração do lado direito da célula. Esta numeração indica a ordem que as células foram executada. 
 
-Muitas vezes queremos limpar a memória. Para isso o podemos recorrer ao menu do `Kernel` , o servidor que roda o código em Python. Neste menu temos opção `Restart Kernel...` que apaga todas as variáveis da memória. Além disso existe outras opções como:
+
+> **Observação**: Observe que toda vez que uma célula é executada há um aumento da numeração do lado direito da célula. Esta numeração indica a ordem que as células foram executada. 
+
+4. Reinicie o Kernel novamente. E execute a Célula 2. O que ocorreu?
+
+> **Explicação**: Quando reiniciamos o Kernel e executamos a Célula 2, haverá um erro. Isso ocorre, porque a variável é criada na Célula 1. E quando limpamos a memória, ela deixa de existir.
+
+**Teoria:**
+
+O Kernel é o servidor que roda o código em Python. Quando clicamos em `Restart Kernel...`  estamos reiniciando o servidor, portanto todos os dados da memória serão deletados. Para isso o podemos recorrer ao menu do `Kernel` , o servidor que roda o código em Python. Abaixo segue uma tabela que explica cada função do menu  `Kernel`.
 
 |                Opção                 | Função                                                |
 | :----------------------------------: | ----------------------------------------------------- |
@@ -281,11 +298,7 @@ Muitas vezes queremos limpar a memória. Para isso o podemos recorrer ao menu do
 | Restart Kernel and Clean All Outputs | Reinicia o kernel e limpa todas as saídas das células |
 |   Restart Kernel and Run All Cells   | Reinicia o kernel e roda todo o Notebook              |
 
-> Tabela 1.2: Algumas funções do menu Kernel
-
-![Menu do Kernel](images/menu_kernel.png)
-
-Finalmente, reinicie o servidor e tente a célula 2. Observe que aconteceu um erro, pois a variável x que deveria ser inicializada na célula 1 não está mais na memória, pois o Kernel foi reiniciado.
+> Tabela 1.2: Algumas funções do menu Kernel.
 
 ### Parte 4: Atalhos
 
@@ -322,7 +335,7 @@ Para acessar o **modo de comando** clique na região esquerda fora da célula ou
 
 Além disso, é possível selecionar várias células pressionando `Shift` e clicando com o mouse.
 
-# Prática 2: Introdução ao Markdown
+# Prática 1: Introdução ao Markdown
 
 ----
 
@@ -330,9 +343,15 @@ Além disso, é possível selecionar várias células pressionando `Shift` e cli
 
 Primeiramente iremos apenas brincar de copiar e colar.  Abra uma nova instância do seu notebook e compare-o lado à lado, sempre com uma instância compilada (Executada) e outra não.
 
-**Célula 1:** Texto genérico
+Antes de começar vamos criar uma nova visão do nosso arquivo de Python
 
-Nesta célula apenas copie e cole e veja o que acontece.
+
+
+Agora vamos aprender a partir de alguns exemplos:
+
+#### Exemplo 1: Texto genérico
+
+**Tarefa:** Nesta célula apenas copie e cole e veja o que acontece.
 
 ```
 ## Atividade 2
@@ -356,25 +375,26 @@ Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
 
 ~~Eu sou apenas um tachado mesmo.~~ 
 
-### É importante saber, principalmente na hora de fazer o seu cabeçalho, que existe *hierarquias* de texto. Se você já é familiarizado com HTML, saberá do que estamos falando.
+### É importante saber, principalmente na hora de fazer o seu cabeçalho, que existe *hierarquias* de títulos. Se você já é familiarizado com HTML, saberá do que estamos falando.
 ### Exemplo:
-# Texto Nível 1
+# Título Nível 1
 
-## Texto Nível 2
+## Título Nível 2
 
-## Texto Nível 3
+## Título Nível 3
 
-### Texto Nível 4
+### Título Nível 4
 
-#### Texto Nível 5
+#### Título Nível 5
 
-##### Texto Nível 6
+##### Título Nível 6
 
 ### ------------------------------------------------
 
-### Temos como inserir código em um arquivo .md (markdown).
-### Para fazer isto, basta: \` codigo aqui `
+### Podemos escrever códigos em linha:
+### Para fazer isto, basta: ` codigo aqui `
 
+**Exemplo**:
 `print("codigo inline")`
 
 ### Ou \``` codigo aqui ```:
@@ -387,25 +407,285 @@ if myage >= 18:
     print("Pode ser preso.")
 else:
     print("Não pode ser preso.")
+​```
 ```
 Conseguiu encontrar alguns padrões?
 
-**Célula 2:** Código
+Após a execução, **delete esta célula**.
 
-Fizemos acima um código genérico. Se quisermos especificar a linguagem de programação devemos usar: \``` python \```. 
+> **Dicas:** 
+>
+> - Sempre que estiver em dúvida em relação ao Markdown, recorra ao menu `Help>Markdown reference`.
+> - Use o atalho `D,D` para deletar a célula.
+> - Trabalhe em markdown com a tela divida.
 
-Crie uma nova célula e coloque o seguinte código abaixo entre \```.
+Vamos estudar cada elemento com detalhes.
+
+#### Exemplo 2: Títulos
+
+Os títulos são criados utilizando `#`. Podemos ter títulos de diversos níveis ou hierarquias. O título com apenas uma `#` gera um título de nível 1, com dois `#`, `##` gera um texto nível dois, e assim por diante. No Markdown podemos criar títulos de até Nível 6.
+
+```markdown
+# Título Nível 1
+
+## Título Nível 2
+
+## Título Nível 3
+
+### Título Nível 4
+
+#### Título Nível 5
+
+##### Título Nível 6
+```
+
+Resulta em:
+
+># Título Nível 1
+>
+>## Título Nível 2
+>
+>## Título Nível 3
+>
+>### Título Nível 4
+>
+>#### Título Nível 5
+>
+>##### Título Nível 6
+
+#### Exemplo 3: Comentários
+
+Comentários são parte de códigos que não aparecem no trecho final. Veja um exemplo:
+```markdown
+<!--Esta frase não vai aparecer pois é um comentário.-->
+
+Esta frase vai aparecer, pois não é um comentário.
+```
+
+Resulta em:
+
+> Esta frase vai aparecer, pois não é um comentário.
+
+Observe que a parte do texto que estava entre `<!--` e `-->` não aparece no seu texto final, pois é um comentário. Somente a frase de baixo, que não é um comentário, aparece.
+
+Podemos escrever comentários em mais de uma linha. utilizando entre o comentário os delimitadores `<!---` e `-->`
+
+```markdown
+<!---
+Este é um comentário multi-linha.
+Portanto eu posso pular uma linha e continuar escrevendo o comentário.
+-->
+
+Esta frase vai aparecer, pois não é um comentário.
+```
+
+> **Curiosidade:**  
+> A notação de comentário apresentada é uma notação da linguagem de marcação de texto HTML. Utilizamos a notação em HTML sempre que queremos fazer algo que não é possível no Markdown nativamente.
+
+Existem alguns interpretadores de Markdown que permitem comentários, porém isso não é uma regra, e existem muitas variações da sintaxe. Portanto, é preferível sempre utilizar a sintaxe de comentário em HTML. Uma das implementações que funciona no Jupyter é:
+
+```mark
+[//]: # (Isto é um comentário com a sintaxe do Markdown que funciona no Jupyter.)
+[//]: # (Este é outro comentário em uma nova linha.)
+```
+
+#### Exemplo 4: Quebra linha
+
+Para quebrar uma linha em Markdown devemos utilizar `dois espaços` no final da frase. Podemos utilizar, também, um espaçamento de uma linha entre uma frase e outra. Veja o exemplo:
+
+```markdown
+<!--- 
+Vamos tentar escrever duas palavras embaixo da outra sem nada adicional:
+-->
+
+Arroz
+Feijão
+
+<!--- 
+Por fim, vamos utilizar o primeiro exemplo. Porém vamos adicionar dois espaços depois de "Arroz", resultando em "Arroz  "
+-->
+Arroz  
+Feijão
+```
+
+Resulta em:
+
+> Arroz Feijão
+>
+> Arroz  
+> Feijão
+
+#### Exemplo 5: Novo parágrafo
+
+Para criar um novo parágrafo é simples, basta adicionar mais de um quebra linha entre duas frase. Veja o exemplo:
+
+```markdown
+Estou criando o primeiro parágrafo para o meu texto.
+
+Agora vou criar mais um parágrafo para o meu texto.
+```
+
+Resulta em:
+
+> Estou criando o primeiro parágrafo para o meu texto.
+>
+> Agora vou criar mais um parágrafo para o meu texto.
+
+#### Exemplo 6: Itálico
+
+Podemos criar textos em itálico utilizando `_` ou `*` entre o texto que você quer deixar em itálico. Por exemplo:
+
+```markdown
+Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
+```
+
+Resulta em:
+
+> Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
+
+Agora, para praticar, tente escrever a frase abaixo utilizando Markdown:
+
+> Em textos acadêmicos, palavras em inglês devem estar sempre em ítalico, como: *mouse*, _software_ e _love_.
+
+#### Exemplo 7: Negrito
+
+De forma similar ao itálico, podemos utilizar o `__` ou `**` para criar um texto em negrito.
+
+```markdown
+Esta palavra está em **negrito**. Engraçado, pois __esta também__.
+```
+
+Resulta em:
+
+> Esta palavra está em **negrito**. Engraçado, pois __esta também__.
+
+**Tarefa:** Tentando escrever as frases em Markdown:
+
+> O **rato** roeu a **roupa** do **rei** de **roma**.   
+> Eu **gosto** de **pizza**
+
+> **Dica:** Lembre-se de usar o quebra linha (Dois espaços).
+
+#### Exemplo 8: Itálico e negrito
+
+Para criar um texto em itálico e negrito, basta combinar as duas formatações. Por exemplo
+
+De forma similar ao itálico, podemos utilizar o `__` ou `**` para criar um texto em negrito.
+
+```markdown
+Esta palavra está em _**negrito e itálico**_. Engraçado, pois *__esta também__*.
+```
+
+Resulta em:
+
+> Esta palavra está em _**negrito e itálico**_. Engraçado, pois *__esta também__*.
+
+**Tarefa:** Tente reescrever a frase abaixo:
+
+> Eu _**gosto**_ de **Guaraná**, mas não **_gosto_** de **_Coca-Cola_**.
+
+#### Exemplo 9: Tachado
+
+Para escrever um texto em tachado, utilizamos `~~` entre o texto. Veja o exemplo abaixo:
+
+```markdown
+~~Eu sou apenas um tachado mesmo.~~ 
+```
+
+Resulta em:
+
+> ~~Eu sou apenas um tachado mesmo.~~ 
+
+**Tarefa:** Reescrava o exemplo anterior utilizando tachado. O resultado deve ser algo parecido com isso:
+
+> ~~Eu _**gosto**_ de **Guaraná**, mas não **_gosto_** de **_Coca-Cola_**.~~
+
+#### Exemplo 10: Código em linha
+
+Podemos escrever um trecho de código em uma frase utilizando o caracter crase. 
+
+Veja o exemplo abaixo:
+
+```markdown
+Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
+```
+
+Resulta em:
+
+---
+
+Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
+
+---
+
+Observe que o comando "print("Olá mundo")" é apresentado em um fundo diferente, indicando que é um código.
+
+**Tarefa:** Reproduza a frase abaixo:
+
+> Um triângulo é formados por 3 lados, os lados `a`, `b` e `c`.
+
+#### Exemplo 11: Código multi-linha
+
+Podemos criar um código que funciona em mais de uma linha. Para isso vamos utilizar a seguinte notação 
+
+Fizemos acima um código genérico. Se quisermos especificar a linguagem de programação devemos usar: 
+
+```markdown
+​```linguagem
+
+Aqui vai mostrar o código no modo texto
+
+ ```. 
+```
+
+Por exemplo, considerando a linguagem markdown:
+
+```markdown
+​```m̀arkdown
+<!---
+Isto aqui é um comentário multi-linha.
+E esta é a segunda linha do comentário
+-->
+Se eu executar esta célula o comando de **negrito** irá aparecer. 
+
+​```
+```
+
+Resulta em:
+
+> ```markdown
+> <!---
+> Isto aqui é um comentário multi-linha.
+> E esta é a segunda linha do comentário
+> -->
+> Se eu executar esta célula o comando de **negrito** irá aparecer. 
+> ```
+
+Agora tente criar um bloco de código no Markdown com a linguagem Python:
 
 ```python
+# Este código será apresentado na forma de texto, em Markdown
 ling = "python"
 
 if ling != "python":
-    break
+    print("Não é uma boa linguagem.")
 else:
     print("Melhor linguagem.")
 ```
 
-**Célula 3:** Citações
+A especificação da linguagem permite realçar algumas notações de sintaxe da linguagem, facilitando a visualização no seu texto final. Porém é possível criar um bloco de código multi-linha sem realçe. Para isso basta não colocar não colocar o nome da linguagem. Como mostra abaixo:
+
+```
+# Este código será apresentado na forma de texto, em Markdown
+ling = "python"
+
+if ling != "python":
+    print("Não é uma boa linguagem.")
+else:
+    print("Melhor linguagem.")
+```
+
+#### Exemplo 12: Citações
 
 Podemos escrever citações. Veja como:
 
@@ -430,38 +710,31 @@ Resulta em:
 
 Agora pense num poema bem bonito e escreva no formato de citação.
 
-**Células 4 e 5:** Listas
+#### Exemplo 13: Lista não ordenada
 
-Para trabalhar com lista, podemos fazer da seguinte forma:
+Para trabalhar com lista não ordenada podemos utilizar o sinal de `-` antes da frase:
 
 ```markdown
 **Lista não ordenada:**
+
 - item 1
-    - item 1.1
-    - item 1.2
 - item 2
-    - item 2.1
-    - item 2.2
 - item 3
-    - item 3.1
-    - item 3.2
 ```
 Resulta em:
 
-----
+> **Lista não ordenada:**
+>
+> - item 1
+> - item 2
+> - item 3
 
-**Lista não ordenada:**
-- item 1
-    - item 1.1
-    - item 1.2
-- item 2
-    - item 2.1
-    - item 2.2
-- item 3
-    - item 3.1
-    - item 3.2
+**Tarefa:** Seguindo o exemplo acima, tente criar lista não ordenada.
 
-----
+> **Dica:** Afazeres domésticos, compras de supermercado, coisas que eu quero aprender em Python, etc.
+
+#### Exemplo 14: Lista ordenada
+
 
 Veja como faz uma lista ordenada:
 
@@ -473,27 +746,55 @@ Veja como faz uma lista ordenada:
 ```
 Resulta em:
 
-----
-**Lista ordenada:**
-
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
-
-----
-
-Agora vamos para praticar criando nossas próprias listas.
-> **Exemplos:**
+> **Lista ordenada:**
 >
-> > **Lista ordenada**: Lista das suas músicas favoritas, seus filmes favoritos, seus pokemons favoritos, etc.  
->
-> > **Lista não ordenada**: Afazeres domésticos, compras de supermercado, coisas que eu quero aprender em Python, etc.
+> 1. Elemento 1
+> 2. Elemento 2
+> 3. Elemento 3
 
-** Lista ordenada não ordenada**:
+**Tarefa:** Crie uma lista ordenada, considerando a numeração como ordem de prioridade.
 
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
+> **Dica:** suas músicas favoritas, seus filmes favoritos, seus pokemons favoritos, etc
+
+#### Exemplo 15: Lista dentro de lista
+
+Podemos criar uma lista dentro de uma lista adicionando uma identação, como mostra abaixo:
+
+```markdown
+- item 1
+   - item 1.1
+   - item 1.2
+   - item 1.3
+- item 2
+   1. item 2.1
+   2. item 2.2
+   3. item 3.3
+- item 3
+```
+
+Resulta em:
+
+>- item 1
+>   - item 1.1
+>   - item 1.2
+>   - item 1.3
+>- item 2
+>    1. item 2.1
+>    2. item 2.2
+>    3. item 3.3
+>- item 3
+
+**Tarefa: ** Abaixo tem uma receita de bolo. Tente reproduzir em Markdown o exemplo abaixo:
+
+> - Ingredientes:
+>   - Ovo
+>   - Farinha de trigo
+>   - Leite
+>   - Fermento
+> - Modo de preparo:
+>   1. Bata no liquidificador o leite com o ovo
+>   2. Jogue a farinha de trigo na mistura
+>   3. Bote para assar
 
 ### Parte 2: Criando o cabeçalho
 
@@ -517,8 +818,10 @@ O meu ficou assim:
 __Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
 __Matrícula__: 9999999999999  
 __Telefone__: (68) 9 9999-9999  
-__E-mail__: beanascigom@gmail.com  
+__E-mail__: beatriz.mestra@cursopythonufac.github.io  
 ```
+
+> **Dica:** Não se esqueça dos dois espaços para quebrar a linha
 
 Resulta em:
 
@@ -543,11 +846,9 @@ __E-mail__: beatriz.mestra@cursopythonufac.github.io
 
 **Ah, não se esqueça de criar os cabeçalhos das próximas atividades 😉**
 
-Exemplo:
 
 
-
-# Prática 3: Introdução ao Python
+# Prática 2: Introdução ao Python
 
 ----
 
@@ -566,18 +867,19 @@ Mas o meu colega ali em cima, é de apenas uma.
 Sacou? :D
 '''
 
-titulo_1 = "Aula 1 - Primeiros passos."
-titulo_2 = "Data: 11 de setembro de 2020."
-titulo_3 = "E-mail: beanascigom@gmail.com"
-titulo_4 = "Telefone: (68) 9 9250-6776"
-comentario = # "eu sou um comentario e nao posso ser executado."
+#Precisamos adicionar qualquer código para o comentário não gerar uma string multilinha
+print()
 ```
 
 Execute o código. Você pode ir até "Run" ou use o atalho `Ctrl + Enter`.
 
-Agora use sua imaginação e crie o seu próprio cabeçalho em utilizando comentários.
+**Tarefa:** Agora use sua imaginação e crie o seu próprio cabeçalho utilizando comentários.
 
-> **Dica:** Use o comentário multi-linha para criar o seu cabeçalho. 
+> **Dicas:** 
+>
+> - Use o comentário multi-linha para criar o seu cabeçalho. 
+>
+> - Lembre-se de adicionar o comando `print()` para evitar que o comentário seja interpretado como uma *string*.
 
 ### Parte 2: Operadores
 
@@ -585,7 +887,11 @@ Em Python, podemos escrever expressões matemáticas como em qualquer outra calc
 
 Escreveremos `2+2` na célula abaixo, e vemos que a expressão irá assumir o valor final de `4`. 
 
-![Dois mais dois em Python](images/dois_mais_dois.png)
+> ```python
+> 2+2
+> ```
+>
+>   4
 
 Podemos usar diversos operadores para computar diversas expressões como quisermos, como listado na tabela abaixo.
 
@@ -599,56 +905,169 @@ Podemos usar diversos operadores para computar diversas expressões como quiserm
 |    -     |    Subtração    |  5 - 2  |     3      |
 |    +     |     Adição      |  2 + 2  |     4      |
 
-A ordem dos operadores da matemática do Python é similar à usada na matemática comum, ou seja, primeiro as potências (`**`), depois multiplicações e divisões (`*` e `/`) e por fim as somas e subtrações (`+` e `-`), da esquerda para a direita. Podemos também usar parênteses. Agora, vamos tentar calcular o valor de algumas operações para exercitar o que foi aprendido. A seguir execute as seguintes operações:
+A ordem dos operadores da matemática do Python é similar à usada na matemática comum, ou seja, primeiro as potências (`**`), depois multiplicações e divisões (`*` e `/`) e por fim as somas e subtrações (`+` e `-`), da esquerda para a direita. Podemos também usar parênteses. Agora, vamos tentar calcular o valor de algumas operações para exercitar o que foi aprendido. 
+
+#### Exemplo 1: Operações de somar, subtrair e multiplicar e dividir
+
+**Tarefa:** Execute as seguintes operações:
+
+> **Dica:** Para executá-las você deve utilizar células diferente para cada uma.
+
+```python
+2+2+3
+```
+
+```python
+7-4
+```
+
+```python
+3*9
+```
+
+```python
+23/7
+```
+
+#### Exemplo 2: Divisão de parte inteira
+
+A divisão de parte inteira retorna somente a parte inteira de uma divisão. Veja o exemplo abaixo:
+
+> Considerando a divisão normal, `/`:
+>
+> ```python
+> 23/7
+> ```
+>
+>    3.2857142857142856
+>
+> Considerando a divisão de parte inteira, `//`:
+>
+> ```python
+> 23//7
+> ```
+>
+>    3
+
+**Tarefa**: Tente resolver os cálculos abaixo utilizando a divisão normal e a divisão de parte inteira:
+
+- $8\div7$
+- $50 \div 3$
+
+#### Exemplo 3: Resto
+
+Podemos encontrar o resto de uma divisão utilizando o operador `%`.
+
+**Tarefa:** Calcule o resto das seguintes operações:
+
+- $23\div 7$
+- $40 \div 4$
+- $43 \div 3$
+
+#### Exemplo 4: Potenciação
+
+O operador `**` permite calcular operação de exponenciação, considerando o exemplo:
+
+```python
+2**5
+```
+
+O número `2` é a base é `5` é o expoente.
+
+**Tarefa:** Calcule as seguintes operações:
+
+- $2^5$
+- $2^3$
+
+#### Exemplo 5: Raiz quadrada
+
+No Python _vanilla_ (Sem módulos ou extensões) não existe a operação de raiz quadrada e nem raiz cúbica. Entretanto podemos reescrever esta operação
+
+onde o na formatação `a**b` Calcule a operação:
+
+
+
+#### Exemplo 5: Parênteses
+
+Os parênteses 
+
+A seguir execute as seguintes operações:
 
 ![Várias operações](images/varias_operacoes.png)
 
-Agora tente calcular as seguintes operações:
+
+
+**Tarefa:** tente calcular as seguintes operações:
 
 - $\frac{8}{2}\times (2+2)$
 - $(2+3)\times 3^3$
 - $7+7\div 7 + 7 \times 7 -7$
+- $\sqrt{4}$
 - $\sqrt{9^2-4\times3}$
 
 > **Dica:** Use $x^{0,5}$ para calcular $\sqrt{x}$.
 
-O python não reconhece expressões que não fazem sentido, como a expressão abaixo. Tente rodar a seguinte célula. Por exemplo, tente rodar o código abaixo:
+#### Exemplo 6: Expressões sem sentido
 
-![Cinco_mais](images/rode_5_mais.png)
+O python não reconhece expressões que não fazem sentido, como a expressão `5+`. 
+
+**Tarefa:** Tente executar a expressão abaixo:
+
+```python
+5+
+```
+
+O que aconteceu?
+
+> **Dica:** Escreva a resposta em Markdown em uma célula de texto abaixo.
 
 ### Parte 3: Tipos de dados
 
 Existem diversos tipos de dados em Python que se comportam de diferente formas em expressões, os três tipos mais básicos são:
 
-|       Data type        |                      Exemplo                      |
-| :--------------------: | :-----------------------------------------------: |
-|        Integers        |             -2, -1, 0, 1, 2, 3, 4, 5              |
-| Floating-point numbers |      -1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25       |
-|        Strings         | 'a', 'aa', 'aaa', 'Hello!', 'curso de python', '' |
+|       Tipo de dado        |                    Exemplo                    |
+| :-----------------------: | :-------------------------------------------: |
+|          Inteiro          |           -2, -1, 0, 1, 2, 3, 4, 5            |
+| Decimal (Ponto flutuante) |    -1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25     |
+|      Texto (String)       | 'a', 'aa', 'aaa', 'Hello!', 'curso de python' |
 
-Integers (`int`) se refere aos números inteiros, floating-point numbers (`float`) se refere a números com casa decimal e strings são textos.
+Inteiros (`int`) se refere aos números inteiros, números em ponto flutuante (`float`) se refere a números com casa decimal e strings são textos.
 
-Note que as strings tem sempre aspas simples em suas extremidades como `'Isso é uma string'`
+> **Observação:** Note que as strings tem sempre aspas simples em suas extremidades como `'Isso é uma string'`
 
-Note, que você pode somar dois inteiros, como `3+5`, mas não pode somar um inteiro e uma string, como na célula abaixo.
+Note, que você pode somar dois inteiros, como `3+5`, mas não pode somar (ou concatenar) um inteiro e uma string, como na célula abaixo.
+
+#### Exemplo 1: Escrevendo uma string
+
+Podemos escrever a string `python` no modo código da seguinte forma:
+
+```python
+'python'
+```
+
+**Tarefa:** Escreva a string `Eu adoro pizza` no modo código.
+
+#### Exemplo 2: Concatenando strings
+
+No entanto, podemos utilizar o operador de `+` para concatenar strings, por exemplo.
+
+
+
+
+
+#### Exemplo 4: Repetindo e concatenando strings
+
+
+
+![6 vezes abacaxi](/home/lucaslrodri/Insync/lucaslrodri@gmail.com/Google Drive/UFAC/Projetos de extensão/Curso Python/Repositorios/cursopythonUFAC.github.io/notebooks/cap1/imgs/cap1/6vezes_abacaxi.png)
+
+#### Exemplo 5: Calculando o raio de uma esfera
+
+Para concatenar (Juntar) strings podemos utilizar o operador de `+`.
 
 ![Célula que dá erro](images/celula_da_erro.png)
 
-No entanto, podemos utilizar os operadores de `+`e de `*` para concatenar strings, por exemplo.
-
-![6 vezes abacaxi](images/6vezes_abacaxi.png)
-
-### Parte 4: Variáveis
-
-Em Python, podemos armazenar nossos dados em variáveis. Variáveis funcionam como caixas em que podemos guardar o que quisermos utilizando o operador `=`. Vamos praticar escrevendo os exemplos abaixo:
-
-![Atribuição](images/atribuicao.png)
-
-Os nomes de variáveis só podem ser uma palavra, com números e underline `_`. Nomes de variáveis não podem começar com números. Tente os seguintes exemplos abaixo:
-
-![Nomes de variáveis](images/primeira_variavel.png)
-
-### Parte 5: Entrada & saída
+### Parte 4: Entrada & saída
 
 **print()**:
 
@@ -664,6 +1083,91 @@ A função `input()` tem o objetivo de pedir ao usuário algum dado para ser man
 
 Note que os dados coletados pela função `input()` são sempre do tipo `string`. Veremos no próximo exemplo como transformar esses dados.
 
+### Parte 5: Variáveis
+
+Em Python, podemos armazenar nossos dados em variáveis. 
+
+#### Exemplo 1: Atribuição de variáveis
+
+Variáveis funcionam como caixas em que podemos guardar o que quisermos utilizando o operador de atribuição, `=`.  Veja os exemplos abaixo:
+
+>```python
+>a = 40
+>b = 2
+>print(a+b)
+>```
+>
+>  42
+
+**Tarefa:** Repita o exemplo acima considerando três variáveis `a`, `b` e `c`. Atribua os valores delas em 5, 10 e 15.
+
+#### Exemplo 2: Usando expressões em atribuições de variáveis
+
+> ```python
+> texto_1 = 'Olá '
+> texto_2 = 'Mundo!'
+> texto_final = texto_1 + texto_2
+> # Para mostrar o valor da variável basta escrever a variável no final da célula
+> texto_final
+> ```
+
+> **Observação:** A última linha da célula acima, `texto_final`, não irá mostrar resultados em scripts normais de Python. Neste caso devemos utilizar a função `print(texto_final)`.
+
+**Tarefa:** A equação de segundo grau tem o seguinte formato:
+$$
+ax^2+bx+c=0
+$$
+Podemos encontrar as duas soluções, $x_1$ e $x_2$ deste tipo de equação com a fórmula de Baskara:
+$$
+\Delta = b^2-4ac
+$$
+
+$$
+x_1=\frac{-b+ \sqrt{\Delta}}{2a}
+$$
+
+$$
+x_2=\frac{-b-\sqrt{\Delta}}{2a}
+$$
+
+Utilizando o conceito de variáveis, crie um programa capaz de resolver uma equação de segundo grau com $a=1$, $b=4$ e $c=7$.
+
+#### Exemplo 3: Variável `_`
+
+A variável 
+
+#### Exemplo 4: Nome das variáveis
+
+Os nomes de variáveis só podem ser uma palavra, sem acentos, com números e underline `_`. Nomes de variáveis não podem começar com números. 
+
+**Tarefa:** Escreva e execute as células abaixo:
+
+```python
+Primeira_variavel=1
+```
+
+```python
+1a_variavel=1
+```
+
+```python
+Primeira_variavel=1
+```
+
+```python
+Primeira variavel=1
+```
+
+```python
+Primeira_variável=1
+```
+
+Escreva um comentário em Python no topo de cada célula explicando o porquê esta sintáxe funciona ou não funciona.
+
+#### Exemplo 5: Atribuição múltipla
+
+
+
 ### Parte 6: Transformação de dados
 
 Algumas vezes será necessário converter de um tipo de dado para outro para podemos operar. A função `Input()`, por exemplo, sempre resulta em uma `string`, mas podemos usar outras funções para podermos transformar esse dado em um número. Essas funções são `str()`, `int()` e `float()`. Escreva o código abaixo, execute e veja o que acontece:
@@ -678,7 +1182,7 @@ No Python é possível atribuir vários valores de variáveis numa mesma express
 
 Agora, utilizando a mesma lógica crie um código capaz de atribuir três variáveis $a=6$, $b=7$ e $c=10$.
 
-# Prática 4: Para casa
+# Prática 3: Para casa
 
 ### Parte 1: Complete a frase
 
@@ -724,3 +1228,7 @@ Está equação retorna duas soluções, $x_1$ e $x_2$. Você deve usar a funç�
 Crie uma pequeno programa capaz de trocar o valor entre duas variáveis sem a necessidade de criar uma terceira variável. 
 
 >  **Dica:** Utilize o conceito de atribuição múltipla para fazer a troca das variáveis. 
+
+```
+
+```
