@@ -152,6 +152,36 @@ nav .active {
     margin-left: 20px;
 }
 
+.jupyter-code{
+    border-left: 0px solid #1897f8;
+    font-style: normal;
+    padding: 0px;
+    .jupyter-input{
+        color: #4a91cd;
+        font-size: 14px;
+        display: inline-block;
+        float: left;
+        padding-right: 10px;
+    }
+    p{
+        margin: -15px 0 20px 0;
+        padding: 0 0 0 45px;
+    }
+    .jupyter-output{
+        color: #c97153;
+        font-size: 14px;
+        display: inline-block;
+        float: left;
+        margin: -15px 0 20px 0;
+    }
+}
+
+.jupyter-markdown{
+    border-left: 3px solid red;
+    font-style: normal;
+}
+
+
 
 @media only screen and (max-width: 480px) {
     #plataformas {

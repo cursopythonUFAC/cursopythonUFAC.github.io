@@ -15,11 +15,19 @@ $(document).on("scroll", onScroll);
 
 $(function() {
   $("section h1").each(function(){//, section h2, section h3
-    text=$(this).text().split(':')[$(this).text().split(':').length-1];
-    $("nav ul").append("<li class='tag-" + this.nodeName.toLowerCase() + "'><a href='#" + text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + text + "</a></li>");
-    $(this).attr("id",text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
-    $("nav ul li:first-child a").parent().addClass("active");
+    if (($(this).text().includes("Introdução")||$(this).text().includes("Atividade"))||(window.location.pathname+window.location.search)==='/'){
+      text=$(this).text().split(':')[$(this).text().split(':').length-1];
+      $("nav ul").append("<li class='tag-" + this.nodeName.toLowerCase() + "'><a href='#" + text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + text + "</a></li>");
+      $(this).attr("id",text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
+      $("nav ul li:first-child a").parent().addClass("active");
+    }
   });
+
+  $("blockquote .language-python").each(function(){
+    $(this).parent().addClass("jupyter-code");
+  });
+  $(".jupyter-code .language-python").before("<div class='jupyter-input'> [**]:  </div>")
+  $(".jupyter-code p").before("<div class='jupyter-output'> [**]:  </div>")
   
   $(document).on("scroll", onScroll);
 
@@ -44,6 +52,7 @@ function onScroll(){
         elements[i].parentNode.classList.remove('active');
     }
   }
+  console.log((window.location.pathname+window.location.search)!=='/')
   
     var anchors = document.querySelectorAll('nav a');
     

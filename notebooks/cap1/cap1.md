@@ -38,7 +38,7 @@ O `JupyterLab` é uma evolução do antigo (Porém, ainda bastante usado) ambien
 
 > Imagem retirada do site: https://towardsdatascience.com/.
 
-### Parte 1: Instalação do Anaconda
+## Parte 1: Instalação do Anaconda
 
 Existem várias maneiras de instalar um ambiente de desenvolvimento de Python na sua máquina. Uma das maneiras mais práticas é através do **Anaconda**. Primeiramente acesse o site:
 
@@ -71,7 +71,7 @@ Após a instalação você pode executar o Anaconda Navigator utilizando o coman
 
 Se ainda assim você estiver dúvidas em relação à instalação do Anaconda você pode ajuda aos nossos monitores no nosso servidor do Discord.
 
-### Parte 2: Instalação do Discord
+## Parte 2: Instalação do Discord
 
 **Passo 1: Instalação e criando conta**
 
@@ -129,7 +129,7 @@ Caso o Discord não reconheça seu microfone, tente ir em configurações (no ca
 
 Para qualquer dúvida em relação ao Discord, procurar o monitor **Gustavo**.
 
-# A interface do Jupyter
+# Atividade 1: A interface do Jupyter
 
 ----
 
@@ -157,7 +157,7 @@ Dentro do próprio Notebook é possível acessar a documentação oficial de mui
 
 Lembre-se de **sempre visitar este menu** antes de fazer aquela pesquisa no google.
 
-### Parte 1: Criação e Execução de Células
+## Parte 1: Criação e Execução de Células
 
 Um Notebook é formado por uma ou mais células. Uma célula é um espaço aonde é possível escrever um trecho de código (Python) ou texto (código Markdown).  Algumas ações relacionadas ao notebook e às células podem ser executadas no painel superior da aba. A figura abaixo mostra alguns atalhos do painel superior.
 
@@ -187,55 +187,57 @@ Vamos à um exemplo. Considere os códigos abaixo, **não se preocupe em entend�
 
 **Célula 1:** Modo texto - Markdown
 
-```
-# Prática 1
+```markdown
+## Atividade 1
 ----
 ```
 
 **Célula 2:** Modo código - Python
 
-```python
-# Está célula está em Python.
-# Iremos escrever nossa primeira célula
-print("Olá mundo")
-```
+>```python
+># Está célula está em Python.
+># Iremos escrever nossa primeira célula
+>print("Olá mundo")
+>```
 
 **Célula 3:** Modo texto - Markdown
 
 ```markdown
-Esta célula está em Markdown e apresenta uma função quadrática:
+Esta célula está em **Markdown** e apresenta uma função quadrática:
 $$y(t)=t^2+2t+3$$
 ```
 
 **Célula 4:** Modo código - Python
 
-```python
-# Esta célula está em Python e está plotando a equação acima
-
-import matplotlib.pyplot as plt
-import numpy as np
-t = np.linspace(-12, 10, num=100)
-y = t**2+2*t+3 
-plt.plot(t, y) 
-plt.xlabel('t - Tempo (s)') 
-plt.ylabel('y - Saída') 
-plt.title('Função quadrática') 
-plt.show() 
-```
+> ```python
+> # Esta célula está em Python e está plotando a equação acima
+> 
+> import matplotlib.pyplot as plt
+> import numpy as np
+> t = np.linspace(-12, 10, num=100)
+> y = t**2+2*t+3 
+> plt.plot(t, y) 
+> plt.xlabel('t - Tempo (s)') 
+> plt.ylabel('y - Saída') 
+> plt.title('Função quadrática') 
+> plt.show() 
+> ```
 
 **Copie e cole-os no seu Notebook de acordo com a linguagem indicada e depois execute-os.**
 
 > **Dicas**: 
 >
-> - Para executar a célula e avançar para a próxima célula pressione no botão `▶` (Número 6 na Figura 1.1).
-> - Se necessário, pode-se adicionar uma célula abaixo clicando no `+`, representado pelo `número 2` na Figura 1.1.
-> - Se necessário é possível mover as células na região `9` da Figura 1.1.
+> > Para executar a célula e avançar para a próxima célula pressione no botão `▶` (Número 6 na Figura 1.1).
+>
+> > Se necessário, pode-se adicionar uma célula abaixo clicando no `+`, representado pelo `número 2` na Figura 1.1.
+>
+> > Se necessário é possível mover as células na região `9` da Figura 1.1.
 
-### Parte 2: Copiar e colar células
+## Parte 2: Copiar e colar células
 
 Crie um novo Notebook, nomeie como `Aula_1aux`, recorte a célula 1 do seu primeiro Notebook e cole no Notebook `Aula_1aux`.
 
-### Parte 3: Kernel e Células
+## Parte 3: Kernel e Células
 
 Toda vez que uma célula de código é executada, os valores das variáveis finais das variáveis são salvas na memória. Primeiramente:
 
@@ -243,31 +245,32 @@ Toda vez que uma célula de código é executada, os valores das variáveis fina
 
 **Célula 1:** Bloco de atribuição da variável `x`:
 
-```python
-# Célula 1:
-# Atribua o valor 0 à variável 'x'
-x=0
-```
+> ```python
+> # Célula 1:
+> # Atribua o valor 0 à variável 'x'
+> x=0
+> ```
 
-**Célula 2:** Incremente a variável `x` em 1
+**Célula 2:** Incremente a variável `x` em 1:
 
-```python
-# Célula 2:
-# Incremente esta variável em 1
-x=x+1
-```
+> ```python
+> # Célula 2:
+> # Incremente esta variável em 1
+> x=x+1
+> ```
 
-**Célula 3:** Imprima o valor da variável `x`
 
-```python
-# Célula 3:
-# Mostre o valor de 'x'
-x
-```
+**Célula 3:** Imprima o valor da variável `x`:
+
+> ```python
+> # Célula 3:
+> # Mostre o valor de 'x'
+> x
+> ```
 
 2. Reinicie o Kernel indo no menu `Kernel>Restart Kernel...` 
 
-   ![image-20200912092242796](/home/lucaslrodri/Insync/lucaslrodri@gmail.com/Google Drive/UFAC/Projetos de extensão/Curso Python/Repositorios/cursopythonUFAC.github.io/notebooks/cap1/images/menu_kernel.png)
+   ![Menu Kernel](images/menu_kernel.png)
 
 3. Execute as células na seguinte ordem:
 
@@ -276,9 +279,11 @@ x
 
 > **Dicas:** 
 >
-> - Selecione a célula e utilize o atalho `Ctrl+Enter` para executar a célula pelo teclado.
-> - Use as teclas $\uparrow$ e $\downarrow$ para movimentar entre as células.
-> - Um atalho para reiniciar o Kernel é apertar `0` duas vezes.
+> > Selecione a célula e utilize o atalho `Ctrl+Enter` para executar a célula pelo teclado.
+>
+> > Use as teclas $\uparrow$ e $\downarrow$ para movimentar entre as células.
+>
+> > Um atalho para reiniciar o Kernel é apertar `0` duas vezes.
 
 
 
@@ -300,7 +305,7 @@ O Kernel é o servidor que roda o código em Python. Quando clicamos em `Restart
 
 > Tabela 1.2: Algumas funções do menu Kernel.
 
-### Parte 4: Atalhos
+## Parte 4: Atalhos
 
 O Jupyter permite o uso de vários atalhos que podem facilitar a nossa vida. No menu `Run` podemos ver alguns atalhos:
 
@@ -335,28 +340,36 @@ Para acessar o **modo de comando** clique na região esquerda fora da célula ou
 
 Além disso, é possível selecionar várias células pressionando `Shift` e clicando com o mouse.
 
-# Prática 1: Introdução ao Markdown
+# Atividade 2: Introdução ao Markdown
 
 ----
 
-### Parte 1: A linguagem Markdown
+## Parte 1: A linguagem Markdown
 
 Primeiramente iremos apenas brincar de copiar e colar.  Abra uma nova instância do seu notebook e compare-o lado à lado, sempre com uma instância compilada (Executada) e outra não.
 
-Antes de começar vamos criar uma nova visão do nosso arquivo de Python
+Antes de começar adicione a seguinte célula de texto abaixo:
 
+```markdown
+## Atividade 2
+----
+```
 
+Agora vamos criar uma nova visão do nosso notebook. Em cima da aba do seu Notebook clique com o botão direito e aparecerá um menu. Procure por `New view for Notebook` e clique. 
 
-Agora vamos aprender a partir de alguns exemplos:
+![Nova visão para o notebook](images/dividir_aba.png)
 
-#### Exemplo 1: Texto genérico
+Ao final você verá uma cópia do seu Notebook na aba ao lado. Utilize a aba da direita para visualizar os resultados da sua escrita em Markdown em tempo real. Para isso basta clicar no modo de edição de texto na aba da esquerda, enquanto a aba da direita está executada.  
+
+![Melhor forma para editar em Markdown](images/duas_instanciais.png)
+
+Agora vamos aprender a partir de alguns exemplos.
+
+### Exemplo 1: Texto genérico
 
 **Tarefa:** Nesta célula apenas copie e cole e veja o que acontece.
 
-```
-## Atividade 2
-----
-
+```markdown
 # Capítulo 1 - Primeiros passos
 #### Data da aula: 11 de setembro de 2020.
 
@@ -409,6 +422,7 @@ else:
     print("Não pode ser preso.")
 ​```
 ```
+
 Conseguiu encontrar alguns padrões?
 
 Após a execução, **delete esta célula**.
@@ -421,7 +435,7 @@ Após a execução, **delete esta célula**.
 
 Vamos estudar cada elemento com detalhes.
 
-#### Exemplo 2: Títulos
+### Exemplo 2: Títulos
 
 Os títulos são criados utilizando `#`. Podemos ter títulos de diversos níveis ou hierarquias. O título com apenas uma `#` gera um título de nível 1, com dois `#`, `##` gera um texto nível dois, e assim por diante. No Markdown podemos criar títulos de até Nível 6.
 
@@ -439,6 +453,7 @@ Os títulos são criados utilizando `#`. Podemos ter títulos de diversos nívei
 ##### Título Nível 6
 ```
 
+
 Resulta em:
 
 ># Título Nível 1
@@ -453,10 +468,11 @@ Resulta em:
 >
 >##### Título Nível 6
 
-#### Exemplo 3: Comentários
+### Exemplo 3: Comentários
 
 Comentários são parte de códigos que não aparecem no trecho final. Veja um exemplo:
-```markdown
+
+​```markdown
 <!--Esta frase não vai aparecer pois é um comentário.-->
 
 Esta frase vai aparecer, pois não é um comentário.
@@ -468,28 +484,27 @@ Resulta em:
 
 Observe que a parte do texto que estava entre `<!--` e `-->` não aparece no seu texto final, pois é um comentário. Somente a frase de baixo, que não é um comentário, aparece.
 
-Podemos escrever comentários em mais de uma linha. utilizando entre o comentário os delimitadores `<!---` e `-->`
+Podemos escrever comentários em mais de uma linha. utilizando entre o comentário os delimitadores `<!---` e `-->`:
 
 ```markdown
 <!---
 Este é um comentário multi-linha.
 Portanto eu posso pular uma linha e continuar escrevendo o comentário.
 -->
-
-Esta frase vai aparecer, pois não é um comentário.
 ```
 
+Esta frase vai aparecer, pois não é um comentário.
 > **Curiosidade:**  
 > A notação de comentário apresentada é uma notação da linguagem de marcação de texto HTML. Utilizamos a notação em HTML sempre que queremos fazer algo que não é possível no Markdown nativamente.
 
 Existem alguns interpretadores de Markdown que permitem comentários, porém isso não é uma regra, e existem muitas variações da sintaxe. Portanto, é preferível sempre utilizar a sintaxe de comentário em HTML. Uma das implementações que funciona no Jupyter é:
 
-```mark
+```markdown
 [//]: # (Isto é um comentário com a sintaxe do Markdown que funciona no Jupyter.)
 [//]: # (Este é outro comentário em uma nova linha.)
 ```
 
-#### Exemplo 4: Quebra linha
+### Exemplo 4: Quebra linha
 
 Para quebrar uma linha em Markdown devemos utilizar `dois espaços` no final da frase. Podemos utilizar, também, um espaçamento de uma linha entre uma frase e outra. Veja o exemplo:
 
@@ -497,15 +512,15 @@ Para quebrar uma linha em Markdown devemos utilizar `dois espaços` no final da 
 <!--- 
 Vamos tentar escrever duas palavras embaixo da outra sem nada adicional:
 -->
-
 Arroz
 Feijão
 
 <!--- 
-Por fim, vamos utilizar o primeiro exemplo. Porém vamos adicionar dois espaços depois de "Arroz", resultando em "Arroz  "
+Por fim, vamos utilizar o primeiro exemplo. Porém vamos adicionar dois spaços depois de "Arroz", resultando em "Arroz  "
 -->
 Arroz  
 Feijão
+​```
 ```
 
 Resulta em:
@@ -515,15 +530,15 @@ Resulta em:
 > Arroz  
 > Feijão
 
-#### Exemplo 5: Novo parágrafo
+### Exemplo 5: Novo parágrafo
 
 Para criar um novo parágrafo é simples, basta adicionar mais de um quebra linha entre duas frase. Veja o exemplo:
 
-```markdown
+ ```markdown
 Estou criando o primeiro parágrafo para o meu texto.
 
 Agora vou criar mais um parágrafo para o meu texto.
-```
+ ```
 
 Resulta em:
 
@@ -531,7 +546,8 @@ Resulta em:
 >
 > Agora vou criar mais um parágrafo para o meu texto.
 
-#### Exemplo 6: Itálico
+
+### Exemplo 6: Itálico
 
 Podemos criar textos em itálico utilizando `_` ou `*` entre o texto que você quer deixar em itálico. Por exemplo:
 
@@ -547,7 +563,7 @@ Agora, para praticar, tente escrever a frase abaixo utilizando Markdown:
 
 > Em textos acadêmicos, palavras em inglês devem estar sempre em ítalico, como: *mouse*, _software_ e _love_.
 
-#### Exemplo 7: Negrito
+### Exemplo 7: Negrito
 
 De forma similar ao itálico, podemos utilizar o `__` ou `**` para criar um texto em negrito.
 
@@ -566,15 +582,15 @@ Resulta em:
 
 > **Dica:** Lembre-se de usar o quebra linha (Dois espaços).
 
-#### Exemplo 8: Itálico e negrito
+### Exemplo 8: Itálico e negrito
 
 Para criar um texto em itálico e negrito, basta combinar as duas formatações. Por exemplo
 
 De forma similar ao itálico, podemos utilizar o `__` ou `**` para criar um texto em negrito.
 
-```markdown
+ ```markdown
 Esta palavra está em _**negrito e itálico**_. Engraçado, pois *__esta também__*.
-```
+ ```
 
 Resulta em:
 
@@ -584,7 +600,7 @@ Resulta em:
 
 > Eu _**gosto**_ de **Guaraná**, mas não **_gosto_** de **_Coca-Cola_**.
 
-#### Exemplo 9: Tachado
+### Exemplo 9: Tachado
 
 Para escrever um texto em tachado, utilizamos `~~` entre o texto. Veja o exemplo abaixo:
 
@@ -600,7 +616,7 @@ Resulta em:
 
 > ~~Eu _**gosto**_ de **Guaraná**, mas não **_gosto_** de **_Coca-Cola_**.~~
 
-#### Exemplo 10: Código em linha
+### Exemplo 10: Código em linha
 
 Podemos escrever um trecho de código em uma frase utilizando o caracter crase. 
 
@@ -612,44 +628,38 @@ Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo"
 
 Resulta em:
 
----
-
-Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
-
----
+> Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
 
 Observe que o comando "print("Olá mundo")" é apresentado em um fundo diferente, indicando que é um código.
 
 **Tarefa:** Reproduza a frase abaixo:
 
-> Um triângulo é formados por 3 lados, os lados `a`, `b` e `c`.
+   "Um triângulo é formados por 3 lados, os lados `a`, `b` e `c`."
 
-#### Exemplo 11: Código multi-linha
+### Exemplo 11: Código multi-linha
 
 Podemos criar um código que funciona em mais de uma linha. Para isso vamos utilizar a seguinte notação 
 
 Fizemos acima um código genérico. Se quisermos especificar a linguagem de programação devemos usar: 
 
-```markdown
+ ```markdown
 ​```linguagem
-
 Aqui vai mostrar o código no modo texto
+​```
+ ```
+ Por exemplo, se considerarmos a linguagem Markdown:
 
- ```. 
-```
 
-Por exemplo, considerando a linguagem markdown:
-
-```markdown
-​```m̀arkdown
+ ```markdown
+​```markdown
 <!---
 Isto aqui é um comentário multi-linha.
 E esta é a segunda linha do comentário
--->
+-->  
 Se eu executar esta célula o comando de **negrito** irá aparecer. 
 
 ​```
-```
+ ```
 
 Resulta em:
 
@@ -685,7 +695,7 @@ else:
     print("Melhor linguagem.")
 ```
 
-#### Exemplo 12: Citações
+### Exemplo 12: Citações
 
 Podemos escrever citações. Veja como:
 
@@ -710,7 +720,7 @@ Resulta em:
 
 Agora pense num poema bem bonito e escreva no formato de citação.
 
-#### Exemplo 13: Lista não ordenada
+### Exemplo 13: Lista não ordenada
 
 Para trabalhar com lista não ordenada podemos utilizar o sinal de `-` antes da frase:
 
@@ -733,7 +743,7 @@ Resulta em:
 
 > **Dica:** Afazeres domésticos, compras de supermercado, coisas que eu quero aprender em Python, etc.
 
-#### Exemplo 14: Lista ordenada
+### Exemplo 14: Lista ordenada
 
 
 Veja como faz uma lista ordenada:
@@ -756,7 +766,7 @@ Resulta em:
 
 > **Dica:** suas músicas favoritas, seus filmes favoritos, seus pokemons favoritos, etc
 
-#### Exemplo 15: Lista dentro de lista
+### Exemplo 15: Lista dentro de lista
 
 Podemos criar uma lista dentro de uma lista adicionando uma identação, como mostra abaixo:
 
@@ -774,29 +784,33 @@ Podemos criar uma lista dentro de uma lista adicionando uma identação, como mo
 
 Resulta em:
 
->- item 1
->   - item 1.1
->   - item 1.2
->   - item 1.3
->- item 2
->    1. item 2.1
->    2. item 2.2
->    3. item 3.3
+>1. item 1
+>  - item 1.1
+>  - item 1.2
+>  - item 1.3
+>2. item 2
+>   - item 2.1
+>   - item 2.2
+>   - item 3.3
 >- item 3
+
+
 
 **Tarefa: ** Abaixo tem uma receita de bolo. Tente reproduzir em Markdown o exemplo abaixo:
 
-> - Ingredientes:
+
+
+> 1. Ingredientes:
 >   - Ovo
 >   - Farinha de trigo
 >   - Leite
 >   - Fermento
-> - Modo de preparo:
->   1. Bata no liquidificador o leite com o ovo
->   2. Jogue a farinha de trigo na mistura
->   3. Bote para assar
+> 2. Modo de preparo:
+>   - Bata no liquidificador o leite com o ovo
+>   - Jogue a farinha de trigo na mistura
+>   - Bote para assar
 
-### Parte 2: Criando o cabeçalho
+## Parte 2: Criando o cabeçalho
 
 Você se lembra do menu de ajuda do Jupyter? Entre lá e procure por `Markdown Reference`.
 
@@ -840,36 +854,36 @@ __E-mail__: beatriz.mestra@cursopythonufac.github.io
 
 >**Dicas:** 
 >
->> Se você conhece, você pode usar em HTML e CSS para deixar o seu texto ainda mais rico. Mais informações [aqui](https://www.w3schools.com/html/html_basic.asp).
+>- Se você conhece, você pode usar em HTML e CSS para deixar o seu texto ainda mais rico. Mais informações [aqui](https://www.w3schools.com/html/html_basic.asp).
 >
->> Evite usar muitos # no seu cabeçalho pois isso pode atrapalhar na geração de índice ao exportar seu Notebook para pdf, LaTeX ou HTML.
+>- Evite usar muitos títulos no seu cabeçalho (`#`,  `##`, etc) no seu cabeçalho pois isso pode atrapalhar na geração de índice ao exportar seu Notebook para pdf, LaTeX ou HTML.
 
-**Ah, não se esqueça de criar os cabeçalhos das próximas atividades 😉**
+**Ah, não se esqueça de criar os títulos e cabeçalhos das próximas atividades 😉**
 
 
 
-# Prática 2: Introdução ao Python
+# Atividade 2: Introdução ao Python
 
 ----
 
-### Parte 1: Comentários
+## Parte 1: Comentários
 
 Digite em seu notebook o seguinte código:
 
-```python
-# aqui vamos refazer o cabeçalho utilizando variáveis
-# aliás, você sabe quem sou eu?
-
-'''
-Eu sou um comentário em Python.
-No meu caso, sou de várias linhas.
-Mas o meu colega ali em cima, é de apenas uma.
-Sacou? :D
-'''
-
-#Precisamos adicionar qualquer código para o comentário não gerar uma string multilinha
-print()
-```
+> ```python
+> # aqui vamos refazer o cabeçalho utilizando variáveis
+> # aliás, você sabe quem sou eu?
+> 
+> '''
+> Eu sou um comentário em Python.
+> No meu caso, sou de várias linhas.
+> Mas o meu colega ali em cima, é de apenas uma.
+> Sacou? :D
+> '''
+> 
+> #Precisamos adicionar qualquer código para o comentário não gerar uma string multilinha
+> print()
+> ```
 
 Execute o código. Você pode ir até "Run" ou use o atalho `Ctrl + Enter`.
 
@@ -881,9 +895,9 @@ Execute o código. Você pode ir até "Run" ou use o atalho `Ctrl + Enter`.
 >
 > - Lembre-se de adicionar o comando `print()` para evitar que o comentário seja interpretado como uma *string*.
 
-### Parte 2: Operadores
+## Parte 2: Operadores
 
-Em Python, podemos escrever expressões matemáticas como em qualquer outra calculadora (Como o MatLab, por exemplo). Expressões consistem de valores, como `2` e operadores, como o `+`.
+Em Python, podemos escrever expressões matemáticas. Expressões consistem de valores, como `2` e operadores, como o `+`.
 
 Escreveremos `2+2` na célula abaixo, e vemos que a expressão irá assumir o valor final de `4`. 
 
@@ -891,7 +905,7 @@ Escreveremos `2+2` na célula abaixo, e vemos que a expressão irá assumir o va
 > 2+2
 > ```
 >
->   4
+> 4
 
 Podemos usar diversos operadores para computar diversas expressões como quisermos, como listado na tabela abaixo.
 
@@ -907,54 +921,56 @@ Podemos usar diversos operadores para computar diversas expressões como quiserm
 
 A ordem dos operadores da matemática do Python é similar à usada na matemática comum, ou seja, primeiro as potências (`**`), depois multiplicações e divisões (`*` e `/`) e por fim as somas e subtrações (`+` e `-`), da esquerda para a direita. Podemos também usar parênteses. Agora, vamos tentar calcular o valor de algumas operações para exercitar o que foi aprendido. 
 
-#### Exemplo 1: Operações de somar, subtrair e multiplicar e dividir
+### Exemplo 1: Operações de somar, subtrair e multiplicar e dividir
 
 **Tarefa:** Execute as seguintes operações:
 
-> **Dica:** Para executá-las você deve utilizar células diferente para cada uma.
+> **Dica:** Para executá-las você deve utilizar células diferente para cada uma. Desta forma é mostrado o resultado abaixo da célula
 
-```python
-2+2+3
-```
+>```python
+># Célula 1
+>2+2+3
+>```
+>
+>```python
+># Célula 2
+>7-4
+>```
+>
+>```python
+># Célula 3
+>3*9
+>```
+>
+>```python
+># Célula 4
+>23/7
+>```
 
-```python
-7-4
-```
-
-```python
-3*9
-```
-
-```python
-23/7
-```
-
-#### Exemplo 2: Divisão de parte inteira
+### Exemplo 2: Divisão de parte inteira
 
 A divisão de parte inteira retorna somente a parte inteira de uma divisão. Veja o exemplo abaixo:
 
-> Considerando a divisão normal, `/`:
->
 > ```python
+># Considerando a divisão normal, /:
 > 23/7
 > ```
->
->    3.2857142857142856
->
-> Considerando a divisão de parte inteira, `//`:
->
-> ```python
-> 23//7
+> 
+>  3.2857142857142856
+>    
+>```python
+> # Considerando a divisão de parte inteira, //:
+>23//7
 > ```
->
->    3
+> 
+> 3
 
 **Tarefa**: Tente resolver os cálculos abaixo utilizando a divisão normal e a divisão de parte inteira:
 
 - $8\div7$
 - $50 \div 3$
 
-#### Exemplo 3: Resto
+### Exemplo 3: Resto
 
 Podemos encontrar o resto de uma divisão utilizando o operador `%`.
 
@@ -964,64 +980,84 @@ Podemos encontrar o resto de uma divisão utilizando o operador `%`.
 - $40 \div 4$
 - $43 \div 3$
 
-#### Exemplo 4: Potenciação
+### Exemplo 4: Potenciação
 
 O operador `**` permite calcular operação de exponenciação, considerando o exemplo:
 
-```python
-2**5
-```
+> ```python
+> 2**5
+> ```
 
 O número `2` é a base é `5` é o expoente.
 
-**Tarefa:** Calcule as seguintes operações:
+**Tarefa:** Calcule as seguintes expressões:
 
 - $2^5$
 - $2^3$
 
-#### Exemplo 5: Raiz quadrada
+### Exemplo 5: Raiz
 
-No Python _vanilla_ (Sem módulos ou extensões) não existe a operação de raiz quadrada e nem raiz cúbica. Entretanto podemos reescrever esta operação
+No Python _vanilla_ (Sem módulos ou extensões) não existe a operação de raiz. Entretanto podemos reescrever esta operação utilizando a operação de potênciação com números fracionários ou decimais. Por exemplo, para calcular $\sqrt{4}$ utilizamos:
 
-onde o na formatação `a**b` Calcule a operação:
+> ```python
+> 4**0.5
+> ```
 
+**Tarefa: ** Calcule as seguintes expressões:
 
+- $\sqrt[4]{256}$
+- $\sqrt[3]{27}$
+- $\sqrt{8}$
 
-#### Exemplo 5: Parênteses
+> **Dica:** Para calcular $\sqrt[3]{x}$ coloque o expoente (1/3) entre parênteses. Como mostra abaixo
+>
+> ```javascript
+> x**(1/3)
+> ```
 
-Os parênteses 
+### Exemplo 6: Parênteses
 
-A seguir execute as seguintes operações:
+Assim como na matemática, os parênteses tem prioridade na execução em comparação às outras operações. Por exemplo:
 
-![Várias operações](images/varias_operacoes.png)
+> ```python
+> (5-1)*((7+1)/(3-1))
+> ```
+>
+> 16
 
+Irá resolver primeiro o que está em parênteses. Abaixo tem-se a tabela de prioridade dos operadores:
 
+| Prioridade |      Operadores      | Significado                                     |
+| :--------: | :------------------: | ----------------------------------------------- |
+|     1      |         `()`         | Parêntese                                       |
+|     2      |         `**`         | Potênciação                                     |
+|     3      | `*`, `/`, `//` e `%` | Multiplicação, divisão, divisão inteira e resto |
+|     4      |      `+` e `-`       | Soma e subtração                                |
 
 **Tarefa:** tente calcular as seguintes operações:
 
 - $\frac{8}{2}\times (2+2)$
 - $(2+3)\times 3^3$
 - $7+7\div 7 + 7 \times 7 -7$
-- $\sqrt{4}$
-- $\sqrt{9^2-4\times3}$
+- $\sqrt[3]{4}$
+- $\sqrt{9^2-4\times 3}$
+- $\sqrt[3]{(9^2-4)\times3}$
 
-> **Dica:** Use $x^{0,5}$ para calcular $\sqrt{x}$.
-
-#### Exemplo 6: Expressões sem sentido
+### Exemplo 7: Expressão sem sentido
 
 O python não reconhece expressões que não fazem sentido, como a expressão `5+`. 
 
 **Tarefa:** Tente executar a expressão abaixo:
 
-```python
-5+
-```
+> ```python
+> 5+
+> ```
 
 O que aconteceu?
 
 > **Dica:** Escreva a resposta em Markdown em uma célula de texto abaixo.
 
-### Parte 3: Tipos de dados
+## Parte 3: Tipos de dados
 
 Existem diversos tipos de dados em Python que se comportam de diferente formas em expressões, os três tipos mais básicos são:
 
@@ -1037,71 +1073,82 @@ Inteiros (`int`) se refere aos números inteiros, números em ponto flutuante (`
 
 Note, que você pode somar dois inteiros, como `3+5`, mas não pode somar (ou concatenar) um inteiro e uma string, como na célula abaixo.
 
-#### Exemplo 1: Escrevendo uma string
+### Exemplo 1: Escrevendo uma string
 
 Podemos escrever a string `python` no modo código da seguinte forma:
 
-```python
-'python'
-```
+> ```python
+> 'python'
+> ```
+>    'python'
 
 **Tarefa:** Escreva a string `Eu adoro pizza` no modo código.
 
-#### Exemplo 2: Concatenando strings
+### Exemplo 2: Concatenando strings
 
-No entanto, podemos utilizar o operador de `+` para concatenar strings, por exemplo.
+Podemos concatenar (Juntar) uma string utilizando o operador `+`. Por exemplo:
 
+> ```python
+> "curso "+"de "+"Python"
+> ```
+>
+>    'curso de Python'
 
+**Tarefa: ** Concatene as seguintes strings para formar uma frase:
 
+- `"O "`
+- `"céu "`
+- `"é "`
+- `"Azul"`
 
+### Exemplo 3: Repetindo e concatenando strings
 
-#### Exemplo 4: Repetindo e concatenando strings
+Podemos repetir uma determinada string e concatená-las utilizando as notações abaixo:
 
+>```python
+>'abacaxi ' * 5
+>```
+>
+>  'abacaxi abacaxi abacaxi abacaxi abacaxi '
 
+**Tarefa: ** Utilize operadores de string para gerar a seguinte frase:
 
-![6 vezes abacaxi](/home/lucaslrodri/Insync/lucaslrodri@gmail.com/Google Drive/UFAC/Projetos de extensão/Curso Python/Repositorios/cursopythonUFAC.github.io/notebooks/cap1/imgs/cap1/6vezes_abacaxi.png)
+> O céu é Azul Azul Azul
 
-#### Exemplo 5: Calculando o raio de uma esfera
+Utilize somente as strings:
 
-Para concatenar (Juntar) strings podemos utilizar o operador de `+`.
+- `"O "`
+- `"céu "`
+- `"é "`
+- `"Azul"`
 
-![Célula que dá erro](images/celula_da_erro.png)
+### Exemplo 5: Expressão sem sentido
 
-### Parte 4: Entrada & saída
+O Python não consegue concatenar uma string e um número. Como por exemplo:
 
-**print()**:
+> ```python
+> 5 + 'abacate'
+> ```
 
-A função `print()` tem o objetivo de imprimir na tela o valor que estiver sendo passado, como você pôde perceber no exemplo anterior. Escreva o código abaixo e execute.
-
-![Imprimir](images/print.png)
-
-**input()**:
-
-A função `input()` tem o objetivo de pedir ao usuário algum dado para ser manualmente entrado no terminal. Agora siga o exemplo e execute
-
-![Entrada](images/input.png)
-
-Note que os dados coletados pela função `input()` são sempre do tipo `string`. Veremos no próximo exemplo como transformar esses dados.
-
-### Parte 5: Variáveis
+## Parte 4: Variáveis
 
 Em Python, podemos armazenar nossos dados em variáveis. 
 
-#### Exemplo 1: Atribuição de variáveis
+### Exemplo 1: Atribuição de variáveis
 
 Variáveis funcionam como caixas em que podemos guardar o que quisermos utilizando o operador de atribuição, `=`.  Veja os exemplos abaixo:
 
 >```python
 >a = 40
 >b = 2
->print(a+b)
+>a+b
 >```
 >
 >  42
 
 **Tarefa:** Repita o exemplo acima considerando três variáveis `a`, `b` e `c`. Atribua os valores delas em 5, 10 e 15.
 
-#### Exemplo 2: Usando expressões em atribuições de variáveis
+### Exemplo 2: Usando expressões em atribuições de variáveis
 
 > ```python
 > texto_1 = 'Olá '
@@ -1132,59 +1179,127 @@ $$
 
 Utilizando o conceito de variáveis, crie um programa capaz de resolver uma equação de segundo grau com $a=1$, $b=4$ e $c=7$.
 
-#### Exemplo 3: Variável `_`
+### Exemplo 3: Variável `_`
 
-A variável 
+Caso a última linha de uma célula for um valor ou uma expressão. O Jupyter irá imprimir o valor desta expressão abaixo da célula e armazenar o valor desta expresão na variável `_`. Vamos verificar isso na prática. Crie duas células:
 
-#### Exemplo 4: Nome das variáveis
+> ```python
+> # Célula 1: atribuição da variável _
+> 2
+> ```
+> ```python
+> # Célula 2: Some em 3 a variável _ e salve o resultado nela mesma
+> _+3
+> ```
+
+> **Dica: ** Para quem tem familiaridade com o MATLAB a variável `_` é equivalente à variável `ans`
+
+Agora execute as células na seguinte ordem:
+
+​	Célula 1 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 2 $\rightarrow$ Célula 1 $\rightarrow$  Célula 2 $\rightarrow$ Célula 1
+
+**Tarefa: ** Reinicie o Kernel e adicione a expresão `print()` no final da célula 1 (Abaixo).  Execute a Célula 1 e a Célula 2. O que aconteceu? Justifique sua Resposta.
+
+> ```python
+> # Célula 1: atribuição da variável _
+> 2
+> print()
+> ```
+
+### Exemplo 4: Nome das variáveis
 
 Os nomes de variáveis só podem ser uma palavra, sem acentos, com números e underline `_`. Nomes de variáveis não podem começar com números. 
 
 **Tarefa:** Escreva e execute as células abaixo:
 
-```python
-Primeira_variavel=1
-```
-
-```python
-1a_variavel=1
-```
-
-```python
-Primeira_variavel=1
-```
-
-```python
-Primeira variavel=1
-```
-
-```python
-Primeira_variável=1
-```
+>```python
+>Primeira_variavel=1
+>```
+>
+>```python
+>1a_variavel=1
+>```
+>
+>```python
+>Primeira_variavel=1
+>```
+>
+>```python
+>Primeira variavel=1
+>```
+>
+>```python
+>Primeira_variável=1
+>```
+>
 
 Escreva um comentário em Python no topo de cada célula explicando o porquê esta sintáxe funciona ou não funciona.
 
-#### Exemplo 5: Atribuição múltipla
+### Exemplo 5: Atribuição múltipla
+
+No Python é possível atribuir vários valores de variáveis numa mesma expressão. Desta forma, teremos em ambos os lados do operador `=` um conjunto de variáveis e de valores, separados por vírgula. Execute o exemplo abaixo:
+
+> ```python
+> ## Atribui a=2 e b=3
+> a, b = 2, 3
+> 
+> ## Mostra os valores de a e b abaixo da célula
+>a, b
+> ```
+
+**Tarefa:** Utilizando a mesma lógica crie um código capaz de atribuir três variáveis $a=6$, $b=7$ e $c=10$.
+
+### Exemplo 6: Trocando o valor de duas variáveis
+
+No Python podemos utilizar a atribuição múltipla para trocar o valor de duas ou mais variáveis sem a necessidade de criar uma outra variável auxiliar.  Veja e execute o exemplo abaixo:
+
+> ```python
+> # Atribui o valor de a=2 e b=3
+> a, b = 2, 3
+> 
+> # Troca os valores de a e b
+> a, b = b, a
+> 
+> # Mostra os valores de a e b abaixo da célula
+> a, b
+> ```
+> (3, 2)
+
+**Tarefa:** Crie um código capaz de trocar os valores das variáveis $a=b$, $b=c$ e $c=a$. Inicialize essas variáveis com os valores $a=6$, $b=7$ e $c=10$.
+
+## Parte 5: Entrada & saída
+
+As funções de entrada e 
 
 
 
-### Parte 6: Transformação de dados
+**print()**:
+
+A função `print()` tem o objetivo de imprimir na tela o valor que estiver sendo passado, como você pôde perceber no exemplo anterior. Escreva o código abaixo e execute.
+
+![Imprimir](images/print.png)
+
+**input()**:
+
+A função `input()` tem o objetivo de pedir ao usuário algum dado para ser manualmente entrado no terminal. Agora siga o exemplo e execute
+
+![Entrada](images/input.png)
+
+Note que os dados coletados pela função `input()` são sempre do tipo `string`. Veremos no próximo exemplo como transformar esses dados.
+
+## Parte 6: Transformação de dados
 
 Algumas vezes será necessário converter de um tipo de dado para outro para podemos operar. A função `Input()`, por exemplo, sempre resulta em uma `string`, mas podemos usar outras funções para podermos transformar esse dado em um número. Essas funções são `str()`, `int()` e `float()`. Escreva o código abaixo, execute e veja o que acontece:
 
 ![Imprimir entrada](images/exercicio_print_input.png)
 
-### Parte 7: Atribuição múltipla
+## Parte 7: Atribuição múltipla
 
-No Python é possível atribuir vários valores de variáveis numa mesma expressão. Desta forma, teremos em ambos os lados do operador um conjunto de variáveis e de valores. Para praticar execute o código abaixo:
 
-![Atribuição Múltipla](images/atribuicao_multipla.png)
 
-Agora, utilizando a mesma lógica crie um código capaz de atribuir três variáveis $a=6$, $b=7$ e $c=10$.
+# Atividade 4: Para casa
 
-# Prática 3: Para casa
-
-### Parte 1: Complete a frase
+### Exercício 1: Complete a frase
 
 Crie pequeno programa (uma ou mais células) capaz de produzir a seguinte frase:
 
@@ -1194,7 +1309,7 @@ Tente construir a seguinte frase, utilizando `input()`, `print()` e conversão d
 
 Além disso, utilize o Markdown para desenvolver um pequeno enunciado para o programa.
 
-### Parte 2: Pergunta teórica
+### Exercício 2: Pergunta teórica
 
 Por que a expressão abaixo causa erro? 
 
@@ -1204,7 +1319,7 @@ print('Eu saí de casa ' + 10 + ' vezes na semana passada')
 
 > **Dica:** Responda esta pergunta utilizando o modo texto (Markdown).
 
-### Parte 3: Fórmula de báskara
+### Exercício 3: Fórmula de báskara
 
 Crie pequeno programa (uma célula) capaz de resolver qualquer equação de segundo:
 $$
@@ -1223,12 +1338,9 @@ O usuário deve entrar com os parâmetros $a$, $b$ e $c$. Utilize a função inp
 
 Está equação retorna duas soluções, $x_1$ e $x_2$. Você deve usar a função `print()` para imprimir o resultado das variáveis $x_1$ e $x_2$ na tela na tela. 
 
-### Parte 4: Trocando valores de duas variáveis
+### Exercício 4: Trocando valores de duas variáveis
 
 Crie uma pequeno programa capaz de trocar o valor entre duas variáveis sem a necessidade de criar uma terceira variável. 
 
 >  **Dica:** Utilize o conceito de atribuição múltipla para fazer a troca das variáveis. 
 
-```
-
-```
