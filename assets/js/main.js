@@ -26,8 +26,30 @@ $(function() {
   $("blockquote .language-python").each(function(){
     $(this).parent().addClass("jupyter-code");
   });
-  $(".jupyter-code .language-python").before("<div class='jupyter-input'> [**]:  </div>")
-  $(".jupyter-code p").before("<div class='jupyter-output'> [**]:  </div>")
+  $("blockquote strong").each(function(){
+    if ($(this).text().includes("%Jup%")){
+      $(this).parent().parent().addClass("jupyter-markdown");
+      $(this).parent().remove();
+    }
+  });
+
+  $(".jupyter-markdown blockquote").each(function(){
+    $(this).addClass("jupyter-txt");
+  });
+
+  $(".jupyter-markdown .jupyter-txt strong").each(function(){
+    if ($(this).text().includes("%Cite%")){
+      $(this).parent().parent().removeClass("jupyter-txt");
+      $(this).parent().remove();
+    }
+  });
+
+
+  $(".jupyter-code .language-python").before("<div class='jupyter-input'> [Py]: </div>")
+  $(".jupyter-code p").before("<div class='jupyter-output'> [Out]:  </div>")
+
+  $(".jupyter-markdown .language-markdown").before("<div class='jupyter-md'> [Md]: </div>")
+  $(".jupyter-markdown .jupyter-txt").before("<div class='jupyter-text'> Resulta em:  </div>")
   
   $(document).on("scroll", onScroll);
 

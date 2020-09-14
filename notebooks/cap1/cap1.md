@@ -187,10 +187,12 @@ Vamos à um exemplo. Considere os códigos abaixo, **não se preocupe em entend�
 
 **Célula 1:** Modo texto - Markdown
 
-```markdown
-## Atividade 1
-----
-```
+> **%Jup%**
+>
+> ```markdown
+> ## Atividade 1
+> ----
+> ```
 
 **Célula 2:** Modo código - Python
 
@@ -202,10 +204,12 @@ Vamos à um exemplo. Considere os códigos abaixo, **não se preocupe em entend�
 
 **Célula 3:** Modo texto - Markdown
 
-```markdown
-Esta célula está em **Markdown** e apresenta uma função quadrática:
-$$y(t)=t^2+2t+3$$
-```
+> **%Jup%**
+>
+> ```markdown
+> Esta célula está em **Markdown** e apresenta uma função quadrática:
+> $$y(t)=t^2+2t+3$$
+> ```
 
 **Célula 4:** Modo código - Python
 
@@ -350,10 +354,13 @@ Primeiramente iremos apenas brincar de copiar e colar.  Abra uma nova instância
 
 Antes de começar adicione a seguinte célula de texto abaixo:
 
-```markdown
-## Atividade 2
-----
-```
+>**%Jup%**
+>
+>```markdown
+>## Atividade 2
+>----
+>```
+>
 
 Agora vamos criar uma nova visão do nosso notebook. Em cima da aba do seu Notebook clique com o botão direito e aparecerá um menu. Procure por `New view for Notebook` e clique. 
 
@@ -369,59 +376,62 @@ Agora vamos aprender a partir de alguns exemplos.
 
 **Tarefa:** Nesta célula apenas copie e cole e veja o que acontece.
 
-```markdown
-# Capítulo 1 - Primeiros passos
-#### Data da aula: 11 de setembro de 2020.
-
-### Contato.
-**Nome**: Beatriz Mestra em Markdown
-**E-mail**: beatriz.mestra@cursopythonufac.github.io
-**Telefone**: (68) 9 9999-9999
-
-# 1. Elementos textuais em Markdown
-
-### Primeiro vamos ver como deixar nosso texto em negrito, itálico ou tachado.
-### Exemplo:
-Esta palavra está em **negrito**. Engraçado, pois __esta também__.
-
-Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
-
-~~Eu sou apenas um tachado mesmo.~~ 
-
-### É importante saber, principalmente na hora de fazer o seu cabeçalho, que existe *hierarquias* de títulos. Se você já é familiarizado com HTML, saberá do que estamos falando.
-### Exemplo:
-# Título Nível 1
-
-## Título Nível 2
-
-## Título Nível 3
-
-### Título Nível 4
-
-#### Título Nível 5
-
-##### Título Nível 6
-
-### ------------------------------------------------
-
-### Podemos escrever códigos em linha:
-### Para fazer isto, basta: ` codigo aqui `
-
-**Exemplo**:
-`print("codigo inline")`
-
-### Ou \``` codigo aqui ```:
-
-​```python
-myname = "Mestre"
-myage = 200
-
-if myage >= 18:
-    print("Pode ser preso.")
-else:
-    print("Não pode ser preso.")
-​```
-```
+>**%Jup%**
+>
+>```markdown
+># Capítulo 1 - Primeiros passos
+>#### Data da aula: 11 de setembro de 2020.
+>
+>### Contato.
+>**Nome**: Beatriz Mestra em Markdown
+>**E-mail**: beatriz.mestra@cursopythonufac.github.io
+>**Telefone**: (68) 9 9999-9999
+>
+># 1. Elementos textuais em Markdown
+>
+>### Primeiro vamos ver como deixar nosso texto em negrito, itálico ou tachado.
+>### Exemplo:
+>Esta palavra está em **negrito**. Engraçado, pois __esta também__.
+>
+>Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
+>
+>~~Eu sou apenas um tachado mesmo.~~ 
+>
+>### É importante saber, principalmente na hora de fazer o seu cabeçalho, que existe *hierarquias* de títulos. Se você já é familiarizado com HTML, saberá do que estamos falando.
+>### Exemplo:
+># Título Nível 1
+>
+>## Título Nível 2
+>
+>## Título Nível 3
+>
+>### Título Nível 4
+>
+>#### Título Nível 5
+>
+>##### Título Nível 6
+>
+>### ------------------------------------------------
+>
+>### Podemos escrever códigos em linha:
+>### Para fazer isto, basta: ` codigo aqui `
+>
+>**Exemplo**:
+>`print("codigo inline")`
+>
+>### Ou \``` codigo aqui ```:
+>
+>​```python
+>myname = "Mestre"
+>myage = 200
+>
+>if myage >= 18:
+>    print("Pode ser preso.")
+>else:
+>    print("Não pode ser preso.")
+>​```
+>```
+>
 
 Conseguiu encontrar alguns padrões?
 
@@ -439,127 +449,144 @@ Vamos estudar cada elemento com detalhes.
 
 Os títulos são criados utilizando `#`. Podemos ter títulos de diversos níveis ou hierarquias. O título com apenas uma `#` gera um título de nível 1, com dois `#`, `##` gera um texto nível dois, e assim por diante. No Markdown podemos criar títulos de até Nível 6.
 
-```markdown
-# Título Nível 1
-
-## Título Nível 2
-
-## Título Nível 3
-
-### Título Nível 4
-
-#### Título Nível 5
-
-##### Título Nível 6
-```
-
-
-Resulta em:
-
-># Título Nível 1
+> **%Jup%**
 >
->## Título Nível 2
+> ```markdown
+> # Título Nível 1
+> 
+> ## Título Nível 2
+> 
+> ## Título Nível 3
+> 
+> ### Título Nível 4
+> 
+> #### Título Nível 5
+> 
+> ##### Título Nível 6
+> ```
 >
->## Título Nível 3
->
->### Título Nível 4
->
->#### Título Nível 5
->
->##### Título Nível 6
+> ># Título Nível 1
+> >
+> >## Título Nível 2
+> >
+> >## Título Nível 3
+> >
+> >### Título Nível 4
+> >
+> >#### Título Nível 5
+> >
+> >##### Título Nível 6
 
 ### Exemplo 3: Comentários
 
 Comentários são parte de códigos que não aparecem no trecho final. Veja um exemplo:
 
-​```markdown
-<!--Esta frase não vai aparecer pois é um comentário.-->
-
-Esta frase vai aparecer, pois não é um comentário.
-```
-
-Resulta em:
-
+> **%Jup%**
+>
+> ```markdown
+> <!--Esta frase não vai aparecer pois é um comentário.-->
+> 
 > Esta frase vai aparecer, pois não é um comentário.
+> ```
+>
+> > Esta frase vai aparecer, pois não é um comentário.
 
 Observe que a parte do texto que estava entre `<!--` e `-->` não aparece no seu texto final, pois é um comentário. Somente a frase de baixo, que não é um comentário, aparece.
 
 Podemos escrever comentários em mais de uma linha. utilizando entre o comentário os delimitadores `<!---` e `-->`:
 
-```markdown
-<!---
-Este é um comentário multi-linha.
-Portanto eu posso pular uma linha e continuar escrevendo o comentário.
--->
-```
+> **%Jup%**
+>
+> ```markdown
+> <!---  
+> Este é um comentário multi-linha.
+> Portanto eu posso pular uma linha e continuar escrevendo o comentário.
+> -->
+> Esta frase vai aparecer, pois não é um comentário.
+> ```
+>
+> > Esta frase vai aparecer, pois não é um comentário.
 
-Esta frase vai aparecer, pois não é um comentário.
 > **Curiosidade:**  
 > A notação de comentário apresentada é uma notação da linguagem de marcação de texto HTML. Utilizamos a notação em HTML sempre que queremos fazer algo que não é possível no Markdown nativamente.
 
 Existem alguns interpretadores de Markdown que permitem comentários, porém isso não é uma regra, e existem muitas variações da sintaxe. Portanto, é preferível sempre utilizar a sintaxe de comentário em HTML. Uma das implementações que funciona no Jupyter é:
 
-```markdown
-[//]: # (Isto é um comentário com a sintaxe do Markdown que funciona no Jupyter.)
-[//]: # (Este é outro comentário em uma nova linha.)
-```
+> **%Jup%**
+>
+> ```markdown
+> [//]: # "Isto é um comentário com a sintaxe do Markdown que funciona no Jupyter."
+> [//]: # "Este é outro comentário em uma nova linha."
+> ```
+>
 
 ### Exemplo 4: Quebra linha
 
 Para quebrar uma linha em Markdown devemos utilizar `dois espaços` no final da frase. Podemos utilizar, também, um espaçamento de uma linha entre uma frase e outra. Veja o exemplo:
 
-```markdown
-<!--- 
-Vamos tentar escrever duas palavras embaixo da outra sem nada adicional:
--->
-Arroz
-Feijão
-
-<!--- 
-Por fim, vamos utilizar o primeiro exemplo. Porém vamos adicionar dois spaços depois de "Arroz", resultando em "Arroz  "
--->
-Arroz  
-Feijão
-​```
-```
-
-Resulta em:
-
-> Arroz Feijão
+> **%Jup%**
 >
+> ```markdown
+> <!--- 
+> Vamos tentar escrever duas palavras embaixo da outra sem nada adicional:
+> -->
+> Arroz
+> Feijão
+> 
+> <!--- 
+> Por fim, vamos utilizar o primeiro exemplo. Porém vamos adicionar dois spaços depois de "Arroz", resultando em "Arroz  "
+> -->
 > Arroz  
 > Feijão
+> ​```
+> ```
+>
+> > Arroz Feijão
+> >
+> > Arroz  
+> > Feijão
 
 ### Exemplo 5: Novo parágrafo
 
 Para criar um novo parágrafo é simples, basta adicionar mais de um quebra linha entre duas frase. Veja o exemplo:
 
- ```markdown
-Estou criando o primeiro parágrafo para o meu texto.
-
-Agora vou criar mais um parágrafo para o meu texto.
- ```
-
-Resulta em:
-
-> Estou criando o primeiro parágrafo para o meu texto.
+> **%Jup%**
 >
+>  ```markdown
+> Estou criando o primeiro parágrafo para o meu texto.
+> 
 > Agora vou criar mais um parágrafo para o meu texto.
+>  ```
+>
+> > Estou criando o primeiro parágrafo para o meu texto.
+> >
+> > Agora vou criar mais um parágrafo para o meu texto.
 
+
+
+**Tarefa:** Tente reproduzir a sentença abaixo:
+
+> Animais que começam com "i":
+>
+> Índio  
+> Igreja  
+> Ira
+>
+> 
 
 ### Exemplo 6: Itálico
 
 Podemos criar textos em itálico utilizando `_` ou `*` entre o texto que você quer deixar em itálico. Por exemplo:
 
-```markdown
-Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
-```
-
-Resulta em:
-
+> **%Jup%**
+>
+> ```markdown
 > Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
+> ```
+>
+> > Legal para vocês, mas eu estou em *itálico*, assim como _esta_.
 
-Agora, para praticar, tente escrever a frase abaixo utilizando Markdown:
+**Tarefa:** Tente escrever a frase abaixo utilizando Markdown:
 
 > Em textos acadêmicos, palavras em inglês devem estar sempre em ítalico, como: *mouse*, _software_ e _love_.
 
@@ -567,13 +594,13 @@ Agora, para praticar, tente escrever a frase abaixo utilizando Markdown:
 
 De forma similar ao itálico, podemos utilizar o `__` ou `**` para criar um texto em negrito.
 
-```markdown
-Esta palavra está em **negrito**. Engraçado, pois __esta também__.
-```
-
-Resulta em:
-
+> **%Jup%**
+>
+> ```markdown
 > Esta palavra está em **negrito**. Engraçado, pois __esta também__.
+> ```
+>
+> > Esta palavra está em **negrito**. Engraçado, pois __esta também__.
 
 **Tarefa:** Tentando escrever as frases em Markdown:
 
@@ -588,13 +615,13 @@ Para criar um texto em itálico e negrito, basta combinar as duas formatações.
 
 De forma similar ao itálico, podemos utilizar o `__` ou `**` para criar um texto em negrito.
 
- ```markdown
-Esta palavra está em _**negrito e itálico**_. Engraçado, pois *__esta também__*.
- ```
-
-Resulta em:
-
-> Esta palavra está em _**negrito e itálico**_. Engraçado, pois *__esta também__*.
+> **%Jup%**
+>
+>  ```markdown
+> Esta palavra está em _**negrito e itálico**_. Engraçado, pois __*esta também*__.
+>  ```
+>
+> > Esta palavra está em _**negrito e itálico**_. Engraçado, pois __*esta também*__.
 
 **Tarefa:** Tente reescrever a frase abaixo:
 
@@ -604,13 +631,13 @@ Resulta em:
 
 Para escrever um texto em tachado, utilizamos `~~` entre o texto. Veja o exemplo abaixo:
 
-```markdown
-~~Eu sou apenas um tachado mesmo.~~ 
-```
-
-Resulta em:
-
+> **%Jup%**
+>
+> ```markdown
 > ~~Eu sou apenas um tachado mesmo.~~ 
+> ```
+>
+> > ~~Eu sou apenas um tachado mesmo.~~ 
 
 **Tarefa:** Reescrava o exemplo anterior utilizando tachado. O resultado deve ser algo parecido com isso:
 
@@ -622,13 +649,13 @@ Podemos escrever um trecho de código em uma frase utilizando o caracter crase.
 
 Veja o exemplo abaixo:
 
-```markdown
-Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
-```
-
-Resulta em:
-
+> **%Jup%**
+>
+> ```markdown
 > Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
+> ```
+>
+> > Para imprimir "Olá mundo!" em python utilizamos o "comando" `print("Olá mundo")`.
 
 Observe que o comando "print("Olá mundo")" é apresentado em um fundo diferente, indicando que é um código.
 
@@ -649,29 +676,27 @@ Aqui vai mostrar o código no modo texto
  ```
  Por exemplo, se considerarmos a linguagem Markdown:
 
-
- ```markdown
-​```markdown
-<!---
-Isto aqui é um comentário multi-linha.
-E esta é a segunda linha do comentário
--->  
-Se eu executar esta célula o comando de **negrito** irá aparecer. 
-
-​```
- ```
-
-Resulta em:
-
-> ```markdown
+> **%Jup%**
+>
+>  ```markdown
+> ​```markdown
 > <!---
 > Isto aqui é um comentário multi-linha.
 > E esta é a segunda linha do comentário
-> -->
+> -->  
 > Se eu executar esta célula o comando de **negrito** irá aparecer. 
-> ```
+> ​```
+>  ```
+>
+> > <!---
+> > Isto aqui é um comentário multi-linha.
+> > E esta é a segunda linha do comentário
+> > -->
+> > Se eu executar esta célula o comando de **negrito** irá aparecer. 
 
-Agora tente criar um bloco de código no Markdown com a linguagem Python:
+
+
+**Tarefa:** Agora tente criar um bloco de código no Markdown com a linguagem Python:
 
 ```python
 # Este código será apresentado na forma de texto, em Markdown
@@ -699,45 +724,47 @@ else:
 
 Podemos escrever citações. Veja como:
 
-```markdown
-> Agir, eis a inteligência verdadeira. 
-> Serei o que quiser. Mas tenho que querer o que for. 
-> O êxito está em ter êxito, e não em ter condições de êxito. 
-> Condições de palácio tem qualquer terra larga, 
-> mas onde estará o palácio se não o fizerem ali?
-```
-Resulta em:
+> **%Jup%**
+>
+> ```markdown
+> > Agir, eis a inteligência verdadeira. 
+> > Serei o que quiser. Mas tenho que querer o que for. 
+> > O êxito está em ter êxito, e não em ter condições de êxito. 
+> > Condições de palácio tem qualquer terra larga, 
+> > mas onde estará o palácio se não o fizerem ali?
+> ```
+>
+> > > **%Cite%**
+> > >
+> > > Agir, eis a inteligência verdadeira.  
+> > > Serei o que quiser. Mas tenho que querer o que for.  
+> > > O êxito está em ter êxito, e não em ter condições de êxito.  
+> > > Condições de palácio tem qualquer terra larga,  
+> > > mas onde estará o palácio se não o fizerem ali?
 
----
 
->Agir, eis a inteligência verdadeira. 
->Serei o que quiser. Mas tenho que querer o que for. 
->O êxito está em ter êxito, e não em ter condições de êxito. 
->Condições de palácio tem qualquer terra larga, 
->mas onde estará o palácio se não o fizerem ali?
 
----
-
-Agora pense num poema bem bonito e escreva no formato de citação.
+**Tarefa:**  Agora pense num poema bem bonito e escreva no formato de citação.
 
 ### Exemplo 13: Lista não ordenada
 
 Para trabalhar com lista não ordenada podemos utilizar o sinal de `-` antes da frase:
 
-```markdown
-**Lista não ordenada:**
-
-- item 1
-- item 2
-- item 3
-```
-Resulta em:
-
-> **Lista não ordenada:**
+> **%Jup%**
 >
+> ```markdown
+> **Lista não ordenada:**
+> 
 > - item 1
 > - item 2
 > - item 3
+> ```
+>
+> > **Lista não ordenada:**
+> >
+> > - item 1
+> > - item 2
+> > - item 3
 
 **Tarefa:** Seguindo o exemplo acima, tente criar lista não ordenada.
 
@@ -745,22 +772,22 @@ Resulta em:
 
 ### Exemplo 14: Lista ordenada
 
-
 Veja como faz uma lista ordenada:
 
-```markdown
-**Lista ordenada:**
-1. Elemento 1
-2. Elemento 2
-3. Elemento 3
-```
-Resulta em:
-
-> **Lista ordenada:**
+> **%Jup%**
 >
+> ```markdown
+> **Lista ordenada:**
 > 1. Elemento 1
 > 2. Elemento 2
 > 3. Elemento 3
+> ```
+>
+> > **Lista ordenada:**
+> >
+> > 1. Elemento 1
+> > 2. Elemento 2
+> > 3. Elemento 3
 
 **Tarefa:** Crie uma lista ordenada, considerando a numeração como ordem de prioridade.
 
@@ -770,45 +797,41 @@ Resulta em:
 
 Podemos criar uma lista dentro de uma lista adicionando uma identação, como mostra abaixo:
 
-```markdown
-- item 1
-   - item 1.1
-   - item 1.2
-   - item 1.3
-- item 2
-   1. item 2.1
-   2. item 2.2
-   3. item 3.3
-- item 3
-```
-
-Resulta em:
-
->1. item 1
->  - item 1.1
->  - item 1.2
->  - item 1.3
->2. item 2
->   - item 2.1
->   - item 2.2
->   - item 3.3
->- item 3
-
-
+> **%Jup%**
+>
+> ```markdown
+> 1. item 1
+>    - item 1.1
+>    - item 1.2
+>    - item 1.3
+> 2. item 2
+>    - item 2.1
+>    - item 2.2
+>    - item 3.3
+> 3. item 3
+> ```
+>
+> > 1. item 1
+> >    - item 1.1
+> >    - item 1.2
+> >    - item 1.3
+> > 2. item 2
+> >    - item 2.1
+> >    - item 2.2
+> >    - item 3.3
+> > 3. item 3
 
 **Tarefa: ** Abaixo tem uma receita de bolo. Tente reproduzir em Markdown o exemplo abaixo:
 
-
-
 > 1. Ingredientes:
->   - Ovo
->   - Farinha de trigo
->   - Leite
->   - Fermento
+>    - Ovo
+>    - Farinha de trigo
+>    - Leite
+>    - Fermento
 > 2. Modo de preparo:
->   - Bata no liquidificador o leite com o ovo
->   - Jogue a farinha de trigo na mistura
->   - Bote para assar
+>    - Bata no liquidificador o leite com o ovo
+>    - Jogue a farinha de trigo na mistura
+>    - Bote para assar
 
 ## Parte 2: Criando o cabeçalho
 
@@ -822,41 +845,37 @@ Dentro do seu Notebook crie uma célula no topo da atividade.
 
 Agora crie o seu cabeçalho.
 
+> **Dica:** Não se esqueça dos dois espaços para quebrar a linha.
+
 O meu ficou assim:
 
-```html
-<center><h1>Capítulo 1: Primeiros passos</h1></center>
-
-<center><div style="font-size:24px;display:inline-block;">11 de setembro de 2020</div></center>
-
-__Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
-__Matrícula__: 9999999999999  
-__Telefone__: (68) 9 9999-9999  
-__E-mail__: beatriz.mestra@cursopythonufac.github.io  
-```
-
-> **Dica:** Não se esqueça dos dois espaços para quebrar a linha
-
-Resulta em:
-
-----
-
-<center><div style="font-size:28px;display:inline-block;font-weight: bold;margin-block-end: 0.43em;">Capítulo 1: Primeiros passos</div></center>
-
-<center><div style="font-size:24px;display:inline-block;margin-block-end: 0.83em;">11 de setembro de 2020</div></center>
-
-__Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
-__Matrícula__: 9999999999999  
-__Telefone__: (68) 9 9999-9999  
-__E-mail__: beatriz.mestra@cursopythonufac.github.io  
-
------
+> **%Jup%**
+>
+> ```html
+> <center><h1>Capítulo 1: Primeiros passos</h1></center>
+> 
+> <center><div style="font-size:24px;display:inline-block;">11 de setembro de 2020</div></center>
+> 
+> __Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
+> __Matrícula__: 9999999999999  
+> __Telefone__: (68) 9 9999-9999  
+> __E-mail__: beatriz.mestra@cursopythonufac.github.io  
+> ```
+>
+> > <center><div style="font-size:28px;display:inline-block;font-weight: bold;margin-block-end: 0.43em;">Capítulo 1: Primeiros passos</div></center>
+> >
+> > <center><div style="font-size:24px;display:inline-block;margin-block-end: 0.83em;">11 de setembro de 2020</div></center>
+> >
+> > __Nome do(a) aluno(a)__: Beatriz Mestra em Markdown  
+> > __Matrícula__: 9999999999999  
+> > __Telefone__: (68) 9 9999-9999  
+> > __E-mail__: beatriz.mestra@cursopythonufac.github.io  
 
 >**Dicas:** 
 >
->- Se você conhece, você pode usar em HTML e CSS para deixar o seu texto ainda mais rico. Mais informações [aqui](https://www.w3schools.com/html/html_basic.asp).
+>> Se você conhece, você pode usar em HTML e CSS para deixar o seu texto ainda mais rico. Mais informações [aqui](https://www.w3schools.com/html/html_basic.asp).
 >
->- Evite usar muitos títulos no seu cabeçalho (`#`,  `##`, etc) no seu cabeçalho pois isso pode atrapalhar na geração de índice ao exportar seu Notebook para pdf, LaTeX ou HTML.
+>> Evite usar muitos títulos no seu cabeçalho (`#`,  `##`, etc) no seu cabeçalho pois isso pode atrapalhar na geração de índice ao exportar seu Notebook para pdf, LaTeX ou HTML.
 
 **Ah, não se esqueça de criar os títulos e cabeçalhos das próximas atividades 😉**
 

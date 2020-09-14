@@ -152,33 +152,57 @@ nav .active {
     margin-left: 20px;
 }
 
-.jupyter-code{
-    border-left: 0px solid #1897f8;
+.jupyter-code, .jupyter-markdown{
+    border: none; //0px solid #1897f8
     font-style: normal;
     padding: 0px;
+    .jupyter-output, .jupyter-input, .jupyter-md{
+        font-size: 14px;
+        float: left;       
+    }
+
+}
+
+.jupyter-code{
     .jupyter-input{
         color: #4a91cd;
-        font-size: 14px;
-        display: inline-block;
-        float: left;
         padding-right: 10px;
     }
+
     p{
         margin: -15px 0 20px 0;
         padding: 0 0 0 45px;
     }
+
     .jupyter-output{
-        color: #c97153;
-        font-size: 14px;
-        display: inline-block;
-        float: left;
         margin: -15px 0 20px 0;
+        color: #c97153;
     }
+
 }
 
 .jupyter-markdown{
-    border-left: 3px solid red;
-    font-style: normal;
+    .jupyter-md{
+        color: #808080;
+    }
+
+    .jupyter-text{
+        margin: -10px 0 0px 0px;
+        color: #c97153;
+    }
+
+    .language-markdown, .jupyter-txt{
+        margin-left: 36px;
+    }
+
+    .jupyter-txt{
+        padding: 8px 8px 0px 15px;
+        margin-bottom: 20px;
+        //border-radius: 3px;
+        overflow-x: auto;
+        border-left:1px solid #ccc;
+        background: transparent;
+    }
 }
 
 
