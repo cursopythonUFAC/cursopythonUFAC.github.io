@@ -1498,7 +1498,7 @@ Note que os dados coletados pela função `input()` são sempre do tipo `string`
 
 > A soma de $a$ e $b$ é [soma].
 
-> **Observação:** Use as funções `input()` e `output()`.
+> **Observação:** Use as funções `input()` e `print()`.
 
 > **Dica:** Use a conversão de dado para criar uma única string como dado de entrada da função `print()`.
 
