@@ -13,6 +13,12 @@ var sectionHeight = function() {
 $(window).resize(sectionHeight);
 $(document).on("scroll", onScroll);
 
+/*
+Procurar por:
+https://www.jqueryscript.net/menu/fixed-in-page-navigation-scrollspy.html
+Para ver o exemplo de menu
+*/
+
 $(function() {
   $("section h1").each(function(){//, section h2, section h3
     if (($(this).text().includes("Introdução")||$(this).text().includes("Atividade"))||(window.location.pathname+window.location.search)==='/'){
