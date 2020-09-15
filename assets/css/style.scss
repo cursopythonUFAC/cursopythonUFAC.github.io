@@ -170,6 +170,8 @@ nav .active {
     }
 
     p{
+        font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+        font-size: 9pt;
         margin: -15px 0 20px 0;
         padding: 0 0 0 45px;
     }
@@ -177,6 +179,13 @@ nav .active {
     .jupyter-output{
         margin: -15px 0 20px 0;
         color: #c97153;
+    }
+    .language-java pre{
+        background-color: #ffdede;
+        margin: -15px 0 20px 0;
+        code{
+            background-color: #ffdede;
+        }
     }
 
 }

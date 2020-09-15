@@ -710,15 +710,29 @@ else:
 
 A especificação da linguagem permite realçar algumas notações de sintaxe da linguagem, facilitando a visualização no seu texto final. Porém é possível criar um bloco de código multi-linha sem realçe. Para isso basta não colocar não colocar o nome da linguagem. Como mostra abaixo:
 
-```
-# Este código será apresentado na forma de texto, em Markdown
-ling = "python"
-
-if ling != "python":
-    print("Não é uma boa linguagem.")
-else:
-    print("Melhor linguagem.")
-```
+> **%Jup%**
+>
+> ```markdown
+> ​```
+> # Este código será apresentado na forma de texto, em Markdown
+> ling = "python"
+> 
+> if ling != "python":
+>     print("Não é uma boa linguagem.")
+> else:
+>     print("Melhor linguagem.")
+> ​```
+> ```
+>
+> > ```
+> > # Este código será apresentado na forma de texto, em Markdown
+> > ling = "python"
+> > 
+> > if ling != "python":
+> >     print("Não é uma boa linguagem.")
+> > else:
+> >     print("Melhor linguagem.")
+> > ```
 
 ### Exemplo 12: Citações
 
@@ -1080,17 +1094,17 @@ O que aconteceu?
 
 Existem diversos tipos de dados em Python que se comportam de diferente formas em expressões, os três tipos mais básicos são:
 
-|       Tipo de dado        |                    Exemplo                    |
-| :-----------------------: | :-------------------------------------------: |
-|          Inteiro          |           -2, -1, 0, 1, 2, 3, 4, 5            |
-| Decimal (Ponto flutuante) |    -1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25     |
-|      Texto (String)       | 'a', 'aa', 'aaa', 'Hello!', 'curso de python' |
+|       Tipo de dado        | Classe |                    Exemplo                    |
+| :-----------------------: | :----: | :-------------------------------------------: |
+|          Inteiro          |  int   |           -2, -1, 0, 1, 2, 3, 4, 5            |
+| Decimal (Ponto flutuante) | float  |    -1.25, -1.0, -0.5, 0.0, 0.5, 1.0, 1.25     |
+|      Texto (String)       | string | 'a', 'aa', 'aaa', 'Hello!', 'curso de python' |
 
-Inteiros (`int`) se refere aos números inteiros, números em ponto flutuante (`float`) se refere a números com casa decimal e strings são textos.
+Inteiros (`int`) se refere aos números inteiros, números em ponto flutuante (`float`) se refere a números com casa decimal e strings são textos. 
 
 > **Observação:** Note que as strings tem sempre aspas simples em suas extremidades como `'Isso é uma string'`.
 
-Note, que você pode somar dois inteiros, como `3+5`, mas não pode somar (ou concatenar) um inteiro e uma string, como na célula abaixo.
+Note que o Python chama inteiras, decimais e texto de `int`, `float` ou `string`.
 
 ### Exemplo 1: Escrevendo uma string
 
@@ -1141,7 +1155,7 @@ Utilize somente as strings:
 - `"é "`
 - `"Azul"`
 
-### Exemplo 5: Expressão sem sentido
+### Exemplo 4: Expressão sem sentido
 
 O Python não consegue concatenar uma string e um número. Como por exemplo:
 
@@ -1149,7 +1163,88 @@ O Python não consegue concatenar uma string e um número. Como por exemplo:
 > 5 + 'abacate'
 > ```
 
-## Parte 4: Variáveis
+## Parte 4: Conversão de dados
+
+A ação de transformar uma variável de um tipo (`int`, `float`  e `string`) em outro tipo é chamada de conversão de dados.  Para fazer essa conversão podemos utilizar as funções `str`, `int` e `float`.
+
+| Função  | Descrição                                     |
+| :-----: | --------------------------------------------- |
+|  str()  | Transforma uma variável em uma string         |
+|  int()  | Transforma uma variável em um inteiro         |
+| float() | Transforma uma variável em um ponto flutuante |
+
+### Exemplo 1: Concatenando strings e números 
+
+Na seção anterior vimos que a operação `5 + 'abacate'`  não é permitida no Python, pois não é possível concatenar um inteiro com uma string. Porém podemos resolver este problema da seguinte forma:
+
+> ```python
+> string(5) + ' abacate'
+> ```
+>
+> '5 abacate'
+
+**Tarefa:** Corrija a célula abaixo utilizando as funções de conversão:
+
+> ```python
+> 'Eu tenho ' + 29 + ' anos de idade.'
+> ```
+>
+> ```java
+> ---------------------------------------------------------------------------
+> TypeError                                 Traceback (most recent call last)
+> <ipython-input-4-b2e1590c4132> in <module>
+> ----> 1 'I am ' + 29 + ' years old.'
+> 
+> TypeError: can only concatenate str (not "int") to str
+> ```
+
+### Exemplo 2: Exercitando as conversão de dados
+
+**Tarefa:** Faça as seguintes conversões:
+
+- `0` para string
+- `-3.14` para string
+- `"-99"` para inteiro
+- `1.25` para inteiro
+- `1.99` para inteiro
+- `'3.14'` para ponto flutuante
+- `10` para inteiro
+
+### Exemplo 3: A função `type()`
+
+A função `type()` indica o tipo de um determinado dado (ou a classe do dado). Veja os exemplos abaixo:
+
+> ```python
+> type(2.0)
+> ```
+>
+> float
+>
+> ```python
+> type("Quero água")
+> ```
+>
+> str
+>
+> ```python
+> type(-5)
+> ```
+>
+> int
+
+**Tarefa:**  Descobra o tipo das seguintes expressões:
+
+- `0.0`
+- `-3.14` 
+- `"-99"` 
+- `123+1.23`
+- `7/3`
+- `7.0j`
+- `9%2`
+- `-11`
+- `5+10j`
+
+## Parte 5: Variáveis
 
 Em Python, podemos armazenar nossos dados em variáveis. 
 
@@ -1167,7 +1262,7 @@ Variáveis funcionam como caixas em que podemos guardar o que quisermos utilizan
 
 **Tarefa:** Repita o exemplo acima considerando três variáveis `a`, `b` e `c`. Atribua os valores delas em 5, 10 e 15.
 
-### Exemplo 2: Usando expressões em atribuições de variáveis
+### Exemplo 2: Expressões em atribuições de variáveis
 
 > ```python
 > texto_1 = 'Olá '
@@ -1198,7 +1293,90 @@ $$
 
 Utilizando o conceito de variáveis, crie um programa capaz de resolver uma equação de segundo grau com $a=1$, $b=4$ e $c=7$.
 
-### Exemplo 3: Variável `_`
+### Exemplo 3: Atribuição em variável existente
+
+Considere o exemplo abaixo:
+
+**Células 1 e 2:**  Primeira atribuição
+
+>```python
+># Célula 1
+>mantega = 40
+>mantega
+>```
+>
+>40
+>
+>```python
+># Célula 2
+>ovos = 2
+>```
+
+As variáveis mantega e ovos não existem previamente na memória. Quando são atribuidos valores para elas, o Python cria esta variáveis e atribuí os seus respectivos valores.
+
+**Células 3 e 4:** Variáveis existentes
+
+> ```python
+> # Célula 3
+> mantega+ovos
+> ```
+>
+> 42
+>
+> ```python
+> # Célula 4
+> mantega+ovos+mantega
+> ```
+>
+> 82
+
+**Célula 5 e 6:** Substituição dos valores
+
+> ```python
+> # Célula 5
+> ovos = 10
+> ovos
+> ```
+>
+> 10
+>
+> ```python
+> # Célula 6
+> mantega=mantega+2
+> ```
+>
+> 42
+
+Quando é atribuido um valor à uma variável existente, o valor antigo da variável é esquecido e o novo valor é atribuído.
+
+> **Observação:** Quando reiniciamos o Kernel a memória é limpa.
+
+**Tarefa:** 
+
+- Escreva e execute as células abaixo:
+
+> ```python
+> # Célula 1
+> cumprimento = "Oi"
+> cumprimento
+> ```
+>
+> ```python
+> # Célula 2
+> cumprimento = "Thau!"
+> cumprimento
+> ```
+
+- Reinicie o Kernel e execute a célula abaixo:
+
+> ```python
+> # Célula 3
+> cumprimento + " Fulano"
+> ```
+
+- Execute a **Célula 1** e depois a **Célula 3**.
+
+### Exemplo 4: Variável `_`
 
 Caso a última linha de uma célula for um valor ou uma expressão. O Jupyter irá imprimir o valor desta expressão abaixo da célula e armazenar o valor desta expresão na variável `_`. Vamos verificar isso na prática. Crie duas células:
 
@@ -1211,7 +1389,7 @@ Caso a última linha de uma célula for um valor ou uma expressão. O Jupyter ir
 > _+3
 > ```
 
-> **Dica: ** Para quem tem familiaridade com o MATLAB a variável `_` é equivalente à variável `ans`
+> **Dica:** Para quem tem familiaridade com o MATLAB a variável `_` é equivalente à variável `ans`.
 
 Agora execute as células na seguinte ordem:
 
@@ -1225,7 +1403,7 @@ Agora execute as células na seguinte ordem:
 print()
 ```
 
-### Exemplo 4: Nome das variáveis
+### Exemplo 5: Nome das variáveis
 
 Os nomes de variáveis só podem ser uma palavra, sem acentos, com números e underline `_`. Nomes de variáveis não podem começar com números. 
 
@@ -1254,7 +1432,7 @@ Os nomes de variáveis só podem ser uma palavra, sem acentos, com números e un
 
 Escreva um comentário em Python no topo de cada célula explicando o porquê esta sintáxe funciona ou não funciona.
 
-### Exemplo 5: Atribuição múltipla
+### Exemplo 6: Atribuição múltipla
 
 No Python é possível atribuir vários valores de variáveis numa mesma expressão. Desta forma, teremos em ambos os lados do operador `=` um conjunto de variáveis e de valores, separados por vírgula. Execute o exemplo abaixo:
 
@@ -1263,12 +1441,13 @@ No Python é possível atribuir vários valores de variáveis numa mesma express
 > a, b = 2, 3
 > 
 > ## Mostra os valores de a e b abaixo da célula
->a, b
+>"O valor de a é "+str(a)+" e o valor de b é " +str(b)+"."
 > ```
+> 'O valor de a é 2 e o valor de b é 3.'
 
 **Tarefa:** Utilizando a mesma lógica crie um código capaz de atribuir três variáveis $a=6$, $b=7$ e $c=10$.
 
-### Exemplo 6: Trocando o valor de duas variáveis
+### Exemplo 7: Trocando o valor de duas variáveis
 
 No Python podemos utilizar a atribuição múltipla para trocar o valor de duas ou mais variáveis sem a necessidade de criar uma outra variável auxiliar.  Veja e execute o exemplo abaixo:
 
@@ -1279,40 +1458,185 @@ No Python podemos utilizar a atribuição múltipla para trocar o valor de duas 
 > # Troca os valores de a e b
 > a, b = b, a
 > 
-> # Mostra os valores de a e b abaixo da célula
-> a, b
+> ## Mostra os valores de a e b abaixo da célula
+> "O valor de a é "+str(a)+" e o valor de b é " +str(b)+"."
 > ```
-> (3, 2)
+> 'O valor de a é 3 e o valor de b é 2.'
 
 **Tarefa:** Crie um código capaz de trocar os valores das variáveis $a=b$, $b=c$ e $c=a$. Inicialize essas variáveis com os valores $a=6$, $b=7$ e $c=10$.
 
-## Parte 5: Entrada & saída
+## Parte 6: Entrada & saída
 
-As fu
+Vimos que é possível mostrar uma expressão, dado ou variável escrevendo o valor desta variável no final da célula. Entretanto nem sempre utilizamos o Jupyter Notebook para programar em Python. Entretanto, desta forma estamos limitado ao último dado da célula. Quando queremos imprimir algum dado intermediário ou com alguma construção mais complexa devemos recorrer à função de saída de dados `print()`. De forma similar, existe uma função que permite que o usuário entre com dados, esta função é chamada de `input()`.
 
+### Exemplo 1: Função `print()`
 
+A função `print()` tem o objetivo de imprimir na tela o valor que estiver sendo passado. Veja e execute a célula abaixo:
 
-**print()**:
+> ```python
+> print("Este é um texto comum")
+> var1 = 300
+> print(var1)
+> ```
 
-A função `print()` tem o objetivo de imprimir na tela o valor que estiver sendo passado, como você pôde perceber no exemplo anterior. Escreva o código abaixo e execute.
+Observe que toda vez que a função `print()` foi chamada houve uma impressão de um texto abaixo da célula.
 
-![Imprimir](images/print.png)
+**Tarefa:** Repita o Exemplo 7 da parte 5 utilizando a função `print()` para imprimir o resultado final.
 
-**input()**:
+### Exemplo 2: Função `input()`
 
 A função `input()` tem o objetivo de pedir ao usuário algum dado para ser manualmente entrado no terminal. Agora siga o exemplo e execute
 
-![Entrada](images/input.png)
+> ```python
+> texto = input('Digite seu texto: ')
+> print('Seu texto é ' + texto)
+> ```
 
-Note que os dados coletados pela função `input()` são sempre do tipo `string`. Veremos no próximo exemplo como transformar esses dados.
+Note que os dados coletados pela função `input()` são sempre do tipo `string`.  Portanto para usar o operador de concatenação devemos utilizar a função `str()`
 
-## Parte 6: Transformação de dados
+**Tarefa:** Crie um programa (Célula) que peça dois números, $a$ e $b$ e imprima a seguinte frase:
 
-Algumas vezes será necessário converter de um tipo de dado para outro para podemos operar. A função `Input()`, por exemplo, sempre resulta em uma `string`, mas podemos usar outras funções para podermos transformar esse dado em um número. Essas funções são `str()`, `int()` e `float()`. Escreva o código abaixo, execute e veja o que acontece:
+> A soma de $a$ e $b$ é [soma].
 
-![Imprimir entrada](images/exercicio_print_input.png)
+> **Observação:** Use as funções `input()` e `output()`.
+
+> **Dica:** Use a conversão de dado para criar uma única string como dado de entrada da função `print()`.
+
+### Exemplo 3: Convertendo Celsius em Fahrenheit
+
+Com as funções de entrada e saída podemos criar programas mais complexos. Como por exemplo um programa capaz de converte a temperatura. Considere a seguinte fómula:
+$$
+C=5\times((F-32)/9)
+$$
+Onde $C$ representa a temperatura em Celcius e $F$ representa a temperatura em Fahrenheit. Veja o exemplo e teste-o para a temperatura de $100^oF$, $32^oF$ e $192^oF$:
+
+> ```python
+> # Lê a entrada do usuário
+> F = input('Digite a temperatura em Fahrenheit: ')
+> # Converte a temperatura para Celcius
+> C = 5*((F-32)/9)
+> # Imprime o valor convertido na tela
+> print('A temperatura em Celcius é de '+str(C)+' graus.')
+> ```
+
+**Tarefa:** Tendo como dado de entrada a altura ($h$) de uma pessoa, construa um algorítmo que calcule o seu peso ideal ($P$) utilizando as seguintes fórmulas:
+
+- Para homens: $P=(72.7\times h)-58$
+- Para mulher: $P=(62.1\times h)-44.7$
+
+> **Observação:** O programa deve imprimir na tela o peso ideal tanto para homem quanto para mulher.
+
+### Exemplo 4: Função `len()`
+
+A função `len()` retorna a quantidade, ou tamanho, de uma string. Veja o exemplo abaixo:
+
+> ```python
+> Tam_1 = len("Oi")
+> Tam_2 = len('Eu tenho um gato que mia bastante.')
+> Tam_3 = len('')
+> print("O tamanho da Frase 1 é "+str(Tam_1)+";")
+> print("O tamanho da Frase 2 é "+str(Tam_2)+";")
+> print("E o tamanho da Frase 3 é "+str(Tam_3)+".")
+> ```
+>
+> O tamanho da Frase 1 é 2;  
+> O tamanho da Frase 2 é 34;  
+> E o tamanho da Frase 3 é 0.
+
+**Tarefa:** Crie um programa que tenha como entrada uma frase, que deve ser digitada pelo usuário, e tenha como saída o tamanho dessa frase.
+
+### Exemplo 5: Caracter de nova linha
+
+Quando queremos escrever uma string com mais de uma linha podemos recorrer ao caracter `\n`. Este caracter simboliza uma quebra linha. Veja o exemplo abaixo:
+
+> ```python
+> print("Esta é a primeira linha.\nEsta é a segunda linha.\nEsta é a terceira linha.")
+> ```
+> Esta é a primeira linha.  
+> Esta é a segunda linha.  
+> Esta é a terceira linha.
+
+Uma outra forma de trabalhar com strings multi-linhas é usando três delimitadores de strings, como mostra abaixo:
+
+> ```python
+> print("""Esta é a primeira linha.
+> Esta é a segunda linha.
+> Esta é a terceira linha.""")
+> ```
+> Esta é a primeira linha.
+> Esta é a segunda linha.
+> Esta é a terceira linha.
+
+> **Dica:** Essa é a mesma notação utilizada para escrever comentário multi-linha.
+
+**Tarefa:** Crie um programa capaz de calcular a raiz quadrada, o dobro e o triplo de um número. Cada resultado deve ser impresso em uma única linha.
+
+- Faça a tarefa utilizando o caracter `\n`
+- Faça a tarefa utilizando a sintáxe de string multi-linha
+
+### Exemplo 6: `print()` com múltiplos argumentos
+
+Até agora trabalhamos com a função `print()`  recebendo um único argumento de entrada (parâmetro) na forma de string. Entretanto esta função permite que você insira mais de argumento (parâmetro).  Veja o exemplo abaixo:
+
+> ```python
+> nome = 'Lucas'
+> data = 19
+> mes='Abril'
+> print('O meu nome é',nome,'e minha data de aniversário é',data,'de',mes,'.')
+> ```
+> 
+>O meu nome é Lucas e minha data de aniversário é 19 de Abril .
+
+Observe que no exemplo acima não houve necessidade de adicionar espaço no final da string. A própria função `print()` fez isso para a gente. 
+
+**Tarefa:** Crie um programa que peça como entrada três palavras e forme uma frase com essas três palavras. A saída deve ser mostrada como:
+
+>A frase formada com essas três palavras é: [palavra1] [palavra2] [palavra3]
+
+### Exemplo 7: `sep` e `end`
+
+Quando trabalhamos com múltiplos objetos de entrada, percebemos que sempre entre um parâmetro e outro, a função um espaço em branco. Além disso, ao final do print havia sempre uma quebra linha. Este é o comportamento padrão da função `print()` , entretanto podemos alterá-lo mudando os parâmetros opcionais `sep=` e `end=`. Descritos na tabela abaixo:
+
+| Parâmetro | Descrição                                                    |
+| :-------: | ------------------------------------------------------------ |
+|    sep    | Quando dois ou mais argumentos são passados para a função `print()` sep coloca entre eles um espaço em branco ou um outro valor que podemos passar para sep. |
+|    end    | O valor padrão de end é uma nova linha “\n” e por isso que sempre a função print adiciona uma nova linha depois de imprimir tudo que lhe foi passado, mas, podemos definir outro valor com uma tabulação “\t” por exemplo. |
+
+Sendo assim a notação da função print é da seguinte forma:
+
+```python
+print(arg1,arg2,arg3,...,sep=valor_do_sep,end=valor_do_end)
+```
+
+Veja e execute o exemplo abaixo:
+
+> ```python
+> ano1 = '1980'
+> ano2 = '1990'
+> ano3 = '2000'
+> ano4 = '2010'
+> 
+> texto = "Alterando o valor de sep"
+> print(texto)
+> print(ano1, ano2, ano3, ano4, sep='--->')
+> 
+> # pula uma linha
+> print()
+> 
+> texto = "Alterando o valor de sep e end"
+> print(texto)
+> print(ano1, ano2, ano3, ano4, sep='--->', end='.\n')
+> ```
+
+**Tarefa:** Crie um programa no qual o usuário deve digitar 3 números para formar a seguinte frase:
+
+> Os números digitados foram: [n1], [n2], [n3].
+
+> **Dica: ** Você pode utilizar mais de uma função `print()` para alcançar este resultado.
 
 # Atividade 4: Para casa
+
+Para fazer as atividades para casa baixe o Notebook disponível no site.
 
 ### Exercício 1: Complete a frase
 
@@ -1320,9 +1644,12 @@ Crie pequeno programa (uma ou mais células) capaz de produzir a seguinte frase:
 
 > "Olá, meu nome é \_\_\_\_\_\_, tenho \_\_\_ anos, e minha idade daqui a 5 anos será \_\_\_."
 
-Tente construir a seguinte frase, utilizando `input()`, `print()` e conversão de dados.
+Tente construir a seguinte frase, utilizando `input()`, `print()` .
 
-Além disso, utilize o Markdown para desenvolver um pequeno enunciado para o programa.
+- Utilize conversão de dados.
+- Reescreva o programa utilizando múltiplos dados de entrada na função `print()`
+
+> **Observação:** Não se esqueça de escrever o enunciado do programa em Markdown.
 
 ### Exercício 2: Pergunta teórica
 
@@ -1353,9 +1680,17 @@ O usuário deve entrar com os parâmetros $a$, $b$ e $c$. Utilize a função inp
 
 Está equação retorna duas soluções, $x_1$ e $x_2$. Você deve usar a função `print()` para imprimir o resultado das variáveis $x_1$ e $x_2$ na tela na tela. 
 
+> **Observação:** Não se esqueça de escrever o enunciado do programa em Markdown.
+
 ### Exercício 4: Trocando valores de duas variáveis
 
-Crie uma pequeno programa capaz de trocar o valor entre duas variáveis sem a necessidade de criar uma terceira variável. 
+Crie uma pequeno programa capaz de trocar duas variáveis, $a$ e $b$.
+
+- O usuário deve entrar com as variáveis $a$ e $b$ (Use a função `input()`).
+- Na saída o programa deve informar o valor das variáveis $a$ e $b$ (Use a função `print()`).
+- O programa deve ser capaz de trocar as variáveis sem a necessidade de criar uma terceira variável.
+
+> **Observação:** Não se esqueça de escrever o enunciado do programa em Markdown.
 
 >  **Dica:** Utilize o conceito de atribuição múltipla para fazer a troca das variáveis. 
 
