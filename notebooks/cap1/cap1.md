@@ -1632,7 +1632,7 @@ Veja e execute o exemplo abaixo:
 
 > Os números digitados foram: [n1], [n2], [n3].
 
-> **Dica: ** Você pode utilizar mais de uma função `print()` para alcançar este resultado.
+> **Dica:** Você pode utilizar mais de uma função `print()` para alcançar este resultado.
 
 # Atividade 4: Para casa
 
