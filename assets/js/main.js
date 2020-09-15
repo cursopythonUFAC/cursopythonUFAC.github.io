@@ -20,8 +20,8 @@ Para ver o exemplo de menu
 */
 
 $(function() {
-  $("section h1").each(function(){//, section h2, section h3
-    if (($(this).text().includes("Introdução")||$(this).text().includes("Atividade"))||(window.location.pathname+window.location.search)==='/'){
+  $("section h1, section h2, section h3").each(function(){//
+    if ((new RegExp(/(Introdução|Atividade|Parte|Exemplo|Exercício)/g)).test($(this).text())||(window.location.pathname+window.location.search)==='/'){
       text=$(this).text().split(':')[$(this).text().split(':').length-1];
       $("nav ul").append("<li class='tag-" + this.nodeName.toLowerCase() + "'><a href='#" + text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,'') + "'>" + text + "</a></li>");
       $(this).attr("id",text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g,''));
