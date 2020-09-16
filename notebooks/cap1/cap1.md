@@ -1198,7 +1198,7 @@ Na seção anterior vimos que a operação `5 + 'abacate'`  não é permitida no
 > TypeError: can only concatenate str (not "int") to str
 > ```
 
-### Exemplo 2: Exercitando as conversão de dados
+### Exemplo 2: Exercícios de conversão de dados
 
 **Tarefa:** Faça as seguintes conversões:
 
