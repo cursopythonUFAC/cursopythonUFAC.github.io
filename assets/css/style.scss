@@ -205,6 +205,27 @@ a:active, a:focus, a:visited {
     -moz-outline-style: none;
 }
 
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:50.625%;
+    position:relative;
+    height:0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    //border: 2px solid #f0b500;
+    //background-color:  #f0b500;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+
 
 @media only screen and (max-width: 480px) {
     #logo{
@@ -242,6 +263,13 @@ a:active, a:focus, a:visited {
 @media only screen and (max-width: 780px) {
     #banner .nome {
         display: none;
+    }
+
+    .video-responsive{
+        width: 100%;
+        padding-bottom:56.25%;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .atividade {
