@@ -17,8 +17,9 @@
 
 **Contato**: cursopython.ufac@gmail.com
 
+<!---
 **Lista de presença (11/Set)**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
-
+--->
 
 
 > Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
@@ -60,9 +61,15 @@ O **Google Meet** é a plataforma de *streamming* (**lives**) aonde aconterão o
 # Conteúdo do curso
 ----
 ### **Capítulo 1:** Primeiros passos
-> Nesta capítulo o aluno aprenderá à instalar e configurar do Anaconda para o uso do Jupyter Lab com o Python. Será apresentado o o ambiente de desenvolvimento Jupyter Lab. Além de uma pequena introdução à linguagem de programação Python.
+> Nesta aula vamos apresentar o ambiente de desenvolvimento do Jupyter Lab e introduzir as linguagens Markdown e Python. Além disso, vamos ensinar como instalar o Anaconda para utilizar o Jupyter Lab com o Python.
 
+<!---
 **Lista de presença da aula:** [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
+-->
+
+{% include video-atividade.html
+    codigo="8SUnxb5KfQA"
+%}
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap1/cap1.html" 
