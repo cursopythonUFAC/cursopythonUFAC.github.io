@@ -21,8 +21,6 @@
 **Lista de presença (11/Set)**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
 --->
 
-**Para assistir a aula anterior clique [aqui]()**
-
 > Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
 
 
