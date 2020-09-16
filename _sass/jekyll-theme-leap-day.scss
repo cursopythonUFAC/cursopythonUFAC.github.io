@@ -345,13 +345,23 @@ nav {
           color: #333;
         }
 
-        +.tag-h2 {}
+        a:hover{
+          color: #666;
+        }
+
+        +.tag-h2 {
+        }
       }
 
       &.tag-h2 {
+        margin-left: 8px;
         a {
           color: #333;
           font-weight: bold;
+        }
+
+        a:hover{
+          color: #666;
         }
 
         +.tag-h1 {
@@ -360,7 +370,7 @@ nav {
       }
 
       &.tag-h3 {
-        margin-right: 8px;
+        margin-left: 8px;
 
         a {
           font-style: italic;
@@ -387,7 +397,7 @@ nav {
 }
 
 nav::-webkit-scrollbar {
-	width:4px;
+	width:6px;
 	height:6px;
 }
 nav::-webkit-scrollbar-track {
@@ -543,7 +553,13 @@ screen and (max-width: 480px) {
   }
 
   #banner {
-    display: none;
+    position: relative;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    border-right: 0px;
+    border-left: 0px;
   }
 
   header ul {

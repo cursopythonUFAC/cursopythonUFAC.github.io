@@ -211,10 +211,10 @@ a:active, a:focus, a:visited {
         display: none;
     }
 
-    #banner {
-        top: 0px;
-        position: relative;
+    #logo{
+        margin-right: 5px !important;
     }
+
 }
 
 @media only screen and (max-width: 340px) {
