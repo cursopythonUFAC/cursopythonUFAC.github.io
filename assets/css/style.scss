@@ -207,14 +207,16 @@ a:active, a:focus, a:visited {
 
 
 @media only screen and (max-width: 480px) {
-    #plataformas {
-        display: none;
-    }
-
     #logo{
         margin-right: 5px !important;
     }
 
+}
+
+@media only screen and (max-width: 540px) {
+    #plataformas {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 340px) {
@@ -230,10 +232,14 @@ a:active, a:focus, a:visited {
         #logo {
             display: none;
         }
+
+        .fork{
+            left: 10px;
+        }
     }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 780px) {
     #banner .nome {
         display: none;
     }
