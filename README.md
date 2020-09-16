@@ -21,10 +21,13 @@
 **Lista de presença (11/Set)**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
 --->
 
-> Caso necessário, os links de **todas as plataformas digitais podem ser acessadas no menu superior.**
+**Observações:**
+> Os links de todas as **plataformas digitais** podem ser acessadas no **menu superior**.
+
+> O **conteúdo do curso** pode ser alcançado no **final da página**.
 
 
-# Plataformas digitais
+# Plataformas
 
 ----
 ### Anaconda
@@ -47,8 +50,6 @@ O **Discord** é tipo um **Whatsapp**, só que com muito mais recursos. Será no
 
 É recomendado a utilização da versão Desktop do **Discord**. 
 
-**Depois de baixado o Discord, clique no menu superior para acessar o [convite](https://discord.gg/vdCWJu).**
-
 ### **Google Classroom**
 
 O **Google Classroom** é a plataforma de ensino  aonde você enviará as suas atividades. Você pode acessá-la clicando no ícone **Entregar atividade**.  Lembrando que a presença nas lives não serão obrigatórias, entretanto nós recomendamos a presença sempre que possível. As **atividades têm caráter obrigatório** e devem ser entregues via Google Classroom/Sala de Aula.  
@@ -56,6 +57,16 @@ O **Google Classroom** é a plataforma de ensino  aonde você enviará as suas a
 ### **Google Meet**
 
 O **Google Meet** é a plataforma de *streamming* (**lives**) aonde aconterão os encontros semanais. O **link** da live será enviado **uma hora antes** pelos canais de comunicação do curso. Além disso, durante as aulas, **você poderá acessar a live (Google Meet)  no menu superior de plataformas digitais**, localizado no topo do site.
+
+### **Canal no Youtube**
+
+No nosso canal no Youtube você pode encontrar as aulas anteriores. O link para o Canal está disponível [aqui](https://www.youtube.com/channel/UCyMrBqAj-98a70ZWPZZb9IQ) e no **menu superior**. 
+
+Caso queira assistir a Playlist completa com todas as aulas clique [aqui](https://www.youtube.com/playlist?list=PLMVGMAJ8MW_ztHsCsn3Mo1sJvpGotmRvT).
+
+Não se esqueçam de se inscrever no canal e clicar no sininho para receber as novas aulas no feed do Youtube.
+
+**Vídeos todas as quartas**.
 
 # Conteúdo do curso
 ----
