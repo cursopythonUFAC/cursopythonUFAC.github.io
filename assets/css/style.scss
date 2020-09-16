@@ -91,14 +91,6 @@
     vertical-align: text-bottom;
 }
 
-nav{
-    li a{
-        padding-right: 0.2em;
-        border-right: 2px solid #EAE6D1; 
-        outline: none;
-    }
-}
-
 .atividade {
     display: block;
     list-style: none;
@@ -205,6 +197,12 @@ nav{
         border-left:1px solid #ccc;
         background: transparent;
     }
+}
+
+a:active, a:focus, a:visited {
+    outline: 0;
+    border: none;
+    -moz-outline-style: none;
 }
 
 
