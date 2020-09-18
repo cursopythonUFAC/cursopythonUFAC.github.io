@@ -1636,7 +1636,7 @@ Veja e execute o exemplo abaixo:
 
 # Atividade 4: Para casa
 
-Para fazer as atividades para casa baixe o Notebook disponível no site.
+Para fazer as atividades para casa baixe a folha de resposta (Notebook) disponível na parte de **Material auxiliar do capítulo 1** (Ver a página inicial do site).
 
 ### Exercício 1: Complete a frase
 
