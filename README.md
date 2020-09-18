@@ -2,9 +2,9 @@
 
 -----
 
-> **Atenção**: Nós **mudamos de Classroom** para ter suporte ao GSuite (Conta Premium da Google).  Considere o link que está no menu superior do site.
 
 
+> **Inscrições reabertas:** [Clique aqui](https://forms.gle/bTP7LqVNM7zLWHDF8).
 
 **Onde:** No Google **Meet** (Ver o menu superior)
 
@@ -25,7 +25,6 @@
 > Os links de todas as **plataformas digitais** podem ser acessadas no **menu superior**.
 
 > O **conteúdo do curso** pode ser alcançado no **final da página**.
-
 
 # Plataformas
 
