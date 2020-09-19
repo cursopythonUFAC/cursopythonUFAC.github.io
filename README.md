@@ -51,6 +51,8 @@ O **Discord** é tipo um **Whatsapp**, só que com muito mais recursos. Será no
 
 > [https://discord.com/download](https://discord.com/download)  
 
+O link de **convite** para o servidor é: [https://discord.gg/G4k53CS](https://discord.gg/G4k53CS)
+
 É recomendado a utilização da versão Desktop do **Discord**. 
 
 ### **Google Classroom**
