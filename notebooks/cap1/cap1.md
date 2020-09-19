@@ -1563,9 +1563,9 @@ Uma outra forma de trabalhar com strings multi-linhas é usando três delimitado
 > Esta é a segunda linha.
 > Esta é a terceira linha.""")
 > ```
-> Esta é a primeira linha.
-> Esta é a segunda linha.
-> Esta é a terceira linha.
+> Esta é a primeira linha.  
+> Esta é a segunda linha.  
+> Esta é a terceira linha.  
 
 > **Dica:** Essa é a mesma notação utilizada para escrever comentário multi-linha.
 
