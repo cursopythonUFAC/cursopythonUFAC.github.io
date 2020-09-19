@@ -6,6 +6,10 @@
 
 > **Inscrições reabertas:** [Clique aqui](https://forms.gle/bTP7LqVNM7zLWHDF8).
 
+> **Termo de compromisso:**
+>
+> Declaro para os devidos fins que ao me inscrever para o curso _Python para engenharia com aplicações_, estou ciente de que caso a minha participação seja __inferior a 75% das aulas__, __não receberei certificado de participação__ de acordo com edital PROEX-11/2020. Declaro, ainda, que __minha participação está condicionada às entregas das atividades semanais__ e do projeto final.
+
 **Onde:** No Google **Meet** (Ver o menu superior)
 
 **Datas**: de 11/09 à 18/12 (**Toda sexta**)
