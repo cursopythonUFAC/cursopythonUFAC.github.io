@@ -1405,7 +1405,7 @@ print()
 
 ### Exemplo 5: Nome das variáveis
 
-Os nomes de variáveis só podem ser uma palavra, sem acentos, com números e underline `_`. Nomes de variáveis não podem começar com números. 
+Os nomes de variáveis só podem ser uma palavra, com acentos, com números e underline `_`. Nomes de variáveis não podem começar com números. 
 
 **Tarefa:** Escreva e execute as células abaixo:
 
@@ -1489,7 +1489,7 @@ A função `input()` tem o objetivo de pedir ao usuário algum dado para ser man
 
 > ```python
 > texto = input('Digite seu texto: ')
-> print('Seu texto é ' + texto)
+> print('Seu texto é ' + str(texto))
 > ```
 
 Note que os dados coletados pela função `input()` são sempre do tipo `string`.  Portanto para usar o operador de concatenação devemos utilizar a função `str()`
@@ -1502,7 +1502,7 @@ Note que os dados coletados pela função `input()` são sempre do tipo `string`
 
 > **Dica:** Use a conversão de dado para criar uma única string como dado de entrada da função `print()`.
 
-### Exemplo 3: Convertendo Celsius em Fahrenheit
+### Exemplo 3: Convertendo Fahrenheit para Celsius
 
 Com as funções de entrada e saída podemos criar programas mais complexos. Como por exemplo um programa capaz de converte a temperatura. Considere a seguinte fómula:
 $$
@@ -1512,7 +1512,7 @@ Onde $C$ representa a temperatura em Celcius e $F$ representa a temperatura em F
 
 > ```python
 > # Lê a entrada do usuário
-> F = input('Digite a temperatura em Fahrenheit: ')
+> F = float(input('Digite a temperatura em Fahrenheit: '))
 > # Converte a temperatura para Celcius
 > C = 5*((F-32)/9)
 > # Imprime o valor convertido na tela
@@ -1563,9 +1563,9 @@ Uma outra forma de trabalhar com strings multi-linhas é usando três delimitado
 > Esta é a segunda linha.
 > Esta é a terceira linha.""")
 > ```
-> Esta é a primeira linha.
-> Esta é a segunda linha.
-> Esta é a terceira linha.
+> Esta é a primeira linha.  
+> Esta é a segunda linha.  
+> Esta é a terceira linha.  
 
 > **Dica:** Essa é a mesma notação utilizada para escrever comentário multi-linha.
 
