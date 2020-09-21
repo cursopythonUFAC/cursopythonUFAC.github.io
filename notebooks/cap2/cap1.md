@@ -2,19 +2,17 @@
 layout: default
 ---
 
-<center><div style="font-size:32px;display:inline-block;font-weight:bold;" class="aula-title">Capítulo 1: Primeiros passos</div></center>
+<center><div style="font-size:32px;display:inline-block;font-weight:bold;" class="aula-title">Capítulo 2: Estruturas de decisão</div></center>
 
 
 
 ----
 
-# Introdução
+# Atividade 1: A função `print()`
 
 ----
 
-**Mas afinal o que é o Jupyter Notebook?**
-
-O Notebook é um conceito revolucionário, pois permite unir código e texto, assim cada funcionalidade pode ser explicada detalhadamente. Você também pode criar funcionalidades dinâmicas, como gráficos, análise de dados ou outros cálculos, em tempo real.
+No capítulo anterior vimos que a função print tem vários aspectos.
 
 Utilizando o Jupyter é possível escrever o trabalho da faculdade, relatórios de estágio, fazer anotações para consolidar o aprendizado, desenvolver os estágios iniciais da sua pesquisa científica, ou criar este material didático que você esta lendo neste momento. Veja abaixo algumas imagens do que o Jupyter é capaz. 
 
@@ -1418,6 +1416,10 @@ Os nomes de variáveis só podem ser uma palavra, com acentos, com números e un
 >```
 >
 >```python
+>Primeira_variavel=1
+>```
+>
+>```python
 >Primeira variavel=1
 >```
 >
@@ -1427,8 +1429,6 @@ Os nomes de variáveis só podem ser uma palavra, com acentos, com números e un
 >
 
 Escreva um comentário em Python no topo de cada célula explicando o porquê esta sintáxe funciona ou não funciona.
-
-> **Observação:** Deste o Python3 é possível imprimir variáveis com caracteres unicode, ou seja palavras **com acentos**.
 
 ### Exemplo 6: Atribuição múltipla
 
@@ -1593,12 +1593,12 @@ Observe que no exemplo acima não houve necessidade de adicionar espaço no fina
 
 ### Exemplo 7: `sep` e `end`
 
-Quando trabalhamos com múltiplos objetos de entrada, percebemos que sempre entre um parâmetro e outro, é adicionado um espaço em branco. Além disso, ao final do `print()` havia sempre uma quebra linha. Este é o comportamento padrão da função `print()` , entretanto podemos alterá-lo mudando os parâmetros opcionais `sep=` e `end=`. Descritos na tabela abaixo:
+Quando trabalhamos com múltiplos objetos de entrada, percebemos que sempre entre um parâmetro e outro, a função um espaço em branco. Além disso, ao final do print havia sempre uma quebra linha. Este é o comportamento padrão da função `print()` , entretanto podemos alterá-lo mudando os parâmetros opcionais `sep=` e `end=`. Descritos na tabela abaixo:
 
-| Parâmetro opcional | Descrição                                                    |
-| :----------------: | ------------------------------------------------------------ |
-|        sep         | Quando dois ou mais argumentos são passados para a função `print()` sep coloca entre eles um espaço em branco ou um outro valor que podemos passar para sep. |
-|        end         | O valor padrão de end é uma nova linha “\n” e por isso que sempre a função print adiciona uma nova linha depois de imprimir tudo que lhe foi passado, mas, podemos definir outro valor com uma tabulação “\t” por exemplo. |
+| Parâmetro | Descrição                                                    |
+| :-------: | ------------------------------------------------------------ |
+|    sep    | Quando dois ou mais argumentos são passados para a função `print()` sep coloca entre eles um espaço em branco ou um outro valor que podemos passar para sep. |
+|    end    | O valor padrão de end é uma nova linha “\n” e por isso que sempre a função print adiciona uma nova linha depois de imprimir tudo que lhe foi passado, mas, podemos definir outro valor com uma tabulação “\t” por exemplo. |
 
 Sendo assim a notação da função print é da seguinte forma:
 
