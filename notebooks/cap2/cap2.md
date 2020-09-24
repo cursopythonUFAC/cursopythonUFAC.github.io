@@ -6,7 +6,7 @@ layout: default
 
 ----
 
-# Atividade 1: A função `print()`
+# Atividade 1: Saída de dados
 
 ----
 
@@ -699,7 +699,7 @@ Em seguida, rodaremos a função `print()` para vermos o resultado gerado das co
 - O que acontece quando utilizamos operador `and` em um `bool` e um `int`?
 - O que acontece quando utilizamos o operador `and` e `int`?
 
-## Parte 2: operação OU
+## Parte 2: Operação OU
 
 A adição lógica é uma operação representada por `+` e funciona  um pouco diferente da multiplicação entre dois números reais, essa operação tem a seguinte tabela verdade:
 
