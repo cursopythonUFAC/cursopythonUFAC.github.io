@@ -1110,7 +1110,7 @@ print("<SEU CÓDIGO AQUI>")
 print("<SEU CÓDIGO AQUI>")
 ```
 
-## Exercício 2: Variáveis booleanas
+## Exercício 2: Sentenças lógicas
 
 Escreva o resultado de cada uma das seguintes expressões em Markdown:
 
@@ -1120,6 +1120,8 @@ Escreva o resultado de cada uma das seguintes expressões em Markdown:
 - `not ((5 > 4) or (3 == 5))`
 - `(True and True) and (True == False)`
 - `(not False) or (not True)`
+
+> **Observação:** Não vale colar no Python em gente 😅. Usem seu cérebro!
 
 ## Exercício 3: Semáforo
 
