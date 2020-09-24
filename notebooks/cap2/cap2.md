@@ -1136,7 +1136,7 @@ Crie uma expressão para cada uma das fases deste cruzamento.
 
 ## Exercício 4: Ano bissexto
 
-Escreva uma expressão (em função de uma incógnita ano) que resulte True caso o ano seja bissexto e False caso contrário.
+Escreva uma expressão (em função de uma incógnita ano) que resulte `True` caso o ano seja bissexto e False caso contrário.
 
 
 
