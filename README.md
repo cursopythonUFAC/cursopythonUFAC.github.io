@@ -91,3 +91,18 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
+
+
+
+### **Capítulo 2:** Saída de dados
+
+> Nesta aula vamos aprender um pouco mais sobre a função `print()` e o método `.format()`. Além disso, como funciona as variáveis booleanas e os operadores lógicos & relacionais.
+
+
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap2/cap2.html" 
+    material="" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
+

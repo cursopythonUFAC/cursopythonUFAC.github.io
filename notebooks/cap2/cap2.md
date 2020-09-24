@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<center><div style="font-size:32px;display:inline-block;font-weight:bold;" class="aula-title">Capítulo 2: Saída de dados e estruturas de decisão</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 2: Saída de dados e sentenças lógicas</div></center>
 
 ----
 
@@ -169,7 +169,7 @@ print(arg1,arg2,arg3,...,[sep=valor_do_sep,end=valor_do_end])
 
 > **Observações:** `sep=` e `end=` são opcionais, portanto você deve adicioná-los somente se houver necessidade de modificar o espaçamento entre os argumentos ou o final.
 
-### Exemplo 1: `sep=`
+### Exemplo 1: Parâmetro `sep=`
 
 Veja e execute o exemplo abaixo:
 
@@ -187,7 +187,7 @@ print(ano1, ano2, ano3, ano4, sep=',')
 - `"->"`
 - `"-"`
 
-### Exemplo 2: `end=`
+### Exemplo 2: Parâmetro `end=`
 
 O parâmetro opcional `end=`  é utilizado para alterar o fim da saída da função `print()`.
 
@@ -461,7 +461,7 @@ Além dos especificadores de tipo é possível customizar uma série de outros d
 | precisão  | Largura máxima do campo (Deve ser iniciada com o `.`)        |
 | tipo      | Especificador citado anteriormente                           |
 
-A campo de `largura`  define a largura mínima do argumento (incluindo o ponto decimal). Veja e execute o exemplo abaixo:`
+A campo de `largura`  define a largura mínima do argumento (incluindo o ponto decimal). Veja e execute o exemplo abaixo:
 
 > ```python
 > print("{:d}".format(12))
@@ -576,17 +576,567 @@ Digite sua idade:  8
 Olá, meu nome é ___Lucas____, tenho _8_ anos e minha idade daqui a 5 anos será 13_ anos.
 ```
 
-## Atividade 2: Variáveis booleanas
+# Atividade 2: Variáveis booleanas
+As operações booleanas são operações que estão presentes na [álgebra booleana](http://www.inf.ufsc.br/~j.guntzel/isd/isd2.pdf), foi desenvolvida em 1854 por George Boole e é extensivamente utilizada para representar o comportamento de circutos eletrônicos. Neste curso iremos apenas apresentar a lógica, sem nos atermos aos conceitos matemáticos ou mais fundamentais da álgebra de Boole.  
+A algebra boolena tem básicamente 3 operadores:
+- `or` (OU) Adição lógica;
+- `and` (E) Multiplicação lógica;
+- `not` Negação ou inversão.
 
+E as operações tem apenas dois resultados:  
+- `True` (verdadeiro) ou 1;
+- `False` (falso) ou 0.
 
+As variáveis booleanas são do classe `bool` no Python:
 
-## Atividade 3: Métodos de string
+> ```python
+> type(True)
+> ```
+>
+> bool
 
+## Parte 1: Operação E
 
+A multiplicação lógica é uma operação representada por `✕` e funciona bem similar a adição entre dois números reais, essa operação tem a seguinte tabela verdade:
 
-## Atividade 4: Estruturas de decisão
+|  A   |  B   |  ✕   |
+| :--: | :--: | :--: |
+|  0   |  0   |  0   |
+|  0   |  1   |  0   |
+|  1   |  0   |  0   |
+|  1   |  1   |  1   |
 
+Por exemplo, vamos inicializar duas variáveis: 
+- `sentenca1`
+- `sentenca2`
 
+Em seguida, rodaremos a função `print()` para vermos o resultado gerado das combinações de acordo com o operador `and`:
+
+### Exemplo 1: Apresentando o operador `and`
+
+> ```python
+> sentenca1 = False
+> sentenca2 = False
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> ```
+>
+> False and False resulta em False.
+>
+> ```python
+> sentenca1 = False
+> sentenca2 = True
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> ```
+>
+> False and True resulta em False.
+>
+> ```python
+> sentenca1 = True
+> sentenca2 = False
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> ```
+>
+> True and False resulta em False.
+>
+> ```python
+> sentenca1 = True
+> sentenca2 = True
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> ```
+>
+> True and True resulta em True.
+
+**Tarefa:** Monte uma tabela verdade do operador `and`  que mostre algo parecido com o texto mostrado abaixo:
+
+```
+|A    |B    |X    |
+|False|False|False|
+|False|True |False|
+|True |False|False|
+|True |True |True |
+```
+
+> **Dica:** Para manter a formatação de `True` ou `False`  use `str(True)`.
+
+### Exemplo 2: Operador `and` com `int`
+
+**Tarefa:** Veja o que acontece quando substituímos as variáveis booleanas (`True` e `False`) por `0` ou `1`:
+
+> ```python
+> #Célula 1: Um booleano e um número
+> sentenca1 = True
+> sentenca2 = 0
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> type(sentenca1 and sentenca2)
+> ```
+>
+> ```python
+> #Célula 2: Dois números 1
+> sentenca1 = 1
+> sentenca2 = 1
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> type(sentenca1 and sentenca2)
+> ```
+>
+> ```python
+> #Célula 3: Um número `0` e um número maior que 0
+> sentenca1 = 0
+> sentenca2 = 10
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> type(sentenca1 and sentenca2)
+> ```
+>
+> ```python
+> #Célula 4: Dois números maiores que zero
+> sentenca1 = 2
+> sentenca2 = 10
+> print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
+> type(sentenca1 and sentenca2)
+> ```
+
+**Tarefa:** Responda:
+
+- O que acontece quando utilizamos operador `and` em um `bool` e um `int`?
+- O que acontece quando utilizamos o operador `and` e `int`?
+
+## Parte 2: operação OU
+
+A adição lógica é uma operação representada por `+` e funciona  um pouco diferente da multiplicação entre dois números reais, essa operação tem a seguinte tabela verdade:
+
+|  A   |  B   |  +   |
+| :--: | :--: | :--: |
+|  0   |  0   |  0   |
+|  0   |  1   |  1   |
+|  1   |  0   |  1   |
+|  1   |  1   |  1   |
+
+Para ilustrar o comportamento deste operador, abaixo vamos inicializar as seguintes variáveis:
+- `sentenca1`
+- `sentenca2`
+
+E vamos ver os resultados com o operador `or`:
+
+### Exemplo 1: Apresentando o operador `or`
+
+Veja e execute o exemplo abaixo:
+
+> ```python
+> sentenca1 = False
+> sentenca2 = False
+> print("{} or {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 or sentenca2)))
+> ```
+>
+> False or False resulta em False.
+>
+> ```python
+> sentenca1 = False
+> sentenca2 = True
+> print("{} or {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 or sentenca2)))
+> ```
+>
+> False or True resulta em True.
+>
+> ```python
+> sentenca1 = True
+> sentenca2 = False
+> print("{} or {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 or sentenca2)))
+> ```
+>
+> True or False resulta em True.
+>
+> ```python
+> sentenca1 = True
+> sentenca2 = True
+> print("{} or {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 or sentenca2)))
+> ```
+>
+> True or True resulta em True.
+
+Em contrapartida ao operador anterior, o operador `or` retorna `True` quando, _pelo menos uma_ sentença for `True`.
+
+**Tarefa 1:** Monte a tabela verdade com o operador `or`  semelhante àquela que você fez com o operador `and`.
+
+**Tarefa 2:** Responda:
+
+- O que acontece quando utilizamos operador `or` em um `bool` e um `int`?
+- O que acontece quando utilizamos o operador `and` e `int`?
+
+Se necessário, teste em uma célula antes de dá a resposta.
+
+**Tarefa 3:** Crie duas variáveis booleanas, que usando todos os operadores booleanos retornem `True`.
+
+## Parte 3: Operação *Inversão*
+
+### Exemplo 1: Apresentando o operador `not`
+
+A inversão lógica é uma operação representada por `¬` e retorna o  valor complementar da variável.
+
+|  A   |  ¬   |
+| :--: | :--: |
+|  0   |  1   |
+|  1   |  0   |
+
+Para ilustrar exemplificar o operador `not`, podemos reutilizar as variáveis anteriores. Vamos pegar a `sentenca1` na célula 3.
+
+> ```python
+> sentenca=True
+> print("not({}) resulta em {}.".format(sentenca,not(sentenca)))
+> sentenca=False
+> print("not({}) resulta em {}.".format(sentenca,not(sentenca)))
+> ```
+>
+> not(True) resulta em False.  
+> not(False) resulta em True.
+
+O operador `not` nega o estado da variável. Para uma variável cujo valor seja `True`, ao utilizar o `not` a mesma variável passa a ser `False`. O mesmo vale para o inverso. Se ela for `False`, com o `not` passa a ser `True`.
+
+**Tarefa:** Repita o exemplo acima substituíndo o `True` por `1` e `False` por `0`. Explique o que aconteceu?
+
+### Exemplo 2: Combinando mais de um operador booleano
+
+É possível combinar mais de uma operação booleana para criar expressões mais complexas. Porém, antes devemos lembrar da ordem de precedência das variáveis booleanas. A tabela abaixo mostra a ordem de precedência dos operadores do Python. Os primeiros operadores apresentam maior prioridade e os últimos apresentam menor prioridade.
+
+|                        Operador                        |
+| :----------------------------------------------------: |
+|                   Parênteses (`( )`)                   |
+| Operadores aritméticos (`+`,`-`,`*`,`/`,`//`,`%`, etc) |
+|                         `not`                          |
+|                         `and`                          |
+|                          `or`                          |
+
+Para entender melhor vamos à um exemplo:
+
+Imagine a porta de um shopping que deve abrir se e somente se as seguintes condições forem verdadeiras:
+
+- A lotação máxima do local não foi atingida.
+- A porta não foi aberta nos últimos 10s.
+- O horário atual é entre 13h e 22h. 
+
+Vamos escrever a expressão lógica que representa a condição para a porta abrir:
+
+> ```python
+> print("Responda com (1 - True ou 0 - False)")
+> lotacao_máxima_atingida=int(input("- A lotação máxima foi atingida? "))
+> Porta_aberta_10_seg=int(input("- A porta abriu nos últimos 10 seg? "))
+> Horário_atual_permitido=int(input("- O horário atual está entre 13h e 22h? "))
+> porta_abrir=not(lotacao_máxima_atingida) and not(Porta_aberta_10_seg)and(Horário_atual_permitido)
+> print("A porta abriu: {}".format(porta_abrir))
+> ```
+
+**Tarefa 1:** Execute o código acima e:
+
+- Indique a condição lógica em que a porta abra.
+- Indique três condições lógicas em que a porta **não abra** abra.
+
+**Tarefa 2:** Construa um programa que identifique se o animal é um cachorro de acordo com as perguntas abaixo:
+
+- Este animal tem quatro patas?
+- Este animal é hebívoro?
+- Este animal é grande (maior que 50 cm)?
+- Este animal é pequeno (menor que 30 cm)?
+
+> **Observação:** Existem cachorros grandes e pequenos.
+
+> **Dica:** Utilize a mesma estrutura do exemplo da porta de shopping.
+
+**Tarefa 3:** Considere uma tabela verdade, em que $x$ é o resultado da combinação lógica.
+
+|   p   |   q   |   x   |
+| :---: | :---: | :---: |
+| True  | True  | True  |
+| True  | False | False |
+| False | True  | True  |
+| False | False | True  |
+
+Apresente uma expressão que produza a saída x, quaisquer sejam as proposições p e q.
+
+> **Dica:** Para testar você pode utilizar o esquema do exemplo da porta de shopping.
+
+### Exemplo 3: Transcrevendo texto em lógica
+
+Considere a texto abaixo:
+
+> João não tem uma boa alimentação, mas pratica exercícios, assim como Pedro. João quer muito ter uma reeducação alimentar, pois seu peso é elevado. 
+>
+> Pedro já teve uma reeducação alimentar, e aprendeu a gostar de frutas, assim não tem um peso elevado.
+
+Vamos criar uma expressão lógica que descreva a frase acima:
+
+> ```python
+> """ Frase:
+> João não tem uma boa alimentação, mas pratica exercícios, assim como Pedro. João quer muito ter uma reeducação alimentar, pois seu peso é elevado. 
+> 
+> Pedro já teve uma reeducação alimentar, e aprendeu a gostar de frutas, assim não tem um peso elevado.
+> """
+> João = (boa_alimentação==False) and (pratica_exercícios==True) and (reeducação_alimentar==False) and (peso_elevado==True)
+> Pedro = (pratica_exercícios==True) and (reeducação_alimentar==True) and (gosta_de_frutas==True) and (peso_elevado==False)
+> ```
+
+**Tarefa:** Crie uma expressão lógica para a frase abaixo:
+
+> Paulo mora em São Paulo há menos de 2 anos e não tem o costume de verificar a previsão do tempo. Ele sai para trabalhar e, ao olhar para o céu, percebe que está muito nublado, logo começou à chover e acabou tendo problemas com a chuva.
+>
+> Seu Raimundo mora em São Paulo há mais de 10 anos, como já está acosutumado com o clima imprevisível, sempre verifica a previsão do tempo. Por isso, ontem adquiriu um guarda chuvas.
+
+Use as variáveis:
+
+- Pessoas: `Paulo` e `Raimundo`.
+- `Tempo_Nublado`.
+- Características das pessoas: `tempo_em_São_Paulo`,  `verifica_previsão_tempo`, `Tem_guarda_chuva`, `Problemas_com_chuva`.
+
+# Atividade 3: Operadores relacionais
+
+Os operadores relacionais são operações que comparam o valor de duas variaveis de _mesmo tipo_. Retornando sempre `True` ou `False` . Costuma ser utilizado em operações com valore literais, i.e, números ou _strings_. 
+
+### Exemplo 1: Apresentando os operadores relacionais
+
+São eles:
+
+**Maior que:** `>`
+
+> ```python
+> a = 5
+> b = 2
+> print(a > b) #a maior que b
+> ```
+>
+> True
+
+**Menor que:** `<`
+
+> ```python
+> a = 5
+> b = 2
+> print(a < b) # a menor que b
+> ```
+>
+> False
+
+**Igual a:** `==` 
+
+> ```python
+> a = 5
+> b = 2
+> res = a==b
+> print("{} == {} resulta em {}.".format(a,b,res))
+> res = a is b
+> print("{} is {} resulta em {}.".format(a,b,res))
+> a = 2
+> b = 2
+> res = a==b
+> print("{} == {} resulta em {}.".format(a,b,res))
+> res = a is b
+> print("{} is {} resulta em {}.".format(a,b,res))
+> ```
+>
+> 5 == 2 resulta em False.  
+> 5 is 2 resulta em False.  
+> 2 == 2 resulta em True.  
+> 2 is 2 resulta em True.
+
+**Diferente de:** `!=` ou `is not`
+
+> ```python
+> a = 5
+> b = 2
+> res = a!=b
+> print("{} != {} resulta em {}.".format(a,b,res))
+> res = a is not b
+> print("{} is not {} resulta em {}.".format(a,b,res))
+> a = 2
+> b = 2
+> res = a!=b
+> print("{} != {} resulta em {}.".format(b,c,res))
+> res = a is not b
+> print("{} is not {} resulta em {}.".format(b,c,res))
+> ```
+>
+> 5 != 2 resulta em True.  
+> 5 is not 2 resulta em True.  
+> 2 != 2 resulta em False.  
+> 2 is not 2 resulta em False.
+
+**Maior ou igual a:**
+
+> ```python
+> a = 5
+> b = 2
+> res = a >= b
+> print("{} >= {} resulta em {}.".format(a,b,res))
+> a = 2
+> b = 2
+> res = a >= b
+> print("{} >= {} resulta em {}.".format(a,b,res))
+> a = 2
+> b = 3
+> res = a >= b
+> print("{} >= {} resulta em {}.".format(a,b,res))
+> ```
+>
+> 5 >= 2 resulta em True.  
+> 2 >= 2 resulta em True.  
+> 2 >= 3 resulta em False.
+
+**Menor ou igual a:**
+
+> ```python
+> a = 5
+> b = 2
+> res = a <= b
+> print("{} <= {} resulta em {}.".format(a,b,res))
+> a = 2
+> b = 2
+> res = a <= b
+> print("{} <= {} resulta em {}.".format(a,b,res))
+> a = 2
+> b = 3
+> res = a <= b
+> print("{} <= {} resulta em {}.".format(a,b,res))
+> ```
+>
+> 5 <= 2 resulta em False.  
+> 2 <= 2 resulta em True.  
+> 2 <= 3 resulta em True.
+
+Os resultados das operações acima podem resultar em `True` ou `False`. 
+
+**Tarefa:** Usando os operador `is` e `==` verifique se o float `2.0` e o int `2` são iguais (Ver o código abaixo).
+
+```python
+a = 2
+b = 2.0
+print(a is b)
+print(a == b)
+```
+
+- De acordo com o resultado explique a diferença entre esses dois operadores.
+- O que você pode explicar em relação ao `is not` e `!=`.
+
+###  Exemplo 2: Operadores relacionais e operadores booleanos
+
+Podemos juntar os operadores relacionais e os operadores booleanos? A resposta é __sim__. 
+
+Os operadores lógicos tem as mesmas precedências. A tabela abaixo compara estes operadores com o 
+
+|                           Operador                           |
+| :----------------------------------------------------------: |
+|                      Parênteses (`( )`)                      |
+|    Operadores aritméticos (`+`,`-`,`*`,`/`,`//`,`%`, etc)    |
+| Operadores relacionais (`==`,`!=`,`>`,`>=`,`<=`.`is`, `is not`) <- Mesma precedência |
+|             Operadores lógicos (`and`, `or`, ``)             |
+|                             `or`                             |
+
+Veja o exemplo:
+
+> ```python
+> a = 5
+> b = 2
+> res=a > b
+> print("{} > {} é {}.".format(a,b,res))
+> ```
+>
+> 5 > 2 é True.
+>
+> ```python
+> res=not(a > b)
+> print("not({} > {}) é {}.".format(a,b,res))
+> ```
+>
+> not(5 > 2) é False.
+>
+> ```python
+> c = a + b
+> res=c > a > b
+> print("{c} > {a} > {b} é {res}.".format(a=a,b=b,c=c,res=res))
+> ```
+>
+> 7 > 5 > 2 é True.
+>
+> ```python
+> res=a < c  and a > b
+> print("{a} < {c} and {a} > {b} é {res}.".format(a=a,b=b,c=c,res=res))
+> ```
+>
+> 5 < 7 and 5 > 2 é True.
+>
+> ```python
+> res=a > c  and a > b
+> print("{a} > {c} and {a} > {b} é {res}.".format(a=a,b=b,c=c,res=res))
+> ```
+>
+> 5 > 7 and 5 > 2 é False.
+
+**Tarefa 1:** Um sensor de temperatura deve retornar `1` sempre que a temperatura estiver acima de 38 °C ou sempre que a temperatura estiver abaixo de 18 °C.
+
+**Tarefa 2:** Imagine a porta de um shopping que deve abrir se e somente se as seguintes condições forem verdadeiras:
+
+- A lotação máxima de 350 pessoas no local não foi atingida.
+- A porta não foi aberta nos últimos 10s.
+- O horário atual é entre 13h e 22h. 
+
+Utilize como base as seguintes perguntas:
+
+- Quantas pessoas estão no local?
+- Há quantos segundos a porta foi aberta?
+- Qual o horário do dia (Em horas)?
+
+> **Dica:** Esse exercício já foi feito anteriormente. Pegue a estrutura do exercício anterior e adapte para a nova situação.
+
+# Atividade 5: Para casa
+
+## Exercício 1: Lista de compras
+
+Crie um código, que faça uma lista de estoque formatada com largura máxima de cada linha de 50 caracteres, ela deverá informar o nome do item e a sua quantidade disponível. O código deverá pedir o usuário que entre com o nome e quantidade de pelo menos 3 itens. Considere que a quantidade máxima de cada item seja 999. Use como modelo a lista abaixo e use o método `.format`.
+```
+_________________Lista de estoque_________________
+Item-----------------------------------------Quant
+Item 1: Caixa de Leite-------------------------002
+Item 2: Caixa de cereal------------------------024
+Item 3: Lata de refrigerante-------------------255 
+```
+
+> Dica: Digite um `print()` para cada linha, e depois repita-o trocando os argumentos, use o seguinte código para começar.
+
+Siga como base o exemplo abaixo:
+
+```python
+'''
+INSIRA AQUI SEU CÓDIGO DE ENTRADA DE DADOS
+'''
+print("{:_^50}".format('Lista de estoque'))
+print("{:-<45}{}".format("Item","Quant"))
+print("<SEU CÓDIGO AQUI>")
+print("<SEU CÓDIGO AQUI>")
+print("<SEU CÓDIGO AQUI>")
+```
+
+## Exercício 2: Variáveis booleanas
+
+Escreva o resultado de cada uma das seguintes expressões em Markdown:
+
+- `(5 > 4) and (3 == 5)`
+- `not (5 > 4)`
+- `(5 > 4) or (3 == 5)`
+- `not ((5 > 4) or (3 == 5))`
+- `(True and True) and (True == False)`
+- `(not False) or (not True)`
+
+## Exercício 3: Semáforo
+
+Um semáforo comum costuma ter de 2 a 4 fases e mais uma fase para os pedestres.
+Crie uma expressão que represente um semáforo, as setas abaixo indicam o fluxo.
+
+```
+    ⇊          N
+  ⇆   ⇆      L   O
+    ⇵          S
+```
+
+Crie uma expressão para cada uma das fases deste cruzamento.
+
+## Exercício 4: Ano bissexto
+
+Escreva uma expressão (em função de uma incógnita ano) que resulte True caso o ano seja bissexto e False caso contrário.
 
 
 
