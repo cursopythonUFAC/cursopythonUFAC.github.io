@@ -94,7 +94,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 
 
-### **Capítulo 2:** Saída de dados
+### **Capítulo 2:** Saída de dados e sentenças lógicas
 
 > Nesta aula vamos aprender um pouco mais sobre a função `print()` e o método `.format()`. Além disso, como funciona as variáveis booleanas e os operadores lógicos & relacionais.
 
