@@ -81,7 +81,7 @@ A função `len()` retorna a quantidade, ou tamanho, de uma string. Veja o exemp
 
 ### Exemplo 3: Função `print()` com múltiplos argumentos
 
-Nos exemplos anteriores trabalhamos com a função `print()`  recebendo um único argumento de entrada (parâmetro). Entretanto esta função permite que você insira mais de argumento (parâmetro).  Seguindo a sintáxe mostrada abaixo:
+Nos exemplos anteriores trabalhamos com a função `print()`  recebendo um único argumento de entrada (parâmetro). Entretanto esta função permite que você insira mais de argumento (parâmetro).  Seguindo a sintaxe mostrada abaixo:
 
 ```python
 print(arg1,arg2,arg3,...)
@@ -167,7 +167,7 @@ Sendo assim a notação da função `print()` é da seguinte forma:
 print(arg1,arg2,arg3,...,[sep=valor_do_sep,end=valor_do_end])
 ```
 
-> **Observações:** `sep=` e `end=` são opcionais, portanto você deve adicioná-los somente se houver necessidade de modificar o espaçamento entre os argumentos ou o final.
+> **Observações:** `sep=` e `end=` são opcionais, portanto você deve adiciona-los somente se houver necessidade de modificar o espaçamento entre os argumentos ou o final.
 
 ### Exemplo 1: Parâmetro `sep=`
 
@@ -234,7 +234,7 @@ mês = input("Digite o mês do seu aniversário: ")
 print('O meu nome é',nome,'e minha data de aniversário é',dia,'de',mês,'.')
 ```
 
-> **Observação:** O erro é: tem um espaço entre o [mes] e o ponto final.
+> **Observação:** O erro é: tem um espaço entre o [mês] e o ponto final.
 
 ### Exemplo 3: Combinando os parâmetros
 
@@ -284,7 +284,7 @@ Com o método `.format()`  podemos reescrever o exemplo da seguinte forma:
 > Digite o mês do seu aniversário:  Abril  
 > O meu nome é Lucas e minha data de aniversário é 19 de Abril.
 
-Observe que ao utilizar o método `.format()`, substituimos o local onde as variávels [nome], [dia] e [mês] apareciam pela máscara `{}`. Depois adicionamos as variáveis como argumentos do método `.format()`.
+Observe que ao utilizar o método `.format()`, substituímos o local onde as variáveis [nome], [dia] e [mês] apareciam pela máscara `{}`. Depois adicionamos as variáveis como argumentos do método `.format()`.
 
 Como o método `.format()` é um método para a classe string, podemos ter o mesmo resultado sem a necessidade da função `print()`. Execute o exemplo abaixo:
 
@@ -398,7 +398,7 @@ Por exemplo, podemos modificar a saída de `x1` e `x2` para arredondar para 6 al
 > Digite o valor de c:  -10  
 > As soluções da equação 1.000000x²+2.000000x+-10.000000=0 são: x1=2.31662 e x2=-4.31662
 
-Observe que a sintáxe de formatação de string é independente da sintáxe de numeração ou nomeação. Veja o mesmo exemplo anterior sem essa sintáxe
+Observe que a sintaxe de formatação de string é independente da sintaxe de numeração ou nomeação. Veja o mesmo exemplo anterior sem essa sintaxe
 
 > ```python
 > print("Este programa resolve uma equação de segundo grau do tipo ax²+bx+c=0")
@@ -454,7 +454,7 @@ Além dos especificadores de tipo é possível customizar uma série de outros d
 
 | Campo     | Função $\rightarrow$Notação                                  |
 | --------- | ------------------------------------------------------------ |
-| preencher | Preenche com o caracter escolhido (`0` no caso de números)   |
+| preencher | Preenche com o caractere escolhido (`0` no caso de números)  |
 | alinhar   | `<` $\rightarrow$ esquerda<br />`>` $\rightarrow$ direita<br />`^` $\rightarrow$ centro |
 | sinal     | `+` $\rightarrow$ Sinal para positivo e negativo<br />`-` $\rightarrow$ Sinal apenas em negativos |
 | largura   | Largura mínima do campo (Um número)                          |
@@ -485,7 +485,7 @@ print("{:2g}".format(999.8))
 O campo de `precisão` varia de acordo com o tipo de dado. Mas de uma forma geral ele determina o número máximo de dígitos de um número.
 
 - No tipo `f` precisão determina o número de casas decimais
-- No tipo `g`  precisão determina o número total de digitos.
+- No tipo `g`  precisão determina o número total de dígitos.
 
 > **Observação:** Tanto o tipo `g` vem de "Geral", portanto, dependendo da precisão ele pode mostrar o número como inteiro como decimal ou em notação científica (Equivalente ao tipo `e`).
 
