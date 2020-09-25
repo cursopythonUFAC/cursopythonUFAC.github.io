@@ -1121,7 +1121,7 @@ Escreva o resultado de cada uma das seguintes expressões em Markdown:
 - `(True and True) and (True == False)`
 - `(not False) or (not True)`
 
-> **Observação:** Não vale colar no Python em gente 😅. Usem seu cérebro!
+> **Observação:** Não vale colar no Python em gente 😅. Usem o 🧠!
 
 ## Exercício 3: Semáforo
 
