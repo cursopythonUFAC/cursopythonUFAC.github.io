@@ -1142,3 +1142,11 @@ Escreva uma expressão (em função de uma incógnita ano) que resulte `True` ca
 
 
 
+### Exercício 5: Teste
+
+> ```python
+> print("Isto aqui está na forma de uma célula no site.")
+> ```
+>
+> Isto aqui está na forma de uma célula no site.
+
