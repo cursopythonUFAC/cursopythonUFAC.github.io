@@ -1144,5 +1144,3 @@ Crie uma expressão para cada uma das fases deste cruzamento.
 
 Escreva uma expressão (em função de uma incógnita ano) que resulte `True` caso o ano seja bissexto e False caso contrário.
 
-
-
