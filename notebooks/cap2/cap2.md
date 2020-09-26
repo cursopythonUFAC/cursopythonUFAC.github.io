@@ -1140,13 +1140,3 @@ Crie uma expressão para cada uma das fases deste cruzamento.
 
 Escreva uma expressão (em função de uma incógnita ano) que resulte `True` caso o ano seja bissexto e False caso contrário.
 
-
-
-## Exercício 5: Teste
-
-> ```python
-> print("Isto aqui está na forma de uma célula no site.")
-> ```
->
-> Isto aqui está na forma de uma célula no site.
-
