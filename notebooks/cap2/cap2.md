@@ -62,7 +62,7 @@ Utilize a função `print()`, a operação de concatenação de strings `+` e a 
 
 ### Exemplo 2: Função `len()`
 
-A função `len()` retorna a quantidade, ou tamanho, de uma string. Veja o exemplo abaixo:
+A função `len()` retorna a quantidade, ou tamanho, de caracteres. Veja o exemplo abaixo:
 
 > ```python
 > Tam_1 = len("Oi")
@@ -77,7 +77,7 @@ A função `len()` retorna a quantidade, ou tamanho, de uma string. Veja o exemp
 > O tamanho da Frase 2 é 34;  
 > E o tamanho da Frase 3 é 0.
 
-**Tarefa:** Crie um programa que tenha como entrada uma frase, que deve ser digitada pelo usuário, e tenha como saída o tamanho dessa frase.
+**Tarefa:** Crie um programa que tenha como entrada uma frase que deve ser digitada pelo usuário. O programa deve mostrar como saída o tamanho da frase.
 
 ### Exemplo 3: Função `print()` com múltiplos argumentos
 
@@ -340,7 +340,11 @@ Veja o exemplo abaixo:
 > # 2) a=2, b=8 e c=-24 
 > ```
 
-**Tarefa:** Crie um programa capaz de usando a sintaxe que permite nomear os argumentos capaz de determinar o antecessor e sucessor
+**Tarefa:** Crie um programa que determine o antecessor e o sucessor de um número. A saída deve ser:
+
+> O número escolhido foi {número}, seu antencessor é {antecessor} e seu sucessor é {sucessor}.
+
+Você deve nomear as máscaras.
 
 > O número escolhido é [número], seu antecessor é [antecessor]  e seu sucessor é [sucessor].
 
@@ -473,7 +477,7 @@ A campo de `largura`  define a largura mínima do argumento (incluindo o ponto d
 
 **Tarefa 1:** Repita o código acima considerando `3` casas decimais considerando os tipos `d`  e `g`.
 
-**Tarefa 2:** Explique porque a largura dos exemplos abaixo não são de 2 dígitos.
+**Tarefa 2:** Explique porque a largura dos exemplos abaixo não são de 2 caracteres.
 
 ```python
 print("{:2d}".format(1234))
