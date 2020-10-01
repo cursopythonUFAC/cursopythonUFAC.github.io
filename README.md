@@ -2,14 +2,6 @@
 
 -----
 
-
-
-> **Inscrições reabertas:** [Clique aqui](https://forms.gle/bTP7LqVNM7zLWHDF8).
-
-> **Termo de compromisso:**
->
-> Declaro para os devidos fins que ao me inscrever para o curso _Python para engenharia com aplicações_, estou ciente de que caso a minha participação seja __inferior a 75% das aulas__, __não receberei certificado de participação__ de acordo com edital PROEX-11/2020. Declaro, ainda, que __minha participação está condicionada às entregas das atividades semanais__ e do projeto final.
-
 **Onde:** No Google **Meet** (Ver o menu superior)
 
 **Datas**: de 11/09 à 18/12 (**Toda sexta**)
@@ -22,10 +14,11 @@
 **Contato**: cursopython.ufac@gmail.com
 
 <!---
-**Lista de presença (11/Set)**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
+**Precisamos de sua ajuda:**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
 --->
 
 **Observações:**
+
 > Os links de todas as **plataformas digitais** podem ser acessadas no **menu superior**.
 
 > O **conteúdo do curso** pode ser alcançado no **final da página**.
@@ -78,10 +71,6 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 ### **Capítulo 1:** Primeiros passos
 > Nesta aula vamos apresentar o ambiente de desenvolvimento do Jupyter Lab e introduzir as linguagens Markdown e Python. Além disso, vamos ensinar como instalar o Anaconda para utilizar o Jupyter Lab com o Python.
 
-<!---
-**Lista de presença da aula:** [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
--->
-
 {% include video-atividade.html
     codigo="8SUnxb5KfQA"
 %}
@@ -104,7 +93,9 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 > Nesta aula vamos aprender um pouco mais sobre a função `print()` e o método `.format()`. Além disso, como funciona as variáveis booleanas e os operadores lógicos & relacionais.
 
-
+{% include video-atividade.html
+    codigo="qAHOh_OMXOU"
+%}
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap2/cap2.html" 
