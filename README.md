@@ -2,6 +2,14 @@
 
 -----
 
+<strong style="color:red">Precisamos coletar seus nomes completos:</strong> [https://forms.gle/ndULDdNL5P8KbqyH9](https://forms.gle/ndULDdNL5P8KbqyH9)
+
+> Infelizmente não temos os nomes completos de todos os inscritos. Por favor preencha este formulário com o nome completo para que possamos associar o nome com o CPF.
+>
+> **Observação**: Use o seu e-mail de inscrição.
+>
+> **Link do formulário:** [https://forms.gle/ndULDdNL5P8KbqyH9](https://forms.gle/ndULDdNL5P8KbqyH9)
+
 **Onde:** No Google **Meet** (Ver o menu superior)
 
 **Datas**: de 11/09 à 18/12 (**Toda sexta**)
@@ -12,10 +20,6 @@
 - **Local (Acre)**: Das 14hs às 18hs
 
 **Contato**: cursopython.ufac@gmail.com
-
-<!---
-**Precisamos de sua ajuda:**: [https://forms.gle/scsoafany928uhoV9](https://forms.gle/scsoafany928uhoV9)
---->
 
 **Observações:**
 
