@@ -473,6 +473,8 @@ A campo de `largura`  define a largura mínima do argumento (incluindo o ponto d
 > print("{:5d}".format(12))
 > # Preenchendo com zeros
 > print("{:05d}".format(12))
+> # Preenchendo com "underlines"
+> print("{:_>5d}".format(12)) #Neste caso deve-se usar o alinhamento
 > ```
 
 **Tarefa 1:** Repita o código acima considerando `3` casas decimais considerando os tipos `d`  e `g`.
@@ -536,16 +538,26 @@ Podemos fazer outras customizações utilizando o método `.format()` Como:
 
 2. Customização em relação ao alinhamento:
 
-```python
-# integer numbers with right alignment
-print("{:5d}".format(12))
-
-# float numbers with center alignment
-print("{:^10.3f}".format(12.2346))
-
-# integer left alignment filled with zeros
-print("{:<05d}".format(12))
-```
+> ```python
+> # Inteiro com alinhamento à direita
+> print("{:5d}".format(12))
+> 
+> # Ponto flutuante com alinhamento ao centro
+> print("{:^10.3f}".format(12.2346))
+> 
+> # Inteiro preenchido com underline com alinhamento à esquerda
+> print("{:*<5d}".format(12))
+> 
+> # Inteiro preenchido com 0 com alinhamento à direita
+> print("{:0>5d}".format(12))
+> print("{:05d}".format(12))
+> ```
+>
+>    12  
+>   12.235  
+> 12***  
+> 00012  
+> 00012  
 
 3. Aplicação em strings
 
