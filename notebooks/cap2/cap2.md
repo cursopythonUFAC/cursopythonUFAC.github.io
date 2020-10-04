@@ -1098,6 +1098,113 @@ Utilize como base as seguintes perguntas:
 
 > **Dica:** Esse exercício já foi feito anteriormente. Pegue a estrutura do exercício anterior e adapte para a nova situação.
 
+# Atividade 4: Método de string
+
+Existem métodos úteis para verificar se um dado de entrada é uma string....
+
+
+
+## Parte 1: Métodos `is`
+
+### Exemplo 1: Método de identificação `.isalpha()`
+
+O método `.isalpha()` é um método de strings que retorna `True` se uma string contiver apenas caracteres alfabeticos. Caso contrário, retorna `False`.
+
+Refaça os exemplos abaixo para ver o resultado:
+
+> ```python
+> a = 'abcde'
+> a.isalpha()
+> ```
+>
+> True
+>
+> ```python
+> b = '\u0030' # unicode para 0
+> c = '\u0047' # unicode para G
+> print('{b} é alfabético? {out}'.format(b=b,out=b.isalpha()))
+> print('{c} é alfabético? {out}'.format(c=c,out=c.isalpha()))
+> ```
+>
+> 0 é alfabético? False
+> G é alfabético? True
+>
+> ```python
+> s = 'lakers98'
+> print('"{}" é alfabético? {}'.format(s,s.isalpha()))
+> ```
+>
+> "lakers98" é alfabético? False
+>
+> ```python
+> z = '1s d3c1m4l'
+> print('"{}" é alfabético? {}'.format(z,z.isalpha()))
+> ```
+
+**Tarefa:** Guarde o nome do usuário, idade e e-mail, imprima utilizando o método `.format()`, diga o tamanho do nome e se é alfabético ou não.
+
+Pegar os exemplos
+
+**Tarefa:** Exemplo de número de telefone
+
+123111231
+
+### Exemplo 2: Método `.isdecimal()`
+
+
+
+### Exemplo 3: Método `.isdigit()`
+
+
+
+### Exemplo 4: Método `.isalnum()`
+
+
+
+### Exemplo 5: `.isidentifier()`
+
+
+
+### Exemplo 6: Outros métodos
+
+istitle()
+
+capitalize()
+
+split() -> Exemplo de número de telefone
+
+123111231
+
+upper()
+
+upper
+
+lower
+
+## Métodos de transformação
+
+Exemplo de converter para título
+
+
+
+Exemplo: Verifique se é uma senha válida
+
+
+
+**Tarefa:** Dissecando uma string:
+
+- Verificar se a string é uma senha válida
+- Verificar se a string é um número
+- Verificar se é alfabético
+- Verificar se é alfanumérico
+- Verificar se é um nome
+
+
+
+
+
+
+
 # Atividade 5: Para casa
 
 ## Exercício 1: Lista de compras
