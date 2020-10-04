@@ -59,17 +59,21 @@
     <h1 id="titulo">Python para engenharia</h1>
     <p>Site de apoio do curso online de Python para a engenharia com aplicações</p>
   </header>
-
   <div id="banner">
     {% if page.url != "/" %}
-      <a href="/" class="button fork">
+      <a href="/" class="button mobi">
         <img src="/imgs/back.png" alt="Voltar" class="plataformas">
         <div class="nome"> Início</div>
       </a>
     {% endif %}
-
     <a href="{{ site.github.repository_url }}" id="logo" target="_blank"></a>
     <div class="downloads">
+      {% if page.url != "/" %}
+        <a href="/" class="button fork">
+          <img src="/imgs/back.png" alt="Voltar" class="plataformas">
+          <div class="nome"> Início</div>
+        </a>
+      {% endif %}
       <span id="plataformas">Plataformas digitais:</span>
       <ul>
         <li>
@@ -104,7 +108,7 @@
     <nav id="side-menu">
       <ul></ul>
     </nav>
-    <section style="padding: 30px 30px 25px 30px">
+    <section style="padding: 30px 30px 25px 30px" id="main-sec">
       {{ content }}
 
     </section>

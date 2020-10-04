@@ -170,9 +170,9 @@ dt {
 }
 
 header {
-  padding: 25px 20px 40px 20px;
+  padding: 25px 0px 40px 0px;
   margin: 0;
-  position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -209,9 +209,11 @@ header {
   left: 0;
   right: 50%;
   height: 50px;
-  margin-right: -382px;
-  position: fixed;
-  top: 115px;
+  //margin-right: -382px;
+  width: calc(50% + 378px);
+  //margin-right: 262px;
+  //position: fixed;
+  margin-top: -25px;
   background: #ffcc00;
   border: 1px solid #f0b500;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, .25);
@@ -240,20 +242,23 @@ header {
     }
   }
 
-  .fork {
-    position: fixed;
-    left: 50%;
-    margin-left: -325px;
-    padding: 10px 12px;
-    margin-top: 6px;
-    line-height: 14px;
-    font-size: 14px;
-    background-color: #FFE788;
+  .mobi{
+    display:none;
   }
 
   .downloads {
     float: right;
-    margin: 0 45px 0 0;
+    margin: 0 15px 0 0;
+
+    .fork {
+      position: absolute;
+      margin-left: -97px;
+      padding: 10px 12px;
+      margin-top: 6px;
+      line-height: 14px;
+      font-size: 14px;
+      background-color: #FFE788;
+    }
 
     span {
       float: left;
@@ -282,12 +287,12 @@ header {
   }
 
   #logo {
-    position: absolute;
+    float: right;
     height: 36px;
     width: 36px;
-    right: 7px;
-    top: 7px;
-    display: block;
+    left: 50%;
+    //margin-left: 565px;
+    margin-top: 7px;
     background: url(../images/octocat-logo.svg);
   }
 }
@@ -296,7 +301,8 @@ section {
   width: 590px;
   padding: 30px 30px 50px 30px;
   margin: 10px 0;
-  margin-top: 190px;
+  //margin-top: 190px;
+  margin-top: 15px;
   position: relative;
   background: #fbfbfb;
   border-radius: 3px;
@@ -448,14 +454,37 @@ screen and (max-width: 1130px) {
     }
   }
 
+  header {
+    
+    position: relative;
+    padding: 25px 0 15px 0;
+  }
+
+  #banner {
+    position: relative;
+    top: 0px;
+    padding: 0px;
+    margin: 0px;
+    display: block;
+    border-right: 0px;
+    border-left: 0px;
+  }
+
   #banner {
     width: 100%;
 
     .downloads {
-      margin-right: 60px;
+      margin-right: 15px;
     }
 
-    .fork {}
+    .mobi{
+      display: inline-block;
+      position: absolute;
+      margin-left: 230px;
+    }
+    .fork{
+      display:none;
+    }
 
     #logo {
       margin-right: 15px;
@@ -466,7 +495,7 @@ screen and (max-width: 1130px) {
     border: 1px solid #e5e5e5;
     border-width: 1px 0;
     padding: 20px auto;
-    margin: 190px auto 20px;
+    margin: 20px auto 20px;
     max-width: 600px;
   }
 
@@ -482,13 +511,29 @@ screen and (max-width: 1130px) {
 }
 
 @media print,
+screen and (max-width: 900px) {
+  div.wrapper {
+      width: auto;
+      margin: 0;
+  }
+  nav{
+    display:none;
+  }
+  #banner{
+    .mobi{
+      margin-left: 30px;
+    }
+  }
+}
+
+@media print,
 screen and (max-width: 720px) {
   body {
     word-wrap: break-word;
   }
 
   header {
-    padding: 20px 20px;
+    padding: 20px 0px;
     margin: 0;
 
     h1 {
@@ -506,20 +551,20 @@ screen and (max-width: 720px) {
   }
 
   #banner {
-    top: 80px;
-
-    .fork {
-      float: left;
-      display: inline-block;
-      margin-left: 0px;
-      position: inherit;
-      left: 20px;
-
+    top: -32px;
+    #logo{
+      display:none;
+    }
+    .downloads {
+      margin-right: 10px;
+    }
+    .mobi {
+      margin-left: 10px;
     }
   }
 
   section {
-    margin-top: 130px;
+    margin-top: -20px;
     margin-bottom: 0px;
     width: auto;
   }
@@ -527,6 +572,31 @@ screen and (max-width: 720px) {
   header ul,
   header p.view {
     position: static;
+  }
+}
+
+@media print,
+screen and (max-width: 681px) {
+  section {
+    margin-top: -30px;
+  }
+  #logo{
+    display:none;
+  }
+  .downloads {
+    margin-right: 20px;
+  }
+  .mobi{
+    margin-left: 10px;
+  }
+  footer {
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
   }
 }
 
@@ -573,20 +643,6 @@ screen and (max-width: 480px) {
     padding: 0.4in;
     font-size: 12pt;
     color: #444;
-  }
-}
-
-@media print,
-screen and (max-height: 680px) {
-
-  footer {
-    text-align: center;
-    margin: 20px auto;
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: auto;
   }
 }
 

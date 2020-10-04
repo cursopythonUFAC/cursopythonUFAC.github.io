@@ -131,12 +131,6 @@
     }
 }
 
-.fork{
-    float: none;
-    position: inherit;
-    margin-left: 20px;
-}
-
 .jupyter-code, .jupyter-markdown{
     border: none; //0px solid #1897f8
     font-style: normal;
@@ -227,65 +221,23 @@ a:active, a:focus, a:visited {
 
 
 
-@media only screen and (max-width: 480px) {
-    #logo{
-        margin-right: 5px !important;
-    }
-
-}
-
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 1130px) {
     #plataformas {
         display: none;
+    }
+}
+
+@media print,
+screen and (max-width: 681px) {
+    #banner{
+        .nome{
+            display:none;
+        }
     }
 }
 
 @media only screen and (max-width: 340px) {
     #titulo-logo {
         display: none;
-    }
-
-    #banner {
-        .downloads {
-            margin-right: 10px;
-        }
-
-        #logo {
-            display: none;
-        }
-
-        .fork{
-            left: 10px;
-        }
-    }
-}
-
-@media only screen and (max-width: 780px) {
-    #banner .nome {
-        display: none;
-    }
-
-    .video-responsive{
-        width: 100%;
-        padding-bottom:56.25%;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .atividade {
-        width: 154px; //210
-        height: 48px;
-
-        li {
-            width: 48px;
-        }
-
-        img {
-            width: 32px;
-        }
-
-        span {
-            display: none;
-        }
     }
 }
