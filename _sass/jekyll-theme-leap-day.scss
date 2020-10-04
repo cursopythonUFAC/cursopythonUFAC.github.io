@@ -422,15 +422,16 @@ footer {
 }
 
 @media print,
-screen and (max-width: 1120px) {
+screen and (max-width: 1130px) {
 
   div.wrapper {
-    width: auto;
-    margin: 0;
+  //  width: auto;
+    margin: 0 0 0 230px;
   }
 
   nav {
-    display: none;
+     left: 0%;
+     margin-left: 5px;
   }
 
   header,
@@ -591,9 +592,9 @@ screen and (max-height: 680px) {
 
 @media print,
 screen and (max-height: 480px) {
-  nav {
-    display: none;
-  }
+  // nav {
+  //   display: none;
+  // }
 
   footer {
     text-align: center;
