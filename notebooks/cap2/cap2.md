@@ -1101,6 +1101,7 @@ Utilize como base as seguintes perguntas:
 # Atividade 4: Método de string
 
 Existem métodos para identificar o tipo de dado de um objeto. Utilizando a função `type()`, em que o parâmetro é a variável alvo é possível visualizar.
+
 No caso de strings, existem outros métodos para ler a string inserida: se são números, letras, etc.
 
 
@@ -1154,6 +1155,13 @@ Pegar os exemplos
 
 O método `.isdecimal()` retorna `True` se uma string for decimal, ou seja, um número na base 10. Caso contrário, o resultado é `False`.
 
+> ```python
+> salario = 'R$4.500,00'
+> print('{salario} é decimal?\n{out}'.format(salario, out=salario.isdecimal()))
+> ```
+>
+> False
+>
 
 ### Exemplo 3: Método `.isdigit()`
 
