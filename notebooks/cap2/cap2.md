@@ -1100,7 +1100,8 @@ Utilize como base as seguintes perguntas:
 
 # Atividade 4: Método de string
 
-Existem métodos úteis para verificar se um dado de entrada é uma string....
+Existem métodos para identificar o tipo de dado de um objeto. Utilizando a função `type()`, em que o parâmetro é a variável alvo é possível visualizar.
+No caso de strings, existem outros métodos para ler a string inserida: se são números, letras, etc.
 
 
 
@@ -1151,35 +1152,99 @@ Pegar os exemplos
 
 ### Exemplo 2: Método `.isdecimal()`
 
+O método `.isdecimal()` retorna `True` se uma string for decimal, ou seja, um número na base 10. Caso contrário, o resultado é `False`.
 
 
 ### Exemplo 3: Método `.isdigit()`
+
+O método `.isdigit()`é um método *built-in* que retorna `True` se todos os caracteres em uma string forem dígitos. Caso contrário, retorna `False`.
+
+`0123456789`.
+
+> ```python
+> tel1 = '98765-4321'
+> print('{} é dígito? {}'.format(tel1, tel1.isdigit()))
+> ```
+>
+> False
+>
+> ``` python
+> tel2 = '987654321'
+> print('{} é dígito? {}'.format(tel2, tel2.isdigit()))
+> ```
+>
+> True
 
 
 
 ### Exemplo 4: Método `.isalnum()`
 
+O método `.isalnum()` é um método que retorna `True` se uma string contiver apenas caracteres alfanuméricos. Caso contrário, retorna `False`.
 
+> ```python
+> bhaskara='ax²+bx+c'
+> bhaskara.isalnum()
+> ```
+>
+> False
+>
+> ```python
+> func = input('dê uma funcao para derivar em relaçao a x: ')
+> a = func.isalnum()
+> print('{func} é numérico? {a}'.format(func, a))
+> ```
+>
+> 
+
+
+
+##### Diferença entre os métodos `isdecimal()`, `isdigit()` e `isnumeric()`. 
+
+| isdecimal() | isdigit()   | isnumeric()  |
+| ----------- | ----------- | ------------ |
+| **"12345"** | **"12345"** | **"12345"**  |
+| **"12"**    | **"123³"**  | **"½¼"**     |
+| **"98201"** | **"³"**     | **"12345½"** |
 
 ### Exemplo 5: `.isidentifier()`
 
+Verifica se a string segue o padrão de identificadores do Python. 
 
+> ```python
+> a = 'Oi'
+> print(a.isidentifier())
+> ```
+>
+> True
+>
+> ```Python
+> senha_valida = 'eu1d0l4tr0'
+> senha_invalida = '3u1d0l4tr0'
+> print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
+> print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
+> ```
+>
+> True
+>
+> False
+
+**Tarefa:** Peça ao usuário o login de e-mail, o domínio e senha. Some o login ao domínio. Para cada variável, verifique os resultados aplicando os métodos: `isalpha`, `isdecimal`, `isdigit`, `isalnum`, `isidentifier`. Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
 
 ### Exemplo 6: Outros métodos
 
-istitle()
+Existem diversos outros métodos para string. Você pode visualizar uma tabela com mais alguns métodos interessantes.
 
-capitalize()
+| Método       | Descrição                                                    |
+| ------------ | ------------------------------------------------------------ |
+| istitle()    | Retorna `True`se a string segue as regras e um título.       |
+| capitalize() | Converte o primeiro caracter de uma string para maiúsculo    |
+| split()      | Separa uma string em um separador especificado como parâmetro |
+| upper()      | Converte toda a string para maiúsculo                        |
+| lower()      | Converte toda a string para minúsculo                        |
 
-split() -> Exemplo de número de telefone
+Para mais métodos, você pode acessar a [documentação oficial do Python](https://docs.python.org/pt-br/3/) ou [o site da W3 Schools](https://www.w3schools.com/python/python_ref_string.asp).
 
-123111231
 
-upper()
-
-upper
-
-lower
 
 ## Métodos de transformação
 
