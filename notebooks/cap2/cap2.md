@@ -1098,15 +1098,9 @@ Utilize como base as seguintes perguntas:
 
 > **Dica:** Esse exercício já foi feito anteriormente. Pegue a estrutura do exercício anterior e adapte para a nova situação.
 
-# Atividade 4: Método de string
+# Atividade 4: Métodos de string
 
-Existem métodos para identificar o tipo de dado de um objeto. Utilizando a função `type()`, em que o parâmetro é a variável alvo é possível visualizar.
-
-No caso de strings, existem outros métodos para ler a string inserida: se são números, letras, etc.
-
-
-
-## Parte 1: Métodos `is`
+Existe métodos para identificar e classificar as strings, este são conhecidos como método `is`. Eles podem verificar se a string são números, letras, etc.
 
 ### Exemplo 1: Método de identificação `.isalpha()`
 
@@ -1145,13 +1139,7 @@ Refaça os exemplos abaixo para ver o resultado:
 
 **Tarefa:** Guarde o nome do usuário, idade e e-mail, imprima utilizando o método `.format()`, diga o tamanho do nome e se é alfabético ou não.
 
-Pegar os exemplos
-
-**Tarefa:** Exemplo de número de telefone
-
-123111231
-
-### Exemplo 2: Método `.isdecimal()`
+### Exemplo 2: Métodos `.isdecimal()`, `.isdigit()` e `isnumeric()`
 
 O método `.isdecimal()` retorna `True` se uma string for decimal, ou seja, um número na base 10. Caso contrário, o resultado é `False`.
 
@@ -1161,13 +1149,8 @@ O método `.isdecimal()` retorna `True` se uma string for decimal, ou seja, um n
 > ```
 >
 > False
->
-
-### Exemplo 3: Método `.isdigit()`
 
 O método `.isdigit()`é um método *built-in* que retorna `True` se todos os caracteres em uma string forem dígitos. Caso contrário, retorna `False`.
-
-`0123456789`.
 
 > ```python
 > tel1 = '98765-4321'
@@ -1183,9 +1166,25 @@ O método `.isdigit()`é um método *built-in* que retorna `True` se todos os ca
 >
 > True
 
+> Falar sobre .isnumeric()
 
+Finalmente, a diferença entre os métodos `isdecimal()`, `isdigit()` e `isnumeric()`:
 
-### Exemplo 4: Método `.isalnum()`
+| isdecimal() | isdigit()   | isnumeric()  |
+| ----------- | ----------- | ------------ |
+| **"12345"** | **"12345"** | **"12345"**  |
+| **"12"**    | **"123³"**  | **"½¼"**     |
+| **"98201"** | **"³"**     | **"12345½"** |
+
+**Tarefa:** Crie um programa capaz de identificar se um número de telefone é celular ou fixo:
+
+- O número de telefone deve conter apenas dígitos
+- Número de celular deve conter 11 dígitos (exemplo: 68995571236)
+- Número de telefone fixo deve conter 10 dígitos 
+
+> **Dica:** Use a função **len()** para calcular o tamanho da string.
+
+### Exemplo 3: Método `.isalnum()`
 
 O método `.isalnum()` é um método que retorna `True` se uma string contiver apenas caracteres alfanuméricos. Caso contrário, retorna `False`.
 
@@ -1197,22 +1196,35 @@ O método `.isalnum()` é um método que retorna `True` se uma string contiver a
 > False
 >
 > ```python
-> func = input('dê uma funcao para derivar em relaçao a x: ')
+> func = input('Dê uma funcao para derivar em relaçao a x: ')
 > a = func.isalnum()
-> print('{func} é numérico? {a}'.format(func, a))
+> #Testar x² e x²+3x e verifique a diferença.
+> print('{func} é numérico? {a}'.format(func=func, a=a))
+> ```
+
+### Exemplo 4: `.isidentifier()`
+
+Verifica se a string segue o padrão de identificadores do Python. 
+
+> ```python
+> a = 'Oi'
+> print(a.isidentifier())
 > ```
 >
-> 
+> True
+>
+> ```Python
+> senha_valida = 'eu1d0l4tr0'
+> senha_invalida = '3u1d0l4tr0'
+> print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
+> print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
+> ```
+>
+> True
+>
+> False
 
-
-
-##### Diferença entre os métodos `isdecimal()`, `isdigit()` e `isnumeric()`. 
-
-| isdecimal() | isdigit()   | isnumeric()  |
-| ----------- | ----------- | ------------ |
-| **"12345"** | **"12345"** | **"12345"**  |
-| **"12"**    | **"123³"**  | **"½¼"**     |
-| **"98201"** | **"³"**     | **"12345½"** |
+**Tarefa:** Peça ao usuário o login de e-mail e senha. Para cada variável, verifique os resultados aplicando o método `isidentifier`.
 
 ### Exemplo 5: `.isidentifier()`
 
@@ -1238,7 +1250,7 @@ Verifica se a string segue o padrão de identificadores do Python.
 
 **Tarefa:** Peça ao usuário o login de e-mail, o domínio e senha. Some o login ao domínio. Para cada variável, verifique os resultados aplicando os métodos: `isalpha`, `isdecimal`, `isdigit`, `isalnum`, `isidentifier`. Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
 
-### Exemplo 6: Outros métodos
+### Exemplo 5: Outros métodos
 
 Existem diversos outros métodos para string. Você pode visualizar uma tabela com mais alguns métodos interessantes.
 
@@ -1252,31 +1264,32 @@ Existem diversos outros métodos para string. Você pode visualizar uma tabela c
 
 Para mais métodos, você pode acessar a [documentação oficial do Python](https://docs.python.org/pt-br/3/) ou [o site da W3 Schools](https://www.w3schools.com/python/python_ref_string.asp).
 
+**Tarefa:** Crie um programa capaz de dissecar uma entrada digitada pelo usuário. A saída desse exercício deve identificar os seguintes padrões:
 
+1. A classe de [entrada]
+2. [entrada] só tem espaços?
+3. [entrada] é um número (use `isnumeric()`)?
+4. [entrada] é alfabética?
+5. [entrada] é alfanumérica?
+6. [entrada] está em maiúsculas?
+7. [entrada] está em minúsculas?
+8. [entrada] está captalizada?
+9. [entrada] pode ser utilizada como nome 
 
-## Métodos de transformação
+```
+Digite algo: 123Bruxa
+A classe de "123Bruxa" é <class 'str'>
+"123Bruxa" só tem espaços? False
+"123Bruxa" é um número? False
+"123Bruxa" é alfabético? False
+"123Bruxa" é alfanumérico? True
+"123Bruxa" está em maiúsculas? False
+"123Bruxa" está em minúsculas? False
+"123Bruxa" está capitalizada? True
+"123Bruxa" pode ser utilizada com nome de variável? False
+```
 
-Exemplo de converter para título
-
-
-
-Exemplo: Verifique se é uma senha válida
-
-
-
-**Tarefa:** Dissecando uma string:
-
-- Verificar se a string é uma senha válida
-- Verificar se a string é um número
-- Verificar se é alfabético
-- Verificar se é alfanumérico
-- Verificar se é um nome
-
-
-
-
-
-
+Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
 
 # Atividade 5: Para casa
 
