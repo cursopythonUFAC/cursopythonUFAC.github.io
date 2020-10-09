@@ -2,7 +2,7 @@ function sectionPos(){
   let secPos = document.getElementById("main-sec").getBoundingClientRect().top;
   document.getElementById("side-menu").style.top = (secPos>5)? secPos + "px": 5 + 'px';
   let val = (secPos>5)? (secPos+10):20;
-  // console.log("Val:"+val+" | Sec:"+secPos);
+  console.log("Val:"+val+" | Sec:"+secPos);
   let h = window.innerHeight;
   document.getElementById("side-menu").style.maxHeight = (secPos>20)? h-val+'px':h-val+'px';
   
