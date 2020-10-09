@@ -1098,6 +1098,199 @@ Utilize como base as seguintes perguntas:
 
 > **Dica:** Esse exercício já foi feito anteriormente. Pegue a estrutura do exercício anterior e adapte para a nova situação.
 
+# Atividade 4: Métodos de string
+
+Existe métodos para identificar e classificar as strings, este são conhecidos como método `is`. Eles podem verificar se a string são números, letras, etc.
+
+### Exemplo 1: Método de identificação `.isalpha()`
+
+O método `.isalpha()` é um método de strings que retorna `True` se uma string contiver apenas caracteres alfabeticos. Caso contrário, retorna `False`.
+
+Refaça os exemplos abaixo para ver o resultado:
+
+> ```python
+> a = 'abcde'
+> a.isalpha()
+> ```
+>
+> True
+>
+> ```python
+> b = '\u0030' # unicode para 0
+> c = '\u0047' # unicode para G
+> print('{b} é alfabético? {out}'.format(b=b,out=b.isalpha()))
+> print('{c} é alfabético? {out}'.format(c=c,out=c.isalpha()))
+> ```
+>
+> 0 é alfabético? False
+> G é alfabético? True
+>
+> ```python
+> s = 'lakers98'
+> print('"{}" é alfabético? {}'.format(s,s.isalpha()))
+> ```
+>
+> "lakers98" é alfabético? False
+>
+> ```python
+> z = '1s d3c1m4l'
+> print('"{}" é alfabético? {}'.format(z,z.isalpha()))
+> ```
+
+**Tarefa:** Guarde o nome do usuário, idade e e-mail, imprima utilizando o método `.format()`, diga o tamanho do nome e se é alfabético ou não.
+
+### Exemplo 2: Métodos `.isdecimal()`, `.isdigit()` e `isnumeric()`
+
+O método `.isdecimal()` retorna `True` se uma string for decimal, ou seja, um número na base 10. Caso contrário, o resultado é `False`.
+
+> ```python
+> salario = 'R$4.500,00'
+> print('{salario} é decimal?\n{out}'.format(salario, out=salario.isdecimal()))
+> ```
+>
+> False
+
+O método `.isdigit()`é um método *built-in* que retorna `True` se todos os caracteres em uma string forem dígitos. Caso contrário, retorna `False`.
+
+> ```python
+> tel1 = '98765-4321'
+> print('{} é dígito? {}'.format(tel1, tel1.isdigit()))
+> ```
+>
+> False
+>
+> ``` python
+> tel2 = '987654321'
+> print('{} é dígito? {}'.format(tel2, tel2.isdigit()))
+> ```
+>
+> True
+
+> Falar sobre .isnumeric()
+
+Finalmente, a diferença entre os métodos `isdecimal()`, `isdigit()` e `isnumeric()`:
+
+| isdecimal() | isdigit()   | isnumeric()  |
+| ----------- | ----------- | ------------ |
+| **"12345"** | **"12345"** | **"12345"**  |
+| **"12"**    | **"123³"**  | **"½¼"**     |
+| **"98201"** | **"³"**     | **"12345½"** |
+
+**Tarefa:** Crie um programa capaz de identificar se um número de telefone é celular ou fixo:
+
+- O número de telefone deve conter apenas dígitos
+- Número de celular deve conter 11 dígitos (exemplo: 68995571236)
+- Número de telefone fixo deve conter 10 dígitos 
+
+> **Dica:** Use a função **len()** para calcular o tamanho da string.
+
+### Exemplo 3: Método `.isalnum()`
+
+O método `.isalnum()` é um método que retorna `True` se uma string contiver apenas caracteres alfanuméricos. Caso contrário, retorna `False`.
+
+> ```python
+> bhaskara='ax²+bx+c'
+> bhaskara.isalnum()
+> ```
+>
+> False
+>
+> ```python
+> func = input('Dê uma funcao para derivar em relaçao a x: ')
+> a = func.isalnum()
+> #Testar x² e x²+3x e verifique a diferença.
+> print('{func} é numérico? {a}'.format(func=func, a=a))
+> ```
+
+### Exemplo 4: `.isidentifier()`
+
+Verifica se a string segue o padrão de identificadores do Python. 
+
+> ```python
+> a = 'Oi'
+> print(a.isidentifier())
+> ```
+>
+> True
+>
+> ```Python
+> senha_valida = 'eu1d0l4tr0'
+> senha_invalida = '3u1d0l4tr0'
+> print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
+> print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
+> ```
+>
+> True
+>
+> False
+
+**Tarefa:** Peça ao usuário o login de e-mail e senha. Para cada variável, verifique os resultados aplicando o método `isidentifier`.
+
+### Exemplo 5: `.isidentifier()`
+
+Verifica se a string segue o padrão de identificadores do Python. 
+
+> ```python
+> a = 'Oi'
+> print(a.isidentifier())
+> ```
+>
+> True
+>
+> ```Python
+> senha_valida = 'eu1d0l4tr0'
+> senha_invalida = '3u1d0l4tr0'
+> print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
+> print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
+> ```
+>
+> True
+>
+> False
+
+**Tarefa:** Peça ao usuário o login de e-mail, o domínio e senha. Some o login ao domínio. Para cada variável, verifique os resultados aplicando os métodos: `isalpha`, `isdecimal`, `isdigit`, `isalnum`, `isidentifier`. Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
+
+### Exemplo 5: Outros métodos
+
+Existem diversos outros métodos para string. Você pode visualizar uma tabela com mais alguns métodos interessantes.
+
+| Método       | Descrição                                                    |
+| ------------ | ------------------------------------------------------------ |
+| istitle()    | Retorna `True`se a string segue as regras e um título.       |
+| capitalize() | Converte o primeiro caracter de uma string para maiúsculo    |
+| split()      | Separa uma string em um separador especificado como parâmetro |
+| upper()      | Converte toda a string para maiúsculo                        |
+| lower()      | Converte toda a string para minúsculo                        |
+
+Para mais métodos, você pode acessar a [documentação oficial do Python](https://docs.python.org/pt-br/3/) ou [o site da W3 Schools](https://www.w3schools.com/python/python_ref_string.asp).
+
+**Tarefa:** Crie um programa capaz de dissecar uma entrada digitada pelo usuário. A saída desse exercício deve identificar os seguintes padrões:
+
+1. A classe de [entrada]
+2. [entrada] só tem espaços?
+3. [entrada] é um número (use `isnumeric()`)?
+4. [entrada] é alfabética?
+5. [entrada] é alfanumérica?
+6. [entrada] está em maiúsculas?
+7. [entrada] está em minúsculas?
+8. [entrada] está captalizada?
+9. [entrada] pode ser utilizada como nome 
+
+```
+Digite algo: 123Bruxa
+A classe de "123Bruxa" é <class 'str'>
+"123Bruxa" só tem espaços? False
+"123Bruxa" é um número? False
+"123Bruxa" é alfabético? False
+"123Bruxa" é alfanumérico? True
+"123Bruxa" está em maiúsculas? False
+"123Bruxa" está em minúsculas? False
+"123Bruxa" está capitalizada? True
+"123Bruxa" pode ser utilizada com nome de variável? False
+```
+
+Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
+
 # Atividade 5: Para casa
 
 ## Exercício 1: Lista de compras
