@@ -2,7 +2,7 @@ function sectionPos(){
   let secPos = document.getElementById("main-sec").getBoundingClientRect().top;
   document.getElementById("side-menu").style.top = (secPos>5)? secPos + "px": 5 + 'px';
   let val = (secPos>5)? (secPos+10):20;
-  console.log("Val:"+val+" | Sec:"+secPos);
+  //console.log("Val:"+val+" | Sec:"+secPos);
   let h = window.innerHeight;
   document.getElementById("side-menu").style.maxHeight = (secPos>20)? h-val+'px':h-val+'px';
   
@@ -19,7 +19,12 @@ var sectionHeight = function () {
   } else {
     $section.css('height', 'auto');
   }
-  sectionPos();
+  let secPos = document.getElementById("main-sec").getBoundingClientRect().top;
+  document.getElementById("side-menu").style.top = (secPos>5)? secPos + "px": 5 + 'px';
+  let val = (secPos>5)? (secPos+10):20;
+  console.log("Val:"+val+" | Sec:"+secPos);
+  let h = window.innerHeight;
+  document.getElementById("side-menu").style.maxHeight = (secPos>20)? h-val+'px':h-val+'px';
 }
 
 $(window).resize(sectionHeight);
@@ -41,7 +46,12 @@ $(function () {
     }
   });
 
-  sectionPos();
+  let secPos = document.getElementById("main-sec").getBoundingClientRect().top;
+  document.getElementById("side-menu").style.top = (secPos>5)? secPos + "px": 5 + 'px';
+  let val = (secPos>5)? (secPos+10):20;
+  //console.log("Val:"+val+" | Sec:"+secPos);
+  let h = window.innerHeight;
+  document.getElementById("side-menu").style.maxHeight = (secPos>20)? h-val+'px':h-val+'px';
 
   $("blockquote .language-python").each(function () {
     $(this).parent().addClass("jupyter-code");
@@ -102,7 +112,12 @@ function onScroll() {
     }
   }
   //console.log((window.location.pathname+window.location.search)!=='/')
-  sectionPos();
+  let secPos = document.getElementById("main-sec").getBoundingClientRect().top;
+  document.getElementById("side-menu").style.top = (secPos>5)? secPos + "px": 5 + 'px';
+  let val = (secPos>5)? (secPos+10):20;
+  //console.log("Val:"+val+" | Sec:"+secPos);
+  let h = window.innerHeight;
+  document.getElementById("side-menu").style.maxHeight = (secPos>20)? h-val+'px':h-val+'px';
 
   var anchors = document.querySelectorAll('nav a');
 
