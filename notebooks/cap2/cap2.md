@@ -46,7 +46,7 @@ Esta é uma das maneiras mais simples de utilizar a função `print()`. Vimos el
 > ```
 >
 
-**Tarefa: ** Crie um programa capaz de imprimir `x` vezes uma `palavra` escolhida pelo usuário. A saída do programa deve ser:
+**Tarefa:** Crie um programa capaz de imprimir `x` vezes uma `palavra` escolhida pelo usuário. A saída do programa deve ser:
 
 > A palavra "[palavra]" será repetida "[x]" vezes: 
 >
@@ -708,6 +708,9 @@ Em seguida, rodaremos a função `print()` para vermos o resultado gerado das co
 > sentenca2 = 10
 > print("{} and {} resulta em {}.".format(sentenca1,sentenca2,(sentenca1 and sentenca2)))
 > type(sentenca1 and sentenca2)
+> 
+> # observe que ele sempre retorna  o valor à direita.
+> 
 > ```
 
 **Tarefa:** Responda:
@@ -847,7 +850,7 @@ Vamos escrever a expressão lógica que representa a condição para a porta abr
 **Tarefa 2:** Construa um programa que identifique se o animal é um cachorro de acordo com as perguntas abaixo:
 
 - Este animal tem quatro patas?
-- Este animal é hebívoro?
+- Este animal é herbívoro?
 - Este animal é grande (maior que 50 cm)?
 - Este animal é pequeno (menor que 30 cm)?
 
@@ -892,7 +895,7 @@ Vamos criar uma expressão lógica que descreva a frase acima:
 
 > Paulo mora em São Paulo há menos de 2 anos e não tem o costume de verificar a previsão do tempo. Ele sai para trabalhar e, ao olhar para o céu, percebe que está muito nublado, logo começou à chover e acabou tendo problemas com a chuva.
 >
-> Seu Raimundo mora em São Paulo há mais de 10 anos, como já está acosutumado com o clima imprevisível, sempre verifica a previsão do tempo. Por isso, ontem adquiriu um guarda chuvas.
+> Seu Raimundo mora em São Paulo há mais de 10 anos, como já está acostumado com o clima imprevisível, sempre verifica a previsão do tempo. Por isso, ontem adquiriu um guarda chuvas.
 
 Use as variáveis:
 
@@ -902,7 +905,7 @@ Use as variáveis:
 
 # Atividade 3: Operadores relacionais
 
-Os operadores relacionais são operações que comparam o valor de duas variaveis de _mesmo tipo_. Retornando sempre `True` ou `False` . Costuma ser utilizado em operações com valore literais, i.e, números ou _strings_. 
+Os operadores relacionais são operações que comparam o valor de duas variáveis de _mesmo tipo_. Retornando sempre `True` ou `False` . Costuma ser utilizado em operações com valore literais, i.e, números ou _strings_. 
 
 ### Exemplo 1: Apresentando os operadores relacionais
 
@@ -1016,7 +1019,7 @@ São eles:
 
 Os resultados das operações acima podem resultar em `True` ou `False`. 
 
-**Tarefa:** Usando os operador `is` e `==` verifique se o float `2.0` e o int `2` são iguais (Ver o código abaixo).
+**Tarefa:** Usando os operadores `is` e `==`, verifique se o float `2.0` e o int `2` são iguais (Ver o código abaixo).
 
 ```python
 a = 2
@@ -1032,7 +1035,7 @@ print(a == b)
 
 Podemos juntar os operadores relacionais e os operadores booleanos? A resposta é __sim__. 
 
-Os operadores lógicos tem as mesmas precedências. A tabela abaixo compara estes operadores com o 
+Os operadores lógicos têm as mesmas precedências. A tabela abaixo compara estes operadores com os relacionais.
 
 |                           Operador                           |
 | :----------------------------------------------------------: |
@@ -1100,7 +1103,7 @@ Utilize como base as seguintes perguntas:
 
 # Atividade 4: Métodos de string
 
-Existe métodos para identificar e classificar as strings, este são conhecidos como método `is`. Eles podem verificar se a string são números, letras, etc.
+Existem métodos para identificar e classificar as strings, estes são conhecidos como métodos `is`. Eles podem verificar se a string são números, letras, etc.
 
 ### Exemplo 1: Método de identificação `.isalpha()`
 
@@ -1145,7 +1148,7 @@ O método `.isdecimal()` retorna `True` se uma string for decimal, ou seja, um n
 
 > ```python
 > salario = 'R$4.500,00'
-> print('{salario} é decimal?\n{out}'.format(salario, out=salario.isdecimal()))
+> print('{salario} é decimal?\n{out}'.format(salario=salario, out=salario.isdecimal()))
 > ```
 >
 > False
@@ -1166,7 +1169,29 @@ O método `.isdigit()`é um método *built-in* que retorna `True` se todos os ca
 >
 > True
 
-> Falar sobre .isnumeric()
+O método `.isnumeric()` é um método que retorna `True` se todos os caracteres em uma string forem numéricos. Caso contrário, retorna `False`. É importante dizer que, embora o `.isnumeric()`e o `.isdigit()` sejam parecidos eles têm uma diferença. Veja no exemplo abaixo: 
+
+> ```python
+> num1 = '12345'
+> num2 = '一二三四五'
+> 
+> print('{} é numérico? {}'.format(num1,num1.isnumeric()))
+> print('{} é numérico? {}'.format(num2,num2.isnumeric()))
+> print('\n')
+> print('{} é digíto? {}'.format(num1,num1.isdigit()))
+> print('{} é digíto? {}'.format(num2,num2.isdigit()))
+> 
+> ```
+>
+> True
+>
+> True
+>
+> True
+>
+> False
+
+Resumidamente, o `.isnumeric()` aceita números de outras línguas.
 
 Finalmente, a diferença entre os métodos `isdecimal()`, `isdigit()` e `isnumeric()`:
 
@@ -1178,9 +1203,9 @@ Finalmente, a diferença entre os métodos `isdecimal()`, `isdigit()` e `isnumer
 
 **Tarefa:** Crie um programa capaz de identificar se um número de telefone é celular ou fixo:
 
-- O número de telefone deve conter apenas dígitos
-- Número de celular deve conter 11 dígitos (exemplo: 68995571236)
-- Número de telefone fixo deve conter 10 dígitos 
+- O número de telefone deve conter apenas dígitos;
+- Número de celular deve conter 11 dígitos (exemplo: 68995571236);
+- Número de telefone fixo deve conter 10 dígitos .
 
 > **Dica:** Use a função **len()** para calcular o tamanho da string.
 
@@ -1216,6 +1241,7 @@ Verifica se a string segue o padrão de identificadores do Python.
 > ```Python
 > senha_valida = 'eu1d0l4tr0'
 > senha_invalida = '3u1d0l4tr0'
+> 
 > print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
 > print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
 > ```
@@ -1228,7 +1254,7 @@ Verifica se a string segue o padrão de identificadores do Python.
 
 ### Exemplo 5: Outros métodos
 
-Existem diversos outros métodos para string. Você pode visualizar uma tabela com mais alguns métodos interessantes.
+Existem diversos outros métodos para strings. Você pode visualizá-los em uma tabela com mais alguns exemplos interessantes.
 
 | Método       | Descrição                                                    |
 | ------------ | ------------------------------------------------------------ |
