@@ -1226,30 +1226,6 @@ Verifica se a string segue o padrão de identificadores do Python.
 
 **Tarefa:** Peça ao usuário o login de e-mail e senha. Para cada variável, verifique os resultados aplicando o método `isidentifier`.
 
-### Exemplo 5: `.isidentifier()`
-
-Verifica se a string segue o padrão de identificadores do Python. 
-
-> ```python
-> a = 'Oi'
-> print(a.isidentifier())
-> ```
->
-> True
->
-> ```Python
-> senha_valida = 'eu1d0l4tr0'
-> senha_invalida = '3u1d0l4tr0'
-> print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
-> print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
-> ```
->
-> True
->
-> False
-
-**Tarefa:** Peça ao usuário o login de e-mail, o domínio e senha. Some o login ao domínio. Para cada variável, verifique os resultados aplicando os métodos: `isalpha`, `isdecimal`, `isdigit`, `isalnum`, `isidentifier`. Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
-
 ### Exemplo 5: Outros métodos
 
 Existem diversos outros métodos para string. Você pode visualizar uma tabela com mais alguns métodos interessantes.
