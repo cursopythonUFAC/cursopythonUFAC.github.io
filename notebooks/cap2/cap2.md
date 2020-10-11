@@ -1042,8 +1042,8 @@ Os operadores lógicos têm as mesmas precedências. A tabela abaixo compara est
 |                      Parênteses (`( )`)                      |
 |    Operadores aritméticos (`+`,`-`,`*`,`/`,`//`,`%`, etc)    |
 | Operadores relacionais (`==`,`!=`,`>`,`>=`,`<=`.`is`, `is not`) <- Mesma precedência |
-|             Operadores lógicos (`and`, `or`, ``)             |
-|                             `or`                             |
+|           Operadores lógicos (`and`, `or`, `not`)            |
+|                                                              |
 
 Veja o exemplo:
 
@@ -1064,6 +1064,8 @@ Veja o exemplo:
 > not(5 > 2) é False.
 >
 > ```python
+> a = 5
+> b = 2
 > c = a + b
 > res=c > a > b
 > print("{c} > {a} > {b} é {res}.".format(a=a,b=b,c=c,res=res))
@@ -1072,6 +1074,9 @@ Veja o exemplo:
 > 7 > 5 > 2 é True.
 >
 > ```python
+> a = 5
+> b = 2
+> c = a + b
 > res=a < c  and a > b
 > print("{a} < {c} and {a} > {b} é {res}.".format(a=a,b=b,c=c,res=res))
 > ```
@@ -1079,6 +1084,9 @@ Veja o exemplo:
 > 5 < 7 and 5 > 2 é True.
 >
 > ```python
+> a = 5
+> b = 2
+> c = a + b
 > res=a > c  and a > b
 > print("{a} > {c} and {a} > {b} é {res}.".format(a=a,b=b,c=c,res=res))
 > ```
@@ -1140,7 +1148,7 @@ Refaça os exemplos abaixo para ver o resultado:
 > print('"{}" é alfabético? {}'.format(z,z.isalpha()))
 > ```
 
-**Tarefa:** Guarde o nome do usuário, idade e e-mail, imprima utilizando o método `.format()`, diga o tamanho do nome e se é alfabético ou não.
+**Tarefa:** Crie um programa capaz de capturar o e-mail, nome do usuário e a idade. Este programa deve retornar o tamanho do e-mail (usando o método `len`) e verificar se o e-mail, nome e a idade são alfabéticos.
 
 ### Exemplo 2: Métodos `.isdecimal()`, `.isdigit()` e `isnumeric()`
 
@@ -1221,6 +1229,20 @@ O método `.isalnum()` é um método que retorna `True` se uma string contiver a
 > False
 >
 > ```python
+> bhaskara = '3x2xc'
+> bhaskara.isalnum()
+> ```
+>
+> True
+>
+> ```python
+> bhaskara = '3x²2xc'
+> bhaskara.isalnum()
+> ```
+>
+> True
+>
+> ```python
 > func = input('Dê uma funcao para derivar em relaçao a x: ')
 > a = func.isalnum()
 > #Testar x² e x²+3x e verifique a diferença.
@@ -1256,13 +1278,12 @@ Verifica se a string segue o padrão de identificadores do Python.
 
 Existem diversos outros métodos para strings. Você pode visualizá-los em uma tabela com mais alguns exemplos interessantes.
 
-| Método       | Descrição                                                    |
-| ------------ | ------------------------------------------------------------ |
-| istitle()    | Retorna `True`se a string segue as regras e um título.       |
-| capitalize() | Converte o primeiro caracter de uma string para maiúsculo    |
-| split()      | Separa uma string em um separador especificado como parâmetro |
-| upper()      | Converte toda a string para maiúsculo                        |
-| lower()      | Converte toda a string para minúsculo                        |
+| Método      | Descrição                                                    |
+| ----------- | ------------------------------------------------------------ |
+| `istitle()` | Retorna `True`se a string segue as regras de título.         |
+| `isspace()` | Verifica se a string é um espaço em branco                   |
+| `isupper()` | Verifica se todas as palavras estão com todas as letras em maiúsculo |
+| `islower()` | Verifica se todas as palavras estão com todas as letras em minúsculo |
 
 Para mais métodos, você pode acessar a [documentação oficial do Python](https://docs.python.org/pt-br/3/) ou [o site da W3 Schools](https://www.w3schools.com/python/python_ref_string.asp).
 
