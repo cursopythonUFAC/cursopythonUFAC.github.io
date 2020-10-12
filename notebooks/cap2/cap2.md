@@ -871,38 +871,6 @@ Apresente uma expressão que produza a saída x, quaisquer sejam as proposiçõe
 
 > **Dica:** Para testar você pode utilizar o esquema do exemplo da porta de shopping.
 
-### Exemplo 3: Transcrevendo texto em lógica
-
-Considere a texto abaixo:
-
-> João não tem uma boa alimentação, mas pratica exercícios, assim como Pedro. João quer muito ter uma reeducação alimentar, pois seu peso é elevado. 
->
-> Pedro já teve uma reeducação alimentar, e aprendeu a gostar de frutas, assim não tem um peso elevado.
-
-Vamos criar uma expressão lógica que descreva a frase acima:
-
-> ```python
-> """ Frase:
-> João não tem uma boa alimentação, mas pratica exercícios, assim como Pedro. João quer muito ter uma reeducação alimentar, pois seu peso é elevado. 
-> 
-> Pedro já teve uma reeducação alimentar, e aprendeu a gostar de frutas, assim não tem um peso elevado.
-> """
-> João = (boa_alimentação==False) and (pratica_exercícios==True) and (reeducação_alimentar==False) and (peso_elevado==True)
-> Pedro = (pratica_exercícios==True) and (reeducação_alimentar==True) and (gosta_de_frutas==True) and (peso_elevado==False)
-> ```
-
-**Tarefa:** Crie uma expressão lógica para a frase abaixo:
-
-> Paulo mora em São Paulo há menos de 2 anos e não tem o costume de verificar a previsão do tempo. Ele sai para trabalhar e, ao olhar para o céu, percebe que está muito nublado, logo começou à chover e acabou tendo problemas com a chuva.
->
-> Seu Raimundo mora em São Paulo há mais de 10 anos, como já está acostumado com o clima imprevisível, sempre verifica a previsão do tempo. Por isso, ontem adquiriu um guarda chuvas.
-
-Use as variáveis:
-
-- Pessoas: `Paulo` e `Raimundo`.
-- `Tempo_Nublado`.
-- Características das pessoas: `tempo_em_São_Paulo`,  `verifica_previsão_tempo`, `Tem_guarda_chuva`, `Problemas_com_chuva`.
-
 # Atividade 3: Operadores relacionais
 
 Os operadores relacionais são operações que comparam o valor de duas variáveis de _mesmo tipo_. Retornando sempre `True` ou `False` . Costuma ser utilizado em operações com valore literais, i.e, números ou _strings_. 
@@ -1100,6 +1068,38 @@ Utilize como base as seguintes perguntas:
 - Qual o horário do dia (Em horas)?
 
 > **Dica:** Esse exercício já foi feito anteriormente. Pegue a estrutura do exercício anterior e adapte para a nova situação.
+
+### Exemplo 3: Transcrevendo texto em lógica
+
+Considere a texto abaixo:
+
+> João não tem uma boa alimentação, mas pratica exercícios, assim como Pedro. João quer muito ter uma reeducação alimentar, pois seu peso é elevado. 
+>
+> Pedro já teve uma reeducação alimentar, e aprendeu a gostar de frutas, assim não tem um peso elevado.
+
+Vamos criar uma expressão lógica que descreva a frase acima:
+
+> ```python
+> """ Frase:
+> João não tem uma boa alimentação, mas pratica exercícios, assim como Pedro. João quer muito ter uma reeducação alimentar, pois seu peso é elevado. 
+> 
+> Pedro já teve uma reeducação alimentar, e aprendeu a gostar de frutas, assim não tem um peso elevado.
+> """
+> João = (boa_alimentação==False) and (pratica_exercícios==True) and (reeducação_alimentar==False) and (peso_elevado==True)
+> Pedro = (pratica_exercícios==True) and (reeducação_alimentar==True) and (gosta_de_frutas==True) and (peso_elevado==False)
+> ```
+
+**Tarefa:** Crie uma expressão lógica para a frase abaixo:
+
+> Paulo mora em São Paulo há menos de 2 anos e não tem o costume de verificar a previsão do tempo. Ele sai para trabalhar e, ao olhar para o céu, percebe que está muito nublado, logo começou à chover e acabou tendo problemas com a chuva.
+>
+> Seu Raimundo mora em São Paulo há mais de 10 anos, como já está acostumado com o clima imprevisível, sempre verifica a previsão do tempo. Por isso, ontem adquiriu um guarda chuvas.
+
+Use as variáveis:
+
+- Pessoas: `Paulo` e `Raimundo`.
+- `Tempo_Nublado`.
+- Características das pessoas: `tempo_em_São_Paulo`,  `verifica_previsão_tempo`, `Tem_guarda_chuva`, `Problemas_com_chuva`.
 
 # Atividade 4: Métodos de string
 
