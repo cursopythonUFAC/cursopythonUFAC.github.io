@@ -1,153 +1,339 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 3: Condicional, método de strings e módulos</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 3: Módulos e condicionais</div></center>
 
-# Atividade 1: Método de string
+# Atividade 1: Módulos e pacotes
 
-Existem métodos para identificar o tipo de dado de um objeto. Utilizando a função `type()`, em que o parâmetro é a variável alvo é possível visualizar.
+# Parte 1: Importando um módulo
 
-No caso de strings, existem outros métodos para ler a string inserida: se são números, letras, etc.
+O python possui muitas funções e operadores que nativa da própria linguagem de programação  como os operadores básicos (+,-,\*,/), potenciação (\*\*) impressão de valores (`print()`,`.format()`), e etc. 
 
-## Parte 1: Métodos `is`
+No entanto, há algumas **funcionalidades** que você irá precisar para produzir seu código, mas que **não tem nativamente** na linguagem Python, podemos então importar tais funcionalidades para o nosso trabalho como módulos. 
 
-### Exemplo 1: Método de identificação `.isalpha()`
+Agora vejam a definição de módulo segundo um trecho da a própria documentação do Python:
 
-O método `.isalpha()` é um método de strings que retorna `True` se uma string contiver apenas caracteres alfabeticos. Caso contrário, retorna `False`.
+> Módulos são um **conjunto** de **códigos como funções, classes, variáveis, etc**. Se você estiver fazendo um programa e ele se tornar muito grande, difícil de ler e se situar nele, é uma boa prática dividi-lo em arquivos menores, para facilitar a manutenção. Também é preferível usar um arquivo separado para uma função que você escreveria em vários programas diferentes, para não copiar a definição de função em cada um deles.
+>
+> Para permitir isso, o Python tem uma maneira de **colocar as definições em um arquivo** e então usá-las em um script ou em uma execução interativa do interpretador. **Tal arquivo é chamado de módulo**; definições de um módulo podem ser importadas para outros módulos, ou para o módulo principal.
 
-Refaça os exemplos abaixo para ver o resultado:
+### Exemplo 1: Importando um módulo
+
+Para o nosso primeiro exemplo vamos importar o módulo **math**, um módulo que extende o Python com algumas funcionalidades matemáticas.
+
+Execute o célula abaixo:
 
 > ```python
-> a = 'abcde'
-> a.isalpha()
-> ```
->
-> True
->
-> ```python
-> b = '\u0030' # unicode para 0
-> c = '\u0047' # unicode para G
-> print('{b} é alfabético? {out}'.format(b=b,out=b.isalpha()))
-> print('{c} é alfabético? {out}'.format(c=c,out=c.isalpha()))
-> ```
->
-> 0 é alfabético? False
-> G é alfabético? True
->
-> ```python
-> s = 'lakers98'
-> print('"{}" é alfabético? {}'.format(s,s.isalpha()))
-> ```
->
-> "lakers98" é alfabético? False
->
-> ```python
-> z = '1s d3c1m4l'
-> print('"{}" é alfabético? {}'.format(z,z.isalpha()))
+> import math # Nesta linha eu estou importando o módulo math
 > ```
 
-**Tarefa:** Guarde o nome do usuário, idade e e-mail, imprima utilizando o método `.format()`, diga o tamanho do nome e se é alfabético ou não.
-
-### Exemplo 4: `.isidentifier()`
-
-Verifica se a string segue o padrão de identificadores do Python. 
+Feito isso, tente escrever o seguinte código e aperte `Tab`:
 
 > ```python
-> a = 'Oi'
-> print(a.isidentifier())
+> math.
+> ```
+
+Você verá todos as **funções** e **constantes (instâncias)** deste pacote, como mostra na Figura abaixo:
+
+![Tab Módulos](images/tab_modulos.png)
+
+Agora apague a célula acima e vamos aprender à calcular a raiz quadrada. Para isso utilize a função `sqrt()` do módulo `math`.
+
+> ```python
+> num = int(input("Digite o número que quer calcular a raiz quadrada: "))
+> raiz = math.sqrt(num) # A função sqrt() do módulo 'math' calcula a raiz quadrada 
+> print("A raiz quadrada de {num} é {raiz}".format(num=num,raiz=raiz))
 > ```
 >
-> True
->
-> ```Python
-> senha_valida = 'eu1d0l4tr0'
-> senha_invalida = '3u1d0l4tr0'
-> print('{} é válida? {}'.format(senha_valida, senha_valida.isidentifier()))
-> print('{} é válida? {}'.format(senha_invalida, senha_invalida.isidentifier()))
+> Digite o número que quer calcular a raiz quadrada:  4  
+> A raiz quadrada de 4 é 2.0
+
+> **Dica:** Teste o exemplo acima com alguns valores, como 5, 4, 3, 2, etc.
+
+
+Agora vamos arredondar o resultado da raiz utilizando a função `ceil()`.
+
+> ```python
+> num = int(input("Digite o número que quer calcular a raiz quadrada: "))
+> raiz = math.sqrt(num) # A função sqrt() do módulo 'math' calcula a raiz quadrada 
+> arredondar = math.ceil(raiz) # A função ceil() arredonda para cima um determinado valor
+> print("A raiz quadrada (arredondada) de {num} é {raiz}".format(num=num,raiz=arredondar))
 > ```
 >
-> True
+> Digite o número que quer calcular a raiz quadrada:  5  
+> A raiz quadrada (arredondada) de 5 é 3
+
+> **Dica:** Teste os exemplos acima com alguns valores, como 5, 4, 3, 2, etc.
+
+Vamos praticar com uma constante. Procure a constante `pi` e execute:
+
+> ```python
+> math.pi
+> ```
 >
-> False
+> 3.141592653589793
 
-**Tarefa:** Peça ao usuário o login de e-mail e senha. Para cada variável, verifique os resultados aplicando os métodos: `isalpha`, `isdecimal`, `isdigit`, `isalnum`, `isidentifier`. Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
+Agora vamos criar um programa capaz de calcular o seno de um ângulo dado em graus:
 
-### Exemplo 5: Outros métodos
+> ```python
+> ang_graus = int(input("Digite um ângulo (Em graus): "))
+> ang_rad = ang_graus*math.pi/180 #Observe que estamos utilizando a constante pi
+> seno = math.sin(ang_rad) # A função sin() calcula o seno de um ângulo
+> print("O seno de {ang_graus}° é {seno:.2g}".format(ang_graus=ang_graus,seno=seno))
+> ```
+>
+> Digite um ângulo (Em graus):  60  
+> O seno de 60° é 0.87
 
-Existem diversos outros métodos para string. Você pode visualizar uma tabela com mais alguns métodos interessantes.
+> **Dica:** Teste o exemplo acima com os ângulos 0, 30, 45, 60 e 90.
 
-| Método       | Descrição                                                    |
-| ------------ | ------------------------------------------------------------ |
-| istitle()    | Retorna `True`se a string segue as regras e um título.       |
-| capitalize() | Converte o primeiro caracter de uma string para maiúsculo    |
-| split()      | Separa uma string em um separador especificado como parâmetro |
-| upper()      | Converte toda a string para maiúsculo                        |
-| lower()      | Converte toda a string para minúsculo                        |
+**Tarefa**: Crie um código que aceite um ângulo em graus como entrada, e imprima na tela o seu correspondente em radianos, o seu seno, cosseno e tangente.
 
-Para mais métodos, você pode acessar a [documentação oficial do Python](https://docs.python.org/pt-br/3/) ou [o site da W3 Schools](https://www.w3schools.com/python/python_ref_string.asp).
+> **Observação:** Utilize a função `radians()` para fazer a conversão de graus para radianos diretamente.
 
-**Tarefa:** Crie um programa capaz de dissecar uma entrada digitada pelo usuário. A saída desse exercício deve identificar os seguintes padrões:
+> **Dica:** Utilize as funções `sin()`, `cos()`, `tan()` para calcular o seno cosseno e tangente.
 
-1. A classe de [entrada]
-2. [entrada] só tem espaços?
-3. [entrada] é um número (use `isnumeric()`)?
-4. [entrada] é alfabética?
-5. [entrada] é alfanumérica?
-6. [entrada] está em maiúsculas?
-7. [entrada] está em minúsculas?
-8. [entrada] está captalizada?
-9. [entrada] pode ser utilizada como nome 
+A saída do programa deve ser parecida com isso:
 
 ```
-Digite algo: 123Bruxa
-A classe de "123Bruxa" é <class 'str'>
-"123Bruxa" só tem espaços? False
-"123Bruxa" é um número? False
-"123Bruxa" é alfabético? False
-"123Bruxa" é alfanumérico? True
-"123Bruxa" está em maiúsculas? False
-"123Bruxa" está em minúsculas? False
-"123Bruxa" está capitalizada? True
-"123Bruxa" pode ser utilizada com nome de variável? False
+Digite o ângulo em graus:  45
+O ângulo 0.79 rad, tem o seno 0.71, cosseno 0.71 e tangente 1
 ```
 
-Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
+> **Dica:** Teste o exemplo acima com os ângulos 0, 30, 45, 60 e 90.
 
-# Atividade 2: Condicionais
+### Exemplo 2: Documentação do `math`
 
-## Parte 1: Se `IF`
+Praticamente todo módulo ou pacote do Python tem uma documentação disponível na internet. O módulo `math` é um módulo **built-in**, ou seja, ele é um módulo que já vem junto com o Python. Para estes módulos podemos olhar a própria documentação do Python. Essa documentação está disponível no menu `Help>Python Reference` ou no próprio [site do python](https://www.python.org/), na parte de **Docs**. 
 
-O `if` uma estrutura condicional presente em todas as linguagens. Ele estabelece uma relação lógica de *"se.. então"*. Veja o exemplo abaixo:
+![Site do Python](images/python_images.png)
+
+No caso do módulo de matemática, podemos utilizar o seguinte módulo direto:
+
+https://docs.python.org/3/library/math.html
+
+Lá podemos encontrar explicações detalhadas de todas as funções e constantes do módulo `math`.
+
+**Tarefa 1:** Buscando na documentação do módulo `math`, crie um programa capaz de calcular as seguintes expressões:
+
+- $e^x$
+- $x!$
+- $\log_{10}(x+1)$
+- $(\pi+e)^x$
+
+O usuário deve colocar como entrada o valor de $x$.
+
+> **Observação:** Teste usar a função `pow()` no lugar do operador `**`.
+
+A saída deve ser parecida com essa:
+
+```
+Digite o valor de x:  1
+e^1=2.72
+1!=1
+log10(1+1)!=0.30
+(pi+e)^1!=5.86
+```
+
+**Tarefa 2:** Crie um programa capaz de calcular a hipotenusa de um retângulo utilizando uma função do módulo `math`.
+
+Sugestão de saída:
+
+```
+Digite o primeiro cateto: 3
+Digite o segundo cateto: 4
+A hipotenusa é 5
+```
+
+### Exemplo 3: `from` ... `import` ...
+
+É muito chato toda vez que for utilizar alguma funcionalidade da função math, ter que escrever `math.` no início. Através da sintaxe:
+
+```python
+from [módulo] import [função1], [função2], [constante1], [etc]
+```
+
+Podemos incluir somente as funções e constantes que desejamos trabalhar e eliminamos a necessidade de utilizar `math.` no início. Veja o exemplo:
 
 > ```python
-> x = 10
-> if x < 10:
-> print('{} é menor que 10.'.format(x))
-> if x == 10:
-> print('{} é igual a 10.'.format(x))
+> from math import pi
+> pi
 > ```
 >
-> *10 é igual a 10* 
+> 3.141592653589793
 
-Genericamente, se uma condição for verdadeira (ou false) ele executará o bloco de código correspondente:
+Vejamos um exemplo de como calcular o fatorial:
 
 > ```python
-> cpf = input('Digite seu CPF: ')
-> if not cpf.isdigit():
->  print('CPF inválido.')
+> # Utilizando import
+> import math 
+> numero = int(input("Digite um valor: "))
+> fat = math.factorial(numero)
+> print("O fatorial de {} é {}.".format(numero, fat))
+> ```
+
+Percebemos agora, a maneira mais simples de importar um módulo, que é simplesmente digitando `import` e o nome do módulo logo em seguida. Na hora de chamar a função `factorial`precisamos especificar que ela pertence ao módulo em questão, por isso a chamamos com `math.factorial()`.  
+
+Agora suponha que iremos usar apenas a função `factorial`, sem usar as outras funções do módulo de matemática, a outra forma de faze-lo é.
+
+> ```python
+> # Utilizando from import
+> from math import factorial
+> numero = int(input("Digite um valor: "))
+> fat = factorial(numero)
+> print("O fatorial de {} é {}.".format(numero, fat))
+> ```
+
+**Tarefa:** Refaça a tarefa abaixo importando todas as funções necessárias utilizando a notação `from` `ìmport`
+
+> Crie um código que aceite um ângulo em graus como entrada, e imprima na tela o seu correspondente em radianos, o seu seno, cosseno e tangente.
+
+### Exemplo 4: `from` ... `import` *
+
+Caso não soubermos as funções que iremos utilizar, ou se iremos utilizar muitas funções de um determinado módulo, podemos importar todas as funções deste módulo utilizando a notação:
+
+```python
+from [módulo] import *
+```
+
+Veja o exemplo abaixo:
+
+> ```python
+> from math import *
+> ang_graus = int(input("Digite um ângulo (Em graus): "))
+> ang_rad = ang_graus*pi/180 #Observe que estamos utilizando a constante pi
+> print("O seno de {}° é {:.2g}".format(ang_graus,sin(ang_rad)))
 > ```
 >
+> Digite um ângulo (Em graus):  60  
+> O seno de 60° é 0.87
 
-**Tarefa: ** Repita o exemplo do capítulo anterior, por convinência o exemplo será mostrado abaixo.
+`import *` é **prático**! Mas **tome cuidado**!
 
-Imagine a porta de um shopping que deve abrir se e somente se as seguintes condições forem verdadeiras:
+Segue alguns motivos para **não usar** o `import *`:
 
-- A lotação máxima de 350 pessoas no local não foi atingida.
-- A porta não foi aberta nos últimos 10s.
-- O horário atual é entre 13h e 22h. 
+- Seu código não fica legível
+- Não fica implícito no código da onde vem aquela função
+- Caso um ou mais módulos tenham duas funções com o mesmo nome, **você não tem como escolher**, sempre será selecionada a última função importada!
+- Bugs inesperados
+- Etc
 
-Utilize como base as seguintes perguntas:
+Isso não quer dizer que usar o `import *` é sempre ruim. Ele pode ser prático em códigos pequenos, ou em módulos que você já conhece bem e que você saiba o que está fazendo.
 
-- Quantas pessoas estão no local?
-- Há quantos segundos a porta foi aberta?
-- Qual o horário do dia (Em horas)?
+Para mais detalhes clique [aqui](https://www.geeksforgeeks.org/why-import-star-in-python-is-a-bad-idea).
+
+### Exemplo 5: Outros módulos _built-in_
+
+Além do módulo math, existem outros módulos _built-in_ e você pode encontrá-los na documentação do Python, em `Library reference` (A página tem o título `Python Library Standard `)
+
+![image-20201014045717891](images/bibliotecas.png)
+
+Esta página mostra diversos módulos em formas de categorias.
+
+Para continuarmos os nossos exercícios vamos utilizar uma outro módulo de matemática, o módulo `random`. Ele está na seção `Numeric and Mathematical Modules`. Vamos ver um exemplo com a função `random()`:
+
+> ```python
+> from random import random # A função random() gera um float aleatório de 0.0 <= x < 1.0
+> from math import floor # A função ceil() arredonda para baixo
+> ```
+>
+> ```python
+> aleatorio=floor(10*random()) # Gera um número aleatório de 0 a 9
+> aleatorio
+> ```
+>
+> 5
+
+Observe que nesse exemplo para conseguir esse efeito combinamos duas funções de módulos diferentes.
+
+**Tarefa 1:** Olhando a documentação do módulo `random` refaça o exemplo sem utilizar o módulo `math`.
+
+**Tarefa 2:** Lendo a documentação indique quais módulos são mais adequados para:
+
+- Trabalhar com o tempo (Horas, dias, semanas)
+- Trabalhar com arquivos de audio do tipo WAV
+- Criar programas com interface gráfica (GUI)
+- Trabalhar com frações
+
+### Exemplo 6: Renomeando módulos
+
+Uma outra forma de importar módulos é renomeando-o. Observe novamente o exemplo do fatorial:
+
+> ```python
+> import math as m
+> numero = int(input("Digite um valor: "))
+> fat = m.factorial(numero)
+> print("O fatorial de {} é {}.".format(numero, fat))
+> ```
+>
+> Digite um valor:  5  
+> O fatorial de 5 é 120.
+
+Observe que a sintaxe `import math as m` tornou o mesmo módulo disponível agora por um nome diferente, no caso, `mat`. Dessa forma, podemos chamar uma função do módulo como `m.função`, como mostrado acima. Essa funcionalidade é particularmente útil quando o nome do módulo é grande e a tarefa de escreve-lo diversas vezes torna-se chata, como é mostrado abaixo:
+
+> ```python
+> import matplotlib.pyplot as plt # Sub-módulo para plotar gráficos
+> ```
+
+Sempre **prefira essa notação ao invés de `ìmport `**, pois desta forma você deixa o código legível e evita a tarefa chata de ter que escrever o nome do módulo toda vez que vai utilizar uma funcionalidade do módulo.
+
+**Tarefa:** Considere o código abaixo, substituia o `from math import *` por `ìmport math as m`:
+
+```python
+from math import *
+ang_graus = int(input("Digite um ângulo (Em graus): "))
+ang_rad = ang_graus*pi/180 #Observe que estamos utilizando a constante pi
+print("O seno de {}° é {:.2g}".format(ang_graus,sin(ang_rad)))
+```
+
+## Parte 2: Pacotes do Anaconda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lembra daquele código que foi executado na aula 1 que gerava um gráfico? 
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+t = np.linspace(-12, 10, num=100)
+y = t**2+2*t+3 
+plt.plot(t, y) 
+plt.xlabel('t - Tempo (s)') 
+plt.ylabel('y - Saída') 
+plt.title('Função quadrática') 
+plt.show()
+```
+
+Vamos disseca-lo para entender melhor como funcionam os módulos.
+
+O python possui muitas funções e operadores que nativa da própria linguagem de programação `Python` como os operadores básicos (+,-,\*,/), potenciação (\*\*) impressão de valores (print), e etc. No entanto, há algumas funcionalidades que você irá precisar para produzir seu código, mas que não vem no Python, podemos então importar tais funcionalidades para o nosso trabalho como módulos. 
+
+Por padrão, o Python não possui nenhuma ferramenta que plote gráficos ou que gere uma sequência de números. No entanto, existem os pacotes `numpy` e `matplotlib` que podem nos oferece-las. Podemos identificar as duas primeiras linhas do código acima, que importam, ou seja, trazem os módulos para podermos utilizar. 
+
+
 
 
 
