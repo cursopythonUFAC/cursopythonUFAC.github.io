@@ -1,8 +1,6 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 3: Módulos e condicionais</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 3: Módulos e pacotes</div></center>
 
-# Atividade 1: Módulos e pacotes
-
-# Parte 1: Importando um módulo
+# Atividade 1: Importando um módulo
 
 O python possui muitas funções e operadores que nativa da própria linguagem de programação  como os operadores básicos (+,-,\*,/), potenciação (\*\*) impressão de valores (`print()`,`.format()`), e etc. 
 
@@ -283,21 +281,128 @@ ang_rad = ang_graus*pi/180 #Observe que estamos utilizando a constante pi
 print("O seno de {}° é {:.2g}".format(ang_graus,sin(ang_rad)))
 ```
 
-## Parte 2: Pacotes do Anaconda
+# Atividade 2: Pacotes do Anaconda
+
+Como dito anteriormente, podemos ver os módulos como se fossem caixas com diversas funções úteis dentro, e que podemos acessa-las com um `import`.  
+
+```mermaid
+classDiagram
+	class Math{
+		<<Módulo>>
+		pi
+		e
+		inf
+		etc
+		ceil(x)
+		comb(n,k)
+		copysign(x,y)
+		etc()
+	}
+```
+
+> **Figura 1:** Representação do módulo Math.
+
+No python, também há o conceito de Pacote. Podemos ver os pacotes como módulos que contém outros módulos separados por temática. Na imagem abaixo temos o pacote `Game`. Dentro deste pacote existem outros módulos.
+
+```mermaid
+classDiagram
+	  Game .. Som
+	  Game .. Imagem
+	  Game .. Fase
+      class Game{
+		<<Pacote>>
+      }
+      class Som{
+      <<Sub-Módulo>>
+      	volumeEfeito
+      	volumeMusica
+      	reproduzirEfeito()
+      	reproduzirMusica()
+      	mudarVolume()
+      }
+      class Imagem{
+      <<Sub-Módulo>>
+      	qualidade
+      	filtros
+      	mudarQualidade()
+      	mudarFiltros()
+      }
+      class Fase{
+      	<<Sub-Módulo>>
+      	mundo
+      	numero
+      	chefe
+      	entrar()
+      	derrotarChefe()
+      }
+```
+
+> **Figura 2:** Conceito de pacote.
+
+O nosso pacote fictício agora possui vários sub-módulos, cada um deles com diversas funções diferentes e de modo mais organizado na visão do programador. 
+
+Muitos dos pacotes utilizados pela comunidade Python não vem por padrão na linguagem. Por sorte o **Anaconda trás diversos pacotes úteis** para o programador Python. Desta forma não precisamos nos preocupar em instalar muitos pacotes utilizados na comunidade Python. Podemos citar alguns exemplos de pacotes que vem junto com o Anaconda:
+
+- Numpy - Gerenciamento de arrays e matrizes
+- Matplotlib - Gráficos e plotagens
+- Scipy - Computação científica
+- Sympy - Variáveis simbólicas
+- Pandas - Análise de dados
+- OpenCV - Processamento de imagens
+- TensorFlow - Machine learning
+- Pillow - Visualização e filtragem de imagens
+- Orange - Análise de dados
+
+Pode ser que na sua máquina estes pacotes não estejam instalados. Entretanto podemos instalá-los utilizando o terminal e utilizando o comando:
+
+> `conda install [pacote]`
+
+O `conda` é o gerenciador de pacotes do Anaconda. Através desse comando podemos instalar, pesquisar e desinstalar pacotes. Abaixo segue alguns comandos que podemos utilizar no gerenciador de pacotes do Anaconda.
+
+| Comando              |                                                          |
+| -------------------- | -------------------------------------------------------- |
+| `install [pacote]`   | Instala um pacote                                        |
+| `--help`             | Ajuda                                                    |
+| `uninstall [pacote]` | Remove um pacote                                         |
+| `search [palavra]`   | Procura por um determinado pacote baseado em uma palavra |
+| update               | Faz o update de todos os pacotes do Anaconda             |
+
+### Exemplo 1: Gerenciador de pacote `conda`
+
+**Tarefa:** Utilizando o comando `conda search` tente procurar pelos seguintes pacotes:
+
+- Orange
+- OpenCV
+- Pillow
+
+Agora **instale** o pacote **Orange**. Utilize a sequencia de comandos abaixo:
+
+```bash
+conda search orange
+conda install orange3
+```
+
+Feche a abra o Anaconda. 
+
+Verá que agora é possível abrir o Orange.
+
+Finalmente, **desinstale o Orange**.
+
+### Exemplo 2: O Numpy
+
+
+
+### Exemplo 3: Plotando um gráfico
+
+
+
+### Exemplo 4: Resolvendo um sistema linear
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+# Atividade 3: Pacotes externos
 
 
 

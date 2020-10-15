@@ -30,6 +30,7 @@
   <script src="https://code.jquery.com/jquery-3.3.0.min.js"
     integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  <script src="/assets/js/jquery.changeelementtype.js"></script>
   <!--[if lt IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
     <![endif]-->
@@ -50,6 +51,18 @@
   </script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({
+    'securityLevel': 'loose', 
+    'theme': 'base',
+    'themeVariables': {
+      'fontSize': '24',
+      'fontFamily': "Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace",
+      'primaryBorderColor': '#f0b500'
+    }
+    });</script>
+    <!-- <script>mermaid.initialize({startOnLoad:false});</script> -->
+
 </head>
 
 <body>
