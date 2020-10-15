@@ -105,6 +105,10 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     codigo="TIsN955OeuQ"
 %}
 
+{% include video-atividade.html
+    codigo="oQbMOLMytN4"
+%}
+
 {% include menu-atividade.html 
     roteiro="notebooks/cap2/cap2.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
