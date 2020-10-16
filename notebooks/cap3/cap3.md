@@ -789,18 +789,39 @@ Além dos pacotes citados nos Exemplos 1 e 2, existem muitos outros. Segue o nom
 Para adicionar a foto utilize a sintaxe de foto do Markdown:
 
 ```markdown
-![Nome da foto](Caminho da foto)
+![Nome da foto](Caminho relativo da foto)
 <!-- Exemplo -->
-![Foto do blockdiag](blockdiag.png)
+![Foto do blockdiag](imgs/blockdiag.png)
 ```
 
 # Atividade 4: Para casa
 
+## Exercício 3: Plotando um gráfico
 
+Crie um programa capaz de plotar uma onda seinodal no formato:
+$$
+y(t)=Acos(\omega t+\delta)
+$$
+onde $A$ é a amplitude, $\delta$ é a fase da onda e $\omega=2\pi f$ é a frequência da onda.
 
+O usuário deve entrar com $A$, $\delta$ e $f$.
 
+Considere os seguintes parâmetros para o gráfico:
 
+- O título do gráfico deve ter todos os parâmetros da onda;
 
+- Os limites do eixo y deve ser $\pm1,2A$;
+- O limite do eixo x deve ser de $2$ segundos;
+- Use o estilo `ggplot`;
+- O gráfico deve ter a cor preta.
+
+Veja o exemplo de saída:
+
+![image-20201016031327565](images/saida-exemplo.png)
+
+## Exercício 4: Descobrindo pacotes
+
+Pesquise na internet um pacote de Python que seja útil na sua área e faça um resumo desse pacote. Siga o formato dos exemplos da Atividade 3, parte 2.
 
 
 
