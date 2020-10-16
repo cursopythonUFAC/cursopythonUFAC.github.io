@@ -1316,7 +1316,7 @@ Discorra sobre o que você entendeu dos métodos e as diferenças entre eles.
 
 # Atividade 5: Para casa
 
-## Exercício 1: Lista de compras
+### Exercício 1: Lista de compras
 
 Crie um código, que faça uma lista de estoque formatada com largura máxima de cada linha de 50 caracteres, ela deverá informar o nome do item e a sua quantidade disponível. O código deverá pedir o usuário que entre com o nome e quantidade de pelo menos 3 itens. Considere que a quantidade máxima de cada item seja 999. Use como modelo a lista abaixo e use o método `.format`.
 ```
@@ -1342,7 +1342,7 @@ print("<SEU CÓDIGO AQUI>")
 print("<SEU CÓDIGO AQUI>")
 ```
 
-## Exercício 2: Sentenças lógicas
+### Exercício 2: Sentenças lógicas
 
 Escreva o resultado de cada uma das seguintes expressões em Markdown:
 
@@ -1355,7 +1355,7 @@ Escreva o resultado de cada uma das seguintes expressões em Markdown:
 
 > **Observação:** Não vale colar no Python em gente 😅. Usem o 🧠!
 
-## Exercício 3: Semáforo
+### Exercício 3: Semáforo
 
 Um semáforo comum costuma ter de 2 a 4 fases e mais uma fase para os pedestres.
 Crie uma expressão que represente um semáforo, as setas abaixo indicam o fluxo.
@@ -1368,7 +1368,7 @@ Crie uma expressão que represente um semáforo, as setas abaixo indicam o fluxo
 
 Crie uma expressão para cada uma das fases deste cruzamento.
 
-## Exercício 4: Ano bissexto
+### Exercício 4: Ano bissexto
 
 Escreva uma expressão (em função de uma incógnita ano) que resulte `True` caso o ano seja bissexto e False caso contrário.
 

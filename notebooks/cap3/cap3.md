@@ -796,7 +796,7 @@ Para adicionar a foto utilize a sintaxe de foto do Markdown:
 
 # Atividade 4: Para casa
 
-## Exercício 1: Média da turma
+### Exercício 1: Média da turma
 
 Crie um código que receba as notas do bimestre de 4 alunos conforme a tabela abaixo, compute a média e arredonde pra cima. Você deverá usar o módulo Math e consultar a documentação para entender a função que arredonda e usa-la no seu programa. O código deverá imprimir na tela a média final de cada um e o quanto cada aluno ganhou de nota no arredondamento.
 
@@ -806,7 +806,7 @@ Crie um código que receba as notas do bimestre de 4 alunos conforme a tabela ab
 | Joãozinho | 7.00 | 7.00 | 8.1  | 9.00 |
 | Juninho   | 6.40 | 7.50 | 8.45 | 9.00 |
 
-## Exercício 2: Plotando um gráfico
+### Exercício 2: Plotando um gráfico
 
 Crie um programa capaz de plotar uma onda seinodal no formato:
 $$
@@ -829,7 +829,7 @@ Veja o exemplo de saída:
 
 ![image-20201016031327565](images/saida-exemplo.png)
 
-## Exercício 3: Descobrindo pacotes
+### Exercício 3: Descobrindo pacotes
 
 Pesquise na internet um pacote de Python que seja útil na sua área e faça um resumo desse pacote. Siga o formato dos exemplos da Atividade 3, parte 2.
 
