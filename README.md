@@ -115,3 +115,12 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
+### Capítulo 3: Módulos e pacotes
+
+> Nesta aula vamos aprender a expandir a linguagem Python através dos módulos e pacotes.
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap2/cap2.html" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
