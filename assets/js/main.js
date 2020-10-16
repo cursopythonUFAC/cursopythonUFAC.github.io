@@ -64,6 +64,12 @@ $(function () {
     }
   });
 
+  $(".language-mermaid").each(function () {
+    $(this).unwrap();
+    $(this).addClass("mermaid").removeClass("language-mermaid").changeElementType('div');
+    //$(this).removeClass("language-mermaid");
+    //$(this).replaceWith( '<div class="mermaid">' + $(this).text() + '</div>' )
+  })
 
   $(".jupyter-code .language-python").before("<div class='jupyter-input'> [Py]: </div>")
   $(".jupyter-code p").before("<div class='jupyter-output'> [Out]:  </div>")

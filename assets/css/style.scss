@@ -193,6 +193,19 @@
     }
 }
 
+.mermaid{
+    svg{
+        max-width: 100%!important;
+        //height: 200px;
+    }
+    // .classText{
+    //     font-size: 11px!important;
+    // }
+    .title{
+        font-weight: bold!important;
+    }
+}
+
 a:active, a:focus, a:visited {
     outline: 0;
     border: none;
