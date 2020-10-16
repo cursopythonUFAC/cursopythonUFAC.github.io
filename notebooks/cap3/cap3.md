@@ -267,7 +267,7 @@ Uma outra forma de importar módulos é renomeando-o. Observe novamente o exempl
 Observe que a sintaxe `import math as m` tornou o mesmo módulo disponível agora por um nome diferente, no caso, `mat`. Dessa forma, podemos chamar uma função do módulo como `m.função`, como mostrado acima. Essa funcionalidade é particularmente útil quando o nome do módulo é grande e a tarefa de escreve-lo diversas vezes torna-se chata, como é mostrado abaixo:
 
 > ```python
-> import matplotlib.pyplot as plt # Sub-módulo para plotar gráficos
+> import matplotlib.pyplot as plt # Submódulo para plotar gráficos
 > ```
 
 Sempre **prefira essa notação ao invés de `ìmport `**, pois desta forma você deixa o código legível e evita a tarefa chata de ter que escrever o nome do módulo toda vez que vai utilizar uma funcionalidade do módulo.
@@ -347,6 +347,7 @@ Muitos dos pacotes utilizados pela comunidade Python não vem por padrão na lin
 - Matplotlib - Gráficos e plotagens
 - Scipy - Computação científica
 - Sympy - Variáveis simbólicas
+- Seaborn - Visualização de dados com estatística
 - Pandas - Análise de dados
 - OpenCV - Processamento de imagens
 - TensorFlow - Machine learning
@@ -359,7 +360,7 @@ Pode ser que na sua máquina estes pacotes não estejam instalados. Entretanto p
 
 O `conda` é o gerenciador de pacotes do Anaconda. Através desse comando podemos instalar, pesquisar e desinstalar pacotes. Abaixo segue alguns comandos que podemos utilizar no gerenciador de pacotes do Anaconda.
 
-| Comando              |                                                          |
+| Comando              | Função                                                   |
 | -------------------- | -------------------------------------------------------- |
 | `install [pacote]`   | Instala um pacote                                        |
 | `--help`             | Ajuda                                                    |
@@ -384,59 +385,422 @@ conda install orange3
 
 Feche a abra o Anaconda. 
 
-Verá que agora é possível abrir o Orange.
+Verá que agora é possível abrir o Orange no Anaconda Navigator.
 
 Finalmente, **desinstale o Orange**.
 
-### Exemplo 2: O Numpy
+### Exemplo 2: Aplicação de um pacote
 
+Para entender melhor o conceito de pacote vamos utilizar o exemplo de uma trajetória de um projetil.
 
+O pacote `sympy`  permite trabalhar com variáveis simbólicas. Variáveis simbólicas são variáveis que armazenam uma incógnita, como por exemplo $t$, $x$, $y$.
 
-### Exemplo 3: Plotando um gráfico
+> **Observação:** A documentação deste pacote pode ser encontrada no menu `Help > Sympy Reference`. Alternativamente você pode [clicar aqui](https://docs.sympy.org/latest/index.html).
 
+A documentação dos módulos disponíveis nesse pacote pode ser encontrada [clicando aqui](https://docs.sympy.org/latest/modules/index.html). 
 
+![image-20201015202106086](images/sympy.png)
 
-### Exemplo 4: Resolvendo um sistema linear
+Observe que neste pacote existem muitos submódulos, que contém muitas classes e funções. Para facilitar a nossa vida, segue o diagrama abaixo que apresenta apenas funções importantes para este exemplo:
 
+```mermaid
+classDiagram
+	sympy .. plotting
+	class sympy{
+		pi
+		symbols()
+		cos()
+		sin()
+	}
+	class plotting{
+		plot()
+		plot_parametric()
+	}
+```
 
+> **Figura 3:** Funções do pacote `sympy` utilizadas nessa atividade.
 
+Agora, considere que a trajetória de um projétil lancada na superfície da terra é governada pela seguinte função:
+$$
+f(x)=-5x^2+20x
+$$
+Antes de tudo é necessário importar `sympy`.
 
+> ```python
+> import sympy
+> ```
+
+> **Observação:** Caso apareça um erro ao importar `sympy` provavelmente o pacote não está instalado na sua máquina. Use o comando:
+>
+> ```
+> conda install sympy
+> ```
+
+Depois podemos criar a variável simbólica de $x$ usando a função `symbols()`:
+
+> ```python
+> x = sympy.symbols('x') 
+> x
+> ```
+>
+> $x$
+
+Feito isso podemos escrever a trajetória do projétil:
+
+> ```python
+> f=-5*x**2+20*x
+> f
+> ```
+>
+> $-5x^2+20x$
+
+Se quisermos plotar a trajetória desse projétil devemos recorrer ao submódulo `plotting` que pertence a pacote `sympy`. Observe na Figura 3 que o submódulo está em uma hierarquia abaixo de `sympy`, então devemos utilizar a notação abaixo:
+
+```python
+import [nome_do_pacote].[submodulo]
+```
+
+Importando o submódulo `plotting`:
+
+> ```python
+> import sympy.plotting #importando o submódulo plotting do pacote sympy
+> ```
+
+Agora podemos plotar a trajetória utilizando a função `plot()` neste submódulo:
+
+> ```python
+> sympy.plotting.plot(f,(x,0,4))
+> ```
+>
+> ![Trajetória do projetil](images/trajetoria_projetil.png)
+
+Observe que usamos a expressão `(x,0,4)` para limitarmos a plotagem entre $0$ e $4$. Se tirarmos essa opção ele vai definir o intervalo de $-10$ à $10$.
+
+> ```python
+> sympy.plotting.plot(f)
+> ```
+>
+> ![Trajetória do projétil sem limites](images/trajetoria_sem_limites.png)
+
+O que é fisicamente impossível, pois estamos considerando que o solo está situado em $x=0$.
+
+Observe que para utilizar a função `plot()` tivemos que escrever o nome do submódulo inteiro. Para evitar essa tarefa chata podemos recorrer às sintaxes `from` ... `import` ... ou `import` ... `as` ... . Veja o mesmo exemplo acima reescrito:
+
+> ```python
+> from sympy import symbols
+> import sympy.plotting as plt
+> 
+> x = symbols('x')
+> f = -5*x**2+20*x
+> plt.plot(f,(x,0,4))
+> ```
+>
+> ![Trajetória do projetil](imgs/cap3/trajetoria_projetil.png)
+
+A notação `from` ... `import` ... também funciona com submódulos:
+
+> ```python
+> from sympy import symbols
+> from sympy import plotting
+> 
+> x = symbols('x')
+> f = -5*x**2+20*x
+> plotting.plot(f,(x,0,4))
+> ```
+>
+> ![Trajetória do projetil](imgs/cap3/trajetoria_projetil.png)
+
+E ainda, podemos customizar o nosso gráfico adicionando parâmetros na função `plot()`, que estão disponíveis na [documentação](https://docs.sympy.org/latest/modules/plotting.html#plot-class). Alguns destes parâmetros estão disponíveis na tabela abaixo:
+
+| Parâmetro        |                                                             |
+| ---------------- | ----------------------------------------------------------- |
+| title            | Adiciona um título                                          |
+| xlabel           | Adiciona um título para o eixo x                            |
+| ylabel           | Adiciona um título para o eixo y                            |
+| xlim             | limita o intervalo do eixo x                                |
+| ylim             | limita o intervalo do eixo y                                |
+| line_color = 'r' | Mudar a cor do gráfico (Utilize o nome das cores em inglês) |
+
+> ```python
+> from sympy import symbols
+> from sympy.plotting import plot
+> 
+> x = symbols('x')
+> f = -5*x**2+20*x
+> plot(f,(x,0,4),
+>   ylim=(0,25),
+>   xlabel="Distância (m)",
+>   ylabel="Altura (m)",
+>   title="Trajetória de um projetil",
+>   line_color = 'Red'
+>  )
+> ```
+>
+> ![Trajetoria do projetil customizada](images/trajetoria_projetil_customizada.png)
+
+Podemos customizar um pouco mais o nosso gráfico utilizando o submódulo `style` do pacote `matplotlib`, através da função `use()`.
+
+> ```python
+> from sympy import symbols
+> from sympy.plotting import plot
+> from matplotlib import style
+> style.use('seaborn-whitegrid')
+> 
+> x = symbols('x')
+> f = -5*x**2+20*x
+> plot(f,(x,0,4),
+>   ylim=(0,25),
+>   xlim=(0,4.005), #Adicionando um pouco mais de espaço para corrigir a grid
+>   xlabel="Distância (m)",
+>   ylabel="Altura (m)",
+>   title="Trajetória de um projetil"
+>  )
+> ```
+>
+> ![image-20201015232146855](images/trajetoria_projetil_estilo.png)
+
+Para encontrar mais estilos você pode [clicar aqui](https://python-graph-gallery.com/199-matplotlib-style-sheets/), ou através da [documentação](https://matplotlib.org/tutorials/introductory/customizing.html) do pacote.
+
+> **Observação:** Iremos ver o pacote `matplotlib` com mais detalhes futuramente.
+
+**Tarefa:** A equação paramétrica de uma elipse é dada por:
+$$
+\begin{cases}
+	x(\theta)=a\cos(\theta)\\
+	y(\theta)=b\sin(\theta)
+\end{cases}
+$$
+Construa um programa capaz de gerar uma elipse utilizando a função `plot_parametric()`. 
+
+- O programa deve ter como entrada $a$ e $b$;
+
+- O título do gráfico deve ter os raios $a$ e $b$;
+- Os limites dos eixos x e y devem ser $\pm1,2a$ e $\pm1,2b$, respectivamente;
+- Use o estilo `classic`;
+- O gráfico deve ter a cor verde.
+
+> **Dicas:** 
+>
+> - Use ctrl+F na documentação para encontrar esta função.
+> - Todas as funções que você precisa está na Figura 3.
+
+A saída do seu gráfico deve ser parecida com:
+
+![image-20201015235451864](images/elipse.png)
 
 # Atividade 3: Pacotes externos
 
+## Parte 1: Python Package Index (PyPI)
 
+Existem outros gerenciadores de pacotes além do `conda`. O **Python Package Index (PyPI)**, ou simplesmente `pip`, é o gerenciador padrão do Python, e muitas vezes só podemos encontrar um pacote neste gerenciador. Você pode encontrar um link do site oficial do `pip` no próprio site do Python. 
 
+![image-20201016000040768](images/pip.png)
 
+Segundo este mesmo site no momento em que este roteiro está sendo escrito existem **267182 pacotes disponíveis para instalar** através desse gerenciador. 
 
+Você pode encontrar uma pequena descrição do pacote ao buscar dentro desta plataforma.
 
+Geralmente os **pacotes têm seu código fonte disponível no [Github](https://github.com/)**, portanto se no site [pypi](https://pypi.org/) não tiver muita informação desse pacote, procure-o no Github, com uma simples pesquisa no Google:
 
+![image-20201016001040955](images/pyperclip_google.png)
 
+> **Observação:** Inclusive este site está hospedado no Github.
 
+Outro site muito relevante para encontrar documentação de pacotes em python é o [Read the Docs](https://readthedocs.org/), um site de documentação.
 
+![Read the Docs](images/read_the_docs.png)
 
+Por exemplo, o própria documentação do JupyterLab está hospedada lá:
 
+> [https://jupyterlab.readthedocs.io/en/latest/](https://jupyterlab.readthedocs.io/en/latest/)
 
+A sintaxe  de comando do `pip` é muito parecida com a do `conda`:
 
+| Comando              | Função                                                   |
+| -------------------- | -------------------------------------------------------- |
+| `install [pacote]`   | Instala um pacote                                        |
+| `--help`             | Ajuda                                                    |
+| `uninstall [pacote]` | Remove um pacote                                         |
+| `search [palavra]`   | Procura por um determinado pacote baseado em uma palavra |
+| update               | Faz o update de todos os pacotes do Anaconda             |
 
-Lembra daquele código que foi executado na aula 1 que gerava um gráfico? 
+Mais comandos podem ser vistos [aqui](https://dzone.com/articles/most-important-quotpipquot-commands-for-a-python-d).
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
-t = np.linspace(-12, 10, num=100)
-y = t**2+2*t+3 
-plt.plot(t, y) 
-plt.xlabel('t - Tempo (s)') 
-plt.ylabel('y - Saída') 
-plt.title('Função quadrática') 
-plt.show()
+### Exemplo 1: Instalando um pacote
+
+Para exemplificar o uso `pip` vamos instalar o pacote `pyperclip`:
+
+- Github: [https://github.com/asweigart/pyperclip](https://github.com/asweigart/pyperclip)
+- Read the docs: [https://pyperclip.readthedocs.io/en/latest/](https://pyperclip.readthedocs.io/en/latest/)
+- Pypi: https://pypi.org/project/pyperclip/
+
+**Tarefa 1:** Instale o pacote `pyperclip` (Entre no Pypi e copie o link
+
+### Exemplo 2: Exemplo de uso de um módulo
+
+O módulo `pyperclip` é usado para trabalhar com os comandos copiar (Ctrl+C) e colar (Ctrl+V) do computador. Nele, há duas funções principais:
+
+| Função  | Comando          |
+| ------- | ---------------- |
+| copy()  | Copia o conteúdo |
+| paste() | Cola o conteúdo  |
+
+```mermaid
+classDiagram
+	class pyperclip{
+		copy()
+		paste()
+	}
+
 ```
 
-Vamos disseca-lo para entender melhor como funcionam os módulos.
+> ```python
+> import pyperclip as ppc
+> 
+> item1 = input("Digite o nome do item 1: ")
+> item2 = input("Digite o nome do item 2: ")
+> item3 = input("Digite o nome do item 3: ")
+> qt1 = int(input("Digite a quantidade do item 1: "))
+> qt2 = int(input("Digite a quantidade do item 2: "))
+> qt3 = int(input("Digite a quantidade do item 3: "))
+> i1 = "Item 1: " + item1
+> i2 = "Item 2: " + item2
+> i3 = "Item 3: " + item3
+> 
+> 
+> print("{:_^50}".format('Lista de estoque'))
+> print("{:-<45}{}".format("Item","Quant"))
+> print("{item:-<47}{quant:03d}".format(item=i1,quant=qt1))
+> print("{item:-<47}{quant:03d}".format(item=i2,quant=qt2))
+> print("{item:-<47}{quant:03d}".format(item=i3,quant=qt3))
+> 
+> lista = "{:_^50}\n".format('Lista de estoque')  + "{:-<45}{}\n".format("Item","Quant") + "{item:-<47}{quant:03d}\n".format(item=i1,quant=qt1)+"{item:-<47}{quant:03d}\n".format(item=i2,quant=qt2) + "{item:-<47}{quant:03d}\n".format(item=i3,quant=qt3)
+> 
+> ppc.copy(lista)
+> ```
+>
+> Digite o nome do item 1:  Arroz  
+> Digite o nome do item 2:  Feijão  
+> Digite o nome do item 3:  Leite  
+> Digite a quantidade do item 1:  4  
+> Digite a quantidade do item 2:  1  
+> Digite a quantidade do item 3:  6  
+> _________________Lista de estoque_________________  
+> Item--------------------------------------------------------Quant  
+> Item 1: Arroz----------------------------------004  
+> Item 2: Feijão---------------------------------001  
+> Item 3: Leite----------------------------------006
 
-O python possui muitas funções e operadores que nativa da própria linguagem de programação `Python` como os operadores básicos (+,-,\*,/), potenciação (\*\*) impressão de valores (print), e etc. No entanto, há algumas funcionalidades que você irá precisar para produzir seu código, mas que não vem no Python, podemos então importar tais funcionalidades para o nosso trabalho como módulos. 
+**Tarefa:** Substitua o último `print()` pelo seu `Ctrl+C` como saída de dados do seguinte código. Cole o resultado como uma célula Raw (OBS: Não é Markdown).
 
-Por padrão, o Python não possui nenhuma ferramenta que plote gráficos ou que gere uma sequência de números. No entanto, existem os pacotes `numpy` e `matplotlib` que podem nos oferece-las. Podemos identificar as duas primeiras linhas do código acima, que importam, ou seja, trazem os módulos para podermos utilizar. 
+> **Dica:** No modo de comando utilize a tecla `R`.
+
+```python
+print("Este programa resolve uma equação de segundo grau do tipo ax²+bx+c=0")
+a=int(input("Digite o valor de a: "))
+b=int(input("Digite o valor de b: "))
+c=int(input("Digite o valor de c: "))
+delta=b**2-4*a*c
+x1=(-b+delta**(1/2))/(2*a)
+x2=(-b-delta**(1/2))/(2*a)
+print("As soluções da equação {:f}x²+{:f}x+{:f}=0 são: x1={:g} e x2={:g}".format(a,b,c,x1,x2))
+```
+
+## Parte 2: Exemplos de módulos e pacotes
+
+No exemplo anterior utilizamos o pacote `pyperclip`, ele é um pacote útil para quem quer trabalhar com programas de interface que precisam de alguma forma trabalhar com a área de transferência.
+
+Na área de Engenharia Elétrica existem uma infinidade de pacotes úteis que podem ser instalados através do `pip` (ou `conda`) ou seguindo as instruções no `github`.
+
+> **Observação:** Estou dando dicas de pacotes da Engenharia Elétrica, porque é a área que eu trabalho.
+
+Agora vamos mostrar dois exemplos.
+
+### Exemplo 1: Python-control
+
+Python Control Systems Library
+
+**Descrição:** Permite a análise e operação de sistemas de controle.
+
+**Documentação:** [http://python-control.readthedocs.org/](http://python-control.readthedocs.org/)
+
+**Repositório (Github):** [https://github.com/python-control/python-control](https://github.com/python-control/python-control)
+
+**Instalação (PyPI):** [https://pypi.org/project/control/](https://pypi.org/project/control/)
+
+```bash
+conda install -c conda-forge control slycot #Método recomendado
+```
+
+ou
+
+```bash
+pip install slycot   # optional; see below
+pip install control
+```
+
+**Exemplo relevante:**
+
+[https://github.com/python-control/python-control/blob/master/examples/bode-and-nyquist-plots.ipynb](https://github.com/python-control/python-control/blob/master/examples/bode-and-nyquist-plots.ipynb)
+
+**Foto relevante:**
+
+![image-20201016015629382](images/control.png)
+
+### Exemplo 2: Lcapy
+
+**L**inear **C**ircuit **A**nalysis
+
+**Descrição:** 
+
+- Lcapy é um pacote para análise de circuitos lineares. 
+- Usa o SymPy para a análise simbólica.
+- Permite o desenho de alguns esquemáticos utilizando código Python.
+
+**Documentação:** [http://lcapy.elec.canterbury.ac.nz/](http://lcapy.elec.canterbury.ac.nz/)
+
+**Repositório (Github):** https://github.com/ahkab/ahkab
+
+**Instalação (PyPI):**  https://pypi.org/project/lcapy/
+
+```
+pip install lcapy
+```
+
+**Exemplo relevante:** 
+
+[https://github.com/mph-/lcapy/blob/master/doc/examples/notebooks/superposition1.ipynb](https://github.com/mph-/lcapy/blob/master/doc/examples/notebooks/superposition1.ipynb)
+
+**Foto relevante:**
+
+![Exemplo do lcapy](images/lcapy.png)
+
+### Exemplo 3: Outros pacotes
+
+Além dos pacotes citados nos Exemplos 1 e 2, existem muitos outros. Segue o nome de alguns:
+
+- [pysimCoder](https://www.youtube.com/watch?v=FZcxfEIOzWs) $\rightarrow$ Editor parecido com o Simulink - Apenas Linux
+- [PySpice]( https://pyspice.fabrice-salvaire.fr/) $\rightarrow$ Simulador de circuitos
+- [SchemDraw](https://schemdraw.readthedocs.io/en/latest/) $\rightarrow$ Desenho de circuitos
+- [py-dss-interface](https://pypi.org/project/py-dss-interface/) $\rightarrow$ Interface do Python com o OpenDSS (Não precisa instalar o OpenDSS) - Apenas Windows
+
+**Tarefa:** Faça um resumo do Pacote `blockdiag`. Siga o formato dos exemplos 1 e 2.
+
+Para adicionar a foto utilize a sintaxe de foto do Markdown:
+
+```markdown
+![Nome da foto](Caminho da foto)
+<!-- Exemplo -->
+![Foto do blockdiag](blockdiag.png)
+```
+
+# Atividade 4: Para casa
+
+
+
+
+
+
 
 
 
