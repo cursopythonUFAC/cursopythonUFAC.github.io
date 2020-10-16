@@ -124,3 +124,4 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
+
