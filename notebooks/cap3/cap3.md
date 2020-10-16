@@ -786,7 +786,7 @@ Além dos pacotes citados nos Exemplos 1 e 2, existem muitos outros. Segue o nom
 
 > **Observação:** Tomem cuidado ao instalar pacotes desatualizados, pois podem quebrar o seu ambiente Python. Sempre olhe as dependências antes de instalar o pacote.
 
-**Tarefa:** Faça um resumo do Pacote `SchemDraw`. Siga o formato dos exemplos 1 e 2.
+**Tarefa:** Faça um resumo do Pacote `graphviz`. Siga o formato dos exemplos 1 e 2.
 
 Para adicionar a foto utilize a sintaxe de foto do Markdown:
 
