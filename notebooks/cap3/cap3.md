@@ -779,12 +779,14 @@ pip install lcapy
 
 Além dos pacotes citados nos Exemplos 1 e 2, existem muitos outros. Segue o nome de alguns:
 
-- [pysimCoder](https://www.youtube.com/watch?v=FZcxfEIOzWs) $\rightarrow$ Editor parecido com o Simulink - Apenas Linux
+- [pysimCoder](https://www.youtube.com/watch?v=FZcxfEIOzWs) $\rightarrow$ Editor parecido com o Simulink - Apenas Linux (Experimental)
 - [PySpice]( https://pyspice.fabrice-salvaire.fr/) $\rightarrow$ Simulador de circuitos
 - [SchemDraw](https://schemdraw.readthedocs.io/en/latest/) $\rightarrow$ Desenho de circuitos
 - [py-dss-interface](https://pypi.org/project/py-dss-interface/) $\rightarrow$ Interface do Python com o OpenDSS (Não precisa instalar o OpenDSS) - Apenas Windows
 
-**Tarefa:** Faça um resumo do Pacote `blockdiag`. Siga o formato dos exemplos 1 e 2.
+> **Observação:** Tomem cuidado ao instalar pacotes desatualizados, pois podem quebrar o seu ambiente Python. Sempre olhe as dependências antes de instalar o pacote.
+
+**Tarefa:** Faça um resumo do Pacote `SchemDraw`. Siga o formato dos exemplos 1 e 2.
 
 Para adicionar a foto utilize a sintaxe de foto do Markdown:
 
