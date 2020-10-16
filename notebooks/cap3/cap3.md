@@ -1,6 +1,6 @@
 <center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 3: Módulos e pacotes</div></center>
 
-# Atividade 1: Importando um módulo
+# Atividade 1: Importando módulos
 
 O python possui muitas funções e operadores que nativa da própria linguagem de programação  como os operadores básicos (+,-,\*,/), potenciação (\*\*) impressão de valores (`print()`,`.format()`), e etc. 
 
