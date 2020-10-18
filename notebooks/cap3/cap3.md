@@ -221,7 +221,7 @@ Para mais detalhes clique [aqui](https://www.geeksforgeeks.org/why-import-star-i
 
 Além do módulo math, existem outros módulos _built-in_ e você pode encontrá-los na documentação do Python, em `Library reference` (A página tem o título `Python Library Standard `)
 
-![image-20201014045717891](images/bibliotecas.png)
+![Bibliotecas Built-in do Python](images/bibliotecas.png)
 
 Esta página mostra diversos módulos em formas de categorias.
 
@@ -399,7 +399,7 @@ O pacote `sympy`  permite trabalhar com variáveis simbólicas. Variáveis simb�
 
 A documentação dos módulos disponíveis nesse pacote pode ser encontrada [clicando aqui](https://docs.sympy.org/latest/modules/index.html). 
 
-![image-20201015202106086](images/sympy.png)
+![Módulos do Sympy](images/sympy.png)
 
 Observe que neste pacote existem muitos submódulos, que contém muitas classes e funções. Para facilitar a nossa vida, segue o diagrama abaixo que apresenta apenas funções importantes para este exemplo:
 
@@ -586,7 +586,7 @@ Construa um programa capaz de gerar uma elipse utilizando a função `plot_param
 
 A saída do seu gráfico deve ser parecida com:
 
-![image-20201015235451864](images/elipse.png)
+![Elipse](images/elipse.png)
 
 # Atividade 3: Pacotes externos
 
@@ -594,7 +594,7 @@ A saída do seu gráfico deve ser parecida com:
 
 Existem outros gerenciadores de pacotes além do `conda`. O **Python Package Index (PyPI)**, ou simplesmente `pip`, é o gerenciador padrão do Python, e muitas vezes só podemos encontrar um pacote neste gerenciador. Você pode encontrar um link do site oficial do `pip` no próprio site do Python. 
 
-![image-20201016000040768](images/pip.png)
+![Como encontrar o pip](images/pip.png)
 
 Segundo este mesmo site no momento em que este roteiro está sendo escrito existem **267182 pacotes disponíveis para instalar** através desse gerenciador. 
 
@@ -602,7 +602,7 @@ Você pode encontrar uma pequena descrição do pacote ao buscar dentro desta pl
 
 Geralmente os **pacotes têm seu código fonte disponível no [Github](https://github.com/)**, portanto se no site [pypi](https://pypi.org/) não tiver muita informação desse pacote, procure-o no Github, com uma simples pesquisa no Google:
 
-![image-20201016001040955](images/pyperclip_google.png)
+![Imagens do Pyperclip](images/pyperclip_google.png)
 
 > **Observação:** Inclusive este site está hospedado no Github.
 
@@ -745,7 +745,7 @@ pip install control
 
 **Foto relevante:**
 
-![image-20201016015629382](images/control.png)
+![Controle Linear](images/control.png)
 
 ### Exemplo 2: Lcapy
 
@@ -829,7 +829,7 @@ Considere os seguintes parâmetros para o gráfico:
 
 Veja o exemplo de saída:
 
-![image-20201016031327565](images/saida-exemplo.png)
+![Exemplo de saída](images/saida-exemplo.png)
 
 ### Exercício 3: Descobrindo pacotes
 
