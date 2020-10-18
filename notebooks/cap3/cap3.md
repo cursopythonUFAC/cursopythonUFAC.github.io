@@ -718,7 +718,9 @@ Agora vamos mostrar dois exemplos.
 
 ### Exemplo 1: Python-control
 
-Python Control Systems Library
+**P**ython **C**ontrol **S**ystems **L**ibrary
+
+**Área:** Engenharia Elétrica / Engenharia de controle e automação
 
 **Descrição:** Permite a análise e operação de sistemas de controle.
 
@@ -750,6 +752,8 @@ pip install control
 ### Exemplo 2: Lcapy
 
 **L**inear **C**ircuit **A**nalysis
+
+**Área:** Engenharia Elétrica
 
 **Descrição:** 
 
@@ -795,6 +799,16 @@ Para adicionar a foto utilize a sintaxe de foto do Markdown:
 <!-- Exemplo -->
 ![Foto do blockdiag](imgs/blockdiag.png)
 ```
+
+Para adicionar um link utilize a seguinte sintaxe:
+
+```markdown
+[Nome do link](Caminho relativo da foto)
+<!-- Exemplo -->
+[Nome do link](http://www.blackdiag.com)
+```
+
+Se o link for uma URL basta copiar a URL.
 
 # Atividade 4: Para casa
 
