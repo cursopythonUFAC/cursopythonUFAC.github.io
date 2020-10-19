@@ -497,13 +497,13 @@ Os blocos de instrução constroem hierarquias e estas, podem ser reconhecidas v
 #bloco principal (Nível 0)
 #bloco principal (Nível 0)
 #bloco principal (Nível 0)
-    #bloco 1 (Nível 1)
-    #bloco 1 (Nível 1)
-    #bloco 1 (Nível 1)
-        #bloco 2 (Nível 2)
-        #bloco 2 (Nível 2)
-        #bloco 2 (Nível 2)
-        #bloco 2 (Nível 2)
+   #bloco 1 (Nível 1)
+   #bloco 1 (Nível 1)
+   #bloco 1 (Nível 1)
+       #bloco 2 (Nível 2)
+       #bloco 2 (Nível 2)
+       #bloco 2 (Nível 2)
+       #bloco 2 (Nível 2)
 #bloco principal (Nível 3)
 #bloco principal (Nível 3)
 #bloco principal (Nível 3)
@@ -533,10 +533,10 @@ O bloco `def` é utilizado para **definir as funções** e tem o seguinte format
 
 ```python
 def nome_da_função(argumento1,argumento2,argumento3,etc):
-    """
-    Instruções da função
-    """
-    return saida
+   """
+   Instruções da função
+   """
+   return saida
 ```
 
 ### Exemplo 1: Introdução ao `interact`
@@ -551,8 +551,8 @@ Para trabalhar com o interact é necessário definir uma função, vamos começa
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->     # Bloco 1 (Nível 1)
->     return print("O valor de x é {:d}".format(x))
+>      # Bloco 1 (Nível 1)
+>      return print("O valor de x é {:d}".format(x))
 > # Bloco principal (Nível 1)
 > interact(f,#Nome da função
 >       x=5 #Variável ou widget
@@ -605,8 +605,8 @@ Podemos remover essa saída adicionando `;` ao final da instrução `ìnteract()
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->     # Bloco 1 (Nível 0)
->     return print("O valor de x é {}".format(x))
+>      # Bloco 1 (Nível 0)
+>      return print("O valor de x é {}".format(x))
 > # Bloco principal (Nível 0)
 > interact(f,x=5);
 > ```
@@ -649,8 +649,8 @@ De fato, conseguimos o mesmo resultado quando passamos o próprio `IntSlider` co
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->    # Bloco 1 (Nível 0)
->    return print("O valor de x é {}".format(x))
+>       # Bloco 1 (Nível 0)
+>       return print("O valor de x é {}".format(x))
 > # Bloco principal (Nível 0)
 > interact(f,x=widget.IntSlider(min=-5, max=15, step=1, value=5));
 > ```
@@ -689,8 +689,8 @@ Por exemplo:
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->    # Bloco 1 (Nível 0)
->    return print("O valor de x é {}".format(x))
+>       # Bloco 1 (Nível 0)
+>       return print("O valor de x é {}".format(x))
 > # Bloco principal (Nível 0)
 > interact(f,x=(0,10)); #widget.IntSlider(min=0, max=10)
 > ```
@@ -717,8 +717,8 @@ E se o segundo parâmetro for passado como `x=(min,max,passo)` irá produzir um 
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
-> # Bloco 1 (Nível 0)
-> return print("O valor de x é {}".format(x))
+>    # Bloco 1 (Nível 0)
+>    return print("O valor de x é {}".format(x))
 > # Bloco principal (Nível 0)
 > interact(f,x=(0.0,10.0,0.5)); #widget.FloatSlider(min=0.0, max=10.0,step=0.5)
 > ```
@@ -737,6 +737,21 @@ E se o segundo parâmetro for passado como `x=(min,max,passo)` irá produzir um 
 > outputH.innerHTML = (this.value).toString();
 > }
 > </script>
+
+**Tarefa:** Crie um programa capaz de calcular a área, $A$, e o volume, $V$ de uma esfera. Considere as equações abaixo para fazer o cálculo:
+$$
+A=4\pi r^2
+$$
+
+$$
+V=\frac{4}{3}\pi r^3
+$$
+
+O programa deve ter como entrada o raio $r$, que deve ser representado na forma de FloatSlider com valor mínimo de 1, máximo de 10 e passo de 0,1.
+
+### Exemplo 3: Widgets e gráficos
+
+
 
 # Atividade 3: Condicionais
 
