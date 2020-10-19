@@ -495,7 +495,7 @@ Observe que para utilizar a função `plot()` tivemos que escrever o nome do sub
 > plt.plot(f,(x,0,4))
 > ```
 >
-> ![Trajetória do projetil](imgs/cap3/trajetoria_projetil.png)
+> ![Trajetória do projetil](images/trajetoria_projetil.png)
 
 A notação `from` ... `import` ... também funciona com submódulos:
 
@@ -508,7 +508,7 @@ A notação `from` ... `import` ... também funciona com submódulos:
 > plotting.plot(f,(x,0,4))
 > ```
 >
-> ![Trajetória do projetil](imgs/cap3/trajetoria_projetil.png)
+> ![Trajetória do projetil](images/trajetoria_projetil.png)
 
 E ainda, podemos customizar o nosso gráfico adicionando parâmetros na função `plot()`, que estão disponíveis na [documentação](https://docs.sympy.org/latest/modules/plotting.html#plot-class). Alguns destes parâmetros estão disponíveis na tabela abaixo:
 
@@ -570,7 +570,7 @@ $$
 	y(\theta)=b\sin(\theta)
 \end{cases}
 $$
-Construa um programa capaz de gerar uma elipse utilizando a função `plot_parametric()`. 
+Construa um programa capaz de gerar uma elipse utilizando a função `plot_parametric()`, seguinte as seguintes premissas:
 
 - O programa deve ter como entrada $a$ e $b$;
 
@@ -763,9 +763,9 @@ pip install control
 
 **Documentação:** [http://lcapy.elec.canterbury.ac.nz/](http://lcapy.elec.canterbury.ac.nz/)
 
-**Repositório (Github):** https://github.com/ahkab/ahkab
+**Repositório (Github):** [https://github.com/mph-/lcapy](https://github.com/mph-/lcapy)
 
-**Instalação (PyPI):**  https://pypi.org/project/lcapy/
+**Instalação (PyPI):** [https://pypi.org/project/lcapy/](https://pypi.org/project/lcapy/)
 
 ```
 pip install lcapy

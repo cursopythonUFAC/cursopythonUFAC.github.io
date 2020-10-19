@@ -1,0 +1,12 @@
+<p>
+  <input type="range" min="{{ include.min }}" max="{{ include.max }}" value="{{ include.val }}" class="slider" id="slider-{{ include.name }}">
+  <span id="val-{{ include.name }}"></span>
+</p>
+<script>
+    var slider = document.getElementById("slider-{{ include.name }}");
+    var output = document.getElementById("val-{{ include.name }}");
+    output.innerHTML = slider.value;
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+    }
+</script>
