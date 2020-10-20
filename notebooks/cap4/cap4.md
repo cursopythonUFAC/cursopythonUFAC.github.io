@@ -265,3 +265,4 @@ O `elif` é a junção do bloco if e else. Ele nega a condição anterior, mas i
 
 **Tarefa:** Refaça o exemplo das organizações Tabajara utilizando `else` e `elseif`.
 
+# Atividade 3: Para casa
