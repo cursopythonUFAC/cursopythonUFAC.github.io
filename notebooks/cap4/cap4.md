@@ -283,7 +283,7 @@ Vimos há pouco que `if` verifica se um estado lógico é `True` ou `False` e re
 ```mermaid
 graph TD
 	id((Início)) --> id1{<b>if</b> condicao:} -- Se sim --> id2[Bloco para verdadeiro] --> id3((Fim))
-	id1 -- "Se não (<b>else</b>)" --> id4[Bloco para falso] --> id3
+	id1 -- "Se não (<b>else</b>:)" --> id4[Bloco para falso] --> id3
 ```
 
 
