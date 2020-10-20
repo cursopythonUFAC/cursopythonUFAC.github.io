@@ -14,9 +14,9 @@ Agora vejam a definição de módulo segundo um trecho da a própria documentaç
 
 ### Exemplo 1: Importando um módulo
 
-Para o nosso primeiro exemplo vamos importar o módulo **math**, um módulo que extende o Python com algumas funcionalidades matemáticas.
+Para o nosso primeiro exemplo vamos importar o módulo **math**, um módulo que estende o Python com algumas funcionalidades matemáticas.
 
-Execute o célula abaixo:
+Execute a célula abaixo:
 
 > ```python
 > import math # Nesta linha eu estou importando o módulo math
@@ -28,11 +28,11 @@ Feito isso, tente escrever o seguinte código e aperte `Tab`:
 > math.
 > ```
 
-Você verá todos as **funções** e **constantes (instâncias)** deste pacote, como mostra na Figura abaixo:
+Você verá todas as **funções** e **constantes (instâncias)** deste pacote, como mostra na Figura abaixo:
 
 ![Tab Módulos](images/tab_modulos.png)
 
-Agora apague a célula acima e vamos aprender à calcular a raiz quadrada. Para isso utilize a função `sqrt()` do módulo `math`.
+Agora apague a célula acima e vamos aprender a calcular a raiz quadrada. Para isso utilize a função `sqrt()` do módulo `math`.
 
 > ```python
 > num = int(input("Digite o número que quer calcular a raiz quadrada: "))
@@ -169,7 +169,7 @@ Vejamos um exemplo de como calcular o fatorial:
 
 Percebemos agora, a maneira mais simples de importar um módulo, que é simplesmente digitando `import` e o nome do módulo logo em seguida. Na hora de chamar a função `factorial`precisamos especificar que ela pertence ao módulo em questão, por isso a chamamos com `math.factorial()`.  
 
-Agora suponha que iremos usar apenas a função `factorial`, sem usar as outras funções do módulo de matemática, a outra forma de faze-lo é.
+Agora suponha que iremos usar apenas a função `factorial`, sem usar as outras funções do módulo de matemática, a outra forma de faze-lo é:
 
 > ```python
 > # Utilizando from import
@@ -179,7 +179,7 @@ Agora suponha que iremos usar apenas a função `factorial`, sem usar as outras 
 > print("O fatorial de {} é {}.".format(numero, fat))
 > ```
 
-**Tarefa:** Refaça a tarefa abaixo importando todas as funções necessárias utilizando a notação `from` `ìmport`
+**Tarefa:** Refaça a tarefa abaixo importando todas as funções necessárias utilizando a notação `from` `import`
 
 > Crie um código que aceite um ângulo em graus como entrada, e imprima na tela o seu correspondente em radianos, o seu seno, cosseno e tangente.
 
@@ -228,12 +228,12 @@ Esta página mostra diversos módulos em formas de categorias.
 Para continuarmos os nossos exercícios vamos utilizar uma outro módulo de matemática, o módulo `random`. Ele está na seção `Numeric and Mathematical Modules`. Vamos ver um exemplo com a função `random()`:
 
 > ```python
-> from random import random # A função random() gera um float aleatório de 0.0 <= x < 1.0
+> from random import random # A função random() gera um float pseudo aleatório de 0.0 <= x < 1.0
 > from math import floor # A função ceil() arredonda para baixo
 > ```
 >
 > ```python
-> aleatorio=floor(10*random()) # Gera um número aleatório de 0 a 9
+> aleatorio=floor(10*random()) # Gera um número pseudo aleatório de 0 a 9
 > aleatorio
 > ```
 >
@@ -270,9 +270,9 @@ Observe que a sintaxe `import math as m` tornou o mesmo módulo disponível agor
 > import matplotlib.pyplot as plt # Submódulo para plotar gráficos
 > ```
 
-Sempre **prefira essa notação ao invés de `ìmport `**, pois desta forma você deixa o código legível e evita a tarefa chata de ter que escrever o nome do módulo toda vez que vai utilizar uma funcionalidade do módulo.
+Sempre **prefira essa notação de `import [nome_do_pacote] as [novo_nome_do_pacote]`ao invés de apenas `import  `**, pois desta forma você deixa o código legível e evita a tarefa chata de ter que escrever o nome completo do módulo toda vez que vai utilizar uma funcionalidade do módulo.
 
-**Tarefa:** Considere o código abaixo, substituia o `from math import *` por `ìmport math as m`:
+**Tarefa:** Considere o código abaixo, substitua o `from math import *` por `ìmport math as m`:
 
 ```python
 from math import *
@@ -512,14 +512,14 @@ A notação `from` ... `import` ... também funciona com submódulos:
 
 E ainda, podemos customizar o nosso gráfico adicionando parâmetros na função `plot()`, que estão disponíveis na [documentação](https://docs.sympy.org/latest/modules/plotting.html#plot-class). Alguns destes parâmetros estão disponíveis na tabela abaixo:
 
-| Parâmetro        |                                                             |
-| ---------------- | ----------------------------------------------------------- |
-| title            | Adiciona um título                                          |
-| xlabel           | Adiciona um título para o eixo x                            |
-| ylabel           | Adiciona um título para o eixo y                            |
-| xlim             | limita o intervalo do eixo x                                |
-| ylim             | limita o intervalo do eixo y                                |
-| line_color = 'r' | Mudar a cor do gráfico (Utilize o nome das cores em inglês) |
+| Função     |                                                             |
+| ---------- | ----------------------------------------------------------- |
+| title      | Adiciona um título                                          |
+| xlabel     | Adiciona um título para o eixo x                            |
+| ylabel     | Adiciona um título para o eixo y                            |
+| xlim       | limita o intervalo do eixo x                                |
+| ylim       | limita o intervalo do eixo y                                |
+| line_color | Mudar a cor do gráfico (Utilize o nome das cores em inglês) |
 
 > ```python
 > from sympy import symbols
