@@ -259,9 +259,9 @@ Veja um exemplo em Python
 
 Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério, baseado no salário atual:
 
-- salários até R\$ 280,00 (incluindo): aumento de 20%;
-- salários entre R\$ 280,00 e R\$ 700,00: aumento de 15%¹; 
-- salários entre R\$ 700,00 e R​\$ 1500,00: aumento de 10%²;
+- salários até R<span>\$</span> 280,00 (incluindo): aumento de 20%;
+- salários entre R<span>\$</span> 280,00 e R<span>$</span> 700,00: aumento de 15%¹; 
+- salários entre R<span>\$</span> 700,00 e R<span>\$</span> 1500,00: aumento de 10%²;
 - salários de R\$ 1500,00 em diante: aumento de 5%;
 
 
@@ -272,9 +272,9 @@ Após o aumento ser realizado, informe na tela:
 - o valor do aumento;
 - o novo salário, após o aumento.
 
-¹ Utilize o `if` alinhado para o caso de salários entre R\$ 280,00 e R\$ 700,00.
+¹ Utilize o `if` alinhado para o caso de salários entre R<span>\$</span> 280,00 e R<span>$</span> 700,00.
 
-² Não utilize o `if` alinhado para o caso de salários entre R\$ 700,00 e R\$ 1500,00.
+² Não utilize o `if` alinhado para o caso de salários entre R<span>\$</span> 700,00 e R<span>\$</span> 1500,00.
 
 ### Exemplo 3: `if-else`
 
