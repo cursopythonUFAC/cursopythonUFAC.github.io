@@ -130,15 +130,15 @@ Os blocos de instrução constroem hierarquias e estas, podem ser reconhecidas v
 #bloco principal (Nível 0)
 ```
 
-### Exemplo 1: Conhecendo o `if`
-
-O `if` uma estrutura condicional presente em todas as linguagens. Ele estabelece uma relação lógica de *"se.. então"*.  
+Até agora, somente demos instruções sequenciais ao computador. Nunca pedimos ao nosso código que tome decisões, isso que aprenderemos agora. Já parou pra pensar como o seu cérebro decide se compra um saco de arroz ou não baseado no preço? O fluxograma do pensamento deve ser algo mais ou menos assim.
 
 ```mermaid
 graph TD
 	id((Início)) -->  id1{Parroz<20} -- Se verdadeiro --> id2[Compra o arroz.<br>Preço está ok!] -->  id4((Fim))
 	id1  -- Se falso --> id3[Não compra arroz.<br>Está caro!] -->id4
 ```
+
+Você começa o pensamento examinando o preço do arroz, caso ele seja menor que um determinado valor, você compra, caso contrário, não compra. Nós podemos escrever um código que execute exatamente o que está no gráfico acima, veja na próxima seção.
 
 No Python apresenta a seguinte sintaxe:
 
@@ -175,47 +175,64 @@ Veja o exemplo abaixo:
 > Essa é a segunda linha do bloco 'if'.   
 > Agora, voltamos para o bloco principal do programa.  
 
-Podemos utilizar mais de um bloco `if` na mesma célula, como é mostrado abaixo:
-
-> ```python
-> x = int(input("Digite o valor de x:"))
-> if x < 10: # Se x menor que 10 então faça
->       print('{} é menor que 10.'.format(x))
-> if x == 10: # Se x igual a 10 então faça
->       print('{} é igual a 10.'.format(x))
-> if x > 10: # Se x maior que 10 então faça
->       print('{} é igual a 10.'.format(x))
-> ```
->
-> Digite o valor de x: 20  
-> 20 é igual a 10.
-
-Podemos utilizar o `if` em conjunto com os métodos de string:
+### Exemplo 1: Estrutura do `if`
 
 > ```python
 > cpf = input('Digite seu CPF: ')
 > if not cpf.isdigit():
->  print('CPF inválido.')
+>     print('CPF inválido.')
 > ```
 >
 > Digite seu CPF:  12312asd
 > CPF inválido.
 
-**Tarefa:** Crie um programa que leia como entrada uma senha:
+Genericamente, se uma condição for verdadeira (`True`), ele executará o bloco de código correspondente.
 
-- Caso o usuário digite uma senha menor que 8 caracteres o programa deve acusar ao usuário:
+### Exemplo 1: Problema do arroz
 
-```
-Sua senha deve ter pelo menos 8 caracteres.
-```
+Podemos utilizar mais de um bloco `if` na mesma célula, como é mostrado abaixo:
 
-- Caso usuário digite uma senha maior que 16 caracteres o programa deve acusar ao usuário:
+> ```python
+> x = int(input("Digite o preço do arroz: "))
+> if x < 20:
+>       print('R${:.2f} é um bom preço. Compre o arroz.'.format(x))
+> if x >= 20:
+>       print('R${:.2f} está muito caro. Não compre o arroz.'.format(x))
+> ```
+>    
+> Digite o preço do arroz:  25   
+>R$25.00 está muito caro. Não compre o arroz.
 
-```
-Sua senha deve ter menos de 16 caracteres.
-```
+Observe nos dois códigos acima que a linha logo após o `if` está espaçada um parágrafo (tab) a frente. Isso se chama **indentação** dos blocos do código. A condição que prossegue o `if`é um bloco e deve ser **indentado** um nível abaixo, caso contrário, o código resultará em erro.
 
-- Caso o usuário digite uma senha entre 8 e 16 caracteres a senha é considerada válida.
+![Níveis](images/niveis.png)
+
+### Exemplo 3: Verificação de senha   
+
+> ```python
+> senha = input('Senha: ')
+> if len(senha) < 8:
+> 	print('Sua senha deve ter pelo menos 8 caracteres.')
+> if len(senha) > 8 and (len(senha) < 16):
+> 	print('Senha válida.')
+> if len(senha) > 16:
+> 	print('Sua senha deve ter menos de 16 caracteres.')
+> ```
+
+Existe ainda o `if` aninhado, que seria um bloco `if` dentro de um bloco `if` maior.
+
+> ```python
+> senha = input('SENHA: ')
+> if len(senha) >= 8:
+> 	if len(senha) <= 16:
+> 		print('Senha válida.')
+> if len(senha) < 8:
+> 	print('Senha inválida.')
+> ```
+
+Observe a indentação dos blocos de código. O segundo `if` está no bloco abaixo do anterior, isso significa que ele está "dentro" do outro `if`.
+
+**Tarefa 1**: peça ao usuário uma senha. Você deve verificar se ela possui de 8 carácteres até 16 e se ela é composta por números e letras. Informe ao usuário se a senha é válida ou não.
 
 ### Exemplo 2: `if` alinhados
 
@@ -261,26 +278,7 @@ Veja um exemplo em Python
 > Qual é seu nome? Gustavo  
 > Nome masculino e charmoso
 
-**Tarefa:** As Organizações Tabajara resolveram dar um aumento de salário aos seus colaboradores e lhe contrataram para desenvolver o programa que calculará os reajustes.
-
-Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério, baseado no salário atual:
-
-- salários até R<span>\$</span> 280,00 (incluindo): aumento de 20%;
-- salários entre R<span>\$</span> 280,00 e R<span>$</span> 700,00: aumento de 15%¹; 
-- salários entre R<span>\$</span> 700,00 e R<span>\$</span> 1500,00: aumento de 10%²;
-- salários de R\$ 1500,00 em diante: aumento de 5%;
-
-
-Após o aumento ser realizado, informe na tela:
-
-- o salário antes do reajuste;
-- o percentual de aumento aplicado;
-- o valor do aumento;
-- o novo salário, após o aumento.
-
-¹ Utilize o `if` alinhado para o caso de salários entre R<span>\$</span> 280,00 e R<span>$</span> 700,00.
-
-² Não utilize o `if` alinhado para o caso de salários entre R<span>\$</span> 700,00 e R<span>\$</span> 1500,00.
+**Tarefa 1**: peça ao usuário uma senha. Você deve verificar se ela possui de 8 carácteres até 16 e se ela é composta por números e letras. Informe ao usuário se a senha é válida ou não.
 
 ### Exemplo 3: `if-else`
 
@@ -299,17 +297,15 @@ Veja um exemplo em Python:
 > ```python
 > senha = input('SENHA: ')
 > if (len(senha) >= 8) and (len(senha) <= 16): #Se
->     print('Senha válida')
+>       print('Senha válida')
 > else: #Se não
->     print('Senha inválida')
+>       print('Senha inválida')
 > ```
 >
 > SENHA:  Macarrão_com_carne   
 > Senha inválida
 
-**Tarefa:** Peça ao usuário uma senha. Você deve verificar se ela possui de 8 carácteres até 16 e se ela é composta por números, letras e caracteres especiais. Informe ao usuário se a senha é válida ou não¹.
-
-¹ Utilize o `if-else`.
+**Tarefa 2:** Refaça o exemplo da **Tarefa 1** utilizando `else` para simplificar o código.
 
 ### Exemplo 4: `elseif`
 
@@ -324,18 +320,122 @@ Esse exemplo não foi proposital foi o exemplo do Gustavo Guanabara
 > ```python
 > nome = str(input("Qual é seu nome?"))
 > if nome == 'Gustavo': #se
->     print("Que nome bonito!")
+>       print("Que nome bonito!")
 > elif nome == 'Pedro' or nome == 'Maria' or nome == 'Paulo': #senão se
->     print("Não é tão bonito quanto Gustavo")
+>       print("Não é tão bonito quanto Gustavo")
 > elif nome in 'Ana Cláudia Jéssica Juliana': #senão se
->     print("Belo nome feminino")
+>       print("Belo nome feminino")
 > else: #senão
->     print('Se nome é normal')
+>       print('Se nome é normal')
 > ```
 >
 > Qual é seu nome? Gustavo  
 > Que nome bonito!
 
-**Tarefa:** Refaça o exemplo das organizações Tabajara utilizando `else` e `elseif`.
+**Tarefa:** Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+
+1. "Telefonou para a vítima?"
+
+2. "Esteve no local do crime?"
+
+3. "Mora perto da vítima?"
+
+4. "Devia para a vítima?"
+
+5. "Já trabalhou com a vítima?" 
+
+O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. 
+
+Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+
+### Exemplo 5: Validação de senha
+
+Vamos criar um programa que receba uma senha do usuário e imprima na tela um texto dizendo se ela é fraca, forte ou inválida.
+
+A senha é considerada forte se cumprir todos os requisitos:  
+
+1. Tiver 8 ou mais caracteres  
+2. Tiver letras maiúsculas e minúsculas  
+3. Tiver combinações de letras e números
+
+A senha é considerada fraca se cumprir pelo menos um dos requisitos:  
+
+1. Tiver menos que 8 caracteres 
+2. Tiver somente letras maiúsculas ou minúsculas   
+3. Tiver somente letras ou somente números
+
+A senha é considerada inválida se cumprir pelo menos um dos requisitos:
+
+1. Tiver caracteres não alfanuméricos
+2. Tiver menos que 5 caracteres
+
+```python
+psw = input('Digite uma senha')
+
+if (len(psw) < 5) or not(psw.isalnum()): #Verificar se é inválida
+    print('Senha inválida')
+else:
+    print('Senha válida')
+    if len(psw) > 7 and not(psw.islower() or psw.isupper()) and not(psw.isalpha() or psw.isdecimal()):
+        print('Senha forte')
+    else:
+        print('Senha fraca')
+```
+
+> **Observação:** Mostrar também os métodos islower(), isupper(), isalnum().
+
+**Tarefa:** O Paulo é um vendedor e quer verificar se receberá bônus este ano. Existe uma tabela de bonificações de acordo com o nº de produtos vendidos. Veja abaixo:
+
+**Bônus de 10%:**
+
+- 100 vendas ou valor de vendas superior a R$10.000,00;
+
+**Bônus de 20%:**
+
+- 200 vendas ou valor de vendas superior a R$20.000,00;
+
+**Bônus de 30%:**
+
+- 300 vendas ou valor de vendas superior a R$30.000.
+
+Paulo não conhece a tabela de bonificação e irá inserir no sistema o valor financeiro total de vendas realizadas e a quantidade total de vendas e quer saber quanto a mais ele irá receber. O seu salário é igual a R$2.000,00.
 
 # Atividade 3: Para casa
+
+### Exercício 1: Interrogatório
+
+Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+
+1. "Telefonou para a vítima?"
+
+2. "Esteve no local do crime?"
+
+3. "Mora perto da vítima?"
+
+4. "Devia para a vítima?"
+
+5. "Já trabalhou com a vítima?" 
+
+O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. 
+
+Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+
+### Exercício 2: Aumento de salário
+
+As Organizações Tabajara resolveram dar um aumento de salário aos seus colaboradores e lhe contrataram para desenvolver o programa que calculará os reajustes.
+
+Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério, baseado no salário atual:
+
+- Salários até R<span>\$</span> 280,00 (incluindo): aumento de 20%;
+- Salários entre R<span>\$</span> 280,00 e R<span>$</span> 700,00: aumento de 15%; 
+- Salários entre R<span>\$</span> 700,00 e R<span>\$</span> 1500,00: aumento de 10%;
+- Salários de R\$ 1500,00 em diante: aumento de 5%;
+
+
+Após o aumento ser realizado, informe na tela:
+
+- O salário antes do reajuste;
+- O percentual de aumento aplicado;
+- O valor do aumento;
+- O novo salário, após o aumento.
+
