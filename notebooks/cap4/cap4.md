@@ -132,12 +132,24 @@ Os blocos de instrução constroem hierarquias e estas, podem ser reconhecidas v
 
 ### Exemplo 1: Conhecendo o `if`
 
-O `if` uma estrutura condicional presente em todas as linguagens. Ele estabelece uma relação lógica de *"se.. então"*.  No Python apresenta a seguinte sintaxe:
+O `if` uma estrutura condicional presente em todas as linguagens. Ele estabelece uma relação lógica de *"se.. então"*.  
+
+No Python apresenta a seguinte sintaxe:
 
 ```python
-if teste_lógico:
-    # Instruções do bloco IF
+if condicao:
+    # Instruções do bloco IF só são executadas quando a condição é verdadeira
 ```
+
+Quando a condição do `if` é verdadeira é executada uma ação dentro do bloco `if`, quando é falsa o conteúdo do bloco não é executado:
+
+```mermaid
+graph TD
+	id((Início)) -->  id1{<b>if</b> val==10:} -- Se verdadeiro --> id2[Execute uma ação] --> id3((Fim))
+	id1  -- Se falso --> id3
+```
+
+
 
 Veja o exemplo abaixo:
 
@@ -146,12 +158,16 @@ Veja o exemplo abaixo:
 > 
 > var = 10
 > if(var == 10): # Se x é igual a 10 então faça
->        print("Estamos no bloco 1, isto é, a 4 espaçamentos da margem.")
->        print("Essa é a segunda linha do bloco 'if'. ")
+>     # Isto só é executado quando a condição é verdadeira
+>     print("Estamos no bloco 1, isto é, a 4 espaçamentos da margem.")
+>     print("Essa é a segunda linha do bloco 'if'. ")
 > print("Agora, voltamos para o bloco principal do programa.")
 > ```
-> Digite seu CPF:  12312asd
-> CPF inválido.
+>
+> Nível 0. Este código está rente a margem do código.  
+> Estamos no bloco 1, isto é, a 3 espaçamentos da margem.  
+> Essa é a segunda linha do bloco 'if'.   
+> Agora, voltamos para o bloco principal do programa.  
 
 Podemos utilizar mais de um bloco `if` na mesma célula, como é mostrado abaixo:
 
@@ -173,8 +189,11 @@ Podemos utilizar o `if` em conjunto com os métodos de string:
 > ```python
 > cpf = input('Digite seu CPF: ')
 > if not cpf.isdigit():
->     print('CPF inválido.')
+>  print('CPF inválido.')
 > ```
+>
+> Digite seu CPF:  12312asd
+> CPF inválido.
 
 **Tarefa:** Crie um programa que leia como entrada uma senha:
 
@@ -196,14 +215,45 @@ Sua senha deve ter menos de 16 caracteres.
 
 Existe ainda o if aninhado, que seria um bloco if dentro de um bloco if maior.
 
+```mermaid
+graph TD
+	id((Início)) -->  id1{<b>if</b> condicao1:} -- Se sim --> id3{"<b>if</b> condicao2:"} -- Se Sim --> id4[Execute uma ação] -->  id5((Fim))
+	id1  -- Se não --> id5
+	id3 -- Se não --> id5
+```
+
+Veja um exemplo em Python:
+
 > ```python
 > senha = input('SENHA: ')
 > if len(senha) >= 8:
->     if len(senha) <= 16:
->          print('Senha válida.')
+>       if len(senha) <= 16:
+>            print('Senha válida.')
 > if len(senha) < 8:
->     print('Senha inválida.')
+>       print('Senha inválida.')
 > ```
+
+Podemos fazer ainda:
+
+```mermaid
+graph TD
+	id((Início)) -->  id1{<b>if</b> condicao1:} -- Se sim --> id2[Execute uma ação] --> id3{"<b>if</b> condicao2:"} -- Se sim --> id4[Execute outra ação] -->  id5((Fim))
+	id1  -- Se não --> id5
+	id3 -- Se não --> id5
+```
+
+Veja um exemplo em Python
+
+> ```python
+> nome = str(input("Qual é seu nome?"))
+> if nome in 'Gustavo Felipe João':
+>     print("Nome masculino",end=' ')
+>     if nome=='Gustavo':
+>         print("e charmoso")
+> ```
+>
+> Qual é seu nome? Gustavo  
+> Nome masculino e charmoso
 
 **Tarefa:** As Organizações Tabajara resolveram dar um aumento de salário aos seus colaboradores e lhe contrataram para desenvolver o programa que calculará os reajustes.
 
@@ -230,6 +280,16 @@ Após o aumento ser realizado, informe na tela:
 
 Vimos há pouco que `if` verifica se um estado lógico é `True` ou `False` e retorna o bloco de código correspondente. O `else` vem para tratar o estado lógico oposto ao anterior.
 
+```mermaid
+graph TD
+	id((Início)) --> id1{<b>if</b> condicao:} -- Se sim --> id2[Bloco para verdadeiro] --> id3((Fim))
+	id1 -- "Se não (<b>else</b>)" --> id4[Bloco para falso] --> id3
+```
+
+
+
+Veja um exemplo em Python:
+
 > ```python
 > senha = input('SENHA: ')
 > if (len(senha) >= 8) and (len(senha) <= 16): #Se
@@ -249,19 +309,26 @@ Vimos há pouco que `if` verifica se um estado lógico é `True` ou `False` e re
 
 O `elif` é a junção do bloco if e else. Ele nega a condição anterior, mas inputa uma nova condição.
 
+<!---
+
+Esse exemplo não foi proposital foi o exemplo do Gustavo Guanabara
+
+--->
+
 > ```python
-> nome = 'Eva'
-> age = 35
-> 
-> if nome == 'Eva': #Se
->     print('Oi, Eva.')
-> elif age > 18: #se não se
->     print('Você não é a EVA.')
-> else: #se
->     print('Você não é a Eva e nem é maior de idade.')
+> nome = str(input("Qual é seu nome?"))
+> if nome == 'Gustavo': #se
+>     print("Que nome bonito!")
+> elif nome == 'Pedro' or nome == 'Maria' or nome == 'Paulo': #senão se
+>     print("Não é tão bonito quanto Gustavo")
+> elif nome in 'Ana Cláudia Jéssica Juliana': #senão se
+>     print("Belo nome feminino")
+> else: #senão
+>     print('Se nome é normal')
 > ```
 >
-> Oi, Eva.
+> Qual é seu nome? Gustavo  
+> Que nome bonito!
 
 **Tarefa:** Refaça o exemplo das organizações Tabajara utilizando `else` e `elseif`.
 
