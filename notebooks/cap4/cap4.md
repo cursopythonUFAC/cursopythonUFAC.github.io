@@ -134,6 +134,12 @@ Os blocos de instrução constroem hierarquias e estas, podem ser reconhecidas v
 
 O `if` uma estrutura condicional presente em todas as linguagens. Ele estabelece uma relação lógica de *"se.. então"*.  
 
+```mermaid
+graph TD
+	id((Início)) -->  id1{Parroz<20} -- Se verdadeiro --> id2[Compra o arroz.<br>Preço está ok!] -->  id4((Fim))
+	id1  -- Se falso --> id3[Não compra arroz.<br>Está caro!] -->id4
+```
+
 No Python apresenta a seguinte sintaxe:
 
 ```python
