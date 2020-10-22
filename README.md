@@ -73,7 +73,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 # Conteúdo do curso
 ----
 ### **Capítulo 1:** Primeiros passos
-> Nesta aula vamos apresentar o ambiente de desenvolvimento do Jupyter Lab e introduzir as linguagens Markdown e Python. Além disso, vamos ensinar como instalar o Anaconda para utilizar o Jupyter Lab com o Python.
+> Neste capítulo vamos apresentar o ambiente de desenvolvimento do Jupyter Lab e introduzir as linguagens Markdown e Python. Além disso, vamos ensinar como instalar o Anaconda para utilizar o Jupyter Lab com o Python.
 
 {% include video-atividade.html
     codigo="8SUnxb5KfQA"
@@ -95,7 +95,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 ### **Capítulo 2:** Saída de dados e sentenças lógicas
 
-> Nesta aula vamos aprender um pouco mais sobre a função `print()` e o método `.format()`. Além disso, como funciona as variáveis booleanas e os operadores lógicos & relacionais.
+> Neste capítulo vamos aprender um pouco mais sobre a função `print()` e o método `.format()`. Além disso, como funciona as variáveis booleanas e os operadores lógicos & relacionais.
 
 {% include video-atividade.html
     codigo="qAHOh_OMXOU"
@@ -117,10 +117,24 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 ### Capítulo 3: Módulos e pacotes
 
-> Nesta aula vamos aprender a expandir a linguagem Python através dos módulos e pacotes.
+> Neste capítulo vamos aprender a expandir a linguagem Python através dos módulos e pacotes.
+
+{% include video-atividade.html
+    codigo="zHUSYJnIcLw"
+%}
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap3/cap3.html" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
+
+### Capítulo 4: Estruturas de decisão
+
+> Neste capítulo vamos aprender sobre as estruturas de decisão do Python e sobre as extensões do Jupyter Notebook.
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap4/cap4.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
