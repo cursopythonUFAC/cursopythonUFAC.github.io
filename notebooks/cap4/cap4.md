@@ -76,11 +76,57 @@ jupyter labextension install @jupyterlab/toc
 
 Assim como é recomendado no próprio repositório da extensão. 
 
-**Tarefa:** Explore a extensão. Como eu faço para:
+**Tarefa 1:** Explore a extensão e responda como eu faço para:
 
 - Adicionar ou remover numeração aos títulos;
 - Mostra ou esconder células de código na aba da extensão;
 - Mostrar ou esconder células de Markdown na aba da extensão.
+
+**Tarefa 2:** Instale a extensão `@agoose77/jupyterlab-markup` . Essa extensão permite a criação de diagrama de blocos utilizando Markdown.
+
+> **Dica:** Busque no menu de extensões por essa extensão.
+
+Link da extensão no Github:
+
+> [https://github.com/agoose77/jupyterlab-markup](https://github.com/agoose77/jupyterlab-markup)
+
+No Windows busque no menu de extensões e instale a extensão normalmente.
+
+**Apenas no Linux!**
+
+Execute primeiro isso:
+
+```bash
+echo "application/wasm      wasm" | sudo tee -a /etc/mime.types
+```
+
+Depois instale a extensão com o comando abaixo:
+
+```bash
+jupyter labextension install @agoose77/jupyterlab-markup
+```
+
+Essa instrução também está disponível no repositório da extensão.
+
+Teste o exemplo abaixo:
+
+> **%Jup%**
+>
+> ```markdown
+> ​```mermaid
+> graph TD
+> 	id((Início)) -->  id1{Condição} -- Frase1 --> id2[Ação1] -->  id4((Fim))
+> 	id1  -- Frase2 --> id3[Ação2] -->id4
+> ​```
+> ```
+>
+> > ```mermaid
+> > graph TD
+> > 	id((Início)) -->  id1{Condição} -- Frase1 --> id2[Ação1] -->  id4((Fim))
+> > 	id1  -- Frase2 --> id3[Ação2] -->id4
+> > ```
+
+
 
 # Atividade 2: Bloco if
 
@@ -183,7 +229,7 @@ Veja o exemplo abaixo:
 >     print('CPF inválido.')
 > ```
 >
-> Digite seu CPF:  12312asd
+> Digite seu CPF:  12312asd  
 > CPF inválido.
 
 Genericamente, se uma condição for verdadeira (`True`), ele executará o bloco de código correspondente.
@@ -267,7 +313,7 @@ Veja um exemplo em Python
 > Qual é seu nome? Gustavo  
 > Nome masculino e charmoso
 
-**Tarefa 1**: peça ao usuário uma senha. Você deve verificar se ela possui de 8 carácteres até 16 e se ela é composta por números e letras. Informe ao usuário se a senha é válida ou não.
+**Tarefa 1**: Peça ao usuário uma senha. Você deve verificar se ela possui de 8 carácteres até 16 e se ela é composta por números e letras. Informe ao usuário se a senha é válida ou não.
 
 ### Exemplo 3: `if-else`
 
@@ -298,7 +344,7 @@ Veja um exemplo em Python:
 
 ### Exemplo 4: `elif` = `else if`
 
-O `elif` é a junção do bloco if e else. Ele nega a condição anterior, mas imputa uma nova condição.
+O `elif` é a junção do bloco `if` e `else`. Ele nega a condição anterior, mas imputa uma nova condição.
 
 <!---
 
@@ -322,8 +368,8 @@ Esse exemplo não foi proposital foi o exemplo do Gustavo Guanabara
 >     print("Olá, {}. Você é idoso.".format(nome))
 > ```
 >
-> Qual o seu nome?  Gustavo
-> Quantos anos você tem?  22
+> Qual o seu nome?  Gustavo   
+> Quantos anos você tem?  22   
 > Olá, Gustavo. Você é jovem.
 
 **Tarefa:** Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
@@ -376,7 +422,7 @@ else:
         print('Senha fraca')
 ```
 
-> **Observação:** Mostrar também os métodos islower(), isupper(), isalnum().
+> **Observação:** Mostrar também os métodos `.islower()`, `.isupper()`, `.isalnum()`.
 
 **Tarefa:** O Paulo é um vendedor e quer verificar se receberá bônus este ano. Existe uma tabela de bonificações de acordo com o nº de produtos vendidos. Veja abaixo:
 
