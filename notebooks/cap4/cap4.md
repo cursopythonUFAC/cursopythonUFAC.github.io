@@ -230,11 +230,9 @@ Existe ainda o `if` aninhado, que seria um bloco `if` dentro de um bloco `if` ma
 > 	print('Senha inválida.')
 > ```
 
-Observe a indentação dos blocos de código. O segundo `if` está no bloco abaixo do anterior, isso significa que ele está "dentro" do outro `if`.
 
-**Tarefa 1**: peça ao usuário uma senha. Você deve verificar se ela possui de 8 carácteres até 16 e se ela é composta por números e letras. Informe ao usuário se a senha é válida ou não.
 
-### Exemplo 2: `if` alinhados
+### Exemplo 2: `if` aninhados
 
 Existe ainda o if aninhado, que seria um bloco if dentro de um bloco if maior.
 
@@ -250,11 +248,13 @@ Veja um exemplo em Python:
 > ```python
 > senha = input('SENHA: ')
 > if len(senha) >= 8:
->       if len(senha) <= 16:
->            print('Senha válida.')
+>    if len(senha) <= 16:
+>         print('Senha válida.')
 > if len(senha) < 8:
->       print('Senha inválida.')
+>    print('Senha inválida.')
 > ```
+
+Observe a indentação dos blocos de código. O segundo `if` está no bloco abaixo do anterior, isso significa que ele está "dentro" do outro `if`.  
 
 Podemos fazer ainda:
 
