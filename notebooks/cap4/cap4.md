@@ -219,17 +219,6 @@ Observe nos dois códigos acima que a linha logo após o `if` está espaçada um
 > 	print('Sua senha deve ter menos de 16 caracteres.')
 > ```
 
-Existe ainda o `if` aninhado, que seria um bloco `if` dentro de um bloco `if` maior.
-
-> ```python
-> senha = input('SENHA: ')
-> if len(senha) >= 8:
-> 	if len(senha) <= 16:
-> 		print('Senha válida.')
-> if len(senha) < 8:
-> 	print('Senha inválida.')
-> ```
-
 
 
 ### Exemplo 2: `if` aninhados
@@ -307,9 +296,9 @@ Veja um exemplo em Python:
 
 **Tarefa 2:** Refaça o exemplo da **Tarefa 1** utilizando `else` para simplificar o código.
 
-### Exemplo 4: `elseif`
+### Exemplo 4: `elif` = `else if`
 
-O `elif` é a junção do bloco if e else. Ele nega a condição anterior, mas inputa uma nova condição.
+O `elif` é a junção do bloco if e else. Ele nega a condição anterior, mas imputa uma nova condição.
 
 <!---
 
@@ -318,19 +307,24 @@ Esse exemplo não foi proposital foi o exemplo do Gustavo Guanabara
 --->
 
 > ```python
-> nome = str(input("Qual é seu nome?"))
-> if nome == 'Gustavo': #se
->       print("Que nome bonito!")
-> elif nome == 'Pedro' or nome == 'Maria' or nome == 'Paulo': #senão se
->       print("Não é tão bonito quanto Gustavo")
-> elif nome in 'Ana Cláudia Jéssica Juliana': #senão se
->       print("Belo nome feminino")
-> else: #senão
->       print('Se nome é normal')
+> nome = input("Qual o seu nome? ")
+> idade = int(input("Quantos anos você tem? "))
+> 
+> if idade < 12:
+>     print("Olá, {}. Você é criança.".format(nome))
+> elif idade < 18:
+>     print("Olá, {}. Você é adolescente.".format(nome))
+> elif idade < 30:
+>     print("Olá, {}. Você é jovem.".format(nome))
+> elif idade < 60:
+>     print("Olá, {}. Você é adulto.".format(nome))
+> else:
+>     print("Olá, {}. Você é idoso.".format(nome))
 > ```
 >
-> Qual é seu nome? Gustavo  
-> Que nome bonito!
+> Qual o seu nome?  Gustavo
+> Quantos anos você tem?  22
+> Olá, Gustavo. Você é jovem.
 
 **Tarefa:** Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
 
