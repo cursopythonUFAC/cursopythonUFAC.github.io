@@ -479,6 +479,6 @@ Após o aumento ser realizado, informe na tela:
 - O valor do aumento;
 - O novo salário, após o aumento.
 
-### Exercício 3: Instalando uma extensão
+### Exercício 3: Adicionando suporte à Widgets
 
 Instale a extensão `@jupyter-widgets/jupyterlab-manager`. Iremos precisar dela no futuro, portanto é interessante instalá-la.
