@@ -92,7 +92,7 @@ Link da extensão no Github:
 
 No Windows busque no menu de extensões e instale a extensão normalmente.
 
-**Apenas no Linux!**
+**Apenas no Linux!** 
 
 Execute primeiro isso:
 
