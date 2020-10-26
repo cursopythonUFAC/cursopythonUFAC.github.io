@@ -832,18 +832,15 @@ onde $A$ é a amplitude, $\delta$ é a fase da onda e $\omega=2\pi f$ é a frequ
 
 O usuário deve entrar com $A$, $\delta$ e $f$.
 
-Considere os seguintes parâmetros para o gráfico:
+Considere as seguintes premissas:
 
 - O título do gráfico deve ter todos os parâmetros da onda;
 - Os limites do eixo y deve ser $\pm1,2A$;
 - O limite do eixo x deve ser de $2$ segundos;
 - Use o estilo `ggplot`;
-- O gráfico deve ter a cor preta.
-
-> **Observações:** 
->
-> - A variável $t$ deve ser simbólica;
-> - Para a plotagem utilize função `plot()` do pacote `sympy`.
+- O gráfico deve ter a cor preta;
+- A variável $t$ deve ser simbólica;
+- Para a plotagem utilize função `plot()` do pacote `sympy`.
 
 Veja o exemplo de saída:
 
