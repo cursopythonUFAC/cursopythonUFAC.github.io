@@ -632,7 +632,7 @@ Para exemplificar o uso `pip` vamos instalar o pacote `pyperclip`:
 
 - Github: [https://github.com/asweigart/pyperclip](https://github.com/asweigart/pyperclip)
 - Read the docs: [https://pyperclip.readthedocs.io/en/latest/](https://pyperclip.readthedocs.io/en/latest/)
-- Pypi: https://pypi.org/project/pyperclip/
+- Pypi: [https://pypi.org/project/pyperclip/](https://pypi.org/project/pyperclip/)
 
 **Tarefa 1:** Instale o pacote `pyperclip` (Entre no Pypi e copie o link
 
@@ -788,7 +788,7 @@ Além dos pacotes citados nos Exemplos 1 e 2, existem muitos outros. Segue o nom
 - [SchemDraw](https://schemdraw.readthedocs.io/en/latest/) $\rightarrow$ Desenho de circuitos
 - [py-dss-interface](https://pypi.org/project/py-dss-interface/) $\rightarrow$ Interface do Python com o OpenDSS (Não precisa instalar o OpenDSS) - Apenas Windows
 
-> **Observação:** Tomem cuidado ao instalar pacotes desatualizados, pois podem quebrar o seu ambiente Python. Sempre olhe as dependências antes de instalar o pacote.
+> **Observação:** Tomem cuidado ao instalar pacotes desatualizados, pois podem quebrar o seu ambiente Python. Sempre olhem as dependências antes de instalar o pacote.
 
 **Tarefa:** Faça um resumo do Pacote `graphviz`. Siga o formato dos exemplos 1 e 2.
 
@@ -835,11 +835,15 @@ O usuário deve entrar com $A$, $\delta$ e $f$.
 Considere os seguintes parâmetros para o gráfico:
 
 - O título do gráfico deve ter todos os parâmetros da onda;
-
 - Os limites do eixo y deve ser $\pm1,2A$;
 - O limite do eixo x deve ser de $2$ segundos;
 - Use o estilo `ggplot`;
 - O gráfico deve ter a cor preta.
+
+> **Observações:** 
+>
+> - A variável $t$ deve ser simbólica;
+> - Para a plotagem utilize função `plot()` do pacote `sympy`.
 
 Veja o exemplo de saída:
 

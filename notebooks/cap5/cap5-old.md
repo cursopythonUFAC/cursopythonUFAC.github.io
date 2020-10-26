@@ -385,7 +385,7 @@ $$
 
 ![image-20201019130845625](images/equacao_da_reta.png)
 
-# Atividade 3: Usando `interact()`
+# Atividade 2: Usando `interact()`
 
 ### Exemplo 1: Introdução ao `interact`
 
@@ -416,7 +416,7 @@ def bloco_def_associado(argumento1,argumento2,argumento3,...):
 interact(bloco_def_associado,argumento1=val1,argumento2=val2,...)
 ```
 
-Observe que o `ìnteract()` está no nível 0 e o conteúdo do bloco `def` está no nível 1.
+observe que o `ìnteract()` está no nível 0 e o conteúdo do bloco `def` está no nível 1.
 
 Para exemplificar o conceito de `interact()` e blocos `def` veja o exemplo abaixo:
 
@@ -633,6 +633,12 @@ outputW.innerHTML = (this.value/10).toFixed(2);
 </script>
 
 ### Exemplo 3: Widgets e gráficos
+
+
+
+
+
+
 
 Ao utilizar o `iteract()` podemos criar gráficos que atualizam em tempo real. Inicialmente vamos considerar a seguinte função:
 $$

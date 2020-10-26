@@ -1,6 +1,6 @@
 <center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 5: Widgets</div></center>
 
-# Atividade 2: Introdução aos Widgets
+# Atividade 1: Introdução aos Widgets
 
 Até o momento vimos como entrada de dados a função `input()`.  Contudo existem outras formas de entrada mais elegantes, como através do uso de **pacotes e extensões do IPython**.  
 
@@ -25,9 +25,9 @@ Para apresentar os widgets vamos começar adicionando um `IntSlider()`.
 
 Contudo, ao executar esse código irá aparecer apenas um texto. Desta forma, **a inclusão do pacote no código não é suficiente para adicionar o suporte a Widgets**. Vamos resolver isso instando os **Jupyter Widgets:**
 
-![Instalando a extensao do IpyWidgets](images/ipywidgets-extensao.png)
+![Instalando a extensao do IpyWidgets](./images/ipywidgets-extensao.png)
 
-Siga o mesmo precedimento para instalar a extensão **Table of Contents**, e execute o código novamente:
+Instale a extensão `@jupyter-widgets/jupyterlab-manager` e execute o código novamente:
 
 > ```python
 > import ipywidgets as widget #Importando o pacote com o apelido de widgets
@@ -35,16 +35,16 @@ Siga o mesmo precedimento para instalar a extensão **Table of Contents**, e exe
 > ```
 >
 > <p>
->   <input type="range" min="0" max="100" value="0" class="slider" id="slider-1">
->   <span id="val-1"></span>
+> <input type="range" min="0" max="100" value="0" class="slider" id="slider-1">
+> <span id="val-1"></span>
 > </p>
 > <script>
->     var slider1 = document.getElementById("slider-1");
->     var output1 = document.getElementById("val-1");
->     output1.innerHTML = slider1.value;
->     slider1.oninput = function() {
->       output1.innerHTML = this.value;
->     }
+>  var slider1 = document.getElementById("slider-1");
+>  var output1 = document.getElementById("val-1");
+>  output1.innerHTML = slider1.value;
+>  slider1.oninput = function() {
+>    output1.innerHTML = this.value;
+>  }
 > </script>
 
 Verá que irá aparecer um `Slider` de inteiro.
@@ -60,16 +60,16 @@ Alternativamente, podemos mostrar sliders através da função `display()`, do m
 > ```
 >
 > <p>
->   <input type="range" min="0" max="100" value="0" class="slider" id="slider-2">
->   <span id="val-2"></span>
+> <input type="range" min="0" max="100" value="0" class="slider" id="slider-2">
+> <span id="val-2"></span>
 > </p>
 > <script>
->     var slider2 = document.getElementById("slider-2");
->     var output2 = document.getElementById("val-2");
->     output2.innerHTML = slider2.value;
->     slider2.oninput = function() {
->       output2.innerHTML = this.value;
->     }
+>  var slider2 = document.getElementById("slider-2");
+>  var output2 = document.getElementById("val-2");
+>  output2.innerHTML = slider2.value;
+>  slider2.oninput = function() {
+>    output2.innerHTML = this.value;
+>  }
 > </script>
 
 Provavelmente não será necessário importar a função display, pois ela já é carregada no Jupyter. Desta forma o código acima simplifica em:
@@ -78,24 +78,20 @@ Provavelmente não será necessário importar a função display, pois ela já �
 > from ipywidgets import IntSlider #Importando a função IntSlider
 > 
 > slider=IntSlider() #Inicializando o IntSlider
-> ```
->
-> ```python
 > display(slider) #Mostra o slider
-> slider.value
-> ```
->
+>```
+> 
 > <p>
 > <input type="range" min="0" max="100" value="0" class="slider" id="slider-3">
 > <span id="val-3"></span>
-> </p>
+></p>
 > <script>
->  var slider3 = document.getElementById("slider-3");
->  var output3 = document.getElementById("val-3");
->  output3.innerHTML = slider3.value;
->  slider3.oninput = function() {
->    output3.innerHTML = this.value;
->  }
+> var slider3 = document.getElementById("slider-3");
+> var output3 = document.getElementById("val-3");
+> output3.innerHTML = slider3.value;
+> slider3.oninput = function() {
+> output3.innerHTML = this.value;
+> }
 > </script>
 
 **Tarefa:** Além do `IntSlider` existe uma extensa lista de Widgets que podem ser vista. Tente inicializar e mostrar os seguintes Widgets:
@@ -104,7 +100,7 @@ Provavelmente não será necessário importar a função display, pois ela já �
 - Checkbox
 - FloatSlider
 
-### Exemplo 3: Customizando os Widgets
+### Exemplo 2: Customizando Widgets
 
 De forma similar aos gráficos que aprendemos a plotar no capítulo anterior, os Widgets também são customizáveis. 
 
@@ -114,11 +110,11 @@ Todas as opções de customizações de todos os tipos de sliders podem ser vist
 
 > ```python
 > widget.IntSlider(
->      value=5, # Valor inicial
->      min=0, # Valor mínimo
->      max=10, # Valor máximo
->      step=1, # Passo
->      description='Número:' #Descrição
+>   value=5, # Valor inicial
+>   min=0, # Valor mínimo
+>   max=10, # Valor máximo
+>   step=1, # Passo
+>   description='Número:' #Descrição
 > )
 > ```
 >
@@ -128,23 +124,23 @@ Todas as opções de customizações de todos os tipos de sliders podem ser vist
 > <span id="val-6"></span>
 > </p>
 > <script>
->  var slider6 = document.getElementById("slider-6");
->  var output6 = document.getElementById("val-6");
->  output6.innerHTML = slider6.value;
->  slider6.oninput = function() {
->    output6.innerHTML = (this.value).toString();
->  }
+> var slider6 = document.getElementById("slider-6");
+> var output6 = document.getElementById("val-6");
+> output6.innerHTML = slider6.value;
+> slider6.oninput = function() {
+> output6.innerHTML = (this.value).toString();
+> }
 > </script>
 
 - `FloatSlider` retorna ponto flutuante:
 
 > ```python
 > widget.FloatSlider(
->      value=5.5, # Valor inicial
->      min=-10.0, # Valor mínimo
->      max=10.0, # Valor máximo
->      step=0.5, # Passo
->      description='Decimal:' #Descrição
+>   value=5.5, # Valor inicial
+>   min=-10.0, # Valor mínimo
+>   max=10.0, # Valor máximo
+>   step=0.5, # Passo
+>   description='Decimal:' #Descrição
 > )
 > ```
 >
@@ -154,21 +150,21 @@ Todas as opções de customizações de todos os tipos de sliders podem ser vist
 > <span id="val-7"></span>
 > </p>
 > <script>
->  var slider7 = document.getElementById("slider-7");
->  var output7 = document.getElementById("val-7");
->  output7.innerHTML = (slider7.value/10).toFixed(2);
->  slider7.oninput = function() {
->    output7.innerHTML = (this.value/10).toFixed(2);
->  }
+> var slider7 = document.getElementById("slider-7");
+> var output7 = document.getElementById("val-7");
+> output7.innerHTML = (slider7.value/10).toFixed(2);
+> slider7.oninput = function() {
+> output7.innerHTML = (this.value/10).toFixed(2);
+> }
 > </script>
 
 - `Checkbox` retorna booleano (Verdadeiro ou falso):
 
 > ```python
 > widget.Checkbox(
->      value=False, # Valor inicial
->      description='Booleano', # Descrição
->      indent=False # Indentação
+>   value=False, # Valor inicial
+>   description='Booleano', # Descrição
+>   indent=False # Indentação
 > )
 > ```
 >
@@ -181,18 +177,18 @@ Todas as opções de customizações de todos os tipos de sliders podem ser vist
 
 > ```python
 > widget.Text(
->      value='', # Valor inicial
->      placeholder='Digite seu nome', #Nome que aparece quando não escreve nada
->      description='Nome: ' # Descrição
+>   value='', # Valor inicial
+>   placeholder='Digite seu nome', #Nome que aparece quando não escreve nada
+>   description='Nome: ' # Descrição
 > )
 > ```
 >
 > <p>
->     Nome: 
->     <input type="text" placeholder="Digite seu nome">
+>  Nome: 
+>  <input type="text" placeholder="Digite seu nome">
 > </p>
 
-### Exemplo 4: Acessando os valores dos Widgets
+### Exemplo 3: Acessando os valores dos Widgets
 
 Toda vez que declaramos um Widget ele inicializa com um valor inicial no parâmetro `value`. 
 
@@ -201,11 +197,11 @@ Por exemplo, digamos que queremos criar um slider chamado em uma célula:
 > ```python
 > # Célula 1: Declarando o widget chamado Peso
 > Peso = widget.FloatSlider(
->     value=5, # Valor inicial
->     min=30, # Valor mínimo
->     max=100, # Valor máximo
->     step=0.1, # Passo
->     description='Peso (kg):' # Descrição
+>  value=5, # Valor inicial
+>  min=30, # Valor mínimo
+>  max=100, # Valor máximo
+>  step=0.1, # Passo
+>  description='Peso (kg):' # Descrição
 > )
 > ```
 
@@ -255,137 +251,19 @@ No final o conjunto das três células é a seguinte:
 > }
 > </script>
 >
+>
 > ```python
-># Célula 3: Mostrando o valor do Peso
+> # Célula 3: Mostrando o valor do Peso
 > print("O valor do peso é {} kg.".format(Peso.value))
 > ```
-> 
+>
 > O valor do peso é 42.9 kg.
 
 Observe que **declaramos o widget em uma célula** e **mostramos o widget em outra célula**. Isso é necessário pois **toda vez que você declara um Widget ele sempre inicializa com o valor padrão**, desta forma caso o `display()` esteja na mesma célula toda iteração sera perdida ao executar esta célula novamente.
 
-### Exemplo 5: Utilizando Widgets em problemas práticos
+**Veremos maneiras mais eficiente de contornar este problema! **
 
-Para exemplificar o uso dos Widgets vamos apresentar um problema prático de plotagem de gráfico.
-
-<!---
-
-> Gustavo dá uma aula sobre Espiriais e equações paramétricas​ (Pode dá o exemplo da elipse)
-
---->
-
-Em coordenadas cartesianas as espirais devem utilizar equações paramétricas. A forma geral das espirais no plano cartesiano é:
-$$
-h(\theta)=\begin{cases}
-	x(\theta)=\theta^n\cdot \cos(\theta)\\
-	y(\theta)=\theta^n\cdot \sin(\theta)
-\end{cases}
-$$
-Vamos plotar o gráfico de $h(\theta)$ utilizando a função `plot_parametric()` do pacote `sympy` (Figura 1):
-
-```mermaid
-classDiagram
-	sympy .. plotting
-	class sympy{
-		pi
-		symbols()
-		cos()
-		sin()
-	}
-	class plotting{
-		plot()
-		plot_parametric()
-	}
-```
-
-> **Figura 1:** Funções do pacote `sympy`.
-
-O programa vai ter a seguinte entrada:
-
-- $n$: `FloatSlider` com os seguintes parâmetros:
-  - Valor mínimo: $-0,5$;
-  - Valor máximo: $1;$
-  - Passo: $0,5$.
-
-
-> ```python
-> # Célula 1: Definindo os sliders
-> n = widget.FloatSlider(
-> description = "n:",
-> value = 1,
-> min = -0.5,
-> max = 1,
-> step = 0.5
-> )
-> ```
->
-> ```python
-> # Célula 2: Mostrando os Sliders
-> display(n)
-> ```
->
-> <p>
-> n: 
-> <input type="range" min="-5" max="10" value="5" step="5" class="slider" id="slider-A">
-> <span id="val-A"></span>
-> </p>
-> <script>
-> var sliderA = document.getElementById("slider-A");
-> var outputA = document.getElementById("val-A");
-> outputA.innerHTML = (sliderA.value/10).toFixed(2);
-> sliderA.oninput = function() {
-> outputA.innerHTML = (this.value/10).toFixed(2);
-> }
-> </script>
->
-> ```python
-> # Célula 3: Plotando o gráfico
-> from sympy import symbols, sin, cos, pi
-> from sympy.plotting import plot_parametric
-> from matplotlib import style
-> style.use('classic')
-> 
-> theta = symbols('θ')
-> x = theta**n.value*sin(theta)
-> y = theta**n.value*cos(theta)
-> 
-> plot_parametric(x,y,(theta,0,10*pi),
->                 xlim=(-8,8.04),
->                 ylim=(-8.06*3/4,8*3/4),
->                 title="Espiral com n={}".format(n.value),
->                 xlabel="",
->                 ylabel=""
->                )
-> ```
->
-> ![image-20201019212707221](images/dspiral-foto.png)
-
-
-
-**Tarefa:** Uma reta é dada por:
-$$
-y(x)=ax+b
-$$
-
-- $a$: `FloatSlider` com os seguintes parâmetros:
-  - Valor mínimo: $-3;$
-  - Valor máximo: $3$;
-  - Valor inicial: $1$;
-  - Passo: $0,5$.
-- $b$: `IntSlider` com os seguintes parâmetros:
-  - Valor mínimo: $-4$;
-  - Valor máximo: $4$;
-  - Valor inicial: $0$;
-  - Passo: $2$.
-- O título do gráfico deve ter a equação da reta `$y(x)={a}x+{b}$`;
-- O título do eixo x deve ser `$x$`;
-- O eixo $y$ não deve ter título;
-- Os limites dos eixos x e y devem ser $\pm4$ e $\pm(4\times 9/16)$, respectivamente;
-- Use o estilo `seaborn-whitegrid`.
-
-![image-20201019130845625](images/equacao_da_reta.png)
-
-# Atividade 3: Usando `interact()`
+# Atividade 2: Usando `interact()`
 
 ### Exemplo 1: Introdução ao `interact`
 
@@ -424,12 +302,12 @@ Para exemplificar o conceito de `interact()` e blocos `def` veja o exemplo abaix
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->      # Bloco 1 (Nível 1)
->      print("O valor de x é {:d}".format(x))
+>   # Bloco 1 (Nível 1)
+>   print("O valor de x é {:d}".format(x))
 > # Bloco principal (Nível 1)
 > interact(f,#Bloco def que se deseja associar
->    x=5 #Valor ou widget
->   )
+> x=5 #Valor ou widget
+> )
 > ```
 >
 > <p>
@@ -454,7 +332,7 @@ Observe também foi imprimido um valor indesejado:
 <function __main__.f(x)>
 ```
 
-Isso aconteceu porque a função interact retorna o tipo da função `<function __main__.f(x)>`. Desta forma, a função foi salva na variável `_` e imprimida na tela. Veja o que acontece quando mandamos imprimir `_`
+Isso aconteceu porque a função interact retorna o tipo da função `<function __main__.f(x)>`. Desta forma, a função foi salva na variável `_` e imprimida na tela. Veja o que acontece quando mandamos imprimir `_`.
 
 > ```python
 > _
@@ -468,8 +346,8 @@ Podemos remover essa saída adicionando `;` ao final da instrução `ìnteract()
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->       # Bloco 1 (Nível 0)
->       print("O valor de x é {}".format(x))
+>    # Bloco 1 (Nível 0)
+>    print("O valor de x é {}".format(x))
 > # Bloco principal (Nível 0)
 > interact(f,x=5);
 > ```
@@ -480,6 +358,7 @@ Podemos remover essa saída adicionando `;` ao final da instrução `ìnteract()
 > <span id="val-C"></span><br>
 > O valor de x é 5
 > </p>
+>
 >
 > <script>
 > var sliderC = document.getElementById("slider-C");
@@ -498,7 +377,34 @@ Podemos remover essa saída adicionando `;` ao final da instrução `ìnteract()
 - `x=""`
 - `x="Digite o seu nome"`
 
-### Exemplo 2: Abreviação  de Widgets
+### Exemplo 2: Utilizando a notação `@interact`
+
+Podemos simplificar ainda mais o uso de widgets ao utilizar a notação `@interact`. Vamos refazer o exemplo anterior:
+
+> ```python
+> from ipywidgets import interact
+> @interact(x=5)
+> def f(x):
+>     return print("O valor de x é {}.".format(x))
+> ```
+>
+> <p>
+> x  
+> <input type="range" min="-5" max="15" value="5" class="slider" id="slider-XC">
+> <span id="val-XC"></span><br>
+> O valor de x é 5
+> </p>
+>
+> <script>
+> var sliderXC = document.getElementById("slider-XC");
+> var outputXC = document.getElementById("val-XC");
+> outputXC.innerHTML = sliderXC.value;
+> sliderXC.oninput = function() {
+> 	outputXC.innerHTML = (this.value).toString();
+> }
+> </script>
+
+### Exemplo 3: Abreviação  de Widgets
 
 Quando você passa um argumento inteiro, como `5` (`x=5`) para o interact. A função cria um slider de inteiro no intervalo de $x\in[-5;3\cdot5]$. Neste caso `5` é abreviação de:
 
@@ -511,11 +417,10 @@ De fato, conseguimos o mesmo resultado quando passamos o próprio `IntSlider` co
 > ```python
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
+> @interact(x=widget.IntSlider(min=-5, max=15, step=1, value=5))
 > def f(x):
->       # Bloco 1 (Nível 0)
->       print("O valor de x é {}".format(x))
-> # Bloco principal (Nível 0)
-> interact(f,x=widget.IntSlider(min=-5, max=15, step=1, value=5));
+>   # Bloco 1 (Nível 0)
+>   print("O valor de x é {}".format(x))
 > ```
 >
 > <p>
@@ -525,6 +430,7 @@ De fato, conseguimos o mesmo resultado quando passamos o próprio `IntSlider` co
 > O valor de x é 5
 > </p>
 >
+> 
 >
 > <script>
 > var sliderD = document.getElementById("slider-D");
@@ -551,11 +457,10 @@ Por exemplo:
 > ```python
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
+> @interact(x=(0,10)) #widget.IntSlider(min=0, max=10)
 > def f(x):
->       # Bloco 1 (Nível 0)
->       print("O valor de x é {}".format(x))
-> # Bloco principal (Nível 0)
-> interact(f,x=(0,10)); #widget.IntSlider(min=0, max=10)
+>   # Bloco 1 (Nível 0)
+>   print("O valor de x é {}".format(x))
 > ```
 >
 > <p>
@@ -564,6 +469,7 @@ Por exemplo:
 > <span id="val-F"></span><br>
 > O valor de x é 5
 > </p>
+>
 >
 > <script>
 > var sliderF = document.getElementById("slider-F");
@@ -580,8 +486,8 @@ E se o segundo parâmetro for passado como `x=(min,max,passo)` irá produzir um 
 > # Bloco principal (Nível 0)
 > from ipywidgets import interact
 > def f(x):
->       # Bloco 1 (Nível 0)
->       print("O valor de x é {}".format(x))
+>    # Bloco 1 (Nível 0)
+>    print("O valor de x é {}".format(x))
 > # Bloco principal (Nível 0)
 > interact(f,x=(0.0,10.0,0.5)); #widget.FloatSlider(min=0.0, max=10.0,step=0.5)
 > ```
@@ -592,6 +498,7 @@ E se o segundo parâmetro for passado como `x=(min,max,passo)` irá produzir um 
 > <span id="val-H"></span><br>
 > O valor de x é 5.0
 > </p>
+>
 >
 > <script>
 > var sliderH = document.getElementById("slider-H");
@@ -622,7 +529,6 @@ r
 Com o raio de 5 m a área da esfera é 314.16 m² e o volume é 523.60 m³.
 </p>
 
-
 <script>
 var sliderW = document.getElementById("slider-W");
 var outputW = document.getElementById("val-W");
@@ -634,123 +540,65 @@ outputW.innerHTML = (this.value/10).toFixed(2);
 
 ### Exemplo 3: Widgets e gráficos
 
-Ao utilizar o `iteract()` podemos criar gráficos que atualizam em tempo real. Inicialmente vamos considerar a seguinte função:
+Ao utilizar o `iteract()` podemos criar gráficos que atualizam em tempo real. Para exemplificar vamos criar um gráfico de uma espiral e interagir com ele.
+
+<!---
+
+> Gustavo dá uma aula sobre Espiriais e equações paramétricas​ (Pode dá o exemplo da elipse)
+
+--->
+
+m coordenadas cartesianas as espirais devem utilizar equações paramétricas. A forma geral das espirais no plano cartesiano é:
 $$
-f(x)=ax
+h(\theta)=\begin{cases}
+	x(\theta)=\theta^n\cdot \cos(\theta)\\
+	y(\theta)=\theta^n\cdot \sin(\theta)
+\end{cases}
 $$
-Vamos criar um programa capaz de variar a inclinação da reta, $u$, variando o parâmetro $a$. O ângulo de inclinação pode ser calculado por:
-$$
-u=\tan^{-1}(a)
-$$
+Vamos plotar o gráfico de $h(\theta)$ utilizando a função `plot_parametric()` do pacote `sympy` (Figura 1):
+
+```mermaid
+classDiagram
+	sympy .. plotting
+	class sympy{
+		pi
+		symbols()
+		cos()
+		sin()
+	}
+	class plotting{
+		plot()
+		plot_parametric()
+	}
+```
+
+> **Figura 1:** Funções do pacote `sympy` que iremos utilizar nesse capítulo.
+
+O programa irá identificar se o figura geométrica é um círculo ou uma espiral e irá mostrar o valor de $n$ da espiral.
+
+Abaixo segue o código do programa. Tente executá-lo.
 
 > ```python
-> from sympy.plotting import plot #importando a função plot
-> from sympy import tan, symbols #importando tan e symbols
-> from ipywidgets import interact #importando interact
-> from math import radians #importando radians
-> from matplotlib import style
+> from sympy import symbols, sin, cos, pi #Importando symbols, sin, cos e pi
+> from sympy.plotting import plot_parametric #Importando plot_parametric
 > style.use('seaborn-whitegrid')
 > 
-> def reta_tangente(u):
->       x=symbols("x") #Definindo a variável simbólica
->       a=tan(radians(u)) #
->       f=a*x
->       plot(f,(x,-4,4),
->             title="Reta com inclinação de {:.1f}°".format(u),
->             xlim=(-4,4),
->             ylim=(-4,4),
->             ylabel="",
->             xlabel=""
->         )
->     
-> interact(reta_tangente,u=(0.1,90,0.1));
+> def plotando_espiral(n):
+>     theta = symbols('θ')
+>     x = theta**n*sin(theta)
+>     y = theta**n*cos(theta)
+>     if n==0:
+>         título='Cículo'
+>     else:
+>         título="Espiral com n={:.2f}".format(n)
+>     plot_parametric(x,y,(theta,0,10*pi),
+>           xlim=(-8,8.04),
+>           ylim=(-8.06*3/4,8*3/4),
+>           title=título,
+>           xlabel="",
+>           ylabel="")
+> interact(plotando_espiral,n=(-2,2.0,0.1));
 > ```
 >
-> <p>
-> x  
-> <input type="range" min="1" max="900" value="450" class="slider" id="slider-Y">
-> <span id="val-Y"></span><br>
-> <img src="images/reta_inclinacao.png" alt="Exemplo inclinacao da reta">
-> </p>
-> <script>
-> var sliderY = document.getElementById("slider-Y");
-> var outputY = document.getElementById("val-Y");
-> outputY.innerHTML = (sliderY.value/10).toFixed(2);
-> sliderY.oninput = function() {
-> outputY.innerHTML = (this.value/10).toFixed(2);
-> }
-> </script>
-
-**Tarefa:** Refaça o exemplo da espiral utilizando a função `iteract()`. Considere $n \in [-2,2]$ com o passo de $n=0,1$.
-
-### Exemplo 4: Múltiplos argumentos
-
-A função `interact()` permite trabalhar com múltiplos argumentos, para isto basta associar o bloco `def` com mais de argumento e adicionar estes argumentos ao `interact()`.  Veja o exemplo abaixo:
-
-> ```python
-> def soma(x,y):
->     s=x+y
->     print("A soma de {} + {} vale {}".format(x,y,s))
-> interact(soma,x=(0.0,0.9,0.1),y=(0,3));
-> ```
->
-> <p>
-> x  
-> <input type="range" min="0" max="9" value="4" class="slider" id="slider-xx">
-> <span id="val-xx"></span><br>
-> <script>
-> var sliderxx = document.getElementById("slider-xx");
-> var outputxx = document.getElementById("val-xx");
-> outputxx.innerHTML = (sliderxx.value/10).toFixed(2);
-> sliderxx.oninput = function() {
-> outputxx.innerHTML = (this.value/10).toFixed(2);
-> }
-> </script>
-> y  
-> <input type="range" min="0" max="3" value="1" class="slider" id="slider-yy">
-> <span id="val-yy"></span><br>
-> <script>
-> var slideryy = document.getElementById("slider-yy");
-> var outputyy = document.getElementById("val-yy");
-> outputyy.innerHTML = (slideryy.value);
-> slideryy.oninput = function() {
-> outputyy.innerHTML = (this.value);
-> }
-> </script>
-> A soma de 0.4 + 1 vale 1.4
-> </p>
-
-**Tarefa:** Refaça o exemplo da equação da reta:
-$$
-y(x)=ax+b
-$$
-
-- Considere que $a$ e $b$ são `FloatSlider`  variando de $\pm6$ com passo de $0,1$. $a$ devem iniciar em $1$.
-- Adicione a possibilidade de escolher a cor do gráfico utilizando o Widget `ColorPicker`.  Utilize os parâmetros `description="Cor:"` e `value="green"` (Veja a [documentação](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#Color-picker)).
-
-![Equação da reta utilizando o método Interact](images/equacao_da_reta_interact.png)
-
-### Exemplo 5: `Interact_manual()`
-
-O `interact_manual()` é uma variação do interact que permite a execução do código apenas quando se clica em um determinado botão. Isso é especialmente útil quando o bloco `def` tem instruções muito demoradas ou quando o você não quer executar o bloco `def` imediatamente após a iteração do widget. Por exemplo, tente executar o código abaixo:
-
-> ```python
-> from ipywidgets import interact_manual
-> def soma(x,y):
->     s=x+y
->     print("A soma de {} + {} vale {}".format(x,y,s))
-> interact_manual(soma,x=(0.0,0.9,0.1),y=(0,3));
-> ```
-
-**Tarefa:** Usando o `interact_manual()` crie um formulário de inscrição para um determinado evento. Os Widgets devem ser strings (Inicialmente em branco) e o resultado deve ser parecido à Figura abaixo:
-
-![image-20201019225759762](images/formulario_tarefa.png)
-
-### Exemplo 6: `def` com o `if`
-
-
-
-### Exemplo 7: Plotando dois gráficos
-
-
+> aa
 
