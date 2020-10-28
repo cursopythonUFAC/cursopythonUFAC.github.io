@@ -190,3 +190,70 @@ id8 -- False --> id10((j elevado<br> a n é igual a -j))
 **Pratique com j elevado 1000 e com j elevado a 1001.**
 
 Agora que você já sabe como descobrir o valor de j elevado a qualquer expoente, **faça um programa que peça ao usuário o valor do expoente três vezes e, utilizando `while`, retorne para ele o resultado. Faça apenas para expoentes pares.**
+
+---
+
+# Atividades 4: Para casa
+
+### Exercício 1: 
+
+Aprimore a **Tarefa 5** para expoentes ímpares.
+
+> **Dica:** reutilize o código.
+
+### Exercício 2: 
+
+Faça um programa que calcule o fatorial de um número mostrando as suas multiplicações para o usuário. Também imprima o valor final.
+
+> **Dica:** por definição, o fatorial de um número n é: n! = 1 x 2 x 3 x ... x (n - 1) x n. Exemplo: 3! = 3 x 2 x 1; 5! = 5 x 4 x 3 x 2 x 1.
+
+### Exercício 3:
+
+Paulo tem apenas R$ 200,00 e decide ir ao supermercado. Ele pede para que você faça um programa simples que adiciona produtos em sua cesta enquanto o valor total não ultrapassar o que tem em mãos. 
+
+| Produto             | Valor       | Quantidade desejada |
+| ------------------- | ----------- | ------------------- |
+| Sabão em pó         | R$ 5,00     | 2                   |
+| Arroz               | R$ 40,00/kg | 2                   |
+| Energético          | R$ 8,00     | 5                   |
+| Produtos de limpeza | R$ 55,00    | 1                   |
+| Picanha             | R$ 70,00/kg | 2,5                 |
+
+Imprima para o Paulo o que você conseguiu colocar e diga o valor total. 
+
+> **Observação:** Embora ele tenha R$ 200,00, talvez ele não queira gastar tudo. Crie a cesta dele de acordo com as suas preferências, mas lembre-se que não pode ultrapassar o saldo.
+
+### Exercício 4:
+
+Imprima todos os números sejam menores que 100 quando elevados ao quadrado.
+
+> **Sugestão:** utilize def.
+
+### Exercício 5:
+
+Crie fluxogramas que representem esses dois códigos.
+
+**Código 1:**
+
+```python
+i = 0
+j = 10
+n = 0
+while i < j :
+	i = i + 1
+	j = j − 1
+	n = n + 1
+```
+
+**Código 2:**
+
+```python
+i = 0
+j = 10
+n = 0
+while i != j :
+	i = i + 2
+	j = j – 2
+	n = n + 1
+```
+
