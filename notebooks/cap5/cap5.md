@@ -21,6 +21,8 @@ graph TD
 
 Imprima os valores de 1 a 10 utilizando `while`:
 
+<div style="margin: -80px"></div>
+
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px'}}}%%
 flowchart LR
@@ -33,6 +35,8 @@ flowchart LR
     id1 -- Enquanto --> id2
     id4 --> id5((Fim))
 ```
+
+<div style="margin: -70px"></div>
 
 > ```python
 > count = 1
@@ -232,16 +236,16 @@ $$
 j = \sqrt{-1} \rightarrow j^{2} = -1 
 $$
 Veja o fluxograma abaixo para saber o valor de j elevado a qualquer expoente.
-
-
-
+<div style="margin: -130px"></div>
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '16px'}}}%%
 graph TD
-id1((j elevado a n)) --> id2{n é par} -- True --> id3((j elevado<br> a 2k)) --> id5{k é par} -- True --> id6((j elevado<br> a n é igual a 1))
+id1((j elevado <br> a n)) --> id2{n é par} -- True --> id3((j elevado<br> a 2k)) --> id5{k é par} -- True --> id6((j elevado<br> a n é igual a 1))
 id5 -- False --> id7((j elevado<br> a n é igual a -1))
 id2 -- False --> id4((j elevado<br>a 2k+1)) --> id8{k é par} -- True --> id9((j elevado<br>a n é igual a j))
 id8 -- False --> id10((j elevado<br> a n é igual a -j))
 ```
+<div style="margin: -120px"></div>
 
 **Pratique com j elevado 1000 e com j elevado a 1001.**
 
