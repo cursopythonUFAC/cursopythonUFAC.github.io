@@ -6,6 +6,8 @@ O `while` é uma estrutura de repetição comum em quase todas as linguagens de 
 
 Para facilitar a compreensão, imagine o `while` como uma estrutura `if` que executa um bloco de código **enquanto** a condição for verdadeira ou o laço seja explicitamente encerrado com `break`. Caso ela seja falsa, executa outro bloco de instrução. 
 
+Contudo, existe uma observação a ser feita em laços como o `while` e o `for` (será visto posteriormente). Acima foi dito que um determinado bloco de código será executado **enquanto** uma condição for verdadeira. Você consegue identificar o problema que pode ser causado para a máquina?
+
 Veja o fluxograma abaixo.
 
 
@@ -37,8 +39,8 @@ flowchart LR
 > ```python
 > count = 1
 > while count <= 10:
->  print(count)
->  count += 1
+>  	print(count)
+>  	count += 1
 > ```
 >
 > 1  
@@ -59,15 +61,15 @@ Paulo quer começar a investir, mas apenas quando tiver R<span>\$</span> 20.000,
 > ```python
 > saldo_atual = 4000
 > bonus_anual = 2000
-> count = 0
+> count = 0  # contador
 > 
 > while saldo_atual < 20000:
->  print("Lamento, Paulo. Ainda não possui {saldo_desejado}. Você possui apenas R$ {saldo_atual}.".format(saldo_desejado=20000, saldo_atual=saldo_atual))
->  saldo_atual += bonus_anual #saldo_atual = saldo_atual + bonus_atual
->  count += 1
+>  	print("Lamento, Paulo. Ainda não possui {saldo_desejado}. Você possui apenas R$ 	{saldo_atual}.".format(saldo_desejado=20000, saldo_atual=saldo_atual))
+>  	saldo_atual += bonus_anual  # saldo_atual = saldo_atual + bonus_atual
+>  	count += 1  # count = count + 1
 >  
 > if saldo_atual >= 20000:
->  print("{} conseguiu em {} anos!".format("Paulo", count))
+>  	print("{} conseguiu em {} anos!".format("Paulo", count))
 > ```
 >
 > Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 4000.  
@@ -87,11 +89,11 @@ Escrevendo uma série de Fibonacci até um valor delimitador.
 > ```python
 > # def e fibonacci
 > def fibonacci(n):  # funcao fibonacci limitado ao parametro n
->     a, b = 0, 1
+>     a, b = 0, 1  # a = 0, b = 1
 >     while a < n:
 >         print(a, end = ' ')
->         a, b = b, a+b
->     print()
+>         a, b = b, a+b  # a = b, b = a + b
+>     	print()
 > 
 > # chamando a funcao criada acima
 > fibonacci(10)
@@ -108,7 +110,9 @@ Escrevendo uma série de Fibonacci até um valor delimitador.
 
 ### Exemplo 4: `break`
 
-`break` é um comando que para o loop. Para exercitar tente fazer a tarefa abaixo:
+O `break` é um comando que encerra o loop imediatamente, sem se importar com as instruções seguintes. É muito útil para o que podemos chamar de "erros críticos". Vamos abstrair em um exemplo: pense que você está dirigindo um carro e o semáforo sinaliza amarelo e, em poucos segundos, altera para o vermelho. Não importa se vem carros ou não, você deve **parar**. O que chamamos de "erro crítico", nesse caso, seria avançar o sinal.
+
+Para exercitar tente fazer a tarefa abaixo:
 
 **Tarefa 1:** Veja o código abaixo e faça o que se pede:
 
@@ -144,10 +148,10 @@ Imprimir os números pares de 0 a 10.
 > numerospares = 0
 > 
 > while numerospares <= 10:
->     print(numerospares)
->     numerospares += 2 # numerospares=numerospares + 2
+>    	print(numerospares)
+>    	numerospares += 2 # numerospares=numerospares + 2
 > else:
->     print('O intervalo foi ultrapassado.')
+>    	print('O intervalo foi ultrapassado.')
 > ```
 >
 > 0   
@@ -165,12 +169,12 @@ Peça ao usuário para que ele digite uma senha. Esta senha não pode iniciar co
 > ```python
 > senha_usuario = input('Senha: ')
 > while senha_usuario[0].isdecimal():
->     print('Senha inválida. Tente novamente!')
->     print('-'*50)
->     senha_usuario = input('Outra senha: ')
+>    	print('Senha inválida. Tente novamente!')
+>    	print('-'*50)
+>    	senha_usuario = input('Outra senha: ')
 > else:
->     print("Senha válida!")
-> print('FIM!!!')
+>    	print("Senha válida!")
+> print('FIM')
 > ```
 >
 > Senha:  1MinhaSenha  
@@ -178,7 +182,7 @@ Peça ao usuário para que ele digite uma senha. Esta senha não pode iniciar co
 > \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-  
 > Outra senha:  MinhaSenha  
 > Senha válida!  
-> FIM!!!
+> FIM
 
 # Atividade 3: while-continue
 
@@ -191,11 +195,11 @@ Neste exemplo vamos imprimir todos os números e dizendo se é par ou ímpar, em
 > ```python
 > num = 0											# inicializa a variavel num
 > while num <= 10:								# itera sobre num
->     num += 1									# adiciona sempre 1 passo
->     if num % 2 == 0:							# para verificar se é par ou nao
->         print('{} é par.'.format(num))			# imprime se for par
->         continue								# aqui ele continua a iteracao
->     print('{} é ímpar.'.format(num))			# imprime se for ímpar
+>    	num += 1									# adiciona sempre 1 passo
+>    	if num % 2 == 0:							# para verificar se é par ou nao
+>            print('{} é par.'.format(num))			# imprime se for par
+>         	continue								# aqui ele continua a iteracao
+>     	print('{} é ímpar.'.format(num))			# imprime se for ímpar
 > print('FIM.')									# fim do codigo
 > ```
 >
@@ -229,7 +233,7 @@ em que:
 $$
 j = \sqrt{-1} \rightarrow j^{2} = -1 
 $$
-Veja o fluxograma abaixo para entender como saber o valor de j elevado a qualquer expoente.
+Veja o fluxograma abaixo para saber o valor de j elevado a qualquer expoente.
 
 
 
