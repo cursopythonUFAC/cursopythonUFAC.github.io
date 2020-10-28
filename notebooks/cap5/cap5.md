@@ -21,6 +21,19 @@ graph TD
 
 Imprima os valores de 1 a 10 utilizando `while`:
 
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '18px'}}}%%
+flowchart LR
+	id1((count=1))
+    subgraph " "
+        id2{count<br>menor/igual a<br>10} 
+        id2 -- True --> id3((count=count+1)) --> id2
+    end
+    id2 -- False --> id4((count é maior<br>que 10))
+    id1 -- Enquanto --> id2
+    id4 --> id5((Fim))
+```
+
 > ```python
 > count = 1
 > while count <= 10:
@@ -38,27 +51,6 @@ Imprima os valores de 1 a 10 utilizando `while`:
 > 8  
 > 9  
 > 10
-
-
-```mermaid
-graph LR
-	id1((count=1)) -- Enquanto --> id2{count <br>menor/igual a <br>10} -- True --> id3((count=count+1)) --> id2
-	id2 -- False --> id4((count é maior<br> que 10)) --> id5((Fim))
-```
-
-```mermaid
-flowchart LR
-	id1((count=1))
-    subgraph " "
-        id2{count<br>menor/igual a<br>10} 
-        id2 -- True --> id3((count=count+1)) --> id2
-    end
-    id2 -- False --> id4((count é maior<br>que 10))
-    id1 -- Enquanto --> id2
-    id4 --> id5((Fim))
-```
-
-
 
 ### Exemplo 2: Exemplo prático
 
