@@ -281,6 +281,8 @@ Imprima todos os números sejam menores que 100 quando elevados ao quadrado.
 
 Crie fluxogramas que representem esses dois códigos.
 
+> **Dica:** Você pode utilizar o `mermaid` em uma célula Markdown que é habilitado através da extensão `@agoose77/jupyterlab-markup` (Ver capítulo 4). A documentação do `mermaid` está disponível [aqui](https://mermaid-js.github.io/mermaid/diagrams-and-syntax-and-examples/flowchart.html).
+
 **Código 1:**
 
 ```python
