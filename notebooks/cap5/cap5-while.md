@@ -172,9 +172,7 @@ $$
 z = a + jb
 $$
 em que:
-$$
-j = \sqrt{-1} \rightarrow j^{2} = -1
-$$
+$ j = \sqrt{-1} \rightarrow j^{2} = -1 $
 Veja o fluxograma abaixo para entender como saber o valor de j elevado a qualquer expoente.
 
 
