@@ -1,4 +1,4 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 5: While</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 5: Laço de repetição while</div></center>
 
 # Atividade 1: while
 
@@ -24,10 +24,20 @@ Imprima os valores de 1 a 10 utilizando `while`:
 > ```python
 > count = 1
 > while count <= 10:
->     print(count)
->     count += 1
+>  print(count)
+>  count += 1
 > ```
-
+>
+> 1  
+> 2  
+> 3  
+> 4  
+> 5  
+> 6  
+> 7  
+> 8  
+> 9  
+> 10
 
 
 ```mermaid
@@ -46,46 +56,42 @@ Paulo quer começar a investir, mas apenas quando tiver R<span>\$</span> 20.000,
 > count = 0
 > 
 > while saldo_atual < 20000:
->     print("Lamento, Paulo. Ainda não possui {saldo_desejado}. Você possui apenas R$ {saldo_atual}.".format(saldo_desejado=20000, saldo_atual=saldo_atual))
->     saldo_atual += bonus_anual
->     count += 1
->     
+>  print("Lamento, Paulo. Ainda não possui {saldo_desejado}. Você possui apenas R$ {saldo_atual}.".format(saldo_desejado=20000, saldo_atual=saldo_atual))
+>  saldo_atual += bonus_anual #saldo_atual = saldo_atual + bonus_atual
+>  count += 1
+>  
 > if saldo_atual >= 20000:
->     print("{} conseguiu em {} anos!".format("Paulo", count))
+>  print("{} conseguiu em {} anos!".format("Paulo", count))
 > ```
 >
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 4000.  
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 6000.   
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 8000.  
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 10000.  
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 12000.  
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 14000.  
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 16000.  
+> Lamento, Paulo. Ainda não possui 20000. Você possui apenas R<span>\$</span> 18000.  
+> Paulo conseguiu em 8 anos!
+
+### Exemplo 3: `def` e Fibonacci.
+
+Escrevendo uma série de Fibonacci até um valor delimitador.
+
+> ```python
+> # def e fibonacci
+> def fibonacci(n):  # funcao fibonacci limitado ao parametro n
+>     a, b = 0, 1
+>     while a < n:
+>         print(a, end = ' ')
+>         a, b = b, a+b
+>     print()
 > 
-
-```python
-saldo_atual = 4000
-bonus_anual = 2000
-count = 0
-
-while saldo_atual < 20000:
-    print("Lamento, Paulo. Ainda não possui {saldo_desejado}. Você possui apenas R$ {saldo_atual}.".format(saldo_desejado=20000, saldo_atual=saldo_atual))
-    saldo_atual += bonus_anual
-    count += 1
-    
-if saldo_atual >= 20000:
-    print("{} conseguiu em {} anos!".format("Paulo", count))
-```
-
-### Exemplo 3: `def` e fibonacci.
-
-Escrevendo uma série de fibonacci até um valor delimitador.
-
-```python
-# def e fibonacci
-def fibonacci(n):  # funcao fibonacci limitado ao parametro n
-    a, b = 0, 1
-    while a < n:
-        print(a, end = ' ')
-        a, b = b, a+b
-    print()
-
-# chamando a funcao criada acima
-fibonacci(10)
-```
+> # chamando a funcao criada acima
+> fibonacci(10)
+> ```
+>
+> 0 1 1 2 3 5 8
 
 > __Links úteis:__
 >
@@ -94,7 +100,9 @@ fibonacci(10)
 > - [Dev Fúria](http://devfuria.com.br/python/functions/);
 > - [Documentação funçoes](https://docs.python.org/2.0/ref/function.html).
 
+### Exemplo 4: `break`
 
+`break` é um comando que para o loop. Para exercitar tente fazer a tarefa abaixo:
 
 **Tarefa 1:** Veja o código abaixo e faça o que se pede:
 
@@ -122,54 +130,81 @@ while qtd_operacoes <= 3:
 
 Você viu anteriormente que o `while` trata de executar um bloco de código enquanto uma condição é verdadeira. Se você incluir um `else` será possível executar uma "contra ação", isto é, executar outro bloco de código caso a condição seja falsa.
 
-### Exemplo 3: Números pares
+### Exemplo 5: Números pares
 
 Imprimir os números pares de 0 a 10.
 
-```python
-numerospares = 0
+> ```python
+> numerospares = 0
+> 
+> while numerospares <= 10:
+>     print(numerospares)
+>     numerospares += 2 # numerospares=numerospares + 2
+> else:
+>     print('O intervalo foi ultrapassado.')
+> ```
+>
+> 0   
+> 2  
+> 4  
+> 6  
+> 8  
+> 10  
+> O intervalo foi ultrapassado.
 
-while numerospares <= 10:
-    print(numerospares)
-    numerospares += 2
-else:
-    print('O intervalo foi ultrapassado.')
-    
-```
-
-### Exemplo 4: Digitando uma senha
+### Exemplo 6: Digitando uma senha
 
 Peça ao usuário para que ele digite uma senha. Esta senha não pode iniciar com um número decimal. Utilizando `While`, faça uma verificação para que todas as vezes que o usuário entre com uma senha inválida, mostre uma mensagem e peça para ele repetir até que seja uma senha aceitável.
 
-```python
-senha_usuario = input('Senha: ')
-while senha_usuario[0].isdecimal():
-    print('Senha inválida. Tente novamente!')
-    print('-'*50)
-    senha_usuario = input('Outra senha: ')
-else:
-    print("Senha válida!")
-print('FIM!!!')
-```
+> ```python
+> senha_usuario = input('Senha: ')
+> while senha_usuario[0].isdecimal():
+>     print('Senha inválida. Tente novamente!')
+>     print('-'*50)
+>     senha_usuario = input('Outra senha: ')
+> else:
+>     print("Senha válida!")
+> print('FIM!!!')
+> ```
+>
+> Senha:  1MinhaSenha  
+> Senha inválida. Tente novamente!  
+> \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-  
+> Outra senha:  MinhaSenha  
+> Senha válida!  
+> FIM!!!
 
 # Atividade 3: while-continue
 
 Além do **break**, temos também o **continue**, que é o seu oposto. Enquanto o primeiro para o código totalmente, sem se importar com o que vem depois; o continue ignora as próximas instruções e passa para a próxima iteração.
 
-### Exemplo 5: Classificando números
+### Exemplo 7: Classificando números
 
 Neste exemplo vamos imprimir todos os números e dizendo se é par ou ímpar, em um intervalo de 0 a 10.
 
-```python
-num = 0											# inicializa a variavel num
-while num <= 10:								# itera sobre num
-    num += 1									# adiciona sempre 1 passo
-    if num % 2 == 0:							# para verificar se é par ou nao
-        print('{} é par.'.format(num))			# imprime se for par
-        continue								# aqui ele continua a iteracao
-    print('{} é ímpar.'.format(num))			# imprime se for ímpar
-print('FIM.')									# fim do codigo
-```
+> ```python
+> num = 0											# inicializa a variavel num
+> while num <= 10:								# itera sobre num
+>     num += 1									# adiciona sempre 1 passo
+>     if num % 2 == 0:							# para verificar se é par ou nao
+>         print('{} é par.'.format(num))			# imprime se for par
+>         continue								# aqui ele continua a iteracao
+>     print('{} é ímpar.'.format(num))			# imprime se for ímpar
+> print('FIM.')									# fim do codigo
+> ```
+>
+> 1 é ímpar.  
+> 2 é par.  
+> 3 é ímpar.  
+> 4 é par.  
+> 5 é ímpar.  
+> 6 é par.  
+> 7 é ímpar.  
+> 8 é par.  
+> 9 é ímpar.  
+> 10 é par.  
+> 11 é ímpar.  
+> FIM.
 
 **Tarefa 3:** Faça um programa que leia e valide as seguintes informações:
 
