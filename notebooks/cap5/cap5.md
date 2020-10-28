@@ -46,6 +46,20 @@ graph LR
 	id2 -- False --> id4((count é maior<br> que 10)) --> id5((Fim))
 ```
 
+```mermaid
+flowchart LR
+	id1((count=1))
+    subgraph " "
+        id2{count<br>menor/igual a<br>10} 
+        id2 -- True --> id3((count=count+1)) --> id2
+    end
+    id2 -- False --> id4((count é maior<br>que 10))
+    id1 -- Enquanto --> id2
+    id4 --> id5((Fim))
+```
+
+
+
 ### Exemplo 2: Exemplo prático
 
 Paulo quer começar a investir, mas apenas quando tiver R<span>\$</span> 20.000,00. Todos os anos, ele recebe um bônus líquido de R<span>\$</span> 2.000,00 e guarda em seu cofre. No momento, ele tem apenas R<span>\$</span> 4.000,00. Utilizando `while`, informe ao Paulo quando ele poderá, finalmente, começar a aplicar o seu patrimônio.
