@@ -8,9 +8,7 @@ Para facilitar a compreensão, imagine o `while` como uma estrutura `if` que exe
 
 Contudo, existe uma observação a ser feita em laços como o `while` e o `for` (será visto posteriormente). Acima foi dito que um determinado bloco de código será executado **enquanto** uma condição for verdadeira. Você consegue identificar o problema que pode ser causado para a máquina?
 
-Veja o fluxograma abaixo.
-
-
+Veja o fluxograma abaixo:
 
 ```mermaid
 graph TD
