@@ -122,7 +122,7 @@ Escrevendo uma série de Fibonacci até um valor delimitador.
 
 > __Links úteis:__
 >
-> - [panda.ime.usp.br](https://panda.ime.usp.br/pensepy/static/pensepy/05-Funcoes/funcoes.html); 
+> - [panda.ime.usp.br](https://panda.ime.usp.br/pensepy/static/pensepy/05-Funcoes/funcoes.html);
 >
 > - [Dev Fúria](http://devfuria.com.br/python/functions/);
 > - [Documentação funçoes](https://docs.python.org/2.0/ref/function.html).
