@@ -271,13 +271,13 @@ Faça um programa que calcule o fatorial de um número mostrando as suas multipl
 
 Paulo tem apenas R<span>\$</span> 200,00 e decide ir ao supermercado. Ele pede para que você faça um programa simples que adiciona produtos em sua cesta enquanto o valor total não ultrapassar o que tem em mãos. 
 
-| Produto             | Valor       | Quantidade desejada |
-| ------------------- | ----------- | ------------------- |
-| Sabão em pó         | R$ 5,00     | 2                   |
-| Arroz               | R$ 40,00/kg | 2                   |
-| Energético          | R$ 8,00     | 5                   |
-| Produtos de limpeza | R$ 55,00    | 1                   |
-| Picanha             | R$ 70,00/kg | 2,5                 |
+| Produto             | Valor                     | Quantidade desejada |
+| ------------------- | ------------------------- | ------------------- |
+| Sabão em pó         | R<span>\$</span> 5,00     | 2                   |
+| Arroz               | R<span>\$</span> 40,00/kg | 2                   |
+| Energético          | R<span>\$</span> 8,00     | 5                   |
+| Produtos de limpeza | R<span>\$</span> 55,00    | 1                   |
+| Picanha             | R<span>\$</span> 70,00/kg | 2,5                 |
 
 Imprima para o Paulo o que você conseguiu colocar e diga o valor total. 
 
@@ -293,7 +293,7 @@ Imprima todos os números sejam menores que 100 quando elevados ao quadrado.
 
 Crie fluxogramas que representem esses dois códigos.
 
-> **Dica:** Você pode utilizar o `mermaid` em uma célula Markdown que é habilitado através da extensão `@agoose77/jupyterlab-markup` (Ver capítulo 4). A documentação do `mermaid` está disponível [aqui](https://mermaid-js.github.io/mermaid/diagrams-and-syntax-and-examples/flowchart.html).
+> **Dica:** Você pode utilizar o `mermaid` em uma célula Markdown que é habilitado através da extensão `@agoose77/jupyterlab-markup` (Ver capítulo 4). A documentação do `mermaid` está disponível [aqui](https://mermaid-js.github.io/mermaid/diagrams-and-syntax-and-examples/flowchart.html), e existe um editor online disponível [aqui](https://mermaid-js.github.io/mermaid-live-editor/).
 
 **Código 1:**
 
