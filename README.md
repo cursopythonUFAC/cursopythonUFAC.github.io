@@ -139,3 +139,12 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
+### Capítulo 5: Estrutura de repetição while 
+
+> Neste capítulo vamos aprender sobre as estruturas de repetição `while`, `while-else` e os comandos `break` e `continue`
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap5/cap5.html" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/ca%E1%B9%955-folha-de-resposta.zip" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
