@@ -83,15 +83,11 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     codigo="3aOmaRNkcDc"
 %}
 
-
-
 {% include menu-atividade.html 
     roteiro="notebooks/cap1/cap1.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
-
-
 
 ### **Capítulo 2:** Saída de dados e sentenças lógicas
 
@@ -123,6 +119,10 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     codigo="zHUSYJnIcLw"
 %}
 
+{% include video-atividade.html
+    codigo="Rz0OL4EfUzU"
+%}
+
 {% include menu-atividade.html 
     roteiro="notebooks/cap3/cap3.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
@@ -132,6 +132,10 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 ### Capítulo 4: Estruturas de decisão
 
 > Neste capítulo vamos aprender sobre as estruturas de decisão do Python e sobre as extensões do Jupyter Notebook.
+
+{% include video-atividade.html
+    codigo="UU0XPDQNkkA"
+%}
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap4/cap4.html" 
