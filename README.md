@@ -83,15 +83,11 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     codigo="3aOmaRNkcDc"
 %}
 
-
-
 {% include menu-atividade.html 
     roteiro="notebooks/cap1/cap1.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
-
-
 
 ### **Capítulo 2:** Saída de dados e sentenças lógicas
 
