@@ -17,7 +17,7 @@ graph TD
 	id1  -- False -->id4((Fim))
 ```
 
-### Exemplo 1: Primeiro exemplo
+### Exemplo 1: Contador de 1 a 10.
 
 Imprima os valores de 1 a 10 utilizando `while`:
 
@@ -56,7 +56,7 @@ flowchart LR
 > 9  
 > 10
 
-### Exemplo 2: Exemplo prático
+### Exemplo 2: Investimento
 
 Paulo quer começar a investir, mas apenas quando tiver R<span>\$</span> 20.000,00. Todos os anos, ele recebe um bônus líquido de R<span>\$</span> 2.000,00 e guarda em seu cofre. No momento, ele tem apenas R<span>\$</span> 4.000,00. Utilizando `while`, informe ao Paulo quando ele poderá, finalmente, começar a aplicar o seu patrimônio.
 
@@ -86,6 +86,22 @@ Paulo quer começar a investir, mas apenas quando tiver R<span>\$</span> 20.000,
 
 ### Exemplo 3: `def` e Fibonacci.
 
+A palavra reservada `def` é para a criação de funções em python. Não é objetivo deste capítulo aprofundar-se sobre as funções, porém é necessário, à primeira vista, entender a sua importância.
+    
+Imagine que você queira fazer um pequeno programa em python que simule uma calculadora. Pense a nível de projeto:
+    
+- Funcionalidades de uma calculadora: "quais operações eu quero que ela realize?"
+    
+- Interações com o usuário: ler os valores fornecidos pelo usuário, retornar para ele o resultado.
+    
+Por cima descrevemos o que seria o projeto de uma calculadora. Agora imagine tudo isso em um arquivo em código "contínuo". Ficaria imenso!
+    
+Você decide compartilhar o seu código com o seu amigo e quando ele vê aquele código imenso, já até sente preguiça de continuar a leitura.
+    
+Isso é bastante desagradável, porém utilizar funções para "enxutar" o seu código ajuda muito. Veja que, em termos de tamanho, não deve mudar muita coisa. Contudo, em termos de legibilidade (acredite, isso importa muito!) influencia.
+    
+Sem mais delongas, vamos ver a sintaxe para criar uma função através do exemplo abaixo, em que queremos retornar ao usuário a série de Fibonacci.
+    
 Escrevendo uma série de Fibonacci até um valor delimitador.
 
 > ```python
@@ -246,6 +262,10 @@ id2 -- False --> id4((j elevado<br>a 2k+1)) --> id8{k é par} -- True --> id9((j
 id8 -- False --> id10((j elevado<br> a n é igual a -j))
 ```
 <div style="margin: -120px"></div>
+
+
+
+
 
 **Pratique com j elevado 1000 e com j elevado a 1001.**
 
