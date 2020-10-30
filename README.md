@@ -153,7 +153,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
-### Capítulo 5: Widgets
+### Capítulo 6: Widgets
 
 > Neste capítulo vamos aprender sobre as entradas iterativas do Jupyter, os Widgets
 
