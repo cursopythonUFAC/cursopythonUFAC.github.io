@@ -145,7 +145,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 ### Capítulo 5: Estrutura de repetição while 
 
-> Neste capítulo vamos aprender sobre as estruturas de repetição `while`, `while-else` e os comandos `break` e `continue`
+> Neste capítulo vamos aprender sobre as estruturas de repetição `while`, `while-else` e os comandos `break` e `continue`.
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap5/cap5.html" 
@@ -155,7 +155,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 ### Capítulo 6: Widgets
 
-> Neste capítulo vamos aprender sobre as entradas iterativas do Jupyter, os Widgets
+> Neste capítulo vamos aprender sobre as entradas iterativas do Jupyter, os Widgets.
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap6/cap6.html" 
