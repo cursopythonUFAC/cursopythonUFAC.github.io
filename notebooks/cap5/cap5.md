@@ -91,9 +91,10 @@ A palavra reservada `def` é para a criação de funções em python. Não é ob
 Imagine que você queira fazer um pequeno programa em python que simule uma calculadora. Pense a nível de projeto:
     
 - Funcionalidades de uma calculadora: "quais operações eu quero que ela realize?"
-    
+  
 - Interações com o usuário: ler os valores fornecidos pelo usuário, retornar para ele o resultado.
-    
+  
+
 Por cima descrevemos o que seria o projeto de uma calculadora. Agora imagine tudo isso em um arquivo em código "contínuo". Ficaria imenso!
     
 Você decide compartilhar o seu código com o seu amigo e quando ele vê aquele código imenso, já até sente preguiça de continuar a leitura.
@@ -121,7 +122,7 @@ Escrevendo uma série de Fibonacci até um valor delimitador.
 
 > __Links úteis:__
 >
-> - [panda.ime.usp.br](https://panda.ime.usp.br/pensepy/static/pensepy/05-Funcoes/funcoes.html); 
+> - [panda.ime.usp.br](https://panda.ime.usp.br/pensepy/static/pensepy/05-Funcoes/funcoes.html);
 >
 > - [Dev Fúria](http://devfuria.com.br/python/functions/);
 > - [Documentação funçoes](https://docs.python.org/2.0/ref/function.html).
@@ -149,7 +150,6 @@ while qtd_operacoes <= 3:
         break # Este comando para o loop
     else:
         print("{} / {} = {:.2f}".format(x, y, x/y))
-    
 ```
 
 **Tarefa 2:** Faça uma calculadora de soma e subtração. Utilize `def` e `while`.
@@ -303,7 +303,7 @@ Imprima para o Paulo o que você conseguiu colocar e diga o valor total.
 
 > **Observação:** Embora ele tenha R$ 200,00, talvez ele não queira gastar tudo. Crie a cesta dele de acordo com as suas preferências, mas lembre-se que não pode ultrapassar o saldo.
 
-### Exercício 4: Imprmindo números
+### Exercício 4: Imprimindo números
 
 Imprima todos os números sejam menores que 100 quando elevados ao quadrado.
 
