@@ -1,4 +1,4 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 5: Widgets</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 6: Widgets</div></center>
 
 # Atividade 1: Introdução aos Widgets
 
@@ -111,17 +111,16 @@ Todas as opções de customizações de todos os tipos de sliders podem ser vist
 - `IntSlider` retorna inteiros:
 
 > ```python
-> import ipywidgets as widget #Importando o pacote com o apelido de widgets
 > widget.IntSlider(
 >     value=5, # Valor inicial
->     min=0, # Valor mínimo
->     max=10, # Valor máximo
->     step=1, # Passo
->     description='Número:' #Descrição
-> )
+>        min=0, # Valor mínimo
+>        max=10, # Valor máximo
+>        step=1, # Passo
+>        description='Número:' #Descrição
+>    )
 > ```
->
-> <p>
+> 
+><p>
 > Número:  
 > <input type="range" min="0" max="10" value="5" class="slider" id="slider-6">
 > <span id="val-6"></span>
@@ -227,11 +226,11 @@ No final o conjunto das três células é a seguinte:
 > ```python
 > # Célula 1: Declarando o widget chamado Peso
 > Peso = widget.FloatSlider(
-> value=5, # Valor inicial
-> min=30, # Valor mínimo
-> max=100, # Valor máximo
-> step=0.1, # Passo
-> description='Peso (kg):' # Descrição
+>     value=5, # Valor inicial
+>     min=30, # Valor mínimo
+>     max=100, # Valor máximo
+>     step=0.1, # Passo
+>     description='Peso (kg):' # Descrição
 > )
 > ```
 >
@@ -307,7 +306,7 @@ Para exemplificar o conceito de `interact()` e blocos `def` veja o exemplo abaix
 > # Bloco principal (Nível 0)
 > interact(f,#Bloco def que se deseja associar
 >             x=5 #Variável ou widget
->           )
+>            )
 > ```
 >
 > <p>
@@ -381,20 +380,19 @@ Podemos remover essa saída adicionando `;` ao final da instrução `ìnteract()
 Utilizando a notação `@interact` podemos simplificar mais ainda o uso dos Widgets, veja o exemplo abaixo:
 
 > ```python
-> from ipywidgets import interact
-> @interact(x=5) #Declaramos o @interact() antes do bloco def
+> @interact(x=5)
 > def f(x):
 >     return print("O valor de x é {}.".format(x))
-> ```
->
-> <p>
+>    ```
+> 
+><p>
 > x  
 > <input type="range" min="-5" max="15" value="5" class="slider" id="slider-DW">
 > <span id="val-DW"></span><br>
 > O valor de x é 5
 > </p>
->
-> <script>
+> 
+><script>
 > var sliderDW = document.getElementById("slider-DW");
 > var outputDW = document.getElementById("val-DW");
 > outputDW.innerHTML = sliderDW.value;
@@ -414,44 +412,42 @@ IntSlider(min=-5, max=15, step=1, value=5)
 De fato, conseguimos o mesmo resultado quando passamos o próprio `IntSlider` como valor de `x`:
 
 > ```python
-> from ipywidgets import interact
 > def f(x):
 >     print("O valor de x é {}".format(x))
 >    interact(f,x=widget.IntSlider(min=-5, max=15, step=1, value=5));
 >    ```
-> 
+>    
 > <p>
 > x  
-><input type="range" min="-5" max="15" value="5" class="slider" id="slider-D">
-> <span id="val-D"></span><br>
+> <input type="range" min="-5" max="15" value="5" class="slider" id="slider-D">
+><span id="val-D"></span><br>
 > O valor de x é 5
 > </p>
 > <script>
 > var sliderD = document.getElementById("slider-D");
 > var outputD = document.getElementById("val-D");
->outputD.innerHTML = sliderD.value;
+> outputD.innerHTML = sliderD.value;
 >sliderD.oninput = function() {
-> outputD.innerHTML = (this.value).toString();
+>outputD.innerHTML = (this.value).toString();
 > }
 > </script>
 
 Ou ainda:
 
 > ```python
-> from ipywidgets import interact
 > @interact(x=widget.IntSlider(min=-5, max=15, step=1, value=5))
 > def f(x):
 >     print("O valor de x é {}".format(x))
-> ```
->
-> <p>
+>    ```
+> 
+><p>
 > x  
 > <input type="range" min="-5" max="15" value="5" class="slider" id="slider-DN">
 > <span id="val-DN"></span><br>
 > O valor de x é 5
 > </p>
->
-> <script>
+> 
+><script>
 > var sliderDN = document.getElementById("slider-DN");
 > var outputDN = document.getElementById("val-DN");
 > outputDN.innerHTML = sliderDN.value;
@@ -474,23 +470,22 @@ Se o segundo parâmetro de `interact()` for passado como `x=(min,max)`  é produ
 Por exemplo:
 
 > ```python
-> from ipywidgets import interact
 > @interact(x=(0,10)) #widget.IntSlider(min=0, max=10)
 > def f(x):
->        print("O valor de x é {}".format(x))
+>     print("O valor de x é {}".format(x))
 >    ```
-> 
+>    
 > <p>
 > x  
-><input type="range" min="0" max="10" value="5" class="slider" id="slider-F">
-> <span id="val-F"></span><br>
+> <input type="range" min="0" max="10" value="5" class="slider" id="slider-F">
+><span id="val-F"></span><br>
 > O valor de x é 5
 > </p>
 > 
 > <script>
 > var sliderF = document.getElementById("slider-F");
->var outputF = document.getElementById("val-F");
-> outputF.innerHTML = sliderF.value;
+> var outputF = document.getElementById("val-F");
+>outputF.innerHTML = sliderF.value;
 > sliderF.oninput = function() {
 > outputF.innerHTML = (this.value).toString();
 > }
@@ -499,23 +494,22 @@ Por exemplo:
 E se o terceiro parâmetro for passado como `x=(min,max,passo)` irá produzir um slider com o valor mínimo, máximo e o passo definido:
 
 > ```python
-> from ipywidgets import interact
 > @interact(x=(0.0,10.0,0.5))
 > def f(x):
->        print("O valor de x é {}".format(x))
+>     print("O valor de x é {}".format(x))
 >    ```
-> 
+>    
 > <p>
 > x  
-><input type="range" min="0" max="100" value="50" class="slider" id="slider-H">
-> <span id="val-H"></span><br>
+> <input type="range" min="0" max="100" value="50" class="slider" id="slider-H">
+><span id="val-H"></span><br>
 > O valor de x é 5.0
 > </p>
 > 
 > <script>
 > var sliderH = document.getElementById("slider-H");
->var outputH = document.getElementById("val-H");
-> outputH.innerHTML = (sliderH.value/10).toFixed(2);
+> var outputH = document.getElementById("val-H");
+>outputH.innerHTML = (sliderH.value/10).toFixed(2);
 > sliderH.oninput = function() {
 > outputH.innerHTML = ((this.value)/10).toFixed(2);
 > }
@@ -598,15 +592,15 @@ O programa vai ter como entrada um `Floatslider` com $n\in[-2,2]$ e passo $0,1$.
 > 
 > @interact(n=(-2.0,2.0,0.1)) # FloatSlider(min=-2.0,max=2.0,step=0.1)
 > def plotando_espiral(n):
->     theta = symbols('θ')
->     x = theta**n*sin(theta)
->     y = theta**n*cos(theta)
->     plot_parametric(x,y,(theta,0,10*pi),
->           xlim=(-8,8.04),
->           ylim=(-8.06*15/23,8*15/23), #Multiplicado por 15/23 para manter a mesma proporção
->           title="Espiral com n={:.2f}".format(n),
->           xlabel="",
->           ylabel="")
+>        theta = symbols('θ')
+>        x = theta**n*sin(theta)
+>        y = theta**n*cos(theta)
+>        plot_parametric(x,y,(theta,0,10*pi),
+>              xlim=(-8,8.04),
+>              ylim=(-8.06*15/23,8*15/23), #Multiplicado por 15/23 para manter a mesma proporção
+>              title="Espiral com n={:.2f}".format(n),
+>              xlabel="",
+>              ylabel="")
 > ```
 >
 > ![Espiral](images/espiral.gif)
@@ -614,11 +608,6 @@ O programa vai ter como entrada um `Floatslider` com $n\in[-2,2]$ e passo $0,1$.
 Observe que quando $n=0$ a espiral se reduz à um círculo. Precisamos adicionar este detalhe no nosso programa com ajuda de um `if`.
 
 > ```python
-> from sympy import symbols, sin, cos, pi #Importando symbols, sin, cos e pi
-> from sympy.plotting import plot_parametric #Importando plot_parametric
-> from matplotlib import style
-> style.use('seaborn-whitegrid')
-> 
 > @interact(n=(-2,2.0,0.1))
 > def plotando_espiral(n):
 >     theta = symbols('θ')
@@ -626,19 +615,19 @@ Observe que quando $n=0$ a espiral se reduz à um círculo. Precisamos adicionar
 >     y = theta**n*cos(theta)
 >     if n==0:
 >         título="Círculo"
->     else:
->         título="Espiral com n={:.2f}".format(n)
->     plot_parametric(x,y,(theta,0,10*pi),
->           xlim=(-8,8.04),
->           ylim=(-8.06*15/23,8*15/23), #Multiplicado por 15/23 para manter a mesma proporção
->           title=título,
->           xlabel="",
->           ylabel="")
-> ```
->
-> ![Espiral Corrigida](images/espiral-corrigida.gif)
+>        else:
+>            título="Espiral com n={:.2f}".format(n)
+>        plot_parametric(x,y,(theta,0,10*pi),
+>              xlim=(-8,8.04),
+>              ylim=(-8.06*15/23,8*15/23), #Multiplicado por 15/23 para manter a mesma proporção
+>              title=título,
+>              xlabel="",
+>              ylabel="")
+>    ```
+>    
+>    ![Espiral Corrigida](images/espiral_modificada.gif)
 
-**Tarefa 4: **Inclinação da reta
+**Tarefa 4:** Inclinação da reta
 
 Uma reta fixada na origem tem a seguinte notação:
 
@@ -697,17 +686,11 @@ A função `interact()` permite trabalhar com múltiplos argumentos, para isto b
 > A soma de 0.4 + 1 vale 1.4
 > </p>
 
-Considerando um exemplo prático, vamos adicionar a possiblidade de trabalhar com Widgets.
+### Exemplo 9: Equação da reta
+
+Considerando um exemplo prático, vamos um programa capaz de plotar e escrever a equação da reta no título do gráfico.
 
 > ```python
-> from sympy import symbols
-> from sympy.plotting import plot
-> from matplotlib import style
-> import matplotlib.pyplot as plt
-> from ipywidgets import interact
-> import ipywidgets as widget
-> style.use('seaborn-whitegrid')
-> 
 > @interact(
 >     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
 >     b=(-6,6,0.1) 
@@ -717,95 +700,287 @@ Considerando um exemplo prático, vamos adicionar a possiblidade de trabalhar co
 >     y = a*x+b
 >     plot(y,(x,-10,10),
 >                 xlim=(-6,6),
+>                    ylim=(-6*3/4,6*3/4),
+>                    title='$y(x)={:.2g}x{:+.2g}$'.format(a,b),
+>                 xlabel="$x$",
+>                 ylabel=""
+>                   )
+>    ```
+>    
+>    ![Equação da reta](images/eq_reta_pt1.gif)
+
+A equação não é mostrada adequadamente. Vamos corrigí-la utilizando `if` e concatenação de `strings`.
+
+A principio vamos seguir as seguintes regras:
+
+   - Quando $a=0$ e $b=0$ deve-se $y(x)=0$
+   - Quando $a=0$ ou $a=1$ deve-se omitir o $a$ na equação
+   - Quando $a=0$ deve-se omitir $x$ da equação
+   - Quando $b=0$ deve-se omitir o valor de $b$ na equação
+   - Quando $a\neq 0$ e $b\neq 0$ deve-se incluir o sinal de $b$
+
+> ```python
+> @interact(
+>     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>     b=(-6,6,0.1)   
+> )
+> def eq_reta(a,b):
+>     x = symbols('x')
+>     y = a*x+b
+>     
+>     # PARCELA 'a'
+>     if a==1 or a==0:
+>         a_str = ''
+>     else:
+>         a_str = '{:.2g}'.format(a)
+>          
+>     # PARCELA 'x'
+>     if a==0:
+>         x_str = ''
+>     else:
+>         x_str = 'x'
+>                
+>     # PARCELA 'b'
+>     if b==0:
+>         if a==0:
+>             b_str = '0'
+>         else:
+>             b_str = ''
+>     elif a!=0: #Quando a é diferente de zero deve-se incluir o '+'
+>         b_str = '{:+.2g}'.format(b)
+>     else: #Quando a é zero não é necessário incluir o '+'
+>         b_str = '{:.2g}'.format(b)
+>     
+>     # Escrevendo a equação
+>     t = '$y(x)=' + a_str + x_str + b_str +'$'
+>     
+>     plot(y,(x,-10,10),
+>                 xlim=(-6,6),
 >                 ylim=(-6*3/4,6*3/4),
->                 title='$y(x)={:.2g}x{:+.2g}$'.format(a,b),
+>                 title=t,
 >                 xlabel="$x$",
 >                 ylabel=""
 >                )
 > ```
 >
+> ![Equação da reta](images/eq_reta_pt2.gif)
+
+Podemos simplificar um pouco o nosso programa se utilizarmos a variavel $t$ como um acomulador:
+
+> ```python
+> @interact(
+>     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>     b=(-6,6,0.1)
+> )
+> def eq_reta(a,b):
+>     x = symbols('x')
+>     y = a*x+b
+>     t = '$y(x)='
+>     
+>     # PARCELA 'a'
+>     if a!=1 and a!=0:
+>         t+= '{:.2g}'.format(a) #t=t+'{:.2g}'.format(a)
+>          
+>     # PARCELA 'x'
+>     if a!=0: 
+>         t+= 'x' #t=t+x
+>                
+>     # PARCELA 'b'
+>     if b==0:
+>         if a==0:
+>             t+= '0'
+>     elif a!=0:
+>         t+= '{:+.2g}'.format(b)
+>     else:
+>         t+= '{:.2g}'.format(b)  
+>     
+>     # Finalizando
+>     t += '$'
+>     
+>     plot(y,(x,-10,10),
+>                 xlim=(-6,6),
+>                 ylim=(-6*3/4,6*3/4),
+>                 title=t,
+>                 xlabel="$x$",
+>                 ylabel=""
+>                )
+> ```
+>
+>![Equação da reta](images/eq_reta_pt2.gif)
+
+Finalmente, vamos adicionar a posssiblidade do usuário mostrar ou esconder a equação (o título):
+
+> ```python
+> @interact(
+>     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>     b=(-6,6,0.1),
+>     Título=True 
+> )
+> def eq_reta(a,b,Título):
+>     x = symbols('x')
+>     y = a*x+b
+>     t = '' #Inicio o t como uma string vazia
+>     
+>     #Vou adicionando termos às strings a medida que passa pelos ifs
+>     if Título:
+>         t += '$y(x)=' 
 > 
-
-
-
-
-
-
+>         # PARCELA 'a'
+>         if a!=1 and a!=0:
+>             t+= '{:.2g}'.format(a)
+> 
+>         # PARCELA 'x'
+>         if a!=0: 
+>             t+= 'x'
+> 
+>         # PARCELA 'b'
+>         if b==0:
+>             if a==0:
+>                 t+= '0'
+>         elif a!=0:
+>             t+= '{:+.2g}'.format(b)
+>         else:
+>             t+= '{:.2g}'.format(b)  
+> 
+>         # Finalizando
+>         t += '$'
+>     
+>     plot(y,(x,-10,10),
+>                 xlim=(-6,6),
+>                 ylim=(-6*3/4,6*3/4),
+>                 title=t,
+>                 xlabel="$x$",
+>                 ylabel=""
+>                )
+> ```
+>
+> ![Equação da reta](images/eq_reta_pt3.gif)
 
 **Tarefa:** Modifique o exemplo da espiral considerando as seguintes premissas:
 
 - Adicione a possiblidade de mostrar e ocultar os títulos e eixos;
 - Adicione a possibilidade de escolher a cor do gráfico utilizando o Widget `ColorPicker`.  Utilize os parâmetros `description="Cor:"` e `value="green"` (Veja a [documentação](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#Color-picker)). 
 
-**Solução:**
+A sua saída do programa deve ser parecida com essa:
 
-> ```python
-> from sympy import symbols, sin, cos, pi #Importando symbols, sin, cos e pi
-> from sympy.plotting import plot_parametric #Importando plot_parametric
-> from matplotlib import style
-> style.use('seaborn-whitegrid')
-> 
-> @interact(n=(-2.0,2.0,0.1),Título=True,Eixos=False)
-> def plotando_espiral(n,Título,Eixos):
->     theta = symbols('θ')
->     x = theta**n*sin(theta)
->     y = theta**n*cos(theta)
->     if Título:
->         if n==0:
->             título_str='Cículo'
->         else:
->             título_str="Espiral com n={:.2f}".format(n)
->     else:
->         título_str=' '
->     if Eixos:
->         eixo_x='$x$'
->         eixo_y='$y$'
->     else:
->         eixo_x=''
->         eixo_y=''        
->     plot_parametric(x,y,(theta,0,10*pi),
->           xlim=(-8,8.04),
->           ylim=(-8.06*15/23,8*15/23),
->           title=título_str,
->           xlabel=eixo_x,
->           ylabel=eixo_y)
-> ```
->
-> ![Espiral modificada](images/espiral_modificado.gif)
+![Equação da reta](images/espiral_modificada.gif)
 
+# Atividade 3: Interact_manual()
 
-
-**Tarefa:** Refaça o exemplo da equação da reta:
-$$
-y(x)=ax+b
-$$
-
-- Considere que $a$ e $b$ são `FloatSlider`  variando de $\pm6$ com passo de $0,1$. $a$ devem iniciar em $1$.
-- Adicione a possibilidade de escolher a cor do gráfico utilizando o Widget `ColorPicker`.  Utilize os parâmetros `description="Cor:"` e `value="green"` (Veja a [documentação](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#Color-picker)).
-
-![Equação da reta utilizando o método Interact](images/equacao_da_reta_interact.png)
-
-### Exemplo 5: `Interact_manual()`
-
-O `interact_manual()` é uma variação do interact que permite a execução do código apenas quando se clica em um determinado botão. Isso é especialmente útil quando o bloco `def` tem instruções muito demoradas ou quando o você não quer executar o bloco `def` imediatamente após a iteração do widget. Por exemplo, tente executar o código abaixo:
+O `interact_manual()` é uma variação do interact que permite a execução do código apenas quando se clica em um determinado botão. Isso é especialmente útil quando o bloco `def` tem instruções muito demoradas ou quando o você não quer executar o bloco `def` imediatamente após a iteração do widget. Para exemplificar refazemos o exemplo da soma usando o `ìnteract_manual()`:
 
 > ```python
 > from ipywidgets import interact_manual
+> @interact_manual(x=(0.0,0.9,0.1),y=(0,3))
 > def soma(x,y):
 >     s=x+y
 >     print("A soma de {} + {} vale {}".format(x,y,s))
-> interact_manual(soma,x=(0.0,0.9,0.1),y=(0,3));
 > ```
+>
 
-**Tarefa:** Usando o `interact_manual()` crie um formulário de inscrição para um determinado evento. Os Widgets devem ser strings (Inicialmente em branco) e o resultado deve ser parecido à Figura abaixo:
+Agora vamos para um exemplo prático.
 
-![image-20201019225759762](images/formulario_tarefa.png)
+### Exemplo 10: Número Primo
 
-### Exemplo 6: `def` com o `if`
+Um número é primo quando ele somente é divisível por um e por ele mesmo. Podemos criar um algoritmo que utiliza a **força bruta** para encontrar números primos. Neste programa vamos dividir o número por todos os divisores possíveis entre 2 e o "Número/2".
 
+> **Observação:** Acima de "Número/2" não há divisores para este número, por isso buscar por divisores acima disso é um desperdício de energia.
 
+```mermaid
+graph TB
+    idi((Início)) --> id2
+    id2[Divida o <b>Número</b> por todos os números entre <b>2</b> e o <b>Número/2</n>] --> idp
+    idp{O <b>Número</b> é divisível por esses números?} -- True --> id3[Não é primo] --> idf((Fim))
+    idp -- False --> id4[É primo] --> idf
+```
 
-### Exemplo 7: Plotando dois gráficos
+Para testar o nosso programa podemos utilizar alguns números primos da lista abaixo:
 
+> Os primeiros 25 números primos são:
+> > 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 
+>
+> Números primos grandes:   
+>
+> > 7919, 27644437
 
+> ```python
+> @interact_manual(Número="")
+> def checar_primo(Número):
+>     if not(Número.isdigit()):
+>         print("Por favor digite um número inteiro e positivo!")      
+>     else:
+>         Número=int(Número) # Converte o número para inteiro          
+>         divisor = 2
+>         primo = True # Iniciamos com a suposição que o número é primo
+>         
+>         while (divisor<= Número/2):
+>             if (Número % divisor == 0): # Se o resto for 0 ele é divisível
+>                 primo=False # Se ele for divisível ele não é primo
+>                 break # Saia do loop para economizar processamento
+>             divisor+=1 # Essa expressão tem o mesmo valor que divisor = divisor +1
+>          
+>         if primo:
+>             print("O número {} é primo.".format(Número))
+>         else:
+>             print("O número {} não é primo, pois é divisível por {}.".format(Número,divisor))
+> ```
+> ![Número Primo](images/primo-pt1.png)
 
+> **Observação:** A tarefa de encontrar números primos grandes é demasiadamente demorada, este é um exemplo perfeito para a utilização do `interact_manual()`.
+
+Consideramos incluir as exceções a regra:
+
+- O número 1 não é primo, pois tem um único divisor;
+- 0 não é primo, pois um número divido por zero é indeterminado;
+
+> ```python
+> @interact_manual(Número="")
+> def checar_primo(Número):
+>     if not(Número.isdigit()):
+>         print("Por favor digite um número inteiro e positivo!")      
+>     else:
+>         Número=int(Número) # Converte o número para inteiro
+>         if (Número>1):
+>             primo=True # Iniciamos com a suposição que o número é primo
+>             
+>             divisor = 2
+>             while (divisor<= Número/2):
+>                 if (Número % divisor == 0):
+>                     primo=False
+>                     break
+>                 divisor+=1
+>             
+>             if primo:
+>                 print("O número {} é primo.".format(Número))
+>             else:
+>                 print("O número {} não é primo, pois é divisível por {}.".format(Número,divisor))
+>         elif (Número==1):
+>             print("O número 1 não é primo, pois tem apenas um único divisor.")
+>         else:
+>             print("O número 0 não é primo, pois divisão por 0 é indeterminada.")
+> ```
+>
+> ![image-20201029235933170](images/primo-pt2.png)
+
+**Tarefa 6:** Crie um programa capaz de reverter a ordem de impressão de um número:
+
+- Use um widget de campo de texto como entrada;  
+- O programa deve aceitar somente números inteiros e positivos;  
+- Você deve trabalhar com o número (E não com a string).
+
+Se precisar, você pode copiar e colar o seguinte diagrama numa célula Markdown para te ajudar.
+
+```markdown
+​```mermaid
+flowchart TB
+    idi((Início)) --> id1["Assuma que <b>NumRevertido</b> é 0"] --> idp
+    idp{"<b>Número</b> == 0?"} -- False --> id3
+    id3["Calcule o <b>Resto</b> do <b>Número</b> dividido por 10"] --> id4
+    id4[Multiplique <b>NumRevertido</b> por 10 e some com o <b>Resto</b>] --> id5
+    id5[Divisão inteira do <b>Número</b> por 10] --> idp
+    idp -- True --> idf((Fim))
+​```
+```
+# Atividade 4: Para casa
+
+Aguarde um pouco mais n_n!

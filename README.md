@@ -152,3 +152,13 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/cap5.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
+
+### Capítulo 5: Widgets
+
+> Neste capítulo vamos aprender sobre as entradas iterativas do Jupyter, os Widgets
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap6/cap6.html" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap6/cap6.zip" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
