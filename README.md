@@ -149,6 +149,6 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap5/cap5.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/ca%E1%B9%955.zip" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/cap5.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
