@@ -127,6 +127,8 @@ Escrevendo uma série de Fibonacci até um valor delimitador.
 > - [Dev Fúria](http://devfuria.com.br/python/functions/);
 > - [Documentação funçoes](https://docs.python.org/2.0/ref/function.html).
 
+**Tarefa 1:** Faça uma calculadora de soma e subtração. Utilize `def` e `while`.
+
 ### Exemplo 4: `break`
 
 O `break` é um comando que encerra o loop imediatamente, sem se importar com as instruções seguintes. É muito útil para o que podemos chamar de "erros críticos". Vamos abstrair em um exemplo: pense que você está dirigindo um carro e o semáforo sinaliza amarelo e, em poucos segundos, altera para o vermelho. Não importa se vem carros ou não, você deve **parar**. O que chamamos de "erro crítico", nesse caso, seria avançar o sinal.
@@ -151,8 +153,6 @@ while qtd_operacoes <= 3:
     else:
         print("{} / {} = {:.2f}".format(x, y, x/y))
 ```
-
-**Tarefa 2:** Faça uma calculadora de soma e subtração. Utilize `def` e `while`.
 
 # Atividade 2: while-else
 
