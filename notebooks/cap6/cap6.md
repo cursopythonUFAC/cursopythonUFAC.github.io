@@ -883,7 +883,7 @@ Por padrão o módulo `sympy.plotting` utiliza o algoritmo adaptativo para calcu
 Para exemplificar o uso deste dois parâmetros de configuração de plotagem vamos considerar um exemplo de uma onda seinodal:
 
 $$
-y(t)=2\cos(2\pi f t)
+y(t)=2\cos(2\pi f t+\delta)
 $$
 
 onde o usuário controla a frequência da onda $f$. 
@@ -1175,7 +1175,7 @@ De forma similar à tarefa da equação da reta crie um programa capaz de criar 
 
 O resultado do seu programa deve ser parecido com a imagem abaixo:
 
-![Parábola](images/eq_parabola.gif)
+![Parábola](images/eq_parabola.gif)**Teste seu exemplo e discuta as vantagens e desvantagens do algoritmo adaptativo.**
 
 ### Exemplo 2: Dissecando uma string
 
