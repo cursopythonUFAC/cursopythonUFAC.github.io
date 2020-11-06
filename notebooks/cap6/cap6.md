@@ -401,7 +401,7 @@ Utilizando a notação `@interact` podemos simplificar mais ainda o uso dos Widg
 > }
 > </script>
 
-### Exemplo 6: Abreviação  de Widgets
+### Exemplo 6: Abreviações de Widgets
 
 Quando você passa um argumento inteiro, como `5` (`x=5`) para o interact. A função cria um slider de inteiro no intervalo de $x\in[-5;3\cdot5]$. Neste caso `5` é abreviação de:
 
@@ -625,7 +625,7 @@ Observe que quando $n=0$ a espiral se reduz à um círculo. Precisamos adicionar
 >              ylabel="")
 >    ```
 >    
->    ![Espiral Corrigida](images/espiral_modificada.gif)
+>    ![Espiral Corrigida](images/espiral_if.gif)
 
 **Tarefa 4:** Inclinação da reta
 
@@ -856,14 +856,133 @@ Finalmente, vamos adicionar a posssiblidade do usuário mostrar ou esconder a eq
 >
 > ![Equação da reta](images/eq_reta_pt3.gif)
 
-**Tarefa:** Modifique o exemplo da espiral considerando as seguintes premissas:
+**Tarefa 5:** Modifique o exemplo da espiral considerando as seguintes premissas:
 
-- Adicione a possiblidade de mostrar e ocultar os títulos e eixos;
-- Adicione a possibilidade de escolher a cor do gráfico utilizando o Widget `ColorPicker`.  Utilize os parâmetros `description="Cor:"` e `value="green"` (Veja a [documentação](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#Color-picker)). 
+- Adicione a possiblidade de mostrar e ocultar o **título** e os **eixos**;
+- Nomei os eixos como `$x$` e `$y$`;
+- Adicione a possibilidade de escolher a cor do gráfico utilizando o Widget `ColorPicker`.  Utilize os parâmetros `description="Cor:"` e `value="green"` (Veja a [documentação](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#Color-picker));
+- Use o parâmetro `line_color` (Na função print) para alterar a cor do gráfico.
 
 A sua saída do programa deve ser parecida com essa:
 
 ![Equação da reta](images/espiral_modificada.gif)
+
+### Exemplo 10: Widgets e configurações de plotagem
+
+Por padrão o módulo `sympy.plotting` utiliza o algoritmo adaptativo para calcular o número de pontos do gráfico. Este algoritmo calcula o número de pontos de cada área do gráfico de forma ter um gráfico sem 'defeitos',entretanto este algoritmo não é preciso para algumas funções. Neste caso, é interessante selecionar o número de pontos manualmente através do atributo `nb_of_points`. O parâmetro `adaptive` determina se o algoritmo adaptativo é utilizado ou não:
+
+- `adaptive=True` $\rightarrow$ O algoritmo adaptativo é ativado (Valor padrão)
+- `adaptive=False` $\rightarrow$ Utiliza um determinado número de pontos igualmente espaçados. Este número é determinado pelo parâmetro `nb_of_points`
+
+Para exemplificar o uso deste dois parâmetros de configuração de plotagem vamos considerar um exemplo de uma onda seinodal:
+
+$$
+y(t)=2\cos(2\pi f t)
+$$
+
+onde o usuário controla a frequência da onda $f$. 
+
+Além disso, vamos adicionar a possiblidade de o usuário escolher o algoritmo de plotagem (`adaptive` True ou False) e o número de pontos do gráfico, caso o algoritmo adaptativo esteja desativado.
+
+Inicialmente vamos construir o gráfico da onda sem essa possibilidade de customização de plotagem.
+
+> ```python
+> @interact(
+>     # Frequência variando entre 0,2 e 20 Hz 
+>     f=widget.FloatSlider(min=0.5,max=20,step=0.5,value=1,description='f (Hz)'),
+>     # Fase variando entre 0 e 90°
+>     d=widget.IntSlider(min=0,max=90,step=15,description="$\delta$ (Graus)")
+> ) 
+> def plot_onda(f,d):
+>     t=symbols('t')
+>     y=2*cos(2*pi*f*t+radians(d))
+>     plot(y,(t,0,2*pi),
+>          ylim=(-3,3),
+>          xlim=(0,1),
+>          ylabel='y(t)'
+>         )
+> ```
+>
+> ![Onda sem configuração de plotagem](images/onda_sem_config.gif)
+
+Observe que a precisão de plotagem diminui quando a frequência da onda aumenta. Isso acontece pois o número de pontos (ou amostras) não são o suficiente para representar o gráfico com fidelidade. Podemos corrigir isso através configurando o número de pontos manualmente.
+
+Agora vamos adicionar a possiblidade do usuário escolher a configuração de plotagem de acordo com as regras abaixo:
+
+- `adaptive=True` $\rightarrow$ O algoritmo adaptativo é ativado (Valor padrão)
+- `adaptive=False` $\rightarrow$ Utiliza um determinado número de pontos igualmente espaçados. Este número é determinado pelo parâmetro `nb_of_points`
+
+> ```python
+> @interact(
+>     # Frequência variando entre 0,2 e 20 Hz 
+>     f=widget.FloatSlider(min=0.5,max=20,step=0.5,value=1,description='f (Hz)'),
+>     # Fase variando entre 0 e 90°
+>     d=widget.IntSlider(min=0,max=90,step=15,description="$\delta$ (Graus)"),
+>     alg=widget.Checkbox(description='Alg. Adaptativo',value=False),
+>     
+>     #Vamos utilizar o FloatLogSlider
+>     pts=widget.FloatLogSlider(
+>         description='No. Pontos',
+>         min=1, #Expoente mínimo
+>         max=4, #Expoente máximo
+>         value=1e2, #Valor inicial
+>         base=10, #Base (O número dobra a cada passo)
+>         step=1, #Passo
+>         readout_format='d' #Mostrando a saída na forma de inteiro
+>     )
+> ) 
+> def plot_onda(f,d,alg,pts):
+>     t=symbols('t')
+>     y=2*cos(2*pi*f*t+radians(d))
+>     plot(y,(t,0,2*pi),
+>          ylim=(-3,3),
+>          xlim=(0,1),
+>          ylabel='y(t)',
+>          adaptive=alg,
+>          nb_of_points=int(pts)
+>         )
+> ```
+>
+> ![Onda com suporte de configuração de plotagem](images/onda_config.gif)
+
+Quando o algoritmo adaptativo está habilitado o número de ponto não tem efeitos. Sendo assim, **vamos desativar o widget que controla o número de pontos**:
+
+> ```python
+> ptWidget=widget.FloatLogSlider(
+>         description='No. Pontos',
+>         min=1, #Expoente mínimo
+>         max=4, #Expoente máximo
+>         value=1e2, #Valor inicial
+>         base=10, #Base (O número dobra a cada passo)
+>         step=1, #Passo
+>         readout_format='d' #Mostrando a saída na forma de inteiro
+> )
+> ```
+>
+> ```python
+> @interact(
+>     # Frequência variando entre 0,2 e 20 Hz 
+>     f=widget.FloatSlider(min=0.5,max=20,step=0.5,value=1,description='f (Hz)'),
+>     # Fase variando entre 0 e 90°
+>     d=widget.IntSlider(min=0,max=90,step=15,description="$\delta$ (Graus)"),
+>     alg=widget.Checkbox(description='Alg. Adaptativo',value=False),
+>     #Vamos utilizar o FloatLogSlider
+>     pts=ptWidget
+> ) 
+> def plot_onda(f,d,alg,pts):
+>     t=symbols('t')
+>     y=2*cos(2*pi*f*t+radians(d))
+>     ptWidget.disabled=alg # Se o método adataptativo estiver ativado desativa o widget
+>     plot(y,(t,0,2*pi),
+>          ylim=(-3,3),
+>          xlim=(0,1),
+>          ylabel='y(t)',
+>          adaptive=alg,
+>          nb_of_points=int(pts)
+>         )
+> ```
+>
+> ![Desabilitando um widget](images/onda_travado.gif)
 
 # Atividade 3: Interact_manual()
 
@@ -928,39 +1047,69 @@ Para testar o nosso programa podemos utilizar alguns números primos da lista ab
 
 > **Observação:** A tarefa de encontrar números primos grandes é demasiadamente demorada, este é um exemplo perfeito para a utilização do `interact_manual()`.
 
+No exemplo acima conseguimos garantir que o número digitado seja primo utilizando o método `.isdigit()`. Contudo, podemos resolver este problema apenas com os Widgets. 
+
+Existem Widgets de texto que permitem trabalharmos somente com números. Alguns deles permitem limitar os intervalos. São eles:
+
+| Widget           | Função                          |
+| ---------------- | ------------------------------- |
+| IntText          | Inteiro (Sem limitação)         |
+| FloatText        | Ponto flutuante (Sem limitação) |
+| BoundedIntText   | Inteiro (Limitado)              |
+| BoundedFloatText | Ponto flutuante (Sem limitação) |
+
+
+No nosso caso iremos utilizar o Widget `BoundedIntText` que permite somente números inteiros, limitados a um intervalo.
+
+> ```python
+> @interact_manual(Número=widget.BoundedIntText(min=0,max=27644437))
+> def checar_primo(Número):     
+>     divisor = 2
+>     primo = True # Iniciamos com a suposição que o número é primo
+>       
+>     while (divisor<= Número/2):
+>         if (Número % divisor == 0): # Se o resto for 0 ele é divisível
+>             primo=False # Se ele for divisível ele não é primo
+>             break # Saia do loop para economizar processamento
+>         divisor+=1 # Essa expressão tem o mesmo valor que divisor = divisor +1
+>          
+>     if primo:
+>         print("O número {} é primo.".format(Número))
+>     else:
+>         print("O número {} não é primo, pois é divisível por {}.".format(Número,divisor))
+> ```
+>
+> ![Adicionando o BoundedIntText](images/primoInt.png)
+
 Consideramos incluir as exceções a regra:
 
 - O número 1 não é primo, pois tem um único divisor;
 - 0 não é primo, pois um número divido por zero é indeterminado;
 
 > ```python
-> @interact_manual(Número="")
-> def checar_primo(Número):
->     if not(Número.isdigit()):
->         print("Por favor digite um número inteiro e positivo!")      
->     else:
->         Número=int(Número) # Converte o número para inteiro
->         if (Número>1):
->             primo=True # Iniciamos com a suposição que o número é primo
->             
->             divisor = 2
->             while (divisor<= Número/2):
->                 if (Número % divisor == 0):
->                     primo=False
->                     break
->                 divisor+=1
->             
->             if primo:
->                 print("O número {} é primo.".format(Número))
->             else:
->                 print("O número {} não é primo, pois é divisível por {}.".format(Número,divisor))
->         elif (Número==1):
->             print("O número 1 não é primo, pois tem apenas um único divisor.")
->         else:
->             print("O número 0 não é primo, pois divisão por 0 é indeterminada.")
-> ```
->
-> ![image-20201029235933170](images/primo-pt2.png)
+> @interact_manual(Número=widget.BoundedIntText(min=0,max=27644437))
+> def checar_primo(Número):  
+>        if(Número>1):
+>            divisor = 2
+>            primo = True # Iniciamos com a suposição que o número é primo
+>    
+>            while (divisor<= Número/2):
+>                if (Número % divisor == 0): # Se o resto for 0 ele é divisível
+>                    primo=False # Se ele for divisível ele não é primo
+>                    break # Saia do loop para economizar processamento
+>                divisor+=1 # Essa expressão tem o mesmo valor que divisor = divisor +1
+>    
+>            if primo:
+>                print("O número {} é primo.".format(Número))
+>            else:
+>                print("O número {} não é primo, pois é divisível por {}.".format(Número,divisor))
+>        elif (Número==1):
+>            print("O número 1 não é primo, pois tem apenas um único divisor.")
+>        else:
+>            print("O número 0 não é primo, pois divisão por 0 é indeterminada.")
+>    ```
+>    
+>    ![Primo único divisor](images/primo-pt2.png)
 
 **Tarefa 6:** Crie um programa capaz de reverter a ordem de impressão de um número:
 
@@ -983,4 +1132,135 @@ flowchart TB
 ```
 # Atividade 4: Para casa
 
-Aguarde um pouco mais n_n!
+## Exercício 1: Parábola
+
+Uma parábola tem a sua função dada por:
+
+$$
+f(x)=ax^2+bx+c
+$$
+
+De forma similar à tarefa da equação da reta crie um programa capaz de criar um gráfico de uma equação do segundo grau. Considere as seguintes premissas:
+
+- Os valores de $a$, $b$ e $c$ devem ser entradas do programa na forma de Sliders;
+- Os sliders devem ter os seguintes parâmetros:
+
+| Slider | Min   | Max  | Passo | Val. Inicial |
+| ------ | ----- | ---- | ----- | ------------ |
+| a      | -2.0  | 2.0  | 0.05  | 0.25         |
+| b      | -20.0 | 20.0 | 0.5   | 0.0          |
+| c      | -45.0 | 45.0 | 0.5   | 0.0          |
+
+- O título do gráfico deve mostrar a equação da parábola (Considere mostrar a equação correntamente, considerando as situações que $a$, $b$ e/ou $c$ podem ser zero ou que $a$ e/ou $b$ podem ser 1);
+- O usuário poderá alterar a cor do gráfico através de um Widget;
+- Os limites do gráfico devem ser $x\in[-100,100]$ e $f(x)\in[-200,200]$;
+- O usuário pode mostrar ou ocultar o título;
+- O usuário pode escolher o algoritmo de plotagem (Uso do algoritmo adaptativo);
+- Caso o usuário não escolha o algoritmo adaptativo, o mesmo poderá escolher a quantidade de pontos através de um `FloatLogSlider`:
+
+| Características | Valor       |
+| --------------- | ----------- |
+| base            | 2           |
+| min             | 64 pontos   |
+| max             | 4096 pontos |
+
+- Você deve utilizar $x$ como variável simbólica;
+- O gráfico deve ser plotado com a função `plot()` do pacote `sympy`.
+
+O resultado do seu programa deve ser parecido com a imagem abaixo:
+
+![Parábola](images/eq_parabola.gif)
+
+## Exemplo 2: Dissecando uma string
+
+Faça um programa que tenha como entrada uma caixa de texto (o Widget `Textarea`). O programa deve analisar o conteúdo da caixa de texto e verificar se:
+
+- O texto só tem espaços;
+- O texto está vazio;
+- O texto é numérico;
+- O texto é alfabético;
+- O texto é alfanumérico;
+- O texto pode ser utilizado como um identificador padrão do Python;
+- O texto está em maiúsculas;
+- O texto está na forma de título;
+- O texto está em minúsculas.
+
+Você deve pesquisar sobre o Widget `Textarea` na documentação.
+
+A análise do texto deve ser feita em tempo real.
+
+O resultado do seu programa deve ser parecido com a imagem abaixo:
+
+![Dissecando uma string](images/dissecando.gif)
+
+## Exemplo 3: Contando dígitos
+
+Crie um programa capaz de contar a quantidade de dígitos de um número inteiro.
+
+- Use um widget de campo de texto como entrada;
+- O programa deve aceitar qualquer número inteiro (Positivos e negativos).
+
+![Contando a quantidade de dígitos](images/quantidade_digitos.png)
+
+## Exemplo 4: Divisores de um número
+
+Crie um programa capaz de encontrar todos os divisores de um número.
+
+- Use um widget de campo de texto como entrada;  
+- O programa deve aceitar somente números inteiros entre 0 e 500.
+
+O usuário deve clicar num botão para fazer a análise do número (Use o `interact_manual`).
+
+O resultado do seu programa deve ser parecido com a imagem abaixo:
+
+![Divisores de um número](images/divisores.png)
+
+## Exemplo 5: Formulário
+
+Crie um programa que capaz de fazer a inscrição de um determinado usuário. O formulário deve ter como entrada:
+
+- Nome (Só aceita se a string for na forma de título e não for na forma alfanumérica)
+- Nome do usuário (Só aceita se aceita se a string for um identificador padrão do Python)
+- Data de nascimento (Só aceita se o usuário for maior de 18 anos) (Utilize o widget `DatePicker`)
+
+Para aceitar a inscrição o usuário deve clicar num botão (Use o `interact_manual`).
+
+Caso a inscrição for inválida o programa deve indicar a causa do erro. Caso a inscrição seja válida o programa deve imprimir:
+
+> Inscrição validada com sucesso!
+
+Use o módulo `datetime` e a função abaixo para te ajudar a construir o seu programa:
+
+```python
+from datetime import date
+
+def calcularIdade(dataNascimento):
+    """
+    Esta função retorna a sua idade de acordo com a data de nascimento
+    A função retorna 'Erro' caso a data de nascimento não for definida
+    """
+    try:
+        hoje = date.today() #Captura a data de hoje
+    
+        # Calcula a sua idade baseando-se na:
+
+        ## Diferença dos anos
+        idade = hoje.year - dataNascimento.year
+
+        ## Diferença entre os meses de aniversário
+        if (hoje.month, hoje.day) < (dataNascimento.month, dataNascimento.day):
+            idade -= 1
+
+        return idade #Retorna a sua idade como valor de saída
+    except:
+        return "Erro" #Em caso de erro retorna 'Erro'
+```
+
+O resultado do seu programa deve ser parecido com as imagens abaixo:
+
+![Formulário exemplo 1](images/formulario_1.png)
+
+![Formulário exemplo 2](images/formulario_2.png)
+
+![Formulário exemplo 3](images/formulario_3.png)
+
