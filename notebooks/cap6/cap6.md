@@ -1132,7 +1132,7 @@ flowchart TB
 ```
 # Atividade 4: Para casa
 
-## Exercício 1: Parábola
+### Exercício 1: Parábola
 
 Uma parábola tem a sua função dada por:
 
@@ -1171,7 +1171,7 @@ O resultado do seu programa deve ser parecido com a imagem abaixo:
 
 ![Parábola](images/eq_parabola.gif)
 
-## Exemplo 2: Dissecando uma string
+### Exemplo 2: Dissecando uma string
 
 Faça um programa que tenha como entrada uma caixa de texto (o Widget `Textarea`). O programa deve analisar o conteúdo da caixa de texto e verificar se:
 
@@ -1193,7 +1193,7 @@ O resultado do seu programa deve ser parecido com a imagem abaixo:
 
 ![Dissecando uma string](images/dissecando.gif)
 
-## Exemplo 3: Contando dígitos
+### Exemplo 3: Contando dígitos
 
 Crie um programa capaz de contar a quantidade de dígitos de um número inteiro.
 
@@ -1202,7 +1202,7 @@ Crie um programa capaz de contar a quantidade de dígitos de um número inteiro.
 
 ![Contando a quantidade de dígitos](images/quantidade_digitos.png)
 
-## Exemplo 4: Divisores de um número
+### Exemplo 4: Divisores de um número
 
 Crie um programa capaz de encontrar todos os divisores de um número.
 
@@ -1215,7 +1215,7 @@ O resultado do seu programa deve ser parecido com a imagem abaixo:
 
 ![Divisores de um número](images/divisores.png)
 
-## Exemplo 5: Formulário
+### Exemplo 5: Formulário
 
 Crie um programa que capaz de fazer a inscrição de um determinado usuário. O formulário deve ter como entrada:
 
