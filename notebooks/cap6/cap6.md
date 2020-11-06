@@ -554,12 +554,16 @@ Para exemplificar o uso dos Widgets vamos apresentar um problema prático de plo
 --->
 
 Em coordenadas cartesianas as espirais devem utilizar equações paramétricas. A forma geral das espirais no plano cartesiano é:
+
+
 $$
 h(\theta)=\begin{cases}
 	x(\theta)=\theta^n\cdot \cos(\theta)\\
 	y(\theta)=\theta^n\cdot \sin(\theta)
 \end{cases}
 $$
+
+
 Vamos plotar o gráfico de $h(\theta)$ utilizando a função `plot_parametric()` do pacote `sympy` (Figura 1):
 
 ```mermaid
