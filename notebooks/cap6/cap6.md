@@ -698,18 +698,18 @@ Considerando um exemplo prático, vamos um programa capaz de plotar e escrever a
 
 > ```python
 > @interact(
->     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
->     b=(-6,6,0.1) 
+>        a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>        b=(-6,6,0.1) 
 > )
 > def eq_reta(a,b):
->     x = symbols('x')
->     y = a*x+b
->     plot(y,(x,-10,10),
->                 xlim=(-6,6),
->                 ylim=(-6*3/4,6*3/4),
->                 title='$y(x)={:.2g}x{:+.2g}$'.format(a,b),
->                 xlabel="$x$",
->                 ylabel=""
+>        x = symbols('x')
+>        y = a*x+b
+>        plot(y,(x,-10,10),
+>                    xlim=(-6,6),
+>                    ylim=(-6*3/4,6*3/4),
+>                    title='$y(x)={:.2g}x{:+.2g}$'.format(a,b),
+>                    xlabel="$x$",
+>                    ylabel=""
 >                   )
 >    ```
 >    
@@ -727,46 +727,46 @@ A principio vamos seguir as seguintes regras:
 
 > ```python
 > @interact(
->     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
->     b=(-6,6,0.1)   
+>        a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>        b=(-6,6,0.1)   
 > )
 > def eq_reta(a,b):
->     x = symbols('x')
->     y = a*x+b
->     
->     # PARCELA 'a'
->     if a==1 or a==0:
->         a_str = ''
->     else:
->         a_str = '{:.2g}'.format(a)
->          
->     # PARCELA 'x'
->     if a==0:
->         x_str = ''
->     else:
->         x_str = 'x'
->                
->     # PARCELA 'b'
->     if b==0:
->         if a==0:
->             b_str = '0'
->         else:
->             b_str = ''
->     elif a!=0: #Quando a é diferente de zero deve-se incluir o '+'
->         b_str = '{:+.2g}'.format(b)
->     else: #Quando a é zero não é necessário incluir o '+'
->         b_str = '{:.2g}'.format(b)
->     
->     # Escrevendo a equação
->     t = '$y(x)=' + a_str + x_str + b_str +'$'
->     
->     plot(y,(x,-10,10),
->                 xlim=(-6,6),
->                 ylim=(-6*3/4,6*3/4),
->                 title=t,
->                 xlabel="$x$",
->                 ylabel=""
->                )
+>        x = symbols('x')
+>        y = a*x+b
+>        
+>        # PARCELA 'a'
+>        if a==1 or a==0:
+>            a_str = ''
+>        else:
+>            a_str = '{:.2g}'.format(a)
+>             
+>        # PARCELA 'x'
+>        if a==0:
+>            x_str = ''
+>        else:
+>            x_str = 'x'
+>                   
+>        # PARCELA 'b'
+>        if b==0:
+>            if a==0:
+>                b_str = '0'
+>            else:
+>                b_str = ''
+>        elif a!=0: #Quando a é diferente de zero deve-se incluir o '+'
+>            b_str = '{:+.2g}'.format(b)
+>        else: #Quando a é zero não é necessário incluir o '+'
+>            b_str = '{:.2g}'.format(b)
+>        
+>        # Escrevendo a equação
+>        t = '$y(x)=' + a_str + x_str + b_str +'$'
+>        
+>        plot(y,(x,-10,10),
+>                    xlim=(-6,6),
+>                    ylim=(-6*3/4,6*3/4),
+>                    title=t,
+>                    xlabel="$x$",
+>                    ylabel=""
+>                   )
 > ```
 >
 > ![Equação da reta](images/eq_reta_pt2.gif)
@@ -775,41 +775,41 @@ Podemos simplificar um pouco o nosso programa se utilizarmos a variavel $t$ como
 
 > ```python
 > @interact(
->     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
->     b=(-6,6,0.1)
+>        a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>        b=(-6,6,0.1)
 > )
 > def eq_reta(a,b):
->     x = symbols('x')
->     y = a*x+b
->     t = '$y(x)='
->     
->     # PARCELA 'a'
->     if a!=1 and a!=0:
->         t+= '{:.2g}'.format(a) #t=t+'{:.2g}'.format(a)
->          
->     # PARCELA 'x'
->     if a!=0: 
->         t+= 'x' #t=t+x
->                
->     # PARCELA 'b'
->     if b==0:
->         if a==0:
->             t+= '0'
->     elif a!=0:
->         t+= '{:+.2g}'.format(b)
->     else:
->         t+= '{:.2g}'.format(b)  
->     
->     # Finalizando
->     t += '$'
->     
->     plot(y,(x,-10,10),
->                 xlim=(-6,6),
->                 ylim=(-6*3/4,6*3/4),
->                 title=t,
->                 xlabel="$x$",
->                 ylabel=""
->                )
+>        x = symbols('x')
+>        y = a*x+b
+>        t = '$y(x)='
+>        
+>        # PARCELA 'a'
+>        if a!=1 and a!=0:
+>            t+= '{:.2g}'.format(a) #t=t+'{:.2g}'.format(a)
+>             
+>        # PARCELA 'x'
+>        if a!=0: 
+>            t+= 'x' #t=t+x
+>                   
+>        # PARCELA 'b'
+>        if b==0:
+>            if a==0:
+>                t+= '0'
+>        elif a!=0:
+>            t+= '{:+.2g}'.format(b)
+>        else:
+>            t+= '{:.2g}'.format(b)  
+>        
+>        # Finalizando
+>        t += '$'
+>        
+>        plot(y,(x,-10,10),
+>                    xlim=(-6,6),
+>                    ylim=(-6*3/4,6*3/4),
+>                    title=t,
+>                    xlabel="$x$",
+>                    ylabel=""
+>                   )
 > ```
 >
 >![Equação da reta](images/eq_reta_pt2.gif)
@@ -818,46 +818,46 @@ Finalmente, vamos adicionar a posssiblidade do usuário mostrar ou esconder a eq
 
 > ```python
 > @interact(
->     a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
->     b=(-6,6,0.1),
->     Título=True 
+>        a=widget.FloatSlider(min=-6,max=6,step=0.1,value=1),
+>        b=(-6,6,0.1),
+>        Título=True 
 > )
 > def eq_reta(a,b,Título):
->     x = symbols('x')
->     y = a*x+b
->     t = '' #Inicio o t como uma string vazia
->     
->     #Vou adicionando termos às strings a medida que passa pelos ifs
->     if Título:
->         t += '$y(x)=' 
+>        x = symbols('x')
+>        y = a*x+b
+>        t = '' #Inicio o t como uma string vazia
+>        
+>        #Vou adicionando termos às strings a medida que passa pelos ifs
+>        if Título:
+>            t += '$y(x)=' 
 > 
->         # PARCELA 'a'
->         if a!=1 and a!=0:
->             t+= '{:.2g}'.format(a)
+>            # PARCELA 'a'
+>            if a!=1 and a!=0:
+>                t+= '{:.2g}'.format(a)
 > 
->         # PARCELA 'x'
->         if a!=0: 
->             t+= 'x'
+>            # PARCELA 'x'
+>            if a!=0: 
+>                t+= 'x'
 > 
->         # PARCELA 'b'
->         if b==0:
->             if a==0:
->                 t+= '0'
->         elif a!=0:
->             t+= '{:+.2g}'.format(b)
->         else:
->             t+= '{:.2g}'.format(b)  
+>            # PARCELA 'b'
+>            if b==0:
+>                if a==0:
+>                    t+= '0'
+>            elif a!=0:
+>                t+= '{:+.2g}'.format(b)
+>            else:
+>                t+= '{:.2g}'.format(b)  
 > 
->         # Finalizando
->         t += '$'
->     
->     plot(y,(x,-10,10),
->                 xlim=(-6,6),
->                 ylim=(-6*3/4,6*3/4),
->                 title=t,
->                 xlabel="$x$",
->                 ylabel=""
->                )
+>            # Finalizando
+>            t += '$'
+>        
+>        plot(y,(x,-10,10),
+>                    xlim=(-6,6),
+>                    ylim=(-6*3/4,6*3/4),
+>                    title=t,
+>                    xlabel="$x$",
+>                    ylabel=""
+>                   )
 > ```
 >
 > ![Equação da reta](images/eq_reta_pt3.gif)
