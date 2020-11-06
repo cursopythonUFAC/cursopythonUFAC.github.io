@@ -601,8 +601,8 @@ O programa vai ter como entrada um `Floatslider` com $n\in[-2,2]$ e passo $0,1$.
 >     y = theta**n*cos(theta)
 >     plot_parametric(x,y,(theta,0,10*pi),
 >           xlim=(-8,8.04),
->           aspect_ratio=(1,1),#Mantém a mesma propoção
 >           ylim=(-8.06*15/23,8*15/23), 
+>           aspect_ratio=(1,1), #Mantendo a proporção de 1:1
 >           title="Espiral com n={:.2f}".format(n),
 >           xlabel="",
 >           ylabel="")
@@ -615,17 +615,17 @@ Observe que quando $n=0$ a espiral se reduz à um círculo. Precisamos adicionar
 > ```python
 > @interact(n=(-2,2.0,0.1))
 > def plotando_espiral(n):
->  theta = symbols('θ')
->  x = theta**n*sin(theta)
->  y = theta**n*cos(theta)
->  if n==0:
->      título="Círculo"
+>     theta = symbols('θ')
+>     x = theta**n*sin(theta)
+>     y = theta**n*cos(theta)
+>     if n==0:
+>         título="Círculo"
 >     else:
 >         título="Espiral com n={:.2f}".format(n)
 >     plot_parametric(x,y,(theta,0,10*pi),
 >           xlim=(-8,8.04),
 >           ylim=(-8.06*15/23,8*15/23),
->           aspect_ratio=(1,1),#Mantém a mesma propoção
+>           aspect_ratio=(1,1), #Mantendo a proporção de 1:1
 >           title=título,
 >           xlabel="",
 >           ylabel="")
@@ -663,7 +663,7 @@ A função `interact()` permite trabalhar com múltiplos argumentos, para isto b
 > @interact(x=(0.0,0.9,0.1),y=(0,3))
 >    def soma(x,y):
 >        s=x+y
->     print("A soma de {} + {} vale {}".format(x,y,s))
+>        print("A soma de {} + {} vale {}".format(x,y,s))
 > ```
 >
 > <p>
