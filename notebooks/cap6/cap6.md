@@ -592,15 +592,16 @@ O programa vai ter como entrada um `Floatslider` com $n\in[-2,2]$ e passo $0,1$.
 > 
 > @interact(n=(-2.0,2.0,0.1)) # FloatSlider(min=-2.0,max=2.0,step=0.1)
 > def plotando_espiral(n):
->        theta = symbols('θ')
->        x = theta**n*sin(theta)
->        y = theta**n*cos(theta)
->        plot_parametric(x,y,(theta,0,10*pi),
->              xlim=(-8,8.04),
->              ylim=(-8.06*15/23,8*15/23), #Multiplicado por 15/23 para manter a mesma proporção
->              title="Espiral com n={:.2f}".format(n),
->              xlabel="",
->              ylabel="")
+>     theta = symbols('θ')
+>     x = theta**n*sin(theta)
+>     y = theta**n*cos(theta)
+>     plot_parametric(x,y,(theta,0,10*pi),
+>           xlim=(-8,8.04),
+>           aspect_ratio=(1,1),#Mantém a mesma propoção
+>           ylim=(-8.06*15/23,8*15/23), 
+>           title="Espiral com n={:.2f}".format(n),
+>           xlabel="",
+>           ylabel="")
 > ```
 >
 > ![Espiral](images/espiral.gif)
@@ -610,22 +611,23 @@ Observe que quando $n=0$ a espiral se reduz à um círculo. Precisamos adicionar
 > ```python
 > @interact(n=(-2,2.0,0.1))
 > def plotando_espiral(n):
->     theta = symbols('θ')
->     x = theta**n*sin(theta)
->     y = theta**n*cos(theta)
->     if n==0:
->         título="Círculo"
->        else:
->            título="Espiral com n={:.2f}".format(n)
->        plot_parametric(x,y,(theta,0,10*pi),
->              xlim=(-8,8.04),
->              ylim=(-8.06*15/23,8*15/23), #Multiplicado por 15/23 para manter a mesma proporção
->              title=título,
->              xlabel="",
->              ylabel="")
->    ```
->    
->    ![Espiral Corrigida](images/espiral_if.gif)
+>  theta = symbols('θ')
+>  x = theta**n*sin(theta)
+>  y = theta**n*cos(theta)
+>  if n==0:
+>      título="Círculo"
+>     else:
+>         título="Espiral com n={:.2f}".format(n)
+>     plot_parametric(x,y,(theta,0,10*pi),
+>           xlim=(-8,8.04),
+>           ylim=(-8.06*15/23,8*15/23),
+>           aspect_ratio=(1,1),#Mantém a mesma propoção
+>           title=título,
+>           xlabel="",
+>           ylabel="")
+> ```
+>
+> ![Espiral Corrigida](images/espiral_if.gif)
 
 **Tarefa 4:** Inclinação da reta
 
@@ -700,8 +702,8 @@ Considerando um exemplo prático, vamos um programa capaz de plotar e escrever a
 >     y = a*x+b
 >     plot(y,(x,-10,10),
 >                 xlim=(-6,6),
->                    ylim=(-6*3/4,6*3/4),
->                    title='$y(x)={:.2g}x{:+.2g}$'.format(a,b),
+>                 ylim=(-6*3/4,6*3/4),
+>                 title='$y(x)={:.2g}x{:+.2g}$'.format(a,b),
 >                 xlabel="$x$",
 >                 ylabel=""
 >                   )
