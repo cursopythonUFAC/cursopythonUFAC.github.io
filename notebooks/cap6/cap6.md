@@ -542,6 +542,87 @@ sliderW.oninput = function() {
 outputW.innerHTML = (this.value/10).toFixed(2);
 }
 </script>
+**Curiosidade:** Existem algumas formas de obter acesso aos dados da função para puder utilizar posteriormente no código.
+
+> **Observação:** Alguns conceitos aqui são avançados, caso tenha dificuldade procure um monitor.
+
+**Método 1**: Através de variáveis globais
+
+Você pode declarar uma varíavel como global, assim ela é acessível em todo código.
+
+> ```python
+> @interact(r=(1,10,0.1))
+> def calc_esfera(r):
+>     global A #Com esta diretiva a variável vira global
+>     global V
+>     A=4*pi*r**2
+>     V=4/3*pi*r**3
+>     print("Com o raio de {:.3g} m a área da esfera é {:.2f} m² e o volume é {:.2f} m³.".format(r,A,V))
+> ```
+>
+> <p>
+> r  
+> <input type="range" min="0" max="100" value="50" class="slider" id="slider-Wu">
+> <span id="val-Wu"></span><br>
+> Com o raio de 5 m a área da esfera é 314.16 m² e o volume é 523.60 m³.
+> </p>
+> <script>
+> var sliderWu = document.getElementById("slider-Wu");
+> var outputWu = document.getElementById("val-Wu");
+> outputWu.innerHTML = (sliderWu.value/10).toFixed(2);
+> sliderWu.oninput = function() {
+> outputWu.innerHTML = (this.value/10).toFixed(2);
+> }
+> </script>
+>
+> ```python
+> display(A)
+> display(V)
+> ```
+>
+> 314.1592653589793  
+> 523.5987755982989
+
+**Método 2:** Através de um dicionário:
+
+> ```python
+> from math import pi
+> import ipywidgets as widget #Importando o pacote com o apelido de widgets
+> from ipywidgets import interact
+> 
+> Esfera = {} #Criando um dicionário vazio
+> @interact(r=(1,10,0.1))
+> def calc_esfera(r):
+>     Esfera["r"]=r
+>     Esfera["A"]=4*pi*r**2
+>     Esfera["V"]=4/3*pi*r**3
+>     print("Com o raio de {r:.3g} m a área da esfera é {A:.2f} m² e o volume é {V:.2f} m³.".format(**Esfera))
+> ```
+>
+> <p>
+> r  
+> <input type="range" min="0" max="100" value="50" class="slider" id="slider-Wuu">
+> <span id="val-Wuu"></span><br>
+> Com o raio de 5 m a área da esfera é 314.16 m² e o volume é 523.60 m³.
+> </p>
+> <script>
+> var sliderWuu = document.getElementById("slider-Wuu");
+> var outputWuu = document.getElementById("val-Wuu");
+> outputWuu.innerHTML = (sliderWuu.value/10).toFixed(2);
+> sliderWuu.oninput = function() {
+> outputWuu.innerHTML = (this.value/10).toFixed(2);
+> }
+> </script>
+>
+> ```python
+> Esfera
+> ```
+>
+> {'r': 5.0, 'A': 314.1592653589793, 'V': 523.5987755982989}
+
+**Método 3:** Através de uma lista.
+
+Este método é muito parecido com o método 2, ele será apresentado durante a próxima aula!
 
 ### Exemplo 7: Widgets e gráficos
 
