@@ -131,6 +131,46 @@
     }
 }
 
+.atividade-resp {
+    display: block;
+    list-style: none;
+    padding: 0;
+    width: 500px; //500px;
+    margin-left: auto;
+    align-items: center;
+    margin-right: auto;
+    border-bottom: 1px solid #dbdbdb;
+    border-top: 1px solid #dbdbdb;
+
+    li {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        vertical-align: center;
+        width: 120px;
+        display: inline-block;
+    }
+
+    a {
+        text-align: center;
+        display: block;
+    }
+
+    img {
+        width: 56px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    span {
+        display: block;
+        text-align: center;
+        margin-top: 4px;
+        line-height: 14px;
+        font-size: 14px;
+    }
+}
+
 .jupyter-code, .jupyter-markdown{
     border: none; //0px solid #1897f8
     font-style: normal;
@@ -256,6 +296,38 @@ screen and (max-width: 681px) {
     #banner{
         .nome{
             display:none;
+        }
+    }
+    .atividade {
+        width: 154px; //210
+        height: 48px;
+
+        li {
+            width: 48px;
+        }
+
+        img {
+            width: 32px;
+        }
+
+        span {
+            display: none;
+        }
+    }
+    .atividade-resp {
+        width: 210px; //210
+        height: 48px;
+
+        li {
+            width: 48px;
+        }
+
+        img {
+            width: 32px;
+        }
+
+        span {
+            display: none;
         }
     }
 }

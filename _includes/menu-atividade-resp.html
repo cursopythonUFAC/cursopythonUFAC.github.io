@@ -1,0 +1,32 @@
+{% assign tags = "capitulo, jupyter, entrega, solucao" | split: ", " %}
+{% assign nomes = "Roteiro, Material auxiliar, Entregar atividade, Solução do capítulo" | split: ", " %}
+
+<ul class="atividade-resp">
+    <li>
+        <a href="{{ include.roteiro }}">
+            <img src="imgs/activities-icons/{{ tags[0] }}.svg" alt="{{ nomes[0] }}">
+        </a>
+        <span>{{ nomes[0] }}</span>
+    </li>
+
+    <li>
+        <a href="{{ include.material }}" target="_blank" download>
+            <img src="imgs/activities-icons/{{ tags[1] }}.svg" alt="{{ nomes[1] }}">
+        </a>
+        <span>{{ nomes[1] }}</span>
+    </li>
+
+    <li>
+        <a href="{{ include.entrega }}" target="_blank">
+            <img src="imgs/activities-icons/{{ tags[2] }}.svg" alt="{{ nomes[2] }}">
+        </a>
+        <span>{{ nomes[2] }}</span>
+    </li>
+
+    <li>
+        <a href="{{ include.solucao }}" target="_blank">
+            <img src="imgs/activities-icons/{{ tags[3] }}.svg" alt="Atividades">
+        </a>
+        <span>{{ nomes[3] }}</span>
+    </li>
+</ul>
