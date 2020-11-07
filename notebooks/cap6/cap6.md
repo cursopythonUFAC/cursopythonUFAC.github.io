@@ -1339,7 +1339,7 @@ def calcularIdade(dataNascimento):
             idade -= 1
 
         return idade #Retorna a sua idade como valor de saída
-    except:
+    except AttributeError:
         return "Erro" #Em caso de erro retorna 'Erro'
 ```
 
