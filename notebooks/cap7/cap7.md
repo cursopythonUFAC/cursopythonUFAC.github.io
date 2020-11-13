@@ -33,7 +33,7 @@ Para armazenar tais dados, utilizamos variáveis, como sempre fizemos. No entant
 >Item-------------------------------------------------------Quant   
 >Item 1: abacaxi-----------------------------001   
 >Item 2: melao----------------------------------002   
->Item 3: cocaina-----------------------------003
+>Item 3: arroz----------------------------------003
 
 Agora, imagine que precisássemos salvar os nomes de 15 itens no código, ele ficaria assim.
 
