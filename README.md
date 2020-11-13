@@ -154,6 +154,10 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 > Neste capítulo vamos aprender sobre as estruturas de repetição `while`, `while-else` e os comandos `break` e `continue`.
 
+{% include video-atividade.html
+    codigo="bb6xNmHFdo8"
+%}
+
 {% include menu-atividade.html 
     roteiro="notebooks/cap5/cap5.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/cap5.zip" 
