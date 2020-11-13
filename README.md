@@ -169,3 +169,13 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap6/cap6.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
+
+### Capítulo 7: Lista
+
+> Neste capítulo vamos aprender sobre as listas
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap7/cap7.html" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap7/cap7.zip" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
