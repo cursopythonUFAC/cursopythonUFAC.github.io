@@ -171,9 +171,55 @@ De modo similar a strings, podemos concatenar e replicar listas usando os operad
 >
 >[1, 2, 3, 1, 2, 3, 1, 2, 3]
 
-### Exemplo 6: Iterando sobre os valores de uma lista usando o `while`
+### Exemplo 6: loop for
 
-Em aulas passadas, vimos a função `len`(), que nos retornava o comprimento de uma string. Essa função também pode ser usada em listas para obter a quantidade de elementos nela. Vejamos no seguinte exemplo como iterar sobre cada elemento de uma lista utilizando essa função.
+O `for`é uma das estruturas de controle mais importantes no Python, bem como em diversas linguagens de programação. Ele é uma estrutura que executa um número específico de **iterações**. Veja sintaxe
+
+Existe a palavra `for`, seguida do `elemento` a ser operado e quais valores este elemento assumirá, ou seja, uma `lista`. A função `range()`gera uma lista de valores inteiros.
+
+Perceba que a operação a ser executada é um bloco com indentação um nível acima.
+
+>   ```python
+>   for elemento in lista:
+>       operação  
+>   ```
+
+Neste exemplo, iremos imprimir os valores inteiros de 0 até 5.
+
+>   ```python
+>   for i in range(6):
+>       print(i)
+>   ```
+>
+>  0
+>   1
+>   2
+>   3
+>   4
+>   5
+
+Também podemos especificar o início e fim da operação.
+
+>   ```python
+>   for i in range(10,21):
+>      print(i)
+>   ```
+>
+>   10
+>   11
+>   12
+>   13
+>   14
+>   15
+>   16
+>   17
+>   18
+>   19
+>   20
+
+### Exemplo 7: Iterando sobre os valores de uma lista 
+
+Em aulas passadas, vimos a função `len`(), que nos retornava o comprimento de uma string. Essa função também pode ser usada em listas para obter a quantidade de elementos nela. Vejamos no seguinte exemplo como iterar sobre cada elemento de uma lista utilizando essa função juntamente com o `while` 
 
 >```python
 >lista = [1,2,3,4,5]
@@ -189,13 +235,30 @@ Em aulas passadas, vimos a função `len`(), que nos retornava o comprimento de 
 >4
 >5
 
-**Tarefa**: Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.  Pode utilizar a seguinte lista.
+Outra maneira de iterar sobre uma lista é utilizando o `for`, veja o exemplo.
+
+>   ```python
+>   lista = [0,1,2,3,4,5]
+>   for i in lista:
+>       print(i)
+>   ```
+>
+>   0
+>   1
+>   2
+>   3
+>   4
+>   5
+
+### **Tarefa**: Separação de valores pares e ímpares
+
+Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.  Pode utilizar a seguinte lista.
 
 ```python
 lista = [18,13,14,23,27,2,33,8,10,56,43,78,15,5,64,42,26,1,16,65]
 ```
 
-### Exemplo 7: Removendo valores da lista
+### Exemplo 8: Removendo valores da lista
 
 Podemos remover um valor da lista de duas formas, uma delas é usando a função `del`,  que deleta utilizando o índice do elemento.
 
@@ -207,7 +270,7 @@ Podemos remover um valor da lista de duas formas, uma delas é usando a função
 >
 >['João', 'Lucas', 'Tiago', 'Gustavo', 'Ana', 'Heithor']
 
-### Exemplo 8: Lista de estoque 2.0
+### Exemplo 9: Lista de estoque 2.0
 
 Crie um código que faça duas listas, uma com uma lista de itens disponíveis em um estoque e a segunda com seus respectivos preços. O i-ésimo elemento da lista de itens deve corresponder ao i-ésimo elemento da lista de preços. Ambas as listas deverão ter o tamanho que o usuário quiser (embora seja o mesmo).
 Crie o código de modo que o usuário entre com os elementos e pare quando quiser.
@@ -215,26 +278,25 @@ Crie o código de modo que o usuário entre com os elementos e pare quando quise
 Dica: O usuário deverá digitar os elementos da lista, e digitar uma string vazia para parar `''`. Utilize o que foi aprendido na aula de `while`
 
 >```python
->#Resposta
 >estoque = []
->while True:
->print('Digite o nome do produto {}. Não digite nada para concluir'.format(len(estoque)+1))
->produto = input()
->if produto == '':
->  break
->estoque = estoque + [produto]
->
->
 >preço = []
 >while True:
->if len(preço) == len(estoque):
->   break
->print("Digite o preço do produto: {}".format(estoque[len(preço)]))
->preço_prod = input()
+>    print('Digite o nome do produto {}. Não digite nada para concluir'.format(len(estoque)+1))
+>    produto = input()
+>    if produto == '':
+>          break
+>    estoque = estoque + [produto]
 >
->preço = preço + [preço_prod]
->  
->print(estoque)    
+>
+>while True:
+>    if len(preço) == len(estoque):
+>        break
+>       print("Digite o preço do produto: {}".format(estoque[len(preço)]))
+>    preço_prod = input()
+> 
+>    preço = preço + [preço_prod]
+>
+>  print(estoque)    
 >print(preço)
 >```
 >
@@ -259,7 +321,9 @@ Dica: O usuário deverá digitar os elementos da lista, e digitar uma string vaz
 >['Arroz', 'Feijão', 'Carne', 'Refrigerante']   
 >['20', '14', '19', '8']   
 
-**Tarefa**: Complete o código acima com uma seção que imprima na tela cada item e seu respectivo preço.
+### **Tarefa**: Imprimir a saída de lista de estoque 2.0
+
+Complete o código acima com uma seção que imprima na tela cada item e seu respectivo preço.
 
 Um exemplo de saída esperada é:
 
@@ -269,7 +333,132 @@ O preço do produto: Feijão é R$ 14.00
 O preço do produto: Bife é R$ 7.00
 ```
 
-### Exemplo 9: Verificando a existência (ou falta) de um valor em uma lista
+### Exemplo 10: Usando o enumerate
+
+Uma forma de obtermos dentro do `for`o índice e o item de uma lista. Veja o exemplo.
+
+>   ```python
+>   lista = ['item 1','item 2', 'item 3']
+>   for i in range(len(lista)):
+>       print(i,lista[i])
+>   ```
+>
+>   0 item 1
+>   1 item 2
+>   2 item 3
+
+Esse código pode ser simplificado da seguinte forma.
+
+>   ```python
+>   lista = ['item 1','item 2', 'item 3']
+>   for index,item in enumerate(lista):
+>       print(index,item)
+>   ```
+>
+>   0 item 1
+>   1 item 2
+>   2 item 3
+
+Podemos incluir na tarefa anterior a saída do código junto com o número do item, veja o exemplo.
+
+>   ```python
+>   estoque = []
+>   while True:
+>       print('Digite o nome do produto {}. Não digite nada para concluir'.format(len(estoque)+1))
+>       produto = input()
+>       if produto == '':
+>           break
+>       estoque = estoque + [produto]
+>   
+>   
+>   preço = []
+>   while len(preço) < len(estoque):
+>       print("Digite o preço do produto: {}".format(estoque[len(preço)]))
+>       preço_prod = float(input())
+>       preço = preço + [preço_prod]
+>       
+>   for index,item in enumerate(estoque):
+>       print("Produto nº {}: {} custa R$ {:.2f}".format(index+1,item,preço[index]))
+>       
+>   ```
+>
+>  Digite o nome do produto 1. Não digite nada para concluir
+>   Arroz
+>    Digite o nome do produto 2. Não digite nada para concluir
+>   Feijão
+>    Digite o nome do produto 3. Não digite nada para concluir
+>   
+>   Digite o preço do produto: Arroz
+>   1
+>    Digite o preço do produto: Feijão
+>   2
+>    Produto nº 1: Arroz custa R\$ 1.00
+>   Produto nº 2: Feijão custa R​\$ 2.00
+
+### Exemplo 11: Geração de matriz de admitância - Trabalhando com matrizes
+
+![sistema](sistema.png)
+
+Sabemos que em um sistema elétrico existem diversas admitâncias que ligam diversas barras. 
+
+A matriz admitância (Y) é uma matriz de ordem ($nb \times nb$) onde $nb$ é o número de barras em um sistema. E ela é formada usando a seguinte definição
+
+Elementos na diagonal principal: Soma das admitâncias conectadas à barra $i$
+
+$$ Y_{ii} = \sum_{j=0}^{n} y_{ij}$$
+
+Elementos fora da diagonal principal: Negativo da admitância entre a barra $i$ e $j$
+
+$$ Y_{ij} = Y_{ji} = -y_{ij}$$
+
+Construa um código que calcule a matriz admitância $Y$ no sistema da figura acima, considerando os dados na seguinte forma. 
+
+$$ y = \begin{bmatrix}
+-1j & -2.5j  & -5j \\ 
+-2.5j & -1.25j & -5j\\ 
+-5j & -5j  & 0 
+\end{bmatrix}$$
+
+```python
+y1 = [-1j, -2.5j,-5j]
+y2 = [-2.5j, -1.25j, -5j]
+y3 = [-5j,-5j,0]
+yy = [y1,y2,y3]
+```
+
+A matriz $Y$ deverá ser
+
+$$ Y = \begin{bmatrix}
+ -8.5j&2.5j  &5j \\ 
+2.5j & -8.75j &5j \\ 
+ 5j& 5j & -10j
+\end{bmatrix}$$
+
+>   ```python
+>   y1 = [-1j, -2.5j,-5j]
+>   y2 = [-2.5j, -1.25j, -5j]
+>   y3 = [-5j,-5j,0]
+>   yy = [y1,y2,y3]
+>   nb = len(y1)
+>   y = []
+>   for i in range(nb): # Criação de uma matriz de zeros de 3 por 3
+>       y.append([0]*nb)
+>       
+>   for i in range(nb): #Itera em cada linha
+>       for j in range(nb): #Itera em cada coluna 
+>           if i == j: #Definição dos elementos da diagonal principal
+>               diag = sum(yy[i])
+>               y[i][i] = diag            
+>           else: #Definição dos elementos fora da diagonal principal
+>               y[i][j] = - yy[i][j]
+>   print(y[0])
+>   print(y[1])
+>   print(y[2])
+>   ```
+>
+>   
+
+### Exemplo 12: Verificando a existência (ou falta) de um valor em uma lista
 
 Podemos verificar se um valor existe ou não existe em uma lista com as funções `in`e `not in `, que retornam as variáveis Booleanas `True` ou `False`. Veja o exemplo a seguir.
 
@@ -280,7 +469,7 @@ Podemos verificar se um valor existe ou não existe em uma lista com as funçõe
 >
 >False
 
-### Exemplo 10: Métodos de listas
+### Exemplo 13: Métodos de listas
 
 Nessa seção, iremos apresentar diversos métodos muito úteis quando trabalhamos com listas.
 
@@ -398,7 +587,11 @@ Para corrigir esse erro, e usarmos a ordem alfabética padrão, podemos usar um 
 >
 >['Ana', 'ana', 'beatriz', 'Gustavo', 'leonardo', 'Lucas']
 
-### Exemplo 11: Referências na memória e cópia de listas
+### **Tarefa**: Disponibilidade no estoque
+
+Crie um código que receba uma lista de produtos e de preços, conforme feito na Lista de estoque 2.0, e que o cliente possa consultar a disponibilidade deste produto. O código deverá informar o preço, caso disponível.
+
+### Exemplo 14: Referências na memória e cópia de listas
 
 Normalmente, falamos que as variáveis guardam valores, mas essa explicação é uma simplificação do que o Python realmente faz. Tecnicamente, variáveis guardam **referências** da memória do computador onde os valores estão realmente guardados.
 
@@ -447,9 +640,9 @@ O Python tem um módulo chamado `copy`, que tem duas funções (`copy()`e `deepc
 
 Se o seu programa tiver que copiar listas que contenham outras listas, você deverá usar a função `copy.deepcopy()`.
 
-### Exemplo 12: Desafio
+### Desafio
 
-**Tarefa:** Faça um código que receba as duas listas do **Exemplo 8: Lista de estoque 2.0** (produtos e preços), e retorne outras duas listas com os produtos ordenados por preço ascendente. O código deverá imprimir na tela o produto e o seu respectivo preço. 
+**Tarefa:** Faça um código que receba as duas listas do **Exemplo 9: Lista de estoque 2.0** (produtos e preços), e retorne outras duas listas com os produtos ordenados por preço ascendente. O código deverá imprimir na tela o produto e o seu respectivo preço. 
 
 Lembre-se que o i-ésimo número da lista de preço corresponde ao i-ésimo elemento da lista de produtos.
 
@@ -468,6 +661,69 @@ Saída esperada:
 >```
 
 > **Dica:** Use os métodos de listas estudados anteriormente
+
+### Exemplo 15: List comprehension
+
+Suponha que você queira criar uma lista dos n primeiros quadrados perfeitos, usando o que foi aprendido até agora, o código seria feito da seguinte forma.
+
+>   ```python
+>   n = int(input('Digite quantos quadrados perfeitos a lista terá '))
+>   lista = []
+>   for i in range(1,n+1):
+>       lista.append(i**2)    
+>   print(lista)
+>   ```
+>
+>   Digite quantos quadrados perfeitos a lista terá  5
+>   [1, 4, 9, 16, 25]
+
+O método chamado *List comprehension* é uma forma de criar uma lista usando um loop iterativo, porém de uma forma mais minimalista e elegante. A sua sintaxe é 
+
+>   ```python
+>   [expressão for item in lista]
+>   ```
+
+Dessa forma, o mesmo exemplos dos n primeiros quadrados perfeitos é.
+
+>   ```python
+>   n = int(input('Digite quantos quadrados perfeitos a lista terá '))
+>   lista = [x**2 for x in range(1,n+1)]
+>   print(lista)
+>   ```
+>
+>   Digite quantos quadrados perfeitos a lista terá  5
+>   [1, 4, 9, 16, 25]
+
+Perceba que há uma expressão, que dita os elementos da lista e um loop `for`na mesma linha que especifica a iteração a ser feita.
+
+Nessa mesma linha também pode-se adicionar uma condicional, veja por exemplo, como podemos obter uma lista dos n primeiros quadrados perfeitos somente dos números pares.
+
+>   ```python
+>   #Só quadrados perfeitos dos números pares
+>   n = int(input('Digite quantos quadrados perfeitos a lista terá '))
+>   lista = [x ** 2 for x in range(1,2*n+1) if x % 2 == 0]
+>   print(lista)
+>   ```
+>
+>   Digite quantos quadrados perfeitos a lista terá  5
+>   [4, 16, 36, 64, 100]
+
+### **Tarefa**: Contagem de pares e ímpares
+
+Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.  Pode utilizar a seguinte lista.
+
+>   ```python
+>   lista = [18,13,14,23,27,2,33,8,10,56,43,78,15,5,64,42,26,1,16,65]
+>   ```
+
+**Dica**: Agora use list comprehension
+
+### **Tarefa**: Conte o número de espaços em uma string 
+
+Utilize list comprehension 
+```python
+texto = "Conte o número de espaços neste texto aqui."
+```
 
 # Atividade 2: Para casa
 
