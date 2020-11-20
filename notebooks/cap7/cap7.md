@@ -646,7 +646,7 @@ Se o seu programa tiver que copiar listas que contenham outras listas, você dev
 
 Lembre-se que o i-ésimo número da lista de preço corresponde ao i-ésimo elemento da lista de produtos.
 
-> **Dica: **para testar, utilize as seguintes listas, depois de pronto, junte ao programa anterior.
+> **Dica:** Para testar, utilize as seguintes listas, depois de pronto, junte ao programa anterior.
 
 >```python
 >estoque = ['Arroz', 'Feijão','Carne','Refrigerante', 'Fruta']
@@ -712,9 +712,9 @@ Nessa mesma linha também pode-se adicionar uma condicional, veja por exemplo, c
 
 Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.  Pode utilizar a seguinte lista.
 
->   ```python
->   lista = [18,13,14,23,27,2,33,8,10,56,43,78,15,5,64,42,26,1,16,65]
->   ```
+>```python
+>lista = [18,13,14,23,27,2,33,8,10,56,43,78,15,5,64,42,26,1,16,65]
+>```
 
 **Dica**: Agora use list comprehension
 
