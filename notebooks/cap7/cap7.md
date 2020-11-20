@@ -557,15 +557,15 @@ Perceba que, quando usada em uma lista com elementos de diferentes tipos, a orde
 >```
 >
 >```java
->   ---------------------------------------------------------------------------
->   TypeError                                 Traceback (most recent call last)
->   <ipython-input-9-e553841dd643> in <module>
->         1 ## .sort() ==> Com strings mistas
->         2 lista3 = [1,2,3,'batata']
->   ----> 3 lista3.sort()
->         4 lista3
+>---------------------------------------------------------------------------
+>TypeError                                 Traceback (most recent call last)
+><ipython-input-9-e553841dd643> in <module>
+>      1 ## .sort() ==> Com strings mistas
+>      2 lista3 = [1,2,3,'batata']
+>----> 3 lista3.sort()
+>      4 lista3
 >   
->   TypeError: '<' not supported between instances of 'str' and 'int'
+>TypeError: '<' not supported between instances of 'str' and 'int'
 >```
 
 A função usa a ordem "ASCIIbética" em vez da ordem alfabética comum, isso significa que a letra "a" minúscula vem **depois** da letra Z maiúscula, veja um exemplo.
@@ -666,49 +666,49 @@ Saída esperada:
 
 Suponha que você queira criar uma lista dos n primeiros quadrados perfeitos, usando o que foi aprendido até agora, o código seria feito da seguinte forma.
 
->   ```python
->   n = int(input('Digite quantos quadrados perfeitos a lista terá '))
->   lista = []
->   for i in range(1,n+1):
->       lista.append(i**2)    
->   print(lista)
->   ```
+>```python
+>n = int(input('Digite quantos quadrados perfeitos a lista terá '))
+>lista = []
+>for i in range(1,n+1):
+>    lista.append(i**2)    
+>print(lista)
+>```
 >
->   Digite quantos quadrados perfeitos a lista terá  5
->   [1, 4, 9, 16, 25]
+>Digite quantos quadrados perfeitos a lista terá  5
+>[1, 4, 9, 16, 25]
 
 O método chamado *List comprehension* é uma forma de criar uma lista usando um loop iterativo, porém de uma forma mais minimalista e elegante. A sua sintaxe é 
 
->   ```python
->   [expressão for item in lista]
->   ```
+>```python
+>[expressão for item in lista]
+>```
 
 Dessa forma, o mesmo exemplos dos n primeiros quadrados perfeitos é.
 
->   ```python
->   n = int(input('Digite quantos quadrados perfeitos a lista terá '))
->   lista = [x**2 for x in range(1,n+1)]
->   print(lista)
->   ```
+>```python
+>n = int(input('Digite quantos quadrados perfeitos a lista terá '))
+>lista = [x**2 for x in range(1,n+1)]
+>print(lista)
+>```
 >
->   Digite quantos quadrados perfeitos a lista terá  5
->   [1, 4, 9, 16, 25]
+>Digite quantos quadrados perfeitos a lista terá  5
+>[1, 4, 9, 16, 25]
 
 Perceba que há uma expressão, que dita os elementos da lista e um loop `for`na mesma linha que especifica a iteração a ser feita.
 
 Nessa mesma linha também pode-se adicionar uma condicional, veja por exemplo, como podemos obter uma lista dos n primeiros quadrados perfeitos somente dos números pares.
 
->   ```python
->   #Só quadrados perfeitos dos números pares
->   n = int(input('Digite quantos quadrados perfeitos a lista terá '))
->   lista = [x ** 2 for x in range(1,2*n+1) if x % 2 == 0]
->   print(lista)
->   ```
+>```python
+>#Só quadrados perfeitos dos números pares
+>n = int(input('Digite quantos quadrados perfeitos a lista terá '))
+>lista = [x ** 2 for x in range(1,2*n+1) if x % 2 == 0]
+>print(lista)
+>```
 >
->   Digite quantos quadrados perfeitos a lista terá  5
->   [4, 16, 36, 64, 100]
+>Digite quantos quadrados perfeitos a lista terá  5
+>[4, 16, 36, 64, 100]
 
-### **Tarefa**: Contagem de pares e ímpares
+### **Tarefa:** Contagem de pares e ímpares
 
 Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.  Pode utilizar a seguinte lista.
 
@@ -718,7 +718,7 @@ Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazen
 
 **Dica**: Agora use list comprehension
 
-### **Tarefa**: Conte o número de espaços em uma string 
+### **Tarefa:** Conte o número de espaços em uma string 
 
 Utilize list comprehension 
 ```python
