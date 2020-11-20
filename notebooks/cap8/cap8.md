@@ -499,7 +499,7 @@ Resulta em:
     - Qtd: 4
 - Lentilha
     - Qtd: 1
-- Ração para Whiskas
+- Ração Whiskas
     - Preço: R\$ 16,30
     - Qtd: 2
 - Leite
