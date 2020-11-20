@@ -176,10 +176,20 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 
 ### Capítulo 7: Lista
 
-> Neste capítulo vamos aprender sobre as listas
+> Neste capítulo vamos aprender sobre as listas, tupla, for e list comprehension.
 
 {% include menu-atividade.html 
     roteiro="notebooks/cap7/cap7.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap7/cap7.zip" 
+    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
+
+### Capítulo 8: Saídas do IPython
+
+> Neste capítulo vamos aprender um pouco sobre as saídas do IPython e sobre alguns métodos de strings.
+
+{% include menu-atividade.html 
+    roteiro="notebooks/cap8/cap8.html" 
+    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap8/cap8.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
