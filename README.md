@@ -87,7 +87,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     roteiro="notebooks/cap1/cap1.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
-    solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/solucao/cap1.pdf"
+    solucao="solucao/cap1.pdf"
 %}
 
 ### **Capítulo 2:** Saída de dados e sentenças lógicas
@@ -110,7 +110,7 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     roteiro="notebooks/cap2/cap2.html" 
    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
-solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/solucao/cap2.pdf"
+solucao="solucao/cap2.pdf"
 %}
 
 ### Capítulo 3: Módulos e pacotes
@@ -129,7 +129,7 @@ solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master
 roteiro="notebooks/cap3/cap3.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
-solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/solucao/cap3.pdf"
+solucao="solucao/cap3.pdf"
 %}
 
 ### Capítulo 4: Estruturas de decisão
