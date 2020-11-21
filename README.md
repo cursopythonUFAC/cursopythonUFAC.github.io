@@ -83,19 +83,13 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     codigo="3aOmaRNkcDc"
 %}
 
-{% include menu-atividade.html 
-    roteiro="notebooks/cap1/cap1.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
-%}
-<!---
 {% include menu-atividade-resp.html 
     roteiro="notebooks/cap1/cap1.html" 
     material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
     entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
-    solucao=""
+    solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/solucao/cap1.pdf"
 %}
---->
+
 ### **Capítulo 2:** Saída de dados e sentenças lógicas
 
 > Neste capítulo vamos aprender um pouco mais sobre a função `print()` e o método `.format()`. Além disso, como funciona as variáveis booleanas e os operadores lógicos & relacionais.
@@ -112,10 +106,11 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
     codigo="oQbMOLMytN4"
 %}
 
-{% include menu-atividade.html 
+{% include menu-atividade-resp.html 
     roteiro="notebooks/cap2/cap2.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+   material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/solucao/cap2.pdf"
 %}
 
 ### Capítulo 3: Módulos e pacotes
@@ -131,9 +126,10 @@ Não se esqueçam de se inscrever no canal e clicar no sininho para receber as n
 %}
 
 {% include menu-atividade.html 
-    roteiro="notebooks/cap3/cap3.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+roteiro="notebooks/cap3/cap3.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/solucao/cap3.pdf"
 %}
 
 ### Capítulo 4: Estruturas de decisão
