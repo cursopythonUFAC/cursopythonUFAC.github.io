@@ -434,27 +434,27 @@ $$ Y = \begin{bmatrix}
  5j& 5j & -10j
 \end{bmatrix}$$
 
->   ```python
->   y1 = [-1j, -2.5j,-5j]
->   y2 = [-2.5j, -1.25j, -5j]
->   y3 = [-5j,-5j,0]
->   yy = [y1,y2,y3]
->   nb = len(y1)
->   y = []
->   for i in range(nb): # Criação de uma matriz de zeros de 3 por 3
->       y.append([0]*nb)
+>```python
+>y1 = [-1j, -2.5j,-5j]
+>y2 = [-2.5j, -1.25j, -5j]
+>y3 = [-5j,-5j,0]
+>yy = [y1,y2,y3]
+>nb = len(y1)
+>y = []
+>for i in range(nb): # Criação de uma matriz de zeros de 3 por 3
+>    y.append([0]*nb)
 >       
->   for i in range(nb): #Itera em cada linha
->       for j in range(nb): #Itera em cada coluna 
->           if i == j: #Definição dos elementos da diagonal principal
->               diag = sum(yy[i])
->               y[i][i] = diag            
->           else: #Definição dos elementos fora da diagonal principal
->               y[i][j] = - yy[i][j]
->   print(y[0])
->   print(y[1])
->   print(y[2])
->   ```
+>for i in range(nb): #Itera em cada linha
+>    for j in range(nb): #Itera em cada coluna 
+>        if i == j: #Definição dos elementos da diagonal principal
+>           diag = sum(yy[i])
+>           y[i][i] = diag            
+>        else: #Definição dos elementos fora da diagonal principal
+>            y[i][j] = - yy[i][j]
+>print(y[0])
+>print(y[1])
+>print(y[2])
+>```
 >
 >   
 
