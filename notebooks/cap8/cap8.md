@@ -391,6 +391,51 @@ E ainda:
 
 > **Dica:** Use um List Comprehension como `[i.strip() for i in Item]` para simplificar seu código.
 
+**Solução:**
+
+```python
+md('Escreva a sua lista de compras abaixo:')
+@interact(Lista=widget.Textarea(description="Lista: ",
+                                placeholder='Escreva Item - Preço - Qtd'))
+def Lista_Saída(Lista):
+    if Lista:
+        ListaVec=Lista.splitlines() #Lista.split('\n')
+
+        saídaLista='Saída da lista de compras:\n'
+
+        Total = 0
+        for Item in ListaVec:
+            Item = Item.split('-')
+        
+            Item = [i.strip() for i in Item]
+            #Verificando se o nome do item é válido
+            if Item[0].replace(' ','').isalpha():
+                saídaLista+='- {}'.format(Item[0])
+
+                Preço = 0 # Supõe que o preço é nulo
+                if len(Item)>=2:
+                    Item[1] = Item[1].replace(',','.')
+                    if isfloat(Item[1]): #Se for um preço válido, atualizo o preço
+                        Preço = float(Item[1])
+
+                saídaLista+=' - '+ conv_Preço(Preço)
+
+                Qtd = 1 #Supõe que a quantidade é 1
+                if len(Item)==3:
+                    if Item[2].isdigit(): #Se a quantidade for válida, atualiza a quantidade
+                        Qtd = int(Item[2])
+
+                saídaLista+=' - Qtd. ' + str(Qtd)
+
+                saídaLista+='\n'
+
+                Total += Preço*Qtd
+
+        
+        md(saídaLista)
+        md('**Total:** {}'.format(conv_Preço(Total)))
+```
+
 # Atividade 2: Tabelas no Markdown
 
 ### Exemplo 5: Trabalhando com tabelas
@@ -693,6 +738,30 @@ A sua solução deve ser parecida com:
 | Bianca  | <span style="color:Fuchsia">F</span> |  40   | 1,57 m | 49,8 kg | 20,2  |   <span style="color:Green">Peso normal</span>    |
 | Carlos  | <span style="color:Fuchsia">F</span> |  44   | 1,67 m | 82,7 kg | 29,65 |     <span style="color:Red">Sobrepeso</span>      |
 
+**Solução:**
+
+```python
+with open('pessoas.csv') as dados:
+    saída='|Nome|Sexo|Idade|Altura|Peso|IMC|Qualitativo|\n|:-:|:-:|:-:|:-:|:-:|:-:|:-:|\n'
+    for pessoa in csv.reader(dados):
+        pessoa[1]='<span style="color:{}">{}</span>'.format('Fuchsia' if pessoa[1]=='F' else 'Teal',pessoa[1])
+        
+        #Convertendo minha string para valores numéricos (float)
+        pessoa[2:]=[float(num) for num in pessoa[2:]]
+        
+        pessoa.append(pessoa[-1]/pessoa[-2]**2) # Calcular o IMC
+        
+        if pessoa[-1] < 18.5:
+            pessoa.append('<span style="color:Orange">Abaixo peso</span>')
+        elif pessoa[-1] > 24.9:
+            pessoa.append('<span style="color:Green">Peso normal</span>')
+        else:
+            pessoa.append('<span style="color:Red">Sobrepeso</span>')
+            
+        saída+='|{}|{}|{:n}|{:.2n} m|{:.3n} kg|{:.4n}|{}|\n'.format(*pessoa)
+    md(saída)
+```
+
 ### Exemplo 7: Tabelas dinâmicas
 
 Podemos **combinar as saídas do IPython** com as **entradas do IPython** (IPywidgets) para criar Tabelas dinâmicas e desta forma poder visualizar os dados com mais clareza. Vamos aproveitar para apresentar novos Widgets, vamos apresentar uns novos widgets.
@@ -799,6 +868,44 @@ Podemos utilizar o widget `ÌntRangeSlider` (Disponível [aqui](https://ipywidge
 Sua resposta deve ser parecida com a figura abaixo:
 
 ![Saída da Tarefa 3](images/tarefa3.gif)
+
+**Solução:**
+
+```python
+@interact(
+    Sexo=[('Todos','MF'),('Masculino','M'),('Feminino','F')],
+    Idade=widget.IntRangeSlider(min=30,max=100,step=5,value=(30,100)),
+    Qualitativo=['Todos','Abaixo do peso','Peso normal','Sobrepeso']
+         )
+def imprimirTabela(Sexo,Idade,Qualitativo):
+    with open('pessoas.csv') as dados:
+        saída='|Nome|Sexo|Idade|Altura|Peso|IMC|Qualitativo|\n|:-:|:-:|:-:|:-:|:-:|:-:|:-:|\n' 
+        for pessoa in csv.reader(dados):
+            if pessoa[1] not in Sexo: 
+                continue
+            
+            pessoa[1]='<span style="color:{}">{}</span>'.format('Fuchsia' if pessoa[1]=='F' else 'Teal',pessoa[1])
+            pessoa[2:]=[float(num) for num in pessoa[2:]]
+
+            pessoa.append(pessoa[-1]/pessoa[-2]**2) # Calculando o IMC
+
+            if pessoa[-1] < 18.5:
+                pessoa.append('<span style="color:Orange">Abaixo do peso</span>') # Cor laranja
+            elif pessoa[-1] < 24.9:
+                pessoa.append('<span style="color:Green">Peso normal</span>')
+            else:
+                pessoa.append('<span style="color:Red">Sobrepeso</span>')
+
+            if pessoa[2]<= Idade[0] or pessoa[2]>=Idade[1]:
+                continue
+
+            if Qualitativo!= 'Todos' and Qualitativo not in pessoa[-1]:
+                continue
+
+            saída+='|{}|{}|{:n}|{:.3n} m|{:.4n} kg|{:.4n}|{}|\n'.format(*pessoa)
+
+        md(saída)
+```
 
 # Atividade 3: Para casa
 
