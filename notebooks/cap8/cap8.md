@@ -393,6 +393,8 @@ E ainda:
 
 # Atividade 2: Tabelas no Markdown
 
+### Exemplo 5: Trabalhando com tabelas
+
 Para criar Tabelas no Markdown é muito simples. Veja o exemplo abaixo:
 
 > **%Jup%**
@@ -425,43 +427,378 @@ Você pode usar o site abaixo para criar tabelas facilmente:
 
 > [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
 
-### Exemplo 5: Trabalhando com tabelas
 
-Sendo assim, podemos refazer o Exemplo 4 na forma de Tabelas:
+
+### Exemplo 6: Trabalhando com arquivos
+
+Em problemas práticos geralmente obtemos uma base de dados de algum arquivo externo, como o `.csv`. CSV vem do acrônimo `Comma Separated Value`. Isto é, **valores separado por vírgulas**, este tipo de arquivo é muito utilizado para representar base de dados. E sua estrutura é muito simples. Por exemplo, o arquivo `pessoas.csv` disponível neste capítulo tem a seguinte estrutura:
+
+```
+André,M,45,1.70,80.1
+Mariana,F,32,1.53,40.7
+João,M,37,1.75,64.2
+Pedro,M,65,1.60,61.4
+José,M,93,1.70,59.3
+Bianca,F,40,1.57,49.8
+Carlos,F,44,1.67,82.7
+```
+
+Vamos imprimir os dados de uma base de dados disponível no arquivo `pessoas.csv` utilizando **métodos de string**. Para isso vamos utilizar a função `open()` para abrir o arquivo e a função `close()` para fechar o arquivo. 
+
+> **Observação:** Quando trabalhando com arquivos estamos usando **recursos** do sistema operacional, portanto é **imprescindível** que o arquivo seja **fechado antes da finalização do programa**.
 
 > ```python
-> # Substituindo a função no programa
-> md("Escreva a sua lista de compras abaixo:")
-> @interact(Lista=widget.Textarea(
->     description="Lista: ",             
->     placeholder='Escreva Item - Preço.')
-> )
-> def Lista_Saída(Lista):
->     if Lista:
->         ListaVec=Lista.splitlines()
->         saídaLista="|Item|Preço|\n|:-:|:-:|\n" #Cria o início da Tabela
->         for Item in ListaVec:
->             Item = Item.split(' - ')
->             
->             #Tratando a entrada
->             Item[0]=Item[0].replace('-','')
->             
->             #Verificando se o nome do item é válido
->             if Item[0].replace(' ','').isalpha():
->                 #Verificando se o preço foi adicionado
->                 Preço = 0
->                 if len(Item)>=2:
->                     #Tratando a entrada
->                     Item[1] = Item[1].replace(' ','').replace(",",'.')
->                     
->                     if isfloat(Item[1]):
->                         Preço = float(Item[1])
->                 
->                 saídaLista+='|{}|{}|\n'.format(Item[0],conv_Preço(Preço))
->         md(saídaLista)
+> arquivo = open('pessoas.csv') #Abrindo o arquivo
+> dados = arquivo.read() #Salvando os dados do arquivo na memória
+> arquivo.close() #Toda vez que abrimos o arquivo é necessário fechá-lo.
+> 
+> #Imprimindo os dados na forma de tabela
+> saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+> for pessoa in dados.splitlines():
+>     pessoa = pessoa.split(',')
+> 
+>     saída+='|{}|{}|{}|{} m|{} kg|\n'.format(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4])
+>     
+> md(saída)
 > ```
 >
-> ![Lista de compras utilizando tabelas](images/lista_compras_tabela.png)
+> |  Nome   | Sexo | Idade | Altura |  Peso   |
+> | :-----: | :--: | :---: | :----: | :-----: |
+> |  André  |  M   |  45   | 1.70 m | 80.1 kg |
+> | Mariana |  F   |  32   | 1.53 m | 40.7 kg |
+> |  João   |  M   |  37   | 1.75 m | 64.2 kg |
+> |  Pedro  |  M   |  65   | 1.60 m | 61.4 kg |
+> |  José   |  M   |  93   | 1.70 m | 59.3 kg |
+> | Bianca  |  F   |  40   | 1.57 m | 49.8 kg |
+> | Carlos  |  F   |  44   | 1.67 m | 82.7 kg |
+
+Observe que tivemos que escrever todos os elementos do vetor para imprimir os dados da nossa tabela. Vamos simplificar isso através do **operador `*`**. Este operador permite **desempacotar** uma lista dentro de uma função. Veja como ficaria o nosso programa utilizando este operador:
+
+> ```python
+> #Imprimindo os dados na forma de tabela
+> saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+> for pessoa in dados.splitlines():
+>     pessoa=pessoa.split(',')
+>     saída+='|{}|{}|{}|{} m|{} kg|\n'.format(*pessoa)
+>     
+> md(saída)
+> ```
+>
+> |  Nome   | Sexo | Idade | Altura |  Peso   |
+> | :-----: | :--: | :---: | :----: | :-----: |
+> |  André  |  M   |  45   | 1.70 m | 80.1 kg |
+> | Mariana |  F   |  32   | 1.53 m | 40.7 kg |
+> |  João   |  M   |  37   | 1.75 m | 64.2 kg |
+> |  Pedro  |  M   |  65   | 1.60 m | 61.4 kg |
+> |  José   |  M   |  93   | 1.70 m | 59.3 kg |
+> | Bianca  |  F   |  40   | 1.57 m | 49.8 kg |
+> | Carlos  |  F   |  44   | 1.67 m | 82.7 kg |
+
+**Leitura stream**
+
+Ler a tabela inteira e salvar na memória não é interessante quando estamos falando de arquivos muito grandes. Uma maneira mais elegante de ler um arquivo é ler linha a linha através fazendo um **streamming** das linhas da tabela.
+
+> ```python
+> dados = open('pessoas.csv') #Abrindo o arquivo
+> 
+> saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+> for pessoa in dados: #Carregamos o arquivo diretamente
+>     pessoa=pessoa.split(',')
+>     saída+='|{}|{}|{}|{} m|{} kg|\n'.format(*pessoa)
+>     
+> md(saída)
+> dados.close() #Fecha o arquivo
+> ```
+>
+> |Nome|Sexo|Idade|Altura|Peso|
+> |:-:|:-:|:-:|:-:|:-:|
+> |André|M|45|1.70 m|80.1
+>  kg|
+> |Mariana|F|32|1.53 m|40.7
+>  kg|
+> |João|M|37|1.75 m|64.2
+>  kg|
+> |Pedro|M|65|1.60 m|61.4
+>  kg|
+> |José|M|93|1.70 m|59.3
+>  kg|
+> |Bianca|F|40|1.57 m|49.8
+>  kg|
+> |Carlos|F|44|1.67 m|82.7
+>  kg|
+> 
+
+Observe que ocorreu algo indesejado devido a presença do **quebra linha** `\n` no final de cada linha do arquivo. Vamos corrigir isso através do método `strip()`.
+
+> ```python
+> dados = open('pessoas.csv') #Abrindo o arquivo
+> 
+> with open('pessoas.csv') as dados:
+>     saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+>     for pessoa in dados: #Carregamos o arquivo diretamente
+>         pessoa=pessoa.strip().split(',')
+>         saída+='|{}|{}|{}|{} m|{} kg|\n'.format(*pessoa)
+> 
+>     md(saída)
+> ```
+>
+> |  Nome   | Sexo | Idade | Altura |  Peso   |
+> | :-----: | :--: | :---: | :----: | :-----: |
+> |  André  |  M   |  45   | 1.70 m | 80.1 kg |
+> | Mariana |  F   |  32   | 1.53 m | 40.7 kg |
+> |  João   |  M   |  37   | 1.75 m | 64.2 kg |
+> |  Pedro  |  M   |  65   | 1.60 m | 61.4 kg |
+> |  José   |  M   |  93   | 1.70 m | 59.3 kg |
+> | Bianca  |  F   |  40   | 1.57 m | 49.8 kg |
+> | Carlos  |  F   |  44   | 1.67 m | 82.7 kg |
+
+**Utilizando o módulo `csv`**
+
+Para simplificar mais ainda o nosso programa podemos utilizar o módulo `csv`. O módulo `csv` permite trabalhar diretamente com os arquivos `csv`, você pode encontrar mais detalhes de como utilizar este módulo [aqui](https://docs.python.org/pt-br/3/library/csv.html).
+
+> ```python
+> import csv #Lendo um arquivo CSV
+> 
+> with open('pessoas.csv') as dados:
+>     saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+>     for pessoa in csv.reader(dados): #Vamos criar um objeto reader para ler os dados
+>         saída+='|{}|{}|{}|{} m|{} kg|\n'.format(*pessoa)
+> 
+>     md(saída)
+> ```
+>
+> |  Nome   | Sexo | Idade | Altura |  Peso   |
+> | :-----: | :--: | :---: | :----: | :-----: |
+> |  André  |  M   |  45   | 1.70 m | 80.1 kg |
+> | Mariana |  F   |  32   | 1.53 m | 40.7 kg |
+> |  João   |  M   |  37   | 1.75 m | 64.2 kg |
+> |  Pedro  |  M   |  65   | 1.60 m | 61.4 kg |
+> |  José   |  M   |  93   | 1.70 m | 59.3 kg |
+> | Bianca  |  F   |  40   | 1.57 m | 49.8 kg |
+> | Carlos  |  F   |  44   | 1.67 m | 82.7 kg |
+
+Observe que com este módulo não precisamos utilizar os métodos de string, o próprio módulo se encarrega de fazer o tratamento do arquivo csv.
+
+**Traduzindo para português:**
+
+O Python nos permite trabalhar com formatos numéricos de outros países (Além do padrão Americano). Para isso é necessário utilizar o **módulo `locale`**. Vamos importá-lo e configurá-lo para trabalhar com o suporte ao português brasileiro (`pt_BR.utf8`):
+
+> ```python
+> #Importando o módulo locale
+> import locale
+> locale.setlocale(locale.LC_ALL,'pt_BR.utf8'); #Localização pt_BR.utf8
+> ```
+
+Através do comando `locale.setlocale()` configuramos a nossa saída para o português brasileiro. Para que o número saia nesse formato precisamos utilizar **a formatação `n`.**
+
+> ```python
+> with open('pessoas.csv') as dados:
+>     saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+>     for pessoa in csv.reader(dados):
+>         # Converte três últimos valores para 'float' 
+>         pessoa[2:]=[float(num) for num in pessoa[2:]]
+>         saída+='|{}|{}|{:n}|{:.3n} m|{:.4n} kg|\n'.format(*pessoa)
+> 
+>     md(saída)
+> ```
+>
+> |  Nome   | Sexo | Idade | Altura |  Peso   |
+> | :-----: | :--: | :---: | :----: | :-----: |
+> |  André  |  M   |  45   | 1,7 m  | 80,1 kg |
+> | Mariana |  F   |  32   | 1,53 m | 40,7 kg |
+> |  João   |  M   |  37   | 1,75 m | 64,2 kg |
+> |  Pedro  |  M   |  65   | 1,6 m  | 61,4 kg |
+> |  José   |  M   |  93   | 1,7 m  | 59,3 kg |
+> | Bianca  |  F   |  40   | 1,57 m | 49,8 kg |
+> | Carlos  |  F   |  44   | 1,67 m | 82,7 kg |
+
+Observe que para imprimir neste formato precisamos converter o número que inicialmente era uma **string** em um **float**. Para fazer a conversão de vários elementos de uma única vez recorremos ao **List Generator**.
+
+**Adicionando cor a tabela:**
+
+O Markdown não suporta nativamente cores, mas **podemos utilizar HTML** para isso. O código que permite adicionar cor no Markdown é apresentado abaixo:
+
+```html
+<span style="color:blue">Texto *azul*</span>
+```
+<span style="color:blue">Texto *azul*</span>
+
+Você pode procurar as cores no site na Wikipedia:
+
+> [https://en.wikipedia.org/wiki/Web_colors](https://en.wikipedia.org/wiki/Web_colors)
+
+
+Caso queira uma customização ainda maior. Você pode recorrer às cores Hexadecimais:
+
+> [https://www.w3schools.com/colors/colors_picker.asp](https://www.w3schools.com/colors/colors_picker.asp)
+
+> **Observação:** Além da cor, é possível utilizar o HTML para a customização de qualquer outro elemento, como a <span style="color:white;background-color:green">cor de fundo</span>, por exemplo.
+
+Vamos colorir nossa tabela. Utilizaremos a notação parecida com o List Generator:
+
+> `valor_verdadeiro if condição else valor_falso`
+
+> ```python
+> with open('pessoas.csv') as dados:
+>     saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+>     for pessoa in csv.reader(dados):
+>         #Alteramos a cor aqui com código HTML
+>         pessoa[1]='<span style="color:{}">{}</span>'.format('Fuchsia' if pessoa[1]=='F' else 'Teal',pessoa[1])
+>         pessoa[2:]=[float(num) for num in pessoa[2:]]
+>         saída+='|{}|{}|{:n}|{:.3n} m|{:.4n} kg|\n'.format(*pessoa)
+> 
+>     md(saída)
+> ```
+>
+> |  Nome   |                 Sexo                 | Idade | Altura |  Peso   |
+> | :-----: | :----------------------------------: | :---: | :----: | :-----: |
+> |  André  |  <span style="color:Teal">M</span>   |  45   | 1,7 m  | 80,1 kg |
+> | Mariana | <span style="color:Fuchsia">F</span> |  32   | 1,53 m | 40,7 kg |
+> |  João   |  <span style="color:Teal">M</span>   |  37   | 1,75 m | 64,2 kg |
+> |  Pedro  |  <span style="color:Teal">M</span>   |  65   | 1,6 m  | 61,4 kg |
+> |  José   |  <span style="color:Teal">M</span>   |  93   | 1,7 m  | 59,3 kg |
+> | Bianca  | <span style="color:Fuchsia">F</span> |  40   | 1,57 m | 49,8 kg |
+> | Carlos  | <span style="color:Fuchsia">F</span> |  44   | 1,67 m | 82,7 kg |
+
+**Tarefa 2:** Modifique o resultado final do Exemplo 3:
+
+- Adicione uma coluna na tabela que cálcule do Índice de Massa Corporal (IMC) da base de dados. A fórmula do IMC é dada abaixo:
+
+$$
+\text{IMC}=\frac{\text{Peso}}{\text{Altura}^2}
+$$
+
+- Adicione uma coluna que indica o resultado qualitativo do IMC conforme a Tabela abaixo:
+
+|        IMC        |  Qualitativo   |
+| :---------------: | :------------: |
+|  Menor que 18,5   | Abaixo do peso |
+| Entre 18,5 e 24,9 |  Peso normal   |
+|  Maior que 24,9   |   Sobrepeso    |
+
+- Adicione cor na coluna no Qualitativo:
+   - `Orange` para abaixo do peso
+   - `Green` para peso normal
+   - `Red` para sobrepeso
+
+A sua solução deve ser parecida com:
+
+|  Nome   |                 Sexo                 | Idade | Altura |  Peso   |  IMC  |                    Qualitativo                    |
+| :-----: | :----------------------------------: | :---: | :----: | :-----: | :---: | :-----------------------------------------------: |
+|  André  |  <span style="color:Teal">M</span>   |  45   | 1,7 m  | 80,1 kg | 27,72 |     <span style="color:Red">Sobrepeso</span>      |
+| Mariana | <span style="color:Fuchsia">F</span> |  32   | 1,53 m | 40,7 kg | 17,39 | <span style="color:#ff8000">Abaixo do peso</span> |
+|  João   |  <span style="color:Teal">M</span>   |  37   | 1,75 m | 64,2 kg | 20,96 |   <span style="color:Green">Peso normal</span>    |
+|  Pedro  |  <span style="color:Teal">M</span>   |  65   | 1,6 m  | 61,4 kg | 23,98 |   <span style="color:Green">Peso normal</span>    |
+|  José   |  <span style="color:Teal">M</span>   |  93   | 1,7 m  | 59,3 kg | 20,52 |   <span style="color:Green">Peso normal</span>    |
+| Bianca  | <span style="color:Fuchsia">F</span> |  40   | 1,57 m | 49,8 kg | 20,2  |   <span style="color:Green">Peso normal</span>    |
+| Carlos  | <span style="color:Fuchsia">F</span> |  44   | 1,67 m | 82,7 kg | 29,65 |     <span style="color:Red">Sobrepeso</span>      |
+
+### Exemplo 7: Tabelas dinâmicas
+
+Podemos **combinar as saídas do IPython** com as **entradas do IPython** (IPywidgets) para criar Tabelas dinâmicas e desta forma poder visualizar os dados com mais clareza. Vamos aproveitar para apresentar novos Widgets, vamos apresentar uns novos widgets.
+
+**Widget dropdown**: 
+
+O widget dropdown é um **widget de seleção** que pode ser criado através de uma **abreviação de lista**:
+
+> ```python
+> @interact(Fruta=['Maça','Laranja'])
+> def f(Fruta):
+>     print(Fruta)
+> ```
+>
+> <p>
+> <select name="Fruta" id="Fruta">
+>   <option value="Maça">Maça</option>
+>   <option value="Laranja">Laranja</option>
+> </select>
+> <br>Maça
+> </p>
+
+A sua pode ser encontrada [aqui](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#Dropdown).
+
+Uma outra forma de trabalhar com o dropdown é através da abreviação de **lista de tuplas**. Desta forma podemos **atribuir um valor cara cada item do seletor**.
+
+> ```python
+> @interact(x=[('Maça',4.50),('Laranja',1.25)])
+> def f(x):
+>     print("O preço é {}.".format(
+>         locale.currency(x) # A função currency traduz um valor na moeda local
+>                                 ))
+> ```
+>
+> <p>
+> <select name="Fruta" id="Fruta">
+>   <option value="4.50">Maça</option>
+>   <option value="1.25">Laranja</option>
+> </select>
+> <br>O preço é R$ 4,50.
+> </p>
+
+Observe que no exemplo aproveitamos para mostrar mais uma funcionalidade do módulo **locale**. Além da função **locale.currency()** que traduz um número para valores da moeda local, existem muitas outras. Vale a pena olhar a documentação [aqui](https://docs.python.org/3/library/locale.html) e uma explicação mais completa [aqui](https://pymotw.com/3/locale/). Se possível dê uma investigada na função **locale.format_string()**.
+
+**Dropdown e tabelas:**
+
+Finalmente vamos utilizar os conceitos que aprendemos para customizar a nossa tabela.
+
+> ```python
+> @interact(Sexo=[('Todos','MF'),('Masculino','M'),('Feminino','F')])
+> def imprimirTabela(Sexo):
+>     with open('pessoas.csv') as dados:
+>         saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+>         for pessoa in csv.reader(dados):
+>             
+>             if pessoa[1] not in Sexo: 
+>                 continue #Volte para o início do loop
+>             
+>             pessoa[1]='<span style="color:{}">{}</span>'.format('Fuchsia' if pessoa[1]=='F' else 'Teal',pessoa[1])
+>             pessoa[2:]=[float(num) for num in pessoa[2:]]
+>             saída+='|{}|{}|{:n}|{:.3n} m|{:.4n} kg|\n'.format(*pessoa)
+> 
+>         md(saída)
+> ```
+>
+> ![Tabelas e dropdown](images/dropdown.gif)
+
+Observe que utilizamos o **continue** para fazer o processo de filtragem.
+
+**Filtrando pela idade:**
+
+Podemos utilizar o widget `ÌntRangeSlider` (Disponível [aqui](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#IntRangeSlider)) para trabalhar com **intervalos**. Vamos utilizá-lo para filtrar a idade.
+
+> ```python
+> @interact(
+>     Sexo=[('Todos','MF'),('Masculino','M'),('Feminino','F')],
+>     Idade=widget.IntRangeSlider(min=30,max=100,step=5,value=(30,100))
+>          )
+> def imprimirTabela(Sexo,Idade):
+>     with open('pessoas.csv') as dados:
+>         saída='|Nome|Sexo|Idade|Altura|Peso|\n|:-:|:-:|:-:|:-:|:-:|\n'
+>         for pessoa in csv.reader(dados):                         
+>             if pessoa[1] not in Sexo: 
+>                 continue
+>             pessoa[1]='<span style="color:{}">{}</span>'.format('Fuchsia' if pessoa[1]=='F' else 'Teal',pessoa[1])
+>             pessoa[2:]=[float(num) for num in pessoa[2:]]
+>            
+>             if pessoa[2]<= Idade[0] or pessoa[2]>=Idade[1]:
+>                 continue
+>                 
+>             saída+='|{}|{}|{:n}|{:.3n} m|{:.4n} kg|\n'.format(*pessoa)
+> 
+>         md(saída)
+> ```
+>
+> ![Filtrando pela idade](images/idade.gif)
+
+**Tarefa:** Incremente a Tarefa 2 adicionando a possibilidade de:
+
+- Filtrar pelo sexo (Assim como no Exemplo 7)
+- Filtrar pela idade (Assim como no Exemplo 7)
+- Filtrar pelo qualitativo do IMC (Use um Dropdown)
+
+Sua resposta deve ser parecida com a figura abaixo:
+
+![Saída da Tarefa 3](images/tarefa3.gif)
 
 # Atividade 3: Para casa
 
@@ -508,7 +845,7 @@ Resulta em:
 
 **Total:** R$ 95,70
 
-### Exercício 2: Tabela em Markdown
+## Exercício 2: Tabela em Markdown
 
 Crie a seguinte tabela em Markdown:
 
@@ -521,3 +858,67 @@ Crie a seguinte tabela em Markdown:
 |    José | Masculino |    93 |
 |  Bianca | Feminino  |    40 |
 |  Carlos | Feminino  |    44 |
+
+## Exercício 3: Valor nutricional dos alimentos
+
+O arquivo `csv` em anexo contém a base de dados do valor nutricional de alguns alimentos consumidos pelos americanos, considerando uma porção de 100 gramas. A versão original da base de dados pode ser encontrada em:
+
+> [https://tools.myfooddata.com/nutrition-facts-database-spreadsheet.php](https://tools.myfooddata.com/nutrition-facts-database-spreadsheet.php)
+
+Neste exercício vamos utilizar o arquivo `comida.csv` que contém apenas um trecho da base de dados, com os seguintes campos:
+
+- Name (Nome da comida)
+- Food Group (Grupo da comida)
+- Calories (Calorias)
+- Fat (Gordura)
+- Protein (Proteína)
+- Carbohydrate (Carboidrato)
+
+Utilizando os conceitos deste capítulo crie uma tabela dinâmica capaz de filtrar os seguintes campos:
+
+- Food Group (Use um widget Dropdown)
+- Calories, Fat, Protein e Carbohydrate (Use um widget do tipo RangeSlider)
+
+Os RangeSlider tem as seguintes configurações:
+
+- Calories (Calorias) $\rightarrow$ `min=17` e `max=642`
+- Fat (Gordura) $\rightarrow$ `min=0` e `max=70`
+- Protein (Proteína) $\rightarrow$ `min=0` e `max=40`
+- Carbohydrate (Carboidrato) $\rightarrow$ `min=0` e `max=90`
+
+A última linha da tabela deve conter o valor médio das colunas `Calories`, `Fat`, `Protein`, `Carbohydrate`. Esta linha deve está em **negrito**.
+
+Adicione as seguintes cores nos campos `Food Group`:
+
+- `Vegatables` $\rightarrow$ Green
+- `Sweets` $\rightarrow$ Fuchsia
+- `Snacks` $\rightarrow$ Orange
+- `Baked Foods` $\rightarrow$ DarkKhaki
+- `Fruits` $\rightarrow$ Blue
+- `Meats` $\rightarrow$ Red
+
+Adicione um campo de busca no qual o usuário pode buscar pelo nome da comida (Campo `Name`). A busca deve ser `case insensitive`.
+
+> **Observação:** 
+> - Lembre-se que esse arquivo csv tem cabeçalho.  
+> - **Use apenas os conhecimentos ensinados** até o momento (Não usar dicionários e nem pandas - Isso deixa a tarefa muito simples).
+
+> **Dica:** Pesquise sobre o método `join` para criar o cabeçalho.
+
+Veja o exemplo abaixo:
+
+> ```python
+> Cabeçalho = ('Nome','Sexo','Idade')
+> saída = '|'+'|'.join(Cabeçalho)+'|\n' #Método Join foi utilizado para criar o cabeçalho usando o próprio cabeçalho da tabela
+> saída += '|'+':-:|'*len(Cabeçalho)+'\n'
+> md(saída)
+> saída
+> ```
+>
+> | Nome | Sexo | Idade |
+> | :-:  | :-:  | :-:  |
+> |      |      |      |
+
+Sua saída deve ser parecida com essa:
+
+![Tabela dinâmica](images/filtragemTabela.gif)

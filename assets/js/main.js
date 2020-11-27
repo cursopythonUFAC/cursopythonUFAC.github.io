@@ -73,6 +73,8 @@ $(function () {
 
   $(".jupyter-code .language-python").before("<div class='jupyter-input'> [Py]: </div>")
   $(".jupyter-code p").before("<div class='jupyter-output'> [Out]:  </div>")
+
+  $(".jupyter-code table").before("<div class='jupyter-output'> [Out]:  </div>")
   $(".jupyter-code .language-java").before("<div class='jupyter-output'> [Out]:  </div>")
 
   $(".jupyter-markdown .language-markdown").before("<div class='jupyter-md'> [Md]: </div>")
