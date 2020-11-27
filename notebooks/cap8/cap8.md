@@ -912,10 +912,9 @@ Veja o exemplo abaixo:
 > saída = '|'+'|'.join(Cabeçalho)+'|\n' #Método Join foi utilizado para criar o cabeçalho usando o próprio cabeçalho da tabela
 > saída += '|'+':-:|'*len(Cabeçalho)+'\n'
 > md(saída)
-> saída
 > ```
->
-> | Nome | Sexo | Idade |
+> 
+>| Nome | Sexo | Idade |
 > | :-:  | :-:  | :-:  |
 > |      |      |      |
 
