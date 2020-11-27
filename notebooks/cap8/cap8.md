@@ -427,8 +427,6 @@ Você pode usar o site abaixo para criar tabelas facilmente:
 
 > [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
 
-
-
 ### Exemplo 6: Trabalhando com arquivos
 
 Em problemas práticos geralmente obtemos uma base de dados de algum arquivo externo, como o `.csv`. CSV vem do acrônimo `Comma Separated Value`. Isto é, **valores separado por vírgulas**, este tipo de arquivo é muito utilizado para representar base de dados. E sua estrutura é muito simples. Por exemplo, o arquivo `pessoas.csv` disponível neste capítulo tem a seguinte estrutura:
@@ -471,6 +469,8 @@ Vamos imprimir os dados de uma base de dados disponível no arquivo `pessoas.csv
 > |  José   |  M   |  93   | 1.70 m | 59.3 kg |
 > | Bianca  |  F   |  40   | 1.57 m | 49.8 kg |
 > | Carlos  |  F   |  44   | 1.67 m | 82.7 kg |
+
+> **Observação:** Se a saída do arquivo estiver estranha utilize a opção `encoding='latin1'`
 
 Observe que tivemos que escrever todos os elementos do vetor para imprimir os dados da nossa tabela. Vamos simplificar isso através do **operador `*`**. Este operador permite **desempacotar** uma lista dentro de uma função. Veja como ficaria o nosso programa utilizando este operador:
 
