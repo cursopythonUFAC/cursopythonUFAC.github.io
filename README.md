@@ -12,10 +12,10 @@
 %}
 
 {% include menu-atividade-resp.html 
-    roteiro="notebooks/cap1/cap1.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
-    solucao="solucao/cap1.pdf"
+roteiro="notebooks/cap1/cap1.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap1/cap1.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
+solucao="solucao/cap1.pdf"
 %}
 
 ### **Capítulo 2:** Saída de dados e sentenças lógicas
@@ -35,8 +35,8 @@
 %}
 
 {% include menu-atividade-resp.html 
-    roteiro="notebooks/cap2/cap2.html" 
-   material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
+roteiro="notebooks/cap2/cap2.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap2/cap2.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 solucao="solucao/cap2.pdf"
 %}
@@ -53,7 +53,7 @@ solucao="solucao/cap2.pdf"
     codigo="Rz0OL4EfUzU"
 %}
 
-{% include menu-atividade.html 
+{% include menu-atividade-resp.html 
 roteiro="notebooks/cap3/cap3.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap3/cap3.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
@@ -68,10 +68,11 @@ solucao="solucao/cap3.pdf"
     codigo="UU0XPDQNkkA"
 %}
 
-{% include menu-atividade.html 
-    roteiro="notebooks/cap4/cap4.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap4/ca%E1%B9%954.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+{% include menu-atividade-resp.html 
+roteiro="notebooks/cap4/cap4.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap4/ca%E1%B9%954.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="solucao/cap4.pdf"
 %}
 
 ### Capítulo 5: Estrutura de repetição while 
@@ -82,10 +83,11 @@ solucao="solucao/cap3.pdf"
     codigo="bb6xNmHFdo8"
 %}
 
-{% include menu-atividade.html 
-    roteiro="notebooks/cap5/cap5.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/cap5.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+{% include menu-atividade-resp.html 
+roteiro="notebooks/cap5/cap5.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap5/cap5.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="solucao/cap5.pdf"
 %}
 
 ### Capítulo 6: Widgets
@@ -93,9 +95,9 @@ solucao="solucao/cap3.pdf"
 > Neste capítulo vamos aprender sobre as entradas iterativas do Jupyter, os Widgets.
 
 {% include menu-atividade.html 
-    roteiro="notebooks/cap6/cap6.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap6/cap6.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+roteiro="notebooks/cap6/cap6.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap6/cap6.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
 ### Capítulo 7: Lista
@@ -103,9 +105,9 @@ solucao="solucao/cap3.pdf"
 > Neste capítulo vamos aprender sobre as listas, tupla, for e list comprehension.
 
 {% include menu-atividade.html 
-    roteiro="notebooks/cap7/cap7.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap7/cap7.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+roteiro="notebooks/cap7/cap7.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap7/cap7.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
 ### Capítulo 8: Saídas do IPython
@@ -113,9 +115,9 @@ solucao="solucao/cap3.pdf"
 > Neste capítulo vamos aprender um pouco sobre as saídas do IPython e sobre alguns métodos de strings.
 
 {% include menu-atividade.html 
-    roteiro="notebooks/cap8/cap8.html" 
-    material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap8/cap8.zip" 
-    entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+roteiro="notebooks/cap8/cap8.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap8/cap8.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
 # Informações importantes
