@@ -274,7 +274,7 @@ Duas formas de se capturar os tickets das ações são:
 > ativos = []
 > 
 > for t in tickers:
->     ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')
+>     ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')['Adj Close']
 > ```
 
 **Obs.:** poderia ser qualquer ativo, estes foram escolhidos aleatoriamente.
