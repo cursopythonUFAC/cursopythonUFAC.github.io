@@ -1,4 +1,4 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 9: Dicionários e a biblioteca Pandas</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 9: dicionários e a biblioteca Pandas</div></center>
 
 # Atividade 1: Dicionários
 
@@ -24,7 +24,7 @@ dicionario['Elemento 1'] = 'Valor 1'
 dicionario['Elemento 2'] = 'Valor 2'
 ```
 
-### Exemplo 1: criando um dicionário
+### Exemplo 1: Criando um dicionário
 
 > ```python
 > # dicionario de notas
@@ -39,7 +39,7 @@ Se o seu dicionário for impresso em uma ordem diferente da minha, não se preoc
 
 
 
-### Exemplo 2: alguns métodos dos dicionários
+### Exemplo 2: Alguns métodos dos dicionários
 
 **Método `keys()`:** recebe um dicionário e retorna uma lista com as chaves.
 
@@ -102,7 +102,7 @@ No python 2.x existia o método `.has_key()`, porém foi retirado do python 3.x.
 
 ---
 
-# Atividade 2: biblioteca `pandas`
+# Atividade 2: Biblioteca `pandas`
 
 A biblioteca `pandas` é uma das bibliotecas mais famosas e utilizadas pela comunidade, principalmente em ciência de dados.
 
@@ -116,7 +116,7 @@ Primeiro, vamos importar o pandas com a sintaxe a seguir:
 
 > import pandas as pd
 
-### Exemplo 3: importando a biblioteca `pandas`
+### Exemplo 3: Importando a biblioteca `pandas`
 
 > ```python
 > import pandas as pd
@@ -128,7 +128,7 @@ Existem dois principais tipos na biblioteca `pandas`: `DataFrame` e `Series`. A 
 
 `DataFrame` são tabelas, em que cada entrada corresponde a uma linha e uma coluna, respectivamente.
 
-### Exemplo 4: criando `DataFrame`
+### Exemplo 4: Criando `DataFrame`
 
 > ```python
 > # criando o dataframe
@@ -192,7 +192,7 @@ Perceba que a criação é através de **dicionários**, em que as *keys* são o
 
 Um conjunto de dados bem famoso para quem inicia no pandas é o *Titanic*. Vamos trabalhar com ele inicialmente.
 
-### Exemplo 5: guardando os nomes e as idades dos passageiros do navio Titanic
+### Exemplo 5: Guardando os nomes e as idades dos passageiros do navio Titanic
 
 > ```python
 > # criando um dataframe
@@ -214,21 +214,29 @@ Um conjunto de dados bem famoso para quem inicia no pandas é o *Titanic*. Vamos
 
 ### Exemplo 6: mudando o index
 
-```python
-alunos.set_index(['Ana', 'Beatriz', 'Bernardo', 'Valentin', 'Sofia'])
-```
+> ```python
+> alunos.set_index(['Ana', 'Beatriz', 'Bernardo', 'Valentin', 'Sofia'])
+> ```
+>
+> | Ana  | Beatriz | Bernardo | Valentin | Sofia |
+> | ---- | ------- | -------- | -------- | ----- |
+> | 10.0 | 10.0    | 10.0     | 10.0     | 10.0  |
+> | 4.0  | 4.0     | 4.0      | 4.0      | 4.0   |
+> | 2.0  | 2.0     | 2.0      | 2.0      | 2.0   |
+> | 10.0 | 10.0    | 10.0     | 10.0     | 10.0  |
+>
 
 Agora os nomes das colunas passam a ser os index, assim o dataframe será indicado por eles.
 
-### Exemplo 7: importando DataFrame com `pandas_datareader`
+### Exemplo 7: Importando DataFrame com `pandas_datareader`
 
 Primeiro, vamos instalar a biblioteca `pandas_datareader`. Esta biblioteca é utilizada para acessar dados remotos, nela encontramos fontes como `Yahoo`, `Quandl`, `World Bank`, etc.
 
 Digite no *powershell*:
 
-> ```python
-> conda install -c anaconda pandas-datareader
-> ```
+```bash
+conda install -c anaconda pandas-datareader
+```
 
 Em seguida, importe o módulo `data` utilizando a seguinte sintaxe:
 
@@ -250,48 +258,60 @@ Duas formas de se capturar os tickets das ações são:
 
 **Forma 1:**
 
-```python
-itau = web.DataReader('ITSA4.SA', data_source='yahoo', start='2020-1-1')
-
-petrobras = web.DataReader('PETR4.SA', data_source='yahoo', start='2020-1-1')
-
-vale = web.DataReader('VALE3.SA', data_source='yahoo', start='2020-1-1')
-```
+> ```python
+> itau = web.DataReader('ITSA4.SA', data_source='yahoo', start='2020-1-1')
+> 
+> petrobras = web.DataReader('PETR4.SA', data_source='yahoo', start='2020-1-1')
+> 
+> vale = web.DataReader('VALE3.SA', data_source='yahoo', start='2020-1-1')
+> ```
 
 **Forma 2:**
 
-```python
-tickers = ['ABEV3.SA', 'ENGI3.SA', 'PETR4.SA', 'TAEE11.SA']
-
-ativos = []
-
-for t in tickers:
-    ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')
-```
+> ```python
+> tickers = ['ABEV3.SA', 'ENGI3.SA', 'PETR4.SA', 'TAEE11.SA']
+> 
+> ativos = []
+> 
+> for t in tickers:
+>     ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')
+> ```
 
 **Obs.:** poderia ser qualquer ativo, estes foram escolhidos aleatoriamente.
 
-### Exemplo 8: visualizando os dataframes
+### Exemplo 8: Visualizando os dataframes
 
-```python
-# visualizando itau
-itau
-```
+Podemos visualizar os dataframes escrevendo os nome deles. Tente rodar cada um deles e veja o que acontece:
 
-```python
-# visualizando petrobras
-petrobras
-```
+> ```python
+> # visualizando itau
+> itau
+> ```
+>
+>![Dataframe do Itau](../cap9/images/itau.png)
+>
+> ```python
+> # visualizando petrobras
+> petrobras
+> ```
+>
+>![Dataframe da Petrobras](../cap9/images/petrobras.png)
+>
+> ```python
+> # visualizando vale
+> vale
+> ```
+>
+>![Dataframes da Vale](../cap9/images/Vale.png)
+>
+> ```python
+> # visualizando os ativos
+> ativos
+> ```
+>
+>![Dataframe de ativos](../cap9/images/ativos.png)
+>
 
-```python
-# visualizando vale
-vale
-```
-
-```python
-# visualizando os ativos
-ativos
-```
 
 Esses conjuntos de dados referem-se aos preços negociados das ações diariamente desde 01 de janeiro de 2020. Trata-se de um conjunto temporal de dados (série temporal), ou seja, um conjunto cujo as observações são igualmente espaçadas ao longo do tempo.
 
@@ -309,7 +329,7 @@ Uma breve explicação sobre as colunas desses *datasets*:
 
 - **Adj Close:** preço de fechamento ajustado, ou seja, é o preço após a distribuição de dividendos, splits, etc.
 
-### Exemplo 9: importando um DataFrame de um arquivo `.csv`
+### Exemplo 9: Importando um DataFrame de um arquivo `.csv`
 
 Na internet existem diversos sites em que você pode encontrar bases de dados, planilhas e conjuntos de dados no geral para se trabalhar. Vamos trabalhar com um arquivo csv chamado "Salary".
 
@@ -325,70 +345,121 @@ Vamos guardá-lo em uma variável e, por curiosidade, vamos ver os parâmetros q
 
 Para isso, ao digitar `pd.read_csv`, aperte as teclas `Shift + Tab`.
 
-```python
-df = pd.read_csv('salarios.csv')
-```
+>```python
+>df = pd.read_csv('salarios.csv')
+>```
 
 Visualizando o nosso dataframe:
 
-```python
-# visualizando
-df
-```
+>```python
+># visualizando
+>df
+>```
+>
+>![Dataframe de salários](../cap9/images/Dataframe_salarios.png)
 
-### Exemplo 10: renomeando as colunas
+### Exemplo 10: Renomeando as colunas
 
 Para renomear as colunas, utilize o método `rename(columns = {'Nome antigo': 'Nome novo'})`.
 
-```python
-df.rename(columns={'Name': 'Nome', 'Position Title': 'Cargo', 'Department': 'Departamento', 'Employee Annual Salary': 'Salário Anual', inplace=True})
-```
+> ```python
+> df.rename(columns={'Name': 'Nome', 'Position Title': 'Cargo', 'Department': 'Departamento', 'Employee Annual Salary': 'Salário Anual', inplace=True})
+> ```
+> ```python
+> df
+> ```
+> 
+>![image-20201204113759206](../cap9/images/salarios_renomeados.png)
+>
 
-### Exemplo 11: criando novas colunas em um DataFrame
+
+### Exemplo 11: Criando novas colunas em um DataFrame
 
 Vamos criar um dataframe simples.
 
-```python
-# criando novo dataframe
-exemplo = pd.DataFrame({'Nome': ['Valentina', 'Anastácio', 'Joseph'], 'Sexo': ['F', 'M', 'M'], 'Dia nascimento': [2, 3, 2]})
+> ```python
+> # criando novo dataframe
+> exemplo = pd.DataFrame({'Nome': ['Valentina', 'Anastácio', 'Joseph'], 'Sexo': ['F', 'M', 'M'], 'Dia nascimento': [2, 3, 2]})
+> 
+> # visualizando o dataframe exemplo
+> exemplo
+> ```
+>
+> |       | Nome      | Sexo | Dia nascimento | Mês de nascimento |
+> | ----: | :-------- | :--- | -------------: | :---------------- |
+> | **0** | Valentina | F    |              2 | Setembro          |
+> | **1** | Anastácio | M    |              3 | Outubro           |
+> | **2** | Joseph    | M    |              2 | Julho             |
 
-# visualizando o dataframe exemplo
-exemplo
-```
+Criando uma nova coluna referente ao `mês de nascimento`.
+
+> ```python
+> #Criando a nova coluna
+> exemplo['Mês de nascimento'] = ['Setembro', 'Outubro', 'Julho']
+> 
+> # visualizando o dataframe exemplo
+> exemplo
+> ```
+>
+> |       | Nome      | Sexo | Dia nascimento | Mês de nascimento |
+> | ----: | :-------- | :--- | -------------: | :---------------- |
+> | **0** | Valentina | F    |              2 | Setembro          |
+> | **1** | Anastácio | M    |              3 | Outubro           |
+> | **2** | Joseph    | M    |              2 | Julho             |
 
 **Tarefa 4:** crie um dataframe de uma loja com 5 funcionários.
 
 **Tarefa 5:** a partir do dataframe anterior, insira novas colunas como tempo de serviço e se tem férias marcada.
 
-### Exemplo 12: alguns métodos do pandas
+### Exemplo 12: Alguns métodos do pandas
 
 Para saber o tamanho do dataset, utilizamos o método `.shape()`.
 
-```python
-df.shape
-```
+> ```python
+> df.shape
+> ```
+>
+> (32182, 4)
 
 Ele nos retorna uma tupla, em que o primeiro item é o **número de linhas** e o segundo **número de colunas**.
 
 Para visualizar os primeiros dados, utiliza-se o método `.head()`.
 
-```python
-df.head()
-```
+> ```python
+> df.head()
+> ```
+>
+> |       | Nome                | Cargo                    | Departamento     | Salário Anual |
+> | ----: | :------------------ | :----------------------- | :--------------- | ------------: |
+> | **0** | AARON,  ELVIA J     | WATER RATE TAKER         | WATER MGMNT      |         88967 |
+> | **1** | AARON,  JEFFERY M   | POLICE OFFICER           | POLICE           |         80778 |
+> | **2** | AARON,  KARINA      | POLICE OFFICER           | POLICE           |         80778 |
+> | **3** | AARON,  KIMBERLEI R | CHIEF CONTRACT EXPEDITER | GENERAL SERVICES |         84780 |
+> | **4** | ABAD JR,  VICENTE M | CIVIL ENGINEER IV        | WATER MGMNT      |        104736 |
 
 Já para visualizar os últimos dados, utiliza-se o método `.tail()`.
 
-```python
-df.tail()
-```
+> ```python
+> df.tail()
+> ```
+>
+> |           | Nome                | Cargo                   | Departamento | Salário Anual |
+> | --------: | :------------------ | :---------------------- | :----------- | ------------: |
+> | **32177** | ZYGOWICZ,  PETER J  | POLICE OFFICER          | POLICE       |         86520 |
+> | **32178** | ZYMANTAS,  MARK E   | POLICE OFFICER          | POLICE       |         83616 |
+> | **32179** | ZYRKOWSKI,  CARLO E | POLICE OFFICER          | POLICE       |         86520 |
+> | **32180** | ZYSKOWSKI,  DARIUSZ | CHIEF DATA BASE ANALYST | DoIT         |        110352 |
+> | **32181** | nan                 | nan                     | nan          |           nan |
 
 Em ambas as estruturas acima, `.head()` e `.tail()`, é possível definir a quantidade de dados como parâmetro que você quer observar. Se você não informa o parâmetro, ele, por padrão, mostra as **cinco** primeiras e últimas entradas, respectivamente.
 
 O método `.info()` é utilizado para visualizar informações sobre o arquivo.
 
-```python
-df.info()
-```
+> ```python
+> df.info()
+> ```
+>
+> ![Informação do dataframe](images/info.png)
 
 Quando se faz uma EDA (Análise Exploratória de Dados) ou quer treinar um modelo de ML existem algumas coisas que merecem ser observadas no resultado de `.info()`. Por exemplo, a quantidade de valores `NaN`, que significa `Not A Number`. São valores **nulos**.
 
@@ -400,21 +471,36 @@ A interpretação depende do que o dataset, em si, quer nos informar. Como trata
 
 Para retirar os valores `NaN`, existe um método específico: `.dropna()`.
 
-```python
-df.dropna()
-```
+> ```python
+> df.dropna()
+> ```
+>
+> ![Remove os elementos tipo NA](images/remove_na.png)
 
 Para saber os tipos dos dados, utiliza-se o método `dtypes`.
 
-```python
-df.dtypes
-```
+> ```Nome             object
+> df.dtypes
+> ```
+>
+> ![Coloca os tipos](images/tipos.png)
 
 Para visualizar informações **estatísticas**, o método `describe()`pode ser invocado.
 
-```python
-df['Salário Anual'].describe()
-```
+> ```python
+> df['Salário Anual'].describe()
+> ```
+>
+> |       | Salário Anual |
+> | :---- | ------------: |
+> | count |         32181 |
+> | mean  |       79167.5 |
+> | std   |       24462.4 |
+> | min   |          0.96 |
+> | 25%   |         69888 |
+> | 50%   |         83616 |
+> | 75%   |         91764 |
+> | max   |        260004 |
 
 Perceba que a coluna `Salário Anual` não era pra ser um objeto e sim float. Neste caso, é necessário fazer uma transformação a fim de tirarmos algunas informações estatísticas.
 
@@ -432,18 +518,30 @@ Os campos dos salários estão como `object` e possuem um cifrão antes dele, o 
 
 Para resolver este problema, precisamos de uma estrutura para, primeiro, retirar o cifrão; posteriormente, converter para dados do tipo `float`.
 
-```python
-# utilizando expressoes regulares para retirar o $
-df['Salário Anual'] = df['Salário Anual'].str.replace('\$\s*', '', regex=True)
-
-# convertendo para float
-df['Salário Anual'] = df['Salário Anual'].astype(float)
-
-# visualizando a serie
-df['Salário Anual']
-```
+> ```python
+> # utilizando expressoes regulares para retirar o $
+> df['Salário Anual'] = df['Salário Anual'].str.replace('\$\s*', '', regex=True)
+> ```
+>
+> ```python
+> # convertendo para float
+> df['Salário Anual'] = df['Salário Anual'].astype(float)
+> ```
+>
+> ```python
+> # visualizando a serie
+> df['Salário Anual']
+> ```
+>
+> ![image-20201204120434655](images/visualizando_serie.png)
 
 Agora, ao invocar `.describe()`, note como a saída alterou.
+
+> ```python
+> df['Salário Anual'].describe()
+> ```
+>
+> ![image-20201204120521894](images/describe.png)
 
 Veja que agora temos uma saída mais adequada para se trabalhar, em que **informações estatísticas** são impressas.
 
@@ -473,31 +571,70 @@ Para selecionar um intervalo de dados, utilizamos os métodos `.loc()` e `.iloc(
 
 O `.loc()` seleciona os dados baseados nos labels das colunas. A sintaxe é:
 
->```python
->df.loc[<linha>, <coluna>]
->```
-
-Vamos pegar o dado localizado na posição 4 do nosso dataset de salários.
-
 ```python
-df.loc[[4]]
+df.loc[<linha>, <coluna>]
 ```
+
+>```python
+>df.loc[[4]]
+>```
+>
+>|       | Nome                | Cargo             | Departamento | Salário Anual |
+>| ----: | :------------------ | :---------------- | :----------- | ------------: |
+>| **4** | ABAD JR,  VICENTE M | CIVIL ENGINEER IV | WATER MGMNT  |        104736 |
 
 Vamos pegar o intervalo entre 10 a 20 pessoas da coluna `Nome` até `Salário Anual`.
 
-```python
-df.loc[9:19, 'Nome': 'Salário Anual']
-```
+> ```python
+> df.loc[9:19, 'Nome':'Salário Anual']
+> ```
+>
+> ![Intervalo de 10 a 20](images/policial.png)
 
 #### Método `.iloc()`
 
 O `.iloc()` é parecido com o `.loc()`. A diferença consiste que este é baseado na localização, ou seja, é dado por um inteiro que seleciona a posição e não o label.
 
-```python
-ativos.iloc[20:50]
-```
+> ```python
+> ativos.iloc[20:50]
+> ```
+>
+> | Date                | ABEV3.SA | ENGI3.SA | PETR4.SA | TAEE11.SA |
+> | :------------------ | -------: | -------: | -------: | --------: |
+> | 2020-01-30 00:00:00 |    18.34 |  12.5516 |  28.9379 |   29.1426 |
+> | 2020-01-31 00:00:00 |    17.85 |  12.6903 |  28.4479 |   29.0307 |
+> | 2020-02-03 00:00:00 |    17.59 |  12.6804 |  28.1779 |   29.1333 |
+> | 2020-02-04 00:00:00 |    17.65 |  13.0371 |  28.6279 |   29.1146 |
+> | 2020-02-05 00:00:00 |    17.25 |  12.9875 |  28.3879 |   29.1613 |
+> | 2020-02-06 00:00:00 |    16.87 |  12.9875 |  29.1778 |   28.8069 |
+> | 2020-02-07 00:00:00 |    16.92 |   12.829 |  28.9279 |   28.4712 |
+> | 2020-02-10 00:00:00 |    16.73 |  12.5913 |  29.1278 |   27.8184 |
+> | 2020-02-11 00:00:00 |     16.8 |  12.7993 |  29.4778 |   28.6297 |
+> | 2020-02-12 00:00:00 |    16.65 |  12.6309 |  30.1278 |   29.2732 |
+> | 2020-02-13 00:00:00 |    16.27 |  12.5417 |  29.7178 |    29.068 |
+> | 2020-02-14 00:00:00 |    16.41 |   12.938 |  29.4178 |   28.9375 |
+> | 2020-02-17 00:00:00 |     16.6 |  12.7498 |  29.3578 |   29.3664 |
+> | 2020-02-18 00:00:00 |    16.18 |  12.3931 |  29.7478 |   29.0587 |
+> | 2020-02-19 00:00:00 |    16.13 |  12.6804 |  30.5477 |   29.3478 |
+> | 2020-02-20 00:00:00 |    16.17 |  12.8885 |  29.9178 |   28.5831 |
+> | 2020-02-21 00:00:00 |    16.25 |  12.6804 |  29.1378 |   28.6763 |
+> | 2020-02-27 00:00:00 |     14.5 |  12.8587 |  25.2981 |   28.0515 |
+> | 2020-02-28 00:00:00 |    14.54 |  12.3351 |  25.3381 |   27.3894 |
+> | 2020-03-02 00:00:00 |    14.72 |  12.4844 |   26.528 |   28.2007 |
+> | 2020-03-03 00:00:00 |    14.74 |  12.5441 |  26.0481 |   28.1914 |
+> | 2020-03-04 00:00:00 |    15.31 |  12.6736 |   26.888 |     29.04 |
+> | 2020-03-05 00:00:00 |    15.23 |   12.564 |  25.2881 |   27.8837 |
+> | 2020-03-06 00:00:00 |    15.32 |  12.9324 |  22.8283 |   27.5293 |
+> | 2020-03-09 00:00:00 |    14.67 |  12.3749 |  16.0488 |   27.0444 |
+> | 2020-03-10 00:00:00 |    14.42 |  12.6437 |  17.5587 |   28.2474 |
+> | 2020-03-11 00:00:00 |    13.75 |  11.1503 |  15.8488 |   27.7438 |
+> | 2020-03-12 00:00:00 |    11.58 |  11.7178 |  12.5991 |   26.0838 |
+> | 2020-03-13 00:00:00 |     12.7 |  12.4446 |  15.3989 |   26.8951 |
+> | 2020-03-16 00:00:00 |    11.03 |  11.9169 |   13.089 |    25.002 |
 
 ---
+
+# Atividade 3: Para casa
 
 ### Exercício 1: extração de datasets
 

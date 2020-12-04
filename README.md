@@ -95,7 +95,7 @@ solucao="solucao/cap5.pdf"
 > Neste capítulo vamos aprender sobre as entradas iterativas do Jupyter, os Widgets.
 
 {% include video-atividade.html
-    codigo="bb6xNmHFdo8"
+    codigo="rNg_QKPPPNw"
 %}
 
 {% include menu-atividade.html 

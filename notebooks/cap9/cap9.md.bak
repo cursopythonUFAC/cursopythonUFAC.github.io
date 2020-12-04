@@ -1,6 +1,6 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 10: dicionários e a biblioteca Pandas</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 9: Dicionários e a biblioteca Pandas</div></center>
 
-# Atividade 1: dicionários
+# Atividade 1: Dicionários
 
 Dicionários, ou arrays associativos, são uma das estruturas de dados presentes na linguagem Python.
 
@@ -214,17 +214,9 @@ Um conjunto de dados bem famoso para quem inicia no pandas é o *Titanic*. Vamos
 
 ### Exemplo 6: mudando o index
 
-> ```python
-> alunos.set_index(['Ana', 'Beatriz', 'Bernardo', 'Valentin', 'Sofia'])
-> ```
->
-> | Ana  | Beatriz | Bernardo | Valentin | Sofia |
-> | ---- | ------- | -------- | -------- | ----- |
-> | 10.0 | 10.0    | 10.0     | 10.0     | 10.0  |
-> | 4.0  | 4.0     | 4.0      | 4.0      | 4.0   |
-> | 2.0  | 2.0     | 2.0      | 2.0      | 2.0   |
-> | 10.0 | 10.0    | 10.0     | 10.0     | 10.0  |
->
+```python
+alunos.set_index(['Ana', 'Beatriz', 'Bernardo', 'Valentin', 'Sofia'])
+```
 
 Agora os nomes das colunas passam a ser os index, assim o dataframe será indicado por eles.
 
@@ -234,9 +226,9 @@ Primeiro, vamos instalar a biblioteca `pandas_datareader`. Esta biblioteca é ut
 
 Digite no *powershell*:
 
-```bash
-conda install -c anaconda pandas-datareader
-```
+> ```python
+> conda install -c anaconda pandas-datareader
+> ```
 
 Em seguida, importe o módulo `data` utilizando a seguinte sintaxe:
 
@@ -258,60 +250,48 @@ Duas formas de se capturar os tickets das ações são:
 
 **Forma 1:**
 
-> ```python
-> itau = web.DataReader('ITSA4.SA', data_source='yahoo', start='2020-1-1')
-> 
-> petrobras = web.DataReader('PETR4.SA', data_source='yahoo', start='2020-1-1')
-> 
-> vale = web.DataReader('VALE3.SA', data_source='yahoo', start='2020-1-1')
-> ```
+```python
+itau = web.DataReader('ITSA4.SA', data_source='yahoo', start='2020-1-1')
+
+petrobras = web.DataReader('PETR4.SA', data_source='yahoo', start='2020-1-1')
+
+vale = web.DataReader('VALE3.SA', data_source='yahoo', start='2020-1-1')
+```
 
 **Forma 2:**
 
-> ```python
-> tickers = ['ABEV3.SA', 'ENGI3.SA', 'PETR4.SA', 'TAEE11.SA']
-> 
-> ativos = []
-> 
-> for t in tickers:
->     ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')
-> ```
+```python
+tickers = ['ABEV3.SA', 'ENGI3.SA', 'PETR4.SA', 'TAEE11.SA']
+
+ativos = []
+
+for t in tickers:
+    ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')
+```
 
 **Obs.:** poderia ser qualquer ativo, estes foram escolhidos aleatoriamente.
 
 ### Exemplo 8: visualizando os dataframes
 
-Podemos visualizar os dataframes escrevendo os nome deles. Tente rodar cada um deles e veja o que acontece:
+```python
+# visualizando itau
+itau
+```
 
-> ```python
-> # visualizando itau
-> itau
-> ```
->
->![Dataframe do Itau](../cap9/images/itau.png)
->
-> ```python
-> # visualizando petrobras
-> petrobras
-> ```
->
->![Dataframe da Petrobras](../cap9/images/petrobras.png)
->
-> ```python
-> # visualizando vale
-> vale
-> ```
->
->![Dataframes da Vale](../cap9/images/Vale.png)
->
-> ```python
-> # visualizando os ativos
-> ativos
-> ```
->
->![Dataframe de ativos](../cap9/images/ativos.png)
->
+```python
+# visualizando petrobras
+petrobras
+```
 
+```python
+# visualizando vale
+vale
+```
+
+```python
+# visualizando os ativos
+ativos
+```
 
 Esses conjuntos de dados referem-se aos preços negociados das ações diariamente desde 01 de janeiro de 2020. Trata-se de um conjunto temporal de dados (série temporal), ou seja, um conjunto cujo as observações são igualmente espaçadas ao longo do tempo.
 
@@ -345,67 +325,36 @@ Vamos guardá-lo em uma variável e, por curiosidade, vamos ver os parâmetros q
 
 Para isso, ao digitar `pd.read_csv`, aperte as teclas `Shift + Tab`.
 
->```python
->df = pd.read_csv('salarios.csv')
->```
+```python
+df = pd.read_csv('salarios.csv')
+```
 
 Visualizando o nosso dataframe:
 
->```python
-># visualizando
->df
->```
->
->![Dataframe de salários](../cap9/images/Dataframe_salarios.png)
+```python
+# visualizando
+df
+```
 
 ### Exemplo 10: renomeando as colunas
 
 Para renomear as colunas, utilize o método `rename(columns = {'Nome antigo': 'Nome novo'})`.
 
-> ```python
-> df.rename(columns={'Name': 'Nome', 'Position Title': 'Cargo', 'Department': 'Departamento', 'Employee Annual Salary': 'Salário Anual', inplace=True})
-> ```
-> ```python
-> df
-> ```
-> 
->![image-20201204113759206](../cap9/images/salarios_renomeados.png)
->
-
+```python
+df.rename(columns={'Name': 'Nome', 'Position Title': 'Cargo', 'Department': 'Departamento', 'Employee Annual Salary': 'Salário Anual', inplace=True})
+```
 
 ### Exemplo 11: criando novas colunas em um DataFrame
 
 Vamos criar um dataframe simples.
 
-> ```python
-> # criando novo dataframe
-> exemplo = pd.DataFrame({'Nome': ['Valentina', 'Anastácio', 'Joseph'], 'Sexo': ['F', 'M', 'M'], 'Dia nascimento': [2, 3, 2]})
-> 
-> # visualizando o dataframe exemplo
-> exemplo
-> ```
->
-> |       | Nome      | Sexo | Dia nascimento | Mês de nascimento |
-> | ----: | :-------- | :--- | -------------: | :---------------- |
-> | **0** | Valentina | F    |              2 | Setembro          |
-> | **1** | Anastácio | M    |              3 | Outubro           |
-> | **2** | Joseph    | M    |              2 | Julho             |
+```python
+# criando novo dataframe
+exemplo = pd.DataFrame({'Nome': ['Valentina', 'Anastácio', 'Joseph'], 'Sexo': ['F', 'M', 'M'], 'Dia nascimento': [2, 3, 2]})
 
-Criando uma nova coluna referente ao `mês de nascimento`.
-
-> ```python
-> #Criando a nova coluna
-> exemplo['Mês de nascimento'] = ['Setembro', 'Outubro', 'Julho']
-> 
-> # visualizando o dataframe exemplo
-> exemplo
-> ```
->
-> |       | Nome      | Sexo | Dia nascimento | Mês de nascimento |
-> | ----: | :-------- | :--- | -------------: | :---------------- |
-> | **0** | Valentina | F    |              2 | Setembro          |
-> | **1** | Anastácio | M    |              3 | Outubro           |
-> | **2** | Joseph    | M    |              2 | Julho             |
+# visualizando o dataframe exemplo
+exemplo
+```
 
 **Tarefa 4:** crie um dataframe de uma loja com 5 funcionários.
 
@@ -415,62 +364,27 @@ Criando uma nova coluna referente ao `mês de nascimento`.
 
 Para saber o tamanho do dataset, utilizamos o método `.shape()`.
 
-> ```python
-> df.shape
-> ```
->
-> (32182, 4)
+```python
+df.shape
+```
 
 Ele nos retorna uma tupla, em que o primeiro item é o **número de linhas** e o segundo **número de colunas**.
 
 Para visualizar os primeiros dados, utiliza-se o método `.head()`.
 
-> ```python
-> df.head()
-> ```
->
-> |       | Nome                | Cargo                    | Departamento     | Salário Anual |
-> | ----: | :------------------ | :----------------------- | :--------------- | ------------: |
-> | **0** | AARON,  ELVIA J     | WATER RATE TAKER         | WATER MGMNT      |         88967 |
-> | **1** | AARON,  JEFFERY M   | POLICE OFFICER           | POLICE           |         80778 |
-> | **2** | AARON,  KARINA      | POLICE OFFICER           | POLICE           |         80778 |
-> | **3** | AARON,  KIMBERLEI R | CHIEF CONTRACT EXPEDITER | GENERAL SERVICES |         84780 |
-> | **4** | ABAD JR,  VICENTE M | CIVIL ENGINEER IV        | WATER MGMNT      |        104736 |
+```python
+df.head()
+```
 
 Já para visualizar os últimos dados, utiliza-se o método `.tail()`.
 
-> ```python
-> df.tail()
-> ```
->
-> |           | Nome                | Cargo                   | Departamento | Salário Anual |
-> | --------: | :------------------ | :---------------------- | :----------- | ------------: |
-> | **32177** | ZYGOWICZ,  PETER J  | POLICE OFFICER          | POLICE       |         86520 |
-> | **32178** | ZYMANTAS,  MARK E   | POLICE OFFICER          | POLICE       |         83616 |
-> | **32179** | ZYRKOWSKI,  CARLO E | POLICE OFFICER          | POLICE       |         86520 |
-> | **32180** | ZYSKOWSKI,  DARIUSZ | CHIEF DATA BASE ANALYST | DoIT         |        110352 |
-> | **32181** | nan                 | nan                     | nan          |           nan |
+```python
+df.tail()
+```
 
 Em ambas as estruturas acima, `.head()` e `.tail()`, é possível definir a quantidade de dados como parâmetro que você quer observar. Se você não informa o parâmetro, ele, por padrão, mostra as **cinco** primeiras e últimas entradas, respectivamente.
 
 O método `.info()` é utilizado para visualizar informações sobre o arquivo.
-
-> ```python
-> df.info()
-> ```
->
-> <class 'pandas.core.frame.DataFrame'>
-> RangeIndex: 32182 entries, 0 to 32181
-> Data columns (total 4 columns):
-> \#   Column         Non-Null Count  Dtype 
->
-> \-\-\-  \-\-\-\-\-\-         \-\-\-\-\-\-\-\-\-\-\-\-\-\-  \-\-\-\-\-
-> 0   Nome           32181 non-null  object
-> 1   Cargo          32181 non-null  object
-> 2   Departamento   32181 non-null  object
-> 3   Salário Anual  32181 non-null  object
-> dtypes: object(4)
-> memory usage: 1005.8+ KB
 
 ```python
 df.info()
