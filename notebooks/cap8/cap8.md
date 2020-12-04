@@ -970,7 +970,7 @@ Crie a seguinte tabela em Markdown:
 
 O **arquivo `csv` em anexo** contém a base de dados do valor nutricional de alguns alimentos consumidos pelos americanos, considerando uma porção de 100 gramas. 
 
-> Atenção: Você deve utilizar o arquivo `comida.csv` disponível no **material auxiliar.** Este material foi adaptado de uma base de dados disponível logo abaixo. **Você deve usar exclusivamente o arquivo `comida.csv`, e não os dados originais!**  Pois seu PC vai travar se usar o arquivo original.  
+> Atenção: Você deve utilizar o arquivo `comida.csv` disponível no **material auxiliar.** Este material foi adaptado de uma base de dados disponível logo abaixo. **Você deve usar preferencialmente o arquivo `comida.csv`, e não os dados originais!**  Pois seu PC vai travar se usar o arquivo original.  
 > [https://tools.myfooddata.com/nutrition-facts-database-spreadsheet.php](https://tools.myfooddata.com/nutrition-facts-database-spreadsheet.php)
 
 Neste exercício vamos utilizar o arquivo `comida.csv` que contém apenas um trecho da base de dados, com os seguintes campos:
@@ -994,8 +994,6 @@ Os RangeSlider tem as seguintes configurações:
 - Protein (Proteína) $\rightarrow$ `min=0` e `max=40`
 - Carbohydrate (Carboidrato) $\rightarrow$ `min=0` e `max=90`
 
-A última linha da tabela deve conter o valor médio das colunas `Calories`, `Fat`, `Protein`, `Carbohydrate`. Esta linha deve está em **negrito**.
-
 Adicione as seguintes cores nos campos `Food Group`:
 
 - `Vegatables` $\rightarrow$ Green
@@ -1008,6 +1006,7 @@ Adicione as seguintes cores nos campos `Food Group`:
 Adicione um campo de busca no qual o usuário pode buscar pelo nome da comida (Campo `Name`). A busca deve ser `case insensitive`.
 
 > **Observação:** 
+>
 > - Lembre-se que esse arquivo csv tem cabeçalho.  
 > - **Use apenas os conhecimentos ensinados** até o momento (Não usar dicionários e nem pandas - Isso deixa a tarefa muito simples).
 
