@@ -271,10 +271,10 @@ Duas formas de se capturar os tickets das ações são:
 > ```python
 > tickers = ['ABEV3.SA', 'ENGI3.SA', 'PETR4.SA', 'TAEE11.SA']
 > 
-> ativos = []
+> ativos = pd.DataFrame()
 > 
 > for t in tickers:
->     ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')['Adj Close']
+>        ativos[t] = web.DataReader(t, data_source='yahoo', start='2020-1-1')['Adj Close']
 > ```
 
 **Obs.:** poderia ser qualquer ativo, estes foram escolhidos aleatoriamente.
