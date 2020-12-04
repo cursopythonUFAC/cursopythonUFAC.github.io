@@ -98,10 +98,11 @@ solucao="solucao/cap5.pdf"
     codigo="rNg_QKPPPNw"
 %}
 
-{% include menu-atividade.html 
+{% include menu-atividade-resp.html 
 roteiro="notebooks/cap6/cap6.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap6/cap6.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="solucao/cap6.pdf"
 %}
 
 ### Capítulo 7: Lista
