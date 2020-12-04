@@ -510,7 +510,7 @@ Perceba que a coluna `Salário Anual` não era pra ser um objeto e sim float. Ne
 
 **Tarefa 8:** calcule o desvio padrão da coluna `Salário`.
 
-### Exemplo 13: transformar tipo `object` para `float`
+### Exemplo 13: Transformar tipo `object` para `float`
 
 Se visualizarmos especificamente a coluna `Salário Anual` nos deparamos com um problema.
 
@@ -563,7 +563,7 @@ Veja que agora temos uma saída mais adequada para se trabalhar, em que **inform
 
 Nós modificamos o tipo de dado partindo de `object`e chegando até um `float`. Porém, existem outros dados que podem ser transformados e dependendo do problema, **devem** ser modificados. Por exemplo, o `Datetime`, principalmente quando se trabalha com **séries temporais**.
 
-### Exemplo 14: métodos de seleção de dados
+### Exemplo 14: Métodos de seleção de dados
 
 Para selecionar um intervalo de dados, utilizamos os métodos `.loc()` e `.iloc()`. Ambos são muito úteis. Pode-se dizer que são os `slices` da lib Pandas.
 
@@ -636,23 +636,23 @@ O `.iloc()` é parecido com o `.loc()`. A diferença consiste que este é basead
 
 # Atividade 3: Para casa
 
-### Exercício 1: extração de datasets
+### Exercício 1: Extração de datasets
 
 Extraia outros dois conjuntos de dados de sua preferência e faça uma análise sobre ele (em markdown). Abordando as características, possíveis problemas de negócio, etc.
 
 > Não entre no mérito de código por ora.
 
-### Exercício 2: identificação de problemas no arquivo `precipitacao.xlsx`
+### Exercício 2: Identificação de problemas no arquivo `precipitacao.xlsx`
 
 Aponte eventuais problemas no arquivo `precipitacao.xlsx`, com relação aos tipos de dados, *NaN*, etc.
 
-### Exercício 3: extração de informações estatísticas
+### Exercício 3: Extração de informações estatísticas
 
 Extraia informações estatísticas do conj. de dados de ações. Faça para outros 5 diferentes ativos.
 
 > O código dos ativos do Yahoo Finance é: código do ativo + .SA
 
-### Exercício 4: série temporal e `Datetime`
+### Exercício 4: Série temporal e `Datetime`
 
 Utilizando o arquivo `precipitacao.xlsx`, deixe-a no formato de uma série temporal.
 
