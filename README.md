@@ -124,6 +124,16 @@ material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/maste
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
+### Capítulo 9: Dicionários e Pandas
+
+> Neste capítulo vamos aprender sobre dicionários e uma das principais bibliotecas de base de dados, o Pandas.
+
+{% include menu-atividade.html 
+roteiro="notebooks/cap9/cap9.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap9/cap9.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
+
 # Informações importantes
 
 -----
