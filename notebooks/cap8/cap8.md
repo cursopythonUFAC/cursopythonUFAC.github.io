@@ -968,9 +968,9 @@ Crie a seguinte tabela em Markdown:
 
 ## Exercício 3: Valor nutricional dos alimentos
 
-O **arquivo `csv` em anexo** contém a base de dados do valor nutricional de alguns alimentos consumidos pelos americanos, considerando uma porção de 100 gramas. A versão original da base de dados pode ser encontrada em:
+O **arquivo `csv` em anexo** contém a base de dados do valor nutricional de alguns alimentos consumidos pelos americanos, considerando uma porção de 100 gramas. 
 
-> Atenção: Você deve utilizar o arquivo `comida.csv` disponível no **material auxiliar.** Este material foi adaptado de uma base de dados disponível logo abaixo. **Você deve usar exclusivamente o arquivo `comida.csv`!**  
+> Atenção: Você deve utilizar o arquivo `comida.csv` disponível no **material auxiliar.** Este material foi adaptado de uma base de dados disponível logo abaixo. **Você deve usar exclusivamente o arquivo `comida.csv`, e não os dados originais!**  Pois seu PC vai travar se usar o arquivo original.  
 > [https://tools.myfooddata.com/nutrition-facts-database-spreadsheet.php](https://tools.myfooddata.com/nutrition-facts-database-spreadsheet.php)
 
 Neste exercício vamos utilizar o arquivo `comida.csv` que contém apenas um trecho da base de dados, com os seguintes campos:
