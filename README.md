@@ -109,6 +109,10 @@ solucao="solucao/cap6.pdf"
 
 > Neste capítulo vamos aprender sobre as listas, tupla, for e list comprehension.
 
+{% include video-atividade.html
+    codigo="F7Orltrlknw"
+%}
+
 {% include menu-atividade.html 
 roteiro="notebooks/cap7/cap7.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap7/cap7.zip" 
