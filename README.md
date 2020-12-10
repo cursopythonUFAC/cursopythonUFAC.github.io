@@ -1,4 +1,28 @@
+# Dia de monitoria
+
+Neste sábado, dia 12 de dezembro de 2020, estaremos realizando o dia de monitoria. Neste dia a equipe do curso estará disponível para auxiliar aos **discentes com atividades atrasadas**. 
+
+A ideia é que vocês aproveitem o dia da monitoria para fazer as questões atrasadas com o auxilio de um monitor. Você pode fazer as questões atrasadas durante o dia de monitoria, ou caso já tenha feito as questões, podem trazer as suas dúvidas.
+
+Estaremos seguindo a seguinte escala:
+
+| Monitor  | Período (Horário do Acre) | Plataforma  |
+| -------- | ------------------------- | ----------- |
+| Beatriz  | 9hs às 12hs (Pela manhã)  | Discord     |
+| Gustavo  | 8hs às 12hs (Pela manhã)  | Google Meet |
+| Lucas    | 13h às 17hs (Pela tarde)  | Google Meet |
+| Leonardo | 14hs às 18hs (Pela tarde) | Discord     |
+
+**Esperamos você lá!**
+
+> **Observações:** 
+>
+> - A aula de sexta feira ocorrerá normalmente;
+> - O dia da monitoria é opcional para quem precisa de auxilio (E motivação) para finalizar as questões atrasadas.
+> - O dia da monitoria pode ser utilizado para te auxiliar no projeto final.
+
 # Conteúdo do curso
+
 ----
 ### **Capítulo 1:** Primeiros passos
 > Neste capítulo vamos apresentar o ambiente de desenvolvimento do Jupyter Lab e introduzir as linguagens Markdown e Python. Além disso, vamos ensinar como instalar o Anaconda para utilizar o Jupyter Lab com o Python.
@@ -138,35 +162,6 @@ roteiro="notebooks/cap9/cap9.html"
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap9/cap9.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
-
-# Informações importantes
-
------
-
-<strong style="color:red">Precisamos coletar seus nomes completos:</strong> [https://forms.gle/ndULDdNL5P8KbqyH9](https://forms.gle/ndULDdNL5P8KbqyH9)
-
-> Infelizmente não temos os nomes completos de todos os inscritos. Por favor preencha este formulário com o nome completo para que possamos associar o nome com o CPF.
->
-> **Observação**: Use o seu e-mail de inscrição.
->
-> **Link do formulário:** [https://forms.gle/ndULDdNL5P8KbqyH9](https://forms.gle/ndULDdNL5P8KbqyH9)
-
-**Onde:** No Google **Meet** (Ver o menu superior)
-
-**Datas**: de 11/09 à 18/12 (**Toda sexta**)
-
-**Horário**:  
-
-- **Brasília**: Das 16hs às 20hs  
-- **Local (Acre)**: Das 14hs às 18hs
-
-**Contato**: cursopython.ufac@gmail.com
-
-**Observações:**
-
-> Os links de todas as **plataformas digitais** podem ser acessadas no **menu superior**.
-
-> O **conteúdo do curso** pode ser alcançado no **final da página**.
 
 # Plataformas
 
