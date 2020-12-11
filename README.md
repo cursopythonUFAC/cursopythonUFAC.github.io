@@ -163,6 +163,16 @@ material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/maste
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
+### Capítulo 10: Numpy e Matplotlib
+
+> Neste capítulo vamos aprender sobre dois pacotes super importantes o Numpy e o Matplotlib.
+
+{% include menu-atividade.html 
+roteiro="notebooks/cap10/cap10.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap10/cap10.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
+
 # Plataformas
 
 ----
