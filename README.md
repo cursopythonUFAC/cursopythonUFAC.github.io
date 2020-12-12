@@ -9,7 +9,7 @@ Estaremos seguindo a seguinte escala:
 | Monitor  | Período (Horário do Acre) | Plataforma  |
 | -------- | ------------------------- | ----------- |
 | Beatriz  | 9hs às 12hs (Pela manhã)  | Discord     |
-| Gustavo  | 8hs às 12hs (Pela manhã)  | Google Meet |
+| Gustavo  | 8hs às 12hs (Pela manhã)  | Discord     |
 | Lucas    | 13h às 17hs (Pela tarde)  | Google Meet |
 | Leonardo | 14hs às 18hs (Pela tarde) | Discord     |
 
