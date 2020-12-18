@@ -91,20 +91,18 @@ O Python permite o cálculo analítico da integral utilizando as funções do pa
 > import IPython
 > 
 > def md(txt):
->     """
->     Mostra um texto em Markdown
->     """
->     display(IPython.display.Markdown(txt))
+>        """
+>        Mostra um texto em Markdown
+>        """
+>        display(IPython.display.Markdown(txt))
 > 
 > def Eqn(eq):
->     """
->     Função equação:
->     Imprime uma equação centralizada
->     """
->     return md(fr"""\begin{{equation}}{eq}\end{{equation}}"""
->     )
-> ```
-> 
+>        """
+>        Função de equação centralizada e com numeração
+>        """
+>        return md(fr"\begin{{equation}}{eq}\end{{equation}}")
+>    ```
+>    
 > 
 
 ### Exemplo 1: Integral definida
