@@ -329,5 +329,5 @@ Se quiser, use o https://musicbrainz.org/
 # Atividade 3: Além-Mar
 Vamos explorar alguns códigos já feitos:
 >[Programa de Estoque](https://github.com/Leonardobat/Estoque-pyside2)  
->Jogo de F1, ainda vou upar no Git...  
+>[Jogo de F1](https://github.com/Leonardobat/Paddock_Manager)
 >[Servidor TCP](https://github.com/Leonardobat/Exemplos_Python/blob/master/Exemplo_Servidor_TCP.py)
