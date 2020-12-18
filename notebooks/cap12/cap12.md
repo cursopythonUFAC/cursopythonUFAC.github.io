@@ -1,4 +1,5 @@
-# Capítulo 12: Classes
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 12: Classes</div></center>
+
 Classes são formas de organizar e dar atributos aos objetos em Python. Uma classe é definida pelo `class` e tem a estrutura parecida à de uma função:
 
 ```python
@@ -12,7 +13,7 @@ Classes são formas de organizar e dar atributos aos objetos em Python. Uma clas
 ```
 Onde a função `metodo` que foi definida na classe `nomedaclasse` é uma função que existe apenas nos objetos que são membros daquela classe.
 
-## Atividade 1: Escopo e _Namespace_
+# Atividade 1: Escopo e _Namespace_
 Agora que vimos o que é uma classe e entendemos um pouco de seu funcionamento vamos explorar o conceito de __escopo__ e __namespace__.
 O namespace consiste em todos os nomes que estão definidos no atual estado do interpretador, por exemplo, quando você importa o módulo `math` você adiciona todos aqueles nomes definidos no módulo math para o seu código.   
 O escopo se trata de quais objetos você pode acessar diretamente, vamos a um exemplo simples:
@@ -58,7 +59,7 @@ Preste bastantteste.var2e atenção que o erro exibido ao tentar apresentar a `v
 >
 > 1
 
-## Atividade 2: Classes
+# Atividade 2: Classes
 ### Exemplo 1: Comando Type
 Tudo, ou quase tudo, no Python é baseado em classes. Por exemplo, observe as saídas do comando `type`:
 
@@ -325,7 +326,7 @@ Se quiser, use o https://musicbrainz.org/
 > subgenero: Funk
 
 
-## Atividade 3: Além-Mar
+# Atividade 3: Além-Mar
 Vamos explorar alguns códigos já feitos:
 >[Programa de Estoque](https://github.com/Leonardobat/Estoque-pyside2)  
 >Jogo de F1, ainda vou upar no Git...  
