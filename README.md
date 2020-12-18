@@ -147,6 +147,10 @@ entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
 
 > Neste capítulo vamos aprender um pouco sobre as saídas do IPython e sobre alguns métodos de strings.
 
+{% include video-atividade.html
+    codigo="ipngtHedZnk"
+%}
+
 {% include menu-atividade.html 
 roteiro="notebooks/cap8/cap8.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap8/cap8.zip" 
