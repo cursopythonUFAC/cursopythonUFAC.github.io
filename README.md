@@ -187,7 +187,7 @@ material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/maste
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
-### Capítulo 12: Classe
+### Capítulo 12: Classes
 
 > Neste capítulo introduziremos o estudo de classes e um a abordagem inicial no conceito de escopo e de namespace.
 
