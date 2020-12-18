@@ -100,7 +100,7 @@ O Python permite o cálculo analítico da integral utilizando as funções do pa
 >        """
 >        Função de equação centralizada e com numeração
 >        """
->        return md(fr"\begin{{equation}}{eq}\end{{equation}}")
+>        return md(r"\begin{equation}"+eq+r"\end{equation}")
 >    ```
 >    
 > 
