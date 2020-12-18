@@ -226,8 +226,7 @@ onde $a$ e $b$ são os limites inferior e superior, respectivamente.
 > ```python
 > I=sym.integrate(y)
 > Int=sym.Integral(y,(x,a,b))
-> 
-> Eqn(fr'I(x)={sym.latex(Int)}=\left[{sym.latex(I)}\right]_{a}^{<span></span>{<span></span>{b}<span></span>}<span></span>}={sym.latex(Int.doit())}')
+> Eqn(fr'I(x)={sym.latex(Int)}=\left[{sym.latex(I)}\right]_{a}^{{"{{"}}{b}{{"}}}}={sym.latex(Int.doit())}')
 > ```
 >
 > $$
@@ -434,7 +433,7 @@ Por exemplo, a derivada de:
 > # Mostrando o resultado da derivada
 > problema=sym.Derivative(y)
 > derivada=sym.diff(y)
-> Eqn(fr'\frac{<span></span>{dy}<span></span>}{<span></span>{dx}<span></span>}={sym.latex(problema)}={sym.latex(derivada)}')
+> Eqn(fr'\frac{{"{{"}}dy{{"}}}}{{"{{"}}dx{{"}}}}={sym.latex(problema)}={sym.latex(derivada)}')
 > 
 > # Explicando o que faz cada função:
 > # - A função Derivative mostra o valor da derivada não resolvida
@@ -449,7 +448,7 @@ Ou ainda, pelo método `doit`:
 
 > ```python
 > problema=sym.Derivative(y)
-> Eqn(fr'\frac{<span></span>{dy}<span></span>}{<span></span>{dx}<span></span>}={sym.latex(problema)}={sym.latex(problema.doit())}')
+> Eqn(fr'\frac{{"{{"}}dy{{"}}}}{{"{{"}}dx{{"}}}}={sym.latex(problema)}={sym.latex(problema.doit())}')
 > ```
 >
 > $$
@@ -478,7 +477,7 @@ Caso queiramos a derivada de segunda ordem, podemos acrescentar um segundo parâ
 
 > ```python
 > # Mostrando o resultado da segunda derivada
-> Eqn(fr'\frac{<span></span>{d^2}}<span></span>{<span></span>{dx^2}<span></span>}\left({sym.latex(y)}\right)={sym.latex(sym.diff(y,x,2))}')
+> Eqn(fr'\frac{{"{{"}}d^2y{{"}}}}{{"{{"}}dx^2{{"}}}}\left({sym.latex(y)}\right)={sym.latex(sym.diff(y,x,2))}')
 > ```
 >
 > $$
