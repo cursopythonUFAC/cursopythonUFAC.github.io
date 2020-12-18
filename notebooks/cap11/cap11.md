@@ -1,4 +1,4 @@
-<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Capítulo 11: Sympy e publicando o seu notebook</div></center>
+<center><div style="font-size:32px;display:inline-block;line-height:1.1;font-weight:bold;margin:0 0 15px" class="aula-title">Sympy e conversão de notebooks</div></center>
 
 Neste capítulo será introduzido o uso do Python na **computação cientítica**. Apresentaremos algo leve como o cálculo diferencial e integral em conjunto com o **Scipy** e o **Sympy**, junto com o Sympy aprenderemos **outros conceitos de funções**.  Posteriormente aprenderemos outras funções relevantes do `Sympy`  e ao final aprenderemos a converter os Notebooks para: 
 
