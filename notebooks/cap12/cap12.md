@@ -228,10 +228,10 @@ __Tarefa 1: __ Vamos criar uma classe simples de empregados, essa classe deve ap
 > ```
 >
 > Nome: João  
-> Salário: R\$ 1500  
+> Salário: R<span>$</span> 1500  
 > Função: Aux. Adminstrativo  
 > Nome: João  
-> Salário: R\$ 22500  
+> Salário: R<span>$</span> 22500  
 > Função: Aux. Adminstrativo
 
 Funções também podem ser criadas a partir de uma já existente, vamos tomar a classe `empregado` como base para a classe `jornalista`:
