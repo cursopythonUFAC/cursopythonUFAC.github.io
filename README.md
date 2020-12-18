@@ -177,6 +177,16 @@ material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/maste
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
 
+### Capítulo 11: Sympy e conversão de notebooks
+
+> Neste capítulo veremos um pouco de tudo. Computação científica com o Sympy e o Scipy, criação de relatórios, slides e aplicativos utilizando o Voila e o Nbconvert e uma abordagem um pouco mais profundada nas funções.
+
+{% include menu-atividade.html 
+roteiro="notebooks/cap11/cap11.html" 
+material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap11/cap11.zip" 
+entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+%}
+
 # Plataformas
 
 ----
