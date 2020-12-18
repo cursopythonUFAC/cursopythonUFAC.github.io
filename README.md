@@ -1,17 +1,8 @@
 # Dia de monitoria
 
-Neste sábado, dia 12 de dezembro de 2020, estaremos realizando o dia de monitoria. Neste dia a equipe do curso estará disponível para auxiliar aos **discentes com atividades atrasadas**. 
+Neste sábado, dia 19 de dezembro de 2020, estaremos realizando o dia de monitoria. Neste dia a equipe do curso estará disponível para auxiliar aos **discentes com atividades atrasadas**. 
 
 A ideia é que vocês aproveitem o dia da monitoria para fazer as questões atrasadas com o auxilio de um monitor. Você pode fazer as questões atrasadas durante o dia de monitoria, ou caso já tenha feito as questões, podem trazer as suas dúvidas.
-
-Estaremos seguindo a seguinte escala:
-
-| Monitor  | Período (Horário do Acre) | Plataforma  |
-| -------- | ------------------------- | ----------- |
-| Beatriz  | 9hs às 12hs (Pela manhã)  | Discord     |
-| Gustavo  | 8hs às 12hs (Pela manhã)  | Discord     |
-| Lucas    | 13h às 17hs (Pela tarde)  | Google Meet |
-| Leonardo | 14hs às 18hs (Pela tarde) | Discord     |
 
 **Esperamos você lá!**
 
