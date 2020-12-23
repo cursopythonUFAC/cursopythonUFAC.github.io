@@ -1,17 +1,3 @@
-# Dia de monitoria
-
-Neste sábado, dia 19 de dezembro de 2020, estaremos realizando o dia de monitoria. Neste dia a equipe do curso estará disponível para auxiliar aos **discentes com atividades atrasadas**. 
-
-A ideia é que vocês aproveitem o dia da monitoria para fazer as questões atrasadas com o auxilio de um monitor. Você pode fazer as questões atrasadas durante o dia de monitoria, ou caso já tenha feito as questões, podem trazer as suas dúvidas.
-
-**Esperamos você lá!**
-
-> **Observações:** 
->
-> - A aula de sexta feira ocorrerá normalmente;
-> - O dia da monitoria é opcional para quem precisa de auxilio (E motivação) para finalizar as questões atrasadas.
-> - O dia da monitoria pode ser utilizado para te auxiliar no projeto final.
-
 # Conteúdo do curso
 
 ----
@@ -128,10 +114,11 @@ solucao="solucao/cap6.pdf"
     codigo="F7Orltrlknw"
 %}
 
-{% include menu-atividade.html 
+{% include menu-atividade-resp.html 
 roteiro="notebooks/cap7/cap7.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap7/cap7.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="solucao/cap7.pdf"
 %}
 
 ### Capítulo 8: Saídas do IPython
@@ -142,25 +129,35 @@ entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
     codigo="ipngtHedZnk"
 %}
 
-{% include menu-atividade.html 
+{% include menu-atividade-resp.html 
 roteiro="notebooks/cap8/cap8.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap8/cap8.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="solucao/cap8.pdf"
 %}
 
 ### Capítulo 9: Dicionários e Pandas
 
 > Neste capítulo vamos aprender sobre dicionários e uma das principais bibliotecas de base de dados, o Pandas.
 
-{% include menu-atividade.html 
+{% include video-atividade.html
+    codigo="ipngtHedZnk"
+%}
+
+{% include menu-atividade-resp.html 
 roteiro="notebooks/cap9/cap9.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap9/cap9.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
+solucao="solucao/cap9.pdf"
 %}
 
 ### Capítulo 10: Numpy e Matplotlib
 
 > Neste capítulo vamos aprender sobre dois pacotes super importantes o Numpy e o Matplotlib.
+
+{% include video-atividade.html
+    codigo="4lm7Z9eImhM"
+%}
 
 {% include menu-atividade.html 
 roteiro="notebooks/cap10/cap10.html" 
@@ -187,41 +184,3 @@ roteiro="notebooks/cap12/cap12.html"
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap12/cap12.zip" 
 entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg" 
 %}
-
-# Plataformas
-
-----
-
-### Anaconda
-
-Anaconda é a distribuição que usaremos para rodar os nossos códigos Python em Notebooks. Link para download:
-
-> [https://www.anaconda.com/products/individual](https://www.anaconda.com/products/individual)
-
-A instalação é simples. Basta clicar Next toda vida, porém tem uma ressalva:
-
-> Caso necessite de rodar o Python no terminal do Windows pode clicar na opção: 
-
-![Instalação Anaconda](imgs/instalacao_anaconda.png)
-
-### **Discord**
-
-O **Discord** é tipo um **Whatsapp**, só que com muito mais recursos. Será nosso canal de comunicação entre você e os tutores. Lá você poderão **conversar** e **tirar dúvidas** e receber **informações relativas ao curso**. O link para download pode ser encontrado logo abaixo:  
-
-> [https://discord.com/download](https://discord.com/download)  
-
-O link de **convite** para o servidor é: [https://discord.gg/G4k53CS](https://discord.gg/G4k53CS)
-
-É recomendado a utilização da versão Desktop do **Discord**. 
-
-### **Google Classroom**
-
-O **Google Classroom** é a plataforma de ensino  aonde você enviará as suas atividades. Você pode acessá-la clicando no ícone **Entregar atividade**.  Lembrando que a presença nas lives não serão obrigatórias, entretanto nós recomendamos a presença sempre que possível. As **atividades têm caráter obrigatório** e devem ser entregues via Google Classroom/Sala de Aula.  
-
-### **Google Meet**
-
-O **Google Meet** é a plataforma de *streamming* (**lives**) aonde aconterão os encontros semanais. O **link** da live será enviado **uma hora antes** pelos canais de comunicação do curso. Além disso, durante as aulas, **você poderá acessar a live (Google Meet)  no menu superior de plataformas digitais**, localizado no topo do site.
-
-### **Canal no Youtube**
-
-No nosso canal no Youtube você pode encontrar as aulas anteriores. O link para o Canal está disponível [aqui](https://www.youtube.com/channel/UCyMrBqAj-98a70ZWPZZb9IQ) e no **menu superior**. 
