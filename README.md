@@ -169,6 +169,10 @@ entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
 
 > Neste capítulo veremos um pouco de tudo. Computação científica com o Sympy e o Scipy, criação de relatórios, slides e aplicativos utilizando o Voila e o Nbconvert e uma abordagem um pouco mais profundada nas funções.
 
+{% include video-atividade.html
+    codigo="T02S_l_IgOE"
+%}
+
 {% include menu-atividade.html 
 roteiro="notebooks/cap11/cap11.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap11/cap11.zip" 

@@ -95,7 +95,7 @@
     display: block;
     list-style: none;
     padding: 0;
-    width: 390px; //500px;
+    width: 270px; //500px; e 390px;
     margin-left: auto;
     align-items: center;
     margin-right: auto;
@@ -135,7 +135,7 @@
     display: block;
     list-style: none;
     padding: 0;
-    width: 500px; //500px;
+    width: 390px; //500px;
     margin-left: auto;
     align-items: center;
     margin-right: auto;
@@ -303,7 +303,7 @@ screen and (max-width: 681px) {
         }
     }
     .atividade {
-        width: 154px; //210
+        width: 106px; //210 | 154
         height: 48px;
 
         li {
@@ -319,7 +319,7 @@ screen and (max-width: 681px) {
         }
     }
     .atividade-resp {
-        width: 210px; //210
+        width: 154px; //210
         height: 48px;
 
         li {
