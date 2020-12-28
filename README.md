@@ -183,6 +183,10 @@ entrega="https://classroom.google.com/c/MTYzNjkzMjMzNDE4?cjc=etkqkdg"
 
 > Neste capítulo introduziremos o estudo de classes e um a abordagem inicial no conceito de escopo e de namespace.
 
+{% include video-atividade.html
+    codigo="8ca1GDcHY0o"
+%}
+
 {% include menu-atividade.html 
 roteiro="notebooks/cap12/cap12.html" 
 material="https://github.com/cursopythonUFAC/cursopythonUFAC.github.io/raw/master/notebooks/cap12/cap12.zip" 
